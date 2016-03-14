@@ -1,0 +1,58 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.0.0-beta6'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.1x'
+        classpath 'com.novoda:bintray-release:0.3.4'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    versionMajor = 0
+    versionMinor = 1
+    versionPatch = 0
+
+    targetSdk = 23
+    compileSdk = 23
+    minSdk = 7
+
+    buildToolsVersion = '23.0.2'
+
+    sourceCompatibilityVersion = JavaVersion.VERSION_1_7
+    targetCompatibilityVersion = JavaVersion.VERSION_1_7
+
+    generateVersionCode = {
+        def minSdkPart = String.format("%02d", rootProject.ext.minSdk)
+        def majorPart = String.format("%01d", rootProject.ext.versionMajor)
+        def minorPart = String.format("%03d", rootProject.ext.versionMinor)
+        def patchPart = String.format("%03d", rootProject.ext.versionPatch)
+        return "${minSdkPart}${majorPart}${minorPart}${patchPart}".toInteger()
+    }
+
+    generateVersionName = {
+        return "${rootProject.ext.versionMajor}.${rootProject.ext.versionMinor}.${rootProject.ext.versionPatch}"
+    }
+}
+
+ext.deps = [
+
+        // Test
+
+        junit: 'junit:junit:4.12',
+        mockito: 'org.mockito:mockito-core:1.10.19',
+        assertj_core: 'org.assertj:assertj-core:1.7.1',
+        assertj_android: 'com.squareup.assertj:assertj-android:1.1.1',
+        robolectric: 'org.robolectric:robolectric:3.0',
+]

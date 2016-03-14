@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+apply plugin: 'jacoco'
+apply plugin: 'com.github.kt3k.coveralls'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdk
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdk
+        targetSdkVersion rootProject.ext.targetSdk
+        versionCode rootProject.ext.generateVersionCode()
+        versionName rootProject.ext.generateVersionName()
+    }
+}
+
+dependencies {
+
+    // Test
+
+    testCompile deps.junit
+    testCompile deps.robolectric
+    testCompile deps.assertj_core
+    testCompile deps.assertj_android
+    testCompile deps.mockito
+
+}
+
+apply from: 'bintray-upload.gradle'
+apply from: 'coverage.gradle'
+
+

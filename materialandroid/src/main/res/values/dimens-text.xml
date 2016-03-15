@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2016 Andrew Lord
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and limitations under the License.
+  -->
+
+<resources>
+
+    <!--
+        Regular (e.g. English or English-like - Latin, Greek, and Cyrillic)
+    -->
+
+    <dimen name="md_text_button">14sp</dimen>
+    <dimen name="md_text_caption">12sp</dimen>
+    <dimen name="md_text_body_1">14sp</dimen>
+    <dimen name="md_text_body_1_desktop">13sp</dimen>
+    <dimen name="md_text_subheading">16sp</dimen>
+    <dimen name="md_text_subheading_desktop">15sp</dimen>
+    <dimen name="md_text_title">20sp</dimen>
+    <dimen name="md_text_headline">24sp</dimen>
+    <dimen name="md_text_display_1">34sp</dimen>
+    <dimen name="md_text_display_2">45sp</dimen>
+    <dimen name="md_text_display_3">56sp</dimen>
+    <dimen name="md_text_display_4">112sp</dimen>
+
+
+    <!--
+        Dense (e.g. Chinese, Japanese, and Korean)
+    -->
+
+    <dimen name="md_dense_text_button">15sp</dimen>
+    <dimen name="md_dense_text_caption">13sp</dimen>
+    <dimen name="md_dense_text_body_1">15sp</dimen>
+    <dimen name="md_dense_text_body_1_desktop">14sp</dimen>
+    <dimen name="md_dense_text_subheading">17sp</dimen>
+    <dimen name="md_dense_text_subheading_desktop">16sp</dimen>
+    <dimen name="md_dense_text_title">21sp</dimen>
+    <dimen name="md_dense_text_headline">24sp</dimen>
+    <dimen name="md_dense_text_display_1">34sp</dimen>
+    <dimen name="md_dense_text_display_2">45sp</dimen>
+    <dimen name="md_dense_text_display_3">56sp</dimen>
+    <dimen name="md_dense_text_display_4">112sp</dimen>
+
+
+    <!--
+        Tall (e.g. South and Southeast Asian and Middle Eastern languages, including
+        Arabic, Hindi, and Thai.)
+    -->
+
+    <dimen name="md_tall_text_button">15sp</dimen>
+    <dimen name="md_tall_text_caption">13sp</dimen>
+    <dimen name="md_tall_text_body_1">15sp</dimen>
+    <dimen name="md_tall_text_body_1_desktop">14sp</dimen>
+    <dimen name="md_tall_text_subheading">17sp</dimen>
+    <dimen name="md_tall_text_subheading_desktop">16sp</dimen>
+    <dimen name="md_tall_text_title">21sp</dimen>
+    <dimen name="md_tall_text_headline">24sp</dimen>
+    <dimen name="md_tall_text_display_1">34sp</dimen>
+    <dimen name="md_tall_text_display_2">45sp</dimen>
+    <dimen name="md_tall_text_display_3">56sp</dimen>
+    <dimen name="md_tall_text_display_4">112sp</dimen>
+
+</resources>

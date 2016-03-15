@@ -15,7 +15,7 @@ publish {
 
     publishVersion = rootProject.ext.generateVersionName()
 
-    desc = ''
+    desc = 'Material Design resources such as colours, text sizes and dimensions through a simple dependency.'
 
     website = 'https://github.com/andrewlord1990/materialandroid'
 

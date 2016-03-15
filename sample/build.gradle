@@ -10,33 +10,38 @@
  *  See the License for the specific language governing permissions and limitations under the License.
  */
 
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdk
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdk
-        targetSdkVersion rootProject.ext.targetSdk
-        versionCode rootProject.ext.generateVersionCode()
-        versionName rootProject.ext.generateVersionName()
+        applicationId "com.github.andrewlord1990.materialandroidsample"
+        minSdkVersion 7
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
 }
 
 dependencies {
 
+    // App
+
+    compile deps.libs
+
+    compile deps.support_v7
+    compile deps.support_design
+
+
     // Test
 
-    testCompile deps.junit
-    testCompile deps.robolectric
-    testCompile deps.assertj_core
-    testCompile deps.assertj_android
-    testCompile deps.mockito
-
+    testCompile 'junit:junit:4.12'
 }
-
-apply from: 'bintray-upload.gradle'
-apply from: 'coverage.gradle'
-
-

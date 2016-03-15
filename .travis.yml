@@ -1,0 +1,18 @@
+language: android
+jdk: oraclejdk8
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-23.0.2
+    - android-23
+
+script: ./gradlew clean assembleDebug testDebug
+
+branches:
+  only:
+  - master
+  - dev
+
+after_success:
+  - ./gradlew jacocoTestReport coveralls

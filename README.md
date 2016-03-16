@@ -61,7 +61,7 @@ Text colours are included for display on both light and dark backgrounds. Materi
 | Disabled / Hint text | #ffffff | 50%     | md_light_disabled_hint_text_50 |
 
 
-Text colours and sizes are available for different types of text, such as buttons, captions and titles.
+Text colours and sizes are available for different types of text, such as buttons, captions and titles, as well
 
 <!--### Keylines and Components-->
 

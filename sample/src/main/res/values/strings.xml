@@ -14,5 +14,11 @@
     <string name="app_name">Material Android Sample</string>
     <string name="action_settings">Settings</string>
 
-    <string name="sample_color">View Colors Sample</string>
+    <string name="sample_color">View Colours Sample</string>
+    <string name="sample_primary_color">Select primary colour</string>
+    <string name="sample_accent_color">Select accent colour</string>
+    <string name="sample_color_chooser_cancel">Cancel</string>
+
+    <string name="sample_color_title">Colour Sample</string>
+    <string name="sample_color_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed elit ut sapien mollis egestas non dapibus turpis. Fusce non erat eu augue pharetra scelerisque nec ac lorem. Aenean vel lobortis lacus, eu blandit urna. Etiam non tristique magna, in iaculis mauris. Vivamus euismod, mi euismod porta feugiat, massa lorem pulvinar tortor, non porttitor enim nisl at mauris.</string>
 </resources>

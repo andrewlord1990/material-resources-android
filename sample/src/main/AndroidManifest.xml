@@ -9,8 +9,7 @@
   ~
   ~  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~  See the License for the specific language governing permissions and limitations under the License.
-  -->
-
+-->
 <manifest package="com.github.andrewlord1990.materialandroidsample"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -29,6 +28,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".ColorSampleActivity">
         </activity>
     </application>
 

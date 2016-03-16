@@ -40,8 +40,6 @@ dependencies {
     compile deps.support_v7
     compile deps.support_design
 
+    compile project(':library')
 
-    // Test
-
-    testCompile 'junit:junit:4.12'
 }

@@ -40,7 +40,7 @@ Code: R.color.md_orange_100, R.color.md_teal_a700
 
 All of the colours and colour values in the palette are included, both regular values and accent versions. Black and white, of course only have a single value.
 
-### [Text colours]
+### [Typography] and [Text colours]
 
 Text colours are included for display on both light and dark backgrounds. Material Design suggests changing text colour through opacity, so that the text displays well on different coloured backgrounds.
 
@@ -61,8 +61,15 @@ Text colours are included for display on both light and dark backgrounds. Materi
 | Disabled / Hint text | #ffffff | 50%     | md_light_disabled_hint_text_50 |
 
 
-There are also text colours available, that use the above, for different types of text, such as buttons, captions and titles.
+Text colours and sizes are available for different types of text, such as buttons, captions and titles.
+
+<!--### Keylines and Components-->
+
+<!--Styling for various different components are included, through dimensions, colours and text sizes.-->
+
+
 
 
 [Colour palette]: https://www.google.com/design/spec/style/color.html#color-color-palette
 [Text colours]: https://www.google.com/design/spec/style/color.html#color-text-background-colors
+[Typography]: https://www.google.com/design/spec/style/typography.html#typography-styles

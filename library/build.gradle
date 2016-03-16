@@ -31,7 +31,9 @@ dependencies {
     testCompile deps.junit
     testCompile deps.robolectric
     testCompile deps.assertj_core
-    testCompile deps.assertj_android
+    testCompile (deps.assertj_android) {
+        exclude module: 'support-annotations'
+    }
     testCompile deps.mockito
 
 }

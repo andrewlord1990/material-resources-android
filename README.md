@@ -14,16 +14,13 @@ Download via Gradle:
 ```groovy
 compile 'com.github.andrewlord1990:materialandroid:0.1.0'
 ```
-or Maven:
-```xml
-<dependency>
-  <groupId>com.github.andrewlord1990</groupId>
-  <artifactId>materialandroid</artifactId>
-  <version>0.1.0</version>
-</dependency>
-```
 
-Available on Bintray (JCenter) and will be on Maven Central soon.
+Available on Bintray (JCenter).
+```groovy
+repositories {
+  jcenter()
+}
+```
 
 ## Contents
 

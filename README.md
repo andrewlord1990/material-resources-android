@@ -10,8 +10,6 @@ Access Material Design resource values, such as colours, text sizes and dimensio
 
 ## Download
 
-Note: Not available on Bintray or Maven Central yet, but will be soon!
-
 Download via Gradle:
 ```groovy
 compile 'com.github.andrewlord1990:materialandroid:0.1.0'
@@ -25,7 +23,7 @@ or Maven:
 </dependency>
 ```
 
-The library will be available on Bintray (JCenter) and Maven Central soon.
+Available on Bintray (JCenter) and will be on Maven Central soon.
 
 ## Contents
 

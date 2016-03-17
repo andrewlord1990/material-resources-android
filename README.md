@@ -62,7 +62,9 @@ Text colours and sizes are available for different types of text, such as button
 
 <!--Styling for various different components are included, through dimensions, colours and text sizes.-->
 
+## Sample
 
+The sample app demonstrates all of the Material resources in use. It also provides a colour sample where you can select your primary and accent colour and see what they look like next to each other. This can help you easily select the colour scheme for your app.
 
 
 [Colour palette]: https://www.google.com/design/spec/style/color.html#color-color-palette

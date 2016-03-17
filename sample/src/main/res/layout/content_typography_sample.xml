@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2016 Andrew Lord
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and limitations under the License.
+  -->
+
+<ScrollView
+    android:id="@+id/background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/md_screen_edge_margin_horizontal"
+    android:paddingRight="@dimen/md_screen_edge_margin_horizontal"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".typography.TypographySampleActivity"
+    tools:showIn="@layout/activity_typography_sample">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/state_dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/md_text_title"
+                android:textColor="@color/md_dark_text_title"
+                android:text="@string/sample_typography_dark"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/md_dark_divider_12"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_display_3"
+                android:textColor="@color/md_dark_text_display_3"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Display 3"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_display_2"
+                android:textColor="@color/md_dark_text_display_2"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Display 2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_display_1"
+                android:textColor="@color/md_dark_text_display_1"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Display 1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_headline"
+                android:textColor="@color/md_dark_text_headline"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Headline"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_title"
+                android:textColor="@color/md_dark_text_title"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Title"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_subheading"
+                android:textColor="@color/md_dark_text_subheading"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Subheading"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_body_1"
+                android:textColor="@color/md_dark_text_body_1"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Body"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_caption"
+                android:textColor="@color/md_dark_text_caption"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Caption"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_button"
+                android:textColor="@color/md_dark_text_button"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Button"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/state_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/md_text_title"
+                android:textColor="@color/md_light_text_title"
+                android:text="@string/sample_typography_light"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/md_light_divider_12"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_display_3"
+                android:textColor="@color/md_light_text_display_3"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Display 3"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_display_2"
+                android:textColor="@color/md_light_text_display_2"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Display 2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_display_1"
+                android:textColor="@color/md_light_text_display_1"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Display 1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_headline"
+                android:textColor="@color/md_light_text_headline"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Headline"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_title"
+                android:textColor="@color/md_light_text_title"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Title"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_subheading"
+                android:textColor="@color/md_light_text_subheading"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Subheading"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_body_1"
+                android:textColor="@color/md_light_text_body_1"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Body"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_caption"
+                android:textColor="@color/md_light_text_caption"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Caption"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/md_text_button"
+                android:textColor="@color/md_light_text_button"
+                android:layout_marginBottom="@dimen/typography_sample_spacing"
+                android:text="Button"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</ScrollView>

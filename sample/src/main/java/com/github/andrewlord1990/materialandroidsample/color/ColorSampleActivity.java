@@ -13,13 +13,12 @@
 package com.github.andrewlord1990.materialandroidsample.color;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.github.andrewlord1990.materialandroidsample.BaseSampleActivity;
 import com.github.andrewlord1990.materialandroidsample.R;
 
-public class ColorSampleActivity extends AppCompatActivity {
+public class ColorSampleActivity extends BaseSampleActivity {
 
     public static final String EXTRA_PRIMARY_COLOR = "extraPrimaryColor";
     public static final String EXTRA_ACCENT_COLOR = "extraAccentColor";
@@ -41,12 +40,9 @@ public class ColorSampleActivity extends AppCompatActivity {
     }
 
     private void setupToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        if (toolbar != null) {
-            toolbar.setBackgroundColor(primaryColor);
-            setSupportActionBar(toolbar);
-            setTitle(R.string.sample_color_title);
-        }
+        toolbar.setBackgroundColor(primaryColor);
+        setTitle(R.string.sample_color_title);
+        showUpButton();
     }
 
     private void setupViews() {

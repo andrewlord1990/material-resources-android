@@ -31,7 +31,19 @@
         </activity>
 
         <activity
-            android:name=".color.ColorSampleActivity">
+            android:name=".color.ColorSampleActivity"
+            android:parentActivityName=".SampleActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SampleActivity"/>
+        </activity>
+
+        <activity
+            android:name=".typography.TypographySampleActivity"
+            android:parentActivityName=".SampleActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SampleActivity"/>
         </activity>
 
     </application>

@@ -22,6 +22,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -39,6 +40,7 @@ dependencies {
 
     compile deps.support_v7
     compile deps.support_design
+    compile deps.support_vector_drawable
 
     compile project(':library')
 

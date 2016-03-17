@@ -15,11 +15,7 @@ package com.github.andrewlord1990.materialandroidsample;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.StringRes;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -27,10 +23,11 @@ import android.widget.Button;
 import com.github.andrewlord1990.materialandroidsample.color.ColorChooserDialog;
 import com.github.andrewlord1990.materialandroidsample.color.ColorSampleActivity;
 import com.github.andrewlord1990.materialandroidsample.color.Colors;
+import com.github.andrewlord1990.materialandroidsample.typography.TypographySampleActivity;
 
 import java.util.ArrayList;
 
-public class SampleActivity extends AppCompatActivity implements ColorChooserDialog.Listener {
+public class SampleActivity extends BaseSampleActivity implements ColorChooserDialog.Listener {
 
     private static final int REQUEST_PRIMARY_COLOR = 0;
     private static final int REQUEST_ACCENT_COLOR = 1;
@@ -45,33 +42,22 @@ public class SampleActivity extends AppCompatActivity implements ColorChooserDia
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        primaryColor = ContextCompat.getColor(this, R.color.md_cyan_500);
-        accentColor = ContextCompat.getColor(this, R.color.md_red_a200);
+        initialiseColors();
 
         setContentView(R.layout.activity_sample);
 
-        setupToolbar();
-        setupFab();
-
+        setTitle(R.string.app_name);
         setupColorSample();
+        setupTypographySample();
     }
 
-    private void setupFab() {
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        if (fab != null) {
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
+    private void initialiseColors() {
+        if (primaryColor == 0) {
+            primaryColor = ContextCompat.getColor(this, R.color.md_cyan_500);
         }
-    }
-
-    private void setupToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        if (accentColor == 0) {
+            accentColor = ContextCompat.getColor(this, R.color.md_red_a200);
+        }
     }
 
     private void setupColorSample() {
@@ -147,5 +133,17 @@ public class SampleActivity extends AppCompatActivity implements ColorChooserDia
 
     private void refreshAccentColorSquare() {
         accentColorSquare.setBackgroundColor(accentColor);
+    }
+
+    private void setupTypographySample() {
+        Button button = (Button) findViewById(R.id.typography_sample_button);
+        if (button != null) {
+            button.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(SampleActivity.this, TypographySampleActivity.class));
+                }
+            });
+        }
     }
 }

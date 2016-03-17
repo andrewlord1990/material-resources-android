@@ -35,7 +35,7 @@ dependencies {
         exclude module: 'support-annotations'
     }
     testCompile deps.mockito
-
+    testCompile deps.support_v7
 }
 
 apply from: 'bintray-upload.gradle'

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Lists -->
+
+    <dimen name="md_list_top_padding">8dp</dimen>
+    <dimen name="md_list_item_primary_text">16sp</dimen>
+    <dimen name="md_list_item_secondary_text">14sp</dimen>
+    <dimen name="md_list_item_horizontal_edges_padding">16dp</dimen>
+    <dimen name="md_list_item_text_edge_padding_start">72dp</dimen>
+    <dimen name="md_list_item_end_icon_padding_start">16dp</dimen>
+    <dimen name="md_list_item_line_spacing">4dp</dimen>
+    <dimen name="md_list_multi_line_item_avatar_icon_padding_top">16dp</dimen>
+
+    <dimen name="md_list_dense_top_padding">4dp</dimen>
+    <dimen name="md_list_dense_item_primary_text">13sp</dimen>
+    <dimen name="md_list_dense_item_secondary_text">13sp</dimen>
+
+    <!-- Lists Single-line -->
+
+    <dimen name="md_list_single_line_item_height">48dp</dimen>
+    <dimen name="md_list_dense_single_line_item_height">40dp</dimen>
+
+    <!-- Lists Single-line (with Avatar) -->
+
+    <dimen name="md_list_single_line_with_avatar_item_height">56dp</dimen>
+    <dimen name="md_list_dense_single_line_with_avatar_item_height">48dp</dimen>
+
+    <!-- Lists Two-line (Text only) -->
+
+    <dimen name="md_list_two_line_item_height">72dp</dimen>
+    <dimen name="md_list_dense_two_line_item_height">60dp</dimen>
+
+    <!-- Lists Two-line (with Avatar) -->
+
+    <dimen name="md_list_two_line_with_avatar_item_height">72dp</dimen>
+    <dimen name="md_list_dense_two_line_with_avatar_item_height">60dp</dimen>
+
+    <!-- Lists Three-line (Text only) -->
+
+    <dimen name="md_list_three_line_item_height">88dp</dimen>
+    <dimen name="md_list_dense_three_line_item_height">76dp</dimen>
+
+    <!-- Lists Three-line (with Avatar) -->
+
+    <dimen name="md_list_three_line_with_avatar_item_height">88dp</dimen>
+    <dimen name="md_list_dense_three_line_with_avatar_item_height">76dp</dimen>
+
+</resources>

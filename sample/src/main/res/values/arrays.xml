@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="list_sample_types">
+        <item>Single-line (Text only)</item>
+        <item>Single-line (Icon with Text)</item>
+        <item>Single-line (Avatar with Text)</item>
+        <item>Single-line (Avatar with Text and Icon)</item>
+        <item>Two-line (Text only)</item>
+        <item>Two-line (Icon with Text)</item>
+        <item>Two-line (Avatar with Text)</item>
+        <item>Two-line (Avatar with Text and Icon)</item>
+        <item>Three-line (Text only)</item>
+        <item>Three-line (Icon with Text)</item>
+        <item>Three-line (Avatar with Text)</item>
+        <item>Three-line (Avatar with Text and Icon)</item>
+    </string-array>
+
+</resources>

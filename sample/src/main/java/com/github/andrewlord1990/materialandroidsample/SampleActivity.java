@@ -23,6 +23,7 @@ import android.widget.Button;
 import com.github.andrewlord1990.materialandroidsample.color.ColorChooserDialog;
 import com.github.andrewlord1990.materialandroidsample.color.ColorSampleActivity;
 import com.github.andrewlord1990.materialandroidsample.color.Colors;
+import com.github.andrewlord1990.materialandroidsample.components.ComponentsSampleActivity;
 import com.github.andrewlord1990.materialandroidsample.typography.TypographySampleActivity;
 
 import java.util.ArrayList;
@@ -49,6 +50,7 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
         setTitle(R.string.app_name);
         setupColorSample();
         setupTypographySample();
+        setupComponentsSample();
     }
 
     private void initialiseColors() {
@@ -142,6 +144,18 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
                 @Override
                 public void onClick(View v) {
                     startActivity(new Intent(SampleActivity.this, TypographySampleActivity.class));
+                }
+            });
+        }
+    }
+
+    private void setupComponentsSample() {
+        Button button = (Button) findViewById(R.id.components_sample_button);
+        if (button != null) {
+            button.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(SampleActivity.this, ComponentsSampleActivity.class));
                 }
             });
         }

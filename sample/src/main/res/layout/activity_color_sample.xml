@@ -18,7 +18,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.github.andrewlord1990.materialandroidsample.SampleActivity">
+    tools:context=".color.ColorSampleActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

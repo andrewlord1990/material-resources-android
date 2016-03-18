@@ -46,6 +46,22 @@
                 android:value=".SampleActivity"/>
         </activity>
 
+        <activity
+            android:name=".components.ComponentsSampleActivity"
+            android:parentActivityName=".SampleActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SampleActivity"/>
+        </activity>
+
+        <activity
+            android:name=".components.lists.ListsSampleActivity"
+            android:parentActivityName=".components.ComponentsSampleActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".components.ComponentsSampleActivity"/>
+        </activity>
+
     </application>
 
 </manifest>

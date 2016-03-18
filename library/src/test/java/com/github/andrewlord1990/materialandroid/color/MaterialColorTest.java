@@ -13,12 +13,9 @@
 package com.github.andrewlord1990.materialandroid.color;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.robolectric.RobolectricGradleTestRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(RobolectricGradleTestRunner.class)
 public class MaterialColorTest {
 
     @Test
@@ -29,7 +26,7 @@ public class MaterialColorTest {
         assertThat(MaterialColor.RED_300).isEqualTo(0xffe57373);
         assertThat(MaterialColor.RED_400).isEqualTo(0xffef5350);
         assertThat(MaterialColor.RED_500).isEqualTo(0xfff44336);
-        
+
         assertThat(MaterialColor.RED_600).isEqualTo(0xffe53935);
         assertThat(MaterialColor.RED_700).isEqualTo(0xffd32f2f);
         assertThat(MaterialColor.RED_800).isEqualTo(0xffc62828);
@@ -371,11 +368,18 @@ public class MaterialColorTest {
     @Test
     public void whenBlack_thenCorrectColorValue() {
         assertThat(MaterialColor.BLACK).isEqualTo(0xff000000);
+        assertThat(MaterialColor.BLACK_87).isEqualTo(0xdf000000);
+        assertThat(MaterialColor.BLACK_54).isEqualTo(0x8a000000);
+        assertThat(MaterialColor.BLACK_38).isEqualTo(0x62000000);
+        assertThat(MaterialColor.BLACK_12).isEqualTo(0x1f000000);
     }
 
     @Test
     public void whenWhite_thenCorrectColorValue() {
         assertThat(MaterialColor.WHITE).isEqualTo(0xffffffff);
+        assertThat(MaterialColor.WHITE_70).isEqualTo(0xb3ffffff);
+        assertThat(MaterialColor.WHITE_50).isEqualTo(0x80ffffff);
+        assertThat(MaterialColor.WHITE_12).isEqualTo(0x1fffffff);
     }
 
 }

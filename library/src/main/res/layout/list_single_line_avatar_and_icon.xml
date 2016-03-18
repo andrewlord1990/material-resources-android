@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/md_list_single_line_with_avatar_item_height">
 
     <ImageView
-        android:id="@+id/avatar"
+        android:id="@+id/list_avatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/md_list_item_horizontal_edges_padding"
         android:layout_marginStart="@dimen/md_list_item_horizontal_edges_padding"
-        android:src="@drawable/ic_avatar"
-        android:contentDescription="@string/sample_lists_avatar_cd"/>
+        tools:src="@drawable/ic_avatar_circle"
+        android:contentDescription="@string/list_item_avatar_cd"/>
 
     <ImageView
-        android:id="@+id/icon"
+        android:id="@+id/list_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -25,19 +26,20 @@
         android:layout_marginStart="@dimen/md_list_item_horizontal_edges_padding"
         android:layout_marginRight="@dimen/md_list_item_horizontal_edges_padding"
         android:layout_marginEnd="@dimen/md_list_item_horizontal_edges_padding"
-        android:src="@drawable/ic_star"
-        android:contentDescription="@string/sample_lists_star_cd"/>
+        tools:src="@drawable/ic_icon_square"
+        android:contentDescription="@string/list_item_icon_cd"/>
 
     <TextView
+        android:id="@+id/list_primary_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/md_list_item_text_edge_padding_start"
         android:layout_marginStart="@dimen/md_list_item_text_edge_padding_start"
-        android:layout_toLeftOf="@id/icon"
-        android:layout_toStartOf="@id/icon"
+        android:layout_toLeftOf="@id/list_icon"
+        android:layout_toStartOf="@id/list_icon"
         android:textSize="@dimen/md_list_item_primary_text"
         android:textColor="@color/md_dark_primary_text_87"
         android:layout_centerVertical="true"
-        android:text="@string/sample_lists_single_item"/>
+        tools:text="Single-line item"/>
 
 </RelativeLayout>

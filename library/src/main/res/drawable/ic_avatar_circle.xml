@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <size
+        android:height="@dimen/md_list_multi_line_item_avatar"
+        android:width="@dimen/md_list_multi_line_item_avatar"/>
+
+    <solid android:color="@color/md_dark_icon_38"/>
+
+</shape>

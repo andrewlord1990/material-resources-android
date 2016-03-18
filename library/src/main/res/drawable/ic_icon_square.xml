@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <size
+        android:height="@dimen/md_list_multi_line_item_icon"
+        android:width="@dimen/md_list_multi_line_item_icon"/>
+
+    <solid android:color="@color/md_dark_icon_38"/>
+
+</shape>

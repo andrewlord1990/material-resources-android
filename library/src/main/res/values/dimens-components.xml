@@ -10,6 +10,8 @@
     <dimen name="md_list_item_text_edge_padding_start">72dp</dimen>
     <dimen name="md_list_item_end_icon_padding_start">16dp</dimen>
     <dimen name="md_list_item_line_spacing">4dp</dimen>
+    <dimen name="md_list_multi_line_item_avatar">40dp</dimen>
+    <dimen name="md_list_multi_line_item_icon">32dp</dimen>
     <dimen name="md_list_multi_line_item_avatar_icon_padding_top">16dp</dimen>
 
     <dimen name="md_list_dense_top_padding">4dp</dimen>

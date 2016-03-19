@@ -12,6 +12,25 @@
   -->
 <resources>
 
+    <!-- Grid Lists -->
+
+    <dimen name="md_grid_list_cell_spacing">4dp</dimen>
+    <dimen name="md_grid_list_cell_spacing_small">1dp</dimen>
+    <dimen name="md_grid_list_label_padding">16dp</dimen>
+    <dimen name="md_grid_list_label_start_icon_label_padding_end">8dp</dimen>
+
+    <!-- Grid Lists Single-line -->
+
+    <dimen name="md_grid_list_single_line_label_height">48dp</dimen>
+    <dimen name="md_grid_list_single_line_label_text">16sp</dimen>
+
+    <!-- Grid Lists Two-line -->
+
+    <dimen name="md_grid_list_two_line_label_height">68dp</dimen>
+    <dimen name="md_grid_list_two_line_label_text_type_diff_primary">16sp</dimen>
+    <dimen name="md_grid_list_two_line_label_text_type_diff_secondary">12sp</dimen>
+    <dimen name="md_grid_list_two_line_label_text_type_same">14sp</dimen>
+
     <!-- Lists -->
 
     <dimen name="md_list_top_padding">8dp</dimen>

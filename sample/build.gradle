@@ -42,6 +42,8 @@ dependencies {
     compile deps.support_design
     compile deps.support_vector_drawable
 
+    compile deps.picasso
+
     compile project(':library')
 
 }

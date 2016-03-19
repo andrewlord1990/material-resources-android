@@ -68,6 +68,8 @@ ext.deps = [
         support_design: 'com.android.support:design:23.2.1',
         support_vector_drawable: 'com.android.support:support-vector-drawable:23.2.1',
 
+        picasso: 'com.squareup.picasso:picasso:2.5.2',
+
         // Test
 
         junit: 'junit:junit:4.12',

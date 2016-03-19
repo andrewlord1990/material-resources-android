@@ -45,7 +45,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:text="@string/sample_components_lists_button"/>
+
+        <Spinner
+            android:id="@+id/grid_types"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/control_padding"
+            android:entries="@array/grid_sample_types"/>
+
+        <Button
+            android:id="@+id/grids"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/sample_components_grids_button"/>
 
     </LinearLayout>
 

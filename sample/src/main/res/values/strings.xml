@@ -30,7 +30,7 @@
 
     <string name="sample_components_title">Components Sample</string>
     <string name="sample_components_lists_button">Show List Sample</string>
-    <string name="sample_components_lists_title">Lists</string>
+    <string name="sample_components_grids_button">Show Grid Sample</string>
 
     <string name="sample_lists_title">Lists Sample</string>
     <string name="sample_lists_single_item">Single-line item</string>
@@ -40,5 +40,12 @@
     <string name="sample_lists_tertiary">Tertiary text</string>
     <string name="sample_lists_star_cd">Star</string>
     <string name="sample_lists_avatar_cd">Avatar</string>
+
+    <string name="sample_grids_title">Grids Sample</string>
+    <string name="sample_grids_single_item">Single-line</string>
+    <string name="sample_grids_two_item_primary">Two-line</string>
+    <string name="sample_grids_secondary">Secondary text</string>
+    <string name="sample_grids_star_cd">Star</string>
+    <string name="sample_grids_image_cd">Image</string>
 
 </resources>

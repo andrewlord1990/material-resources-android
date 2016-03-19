@@ -11,13 +11,16 @@ import android.widget.Spinner;
 
 import com.github.andrewlord1990.materialandroidsample.BaseSampleActivity;
 import com.github.andrewlord1990.materialandroidsample.R;
+import com.github.andrewlord1990.materialandroidsample.components.grids.GridsSampleActivity;
 import com.github.andrewlord1990.materialandroidsample.components.lists.ListsSampleActivity;
 
 public class ComponentsSampleActivity extends BaseSampleActivity {
 
     private static int lastListType = 0;
+    private static int lastGridType = 0;
 
     private Spinner listsSpinner;
+    private Spinner gridsSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,7 @@ public class ComponentsSampleActivity extends BaseSampleActivity {
 
         setupToolbar();
         setupListsButton();
+        setupGridsButton();
     }
 
     @Override
@@ -34,6 +38,7 @@ public class ComponentsSampleActivity extends BaseSampleActivity {
         super.onResume();
 
         listsSpinner.setSelection(lastListType);
+        gridsSpinner.setSelection(lastGridType);
     }
 
     private void setupToolbar() {
@@ -69,6 +74,37 @@ public class ComponentsSampleActivity extends BaseSampleActivity {
     private void onListsButtonPressed() {
         Intent intent = new Intent(this, ListsSampleActivity.class);
         intent.putExtra(ListsSampleActivity.EXTRA_LIST_TYPE, lastListType);
+        startActivity(intent);
+    }
+
+    private void setupGridsButton() {
+        gridsSpinner = (Spinner) findViewById(R.id.grid_types);
+        if (gridsSpinner != null) {
+            gridsSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    lastGridType = position;
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+                }
+            });
+        }
+        Button gridsButton = (Button) findViewById(R.id.grids);
+        if (gridsButton != null) {
+            gridsButton.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onGridsButtonPressed();
+                }
+            });
+        }
+    }
+
+    private void onGridsButtonPressed() {
+        Intent intent = new Intent(this, GridsSampleActivity.class);
+        intent.putExtra(GridsSampleActivity.EXTRA_GRID_TYPE, lastGridType);
         startActivity(intent);
     }
 

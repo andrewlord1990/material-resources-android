@@ -22,4 +22,5 @@
     <dimen name="color_chooser_padding">24dp</dimen>
     <dimen name="typography_sample_spacing">8dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="grid_cell_size">180dp</dimen>
 </resources>

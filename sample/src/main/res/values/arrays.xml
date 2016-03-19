@@ -16,4 +16,31 @@
         <item>Three-line (Avatar with Text and Icon)</item>
     </string-array>
 
+    <string-array name="grid_sample_types">
+        <item>Single-line (Text only)</item>
+        <item>Single-line (Text with icon at start)</item>
+        <item>Single-line (Text with icon at end)</item>
+        <item>Two-line (Text same size)</item>
+        <item>Two-line (Text different sizes)</item>
+        <item>Two-line (Text same size with icon at start)</item>
+        <item>Two-line (Text same size with icon at end)</item>
+        <item>Two-line (Text different sizes with icon at start)</item>
+        <item>Two-line (Text different sizes with icon at end)</item>
+    </string-array>
+
+    <string-array name="grid_sample_images">
+        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo0.jpg</item>
+        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo1.jpg</item>
+        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo2.jpg</item>
+        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo3.jpg</item>
+        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo4.jpg</item>
+        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo5.jpg</item>
+        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo6.jpg</item>
+        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo7.jpg</item>
+        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo8.jpg</item>
+        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo9.jpg</item>
+        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo10.jpg</item>
+        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo11.jpg</item>
+    </string-array>
+
 </resources>

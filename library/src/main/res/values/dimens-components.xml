@@ -58,8 +58,11 @@
     <!-- Dialogs -->
 
     <dimen name="md_dialog_text_padding">24dp</dimen>
-    <dimen name="md_dialog_button_container_height">54dp</dimen>
+    <dimen name="md_dialog_title_body_padding">20dp</dimen>
+    <dimen name="md_dialog_button_container_height">52dp</dimen>
     <dimen name="md_dialog_button_padding">8dp</dimen>
+    <dimen name="md_dialog_between_buttons_spacing">8dp</dimen>
+    <dimen name="md_dialog_stacked_buttons_bottom_spacing">8dp</dimen>
     <dimen name="md_dialog_button_minimum_width">64dp</dimen>
 
 

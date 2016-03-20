@@ -66,6 +66,11 @@
     <dimen name="md_dialog_button_minimum_width">64dp</dimen>
 
 
+    <!-- Dividers -->
+
+    <dimen name="md_divider_thickness">1dp</dimen>
+
+
     <!-- Floating Action Button (FAB) -->
 
     <dimen name="md_fab_icon_size">24dp</dimen>

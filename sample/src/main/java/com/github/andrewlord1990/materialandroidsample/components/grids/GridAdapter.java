@@ -23,6 +23,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.github.andrewlord1990.materialandroidsample.R;
@@ -30,6 +32,11 @@ import com.github.andrewlord1990.materialandroidsample.components.grids.GridAdap
 import com.squareup.picasso.Picasso;
 
 public class GridAdapter extends RecyclerView.Adapter<GridViewHolder> {
+
+    private static final int TYPE_FOOTER = 0;
+    private static final int TYPE_HEADER = 1;
+
+    private static int type = TYPE_FOOTER;
 
     private Context context;
 
@@ -77,7 +84,20 @@ public class GridAdapter extends RecyclerView.Adapter<GridViewHolder> {
         View view = inflater.inflate(R.layout.grid_list_cell, parent, false);
         ViewGroup labelView = (ViewGroup) view.findViewById(R.id.label);
         inflater.inflate(layout, labelView);
+        setupLabel(labelView);
         return new GridViewHolder(view, primaryText);
+    }
+
+    private void setupLabel(ViewGroup labelView) {
+        RelativeLayout.LayoutParams params = (LayoutParams) labelView.getLayoutParams();
+        if (type == TYPE_FOOTER) {
+            params.addRule(RelativeLayout.ALIGN_BOTTOM, R.id.image);
+            params.addRule(RelativeLayout.ALIGN_TOP, 0);
+        } else if (type == TYPE_HEADER) {
+            params.addRule(RelativeLayout.ALIGN_TOP, R.id.image);
+            params.addRule(RelativeLayout.ALIGN_BOTTOM, 0);
+        }
+        labelView.setLayoutParams(params);
     }
 
     @Override
@@ -87,6 +107,12 @@ public class GridAdapter extends RecyclerView.Adapter<GridViewHolder> {
                 .load(url)
                 .fit()
                 .into(holder.imageView);
+        setupLabel(holder.labelView);
+    }
+
+    public void toggleType() {
+        type = type == TYPE_HEADER ? TYPE_FOOTER : TYPE_HEADER;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -97,6 +123,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridViewHolder> {
     public static class GridViewHolder extends ViewHolder {
 
         private ImageView imageView;
+        private ViewGroup labelView;
         private TextView primaryTextView;
         private TextView secondaryTextView;
         private ImageView iconView;
@@ -119,6 +146,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridViewHolder> {
             if (iconView != null) {
                 iconView.setImageResource(R.drawable.ic_star_white);
             }
+            labelView = (ViewGroup) itemView.findViewById(R.id.label);
         }
 
         private int getColor(@ColorRes int colorRes) {

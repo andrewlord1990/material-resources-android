@@ -87,4 +87,12 @@
     <dimen name="md_menu_item_padding_start">16dp</dimen>
     <dimen name="md_menu_item_text">16sp</dimen>
 
+
+    <!-- Snackbars -->
+
+    <dimen name="md_snackbar_single_line_height">48dp</dimen>
+    <dimen name="md_snackbar_multi_line_height">80dp</dimen>
+    <dimen name="md_snackbar_text">14sp</dimen>
+    <dimen name="md_snackbar_action">14sp</dimen>
+
 </resources>

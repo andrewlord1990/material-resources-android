@@ -35,6 +35,26 @@
     <dimen name="md_button_raised_dense_elevation">2dp</dimen>
 
 
+    <!-- Chips -->
+
+    <dimen name="md_chip_height">32dp</dimen>
+    <dimen name="md_chip_text">13sp</dimen>
+    <dimen name="md_chip_padding_edge">12dp</dimen>
+    <dimen name="md_chip_remove_icon_size">24dp</dimen>
+    <dimen name="md_chip_remove_icon_margin">4dp</dimen>
+    <dimen name="md_chip_start_icon_padding">8dp</dimen>
+
+    <!-- Chips Contact Closed -->
+
+    <dimen name="md_chip_contact_text">14sp</dimen>
+
+    <!-- Chips Contact Open -->
+
+    <dimen name="md_chip_contact_open_elevation">8dp</dimen>
+    <dimen name="md_chip_contact_open_name_text">16sp</dimen>
+    <dimen name="md_chip_contact_open_address_text">14sp</dimen>
+
+
     <!-- Dialogs -->
 
     <dimen name="md_dialog_text_padding">24dp</dimen>

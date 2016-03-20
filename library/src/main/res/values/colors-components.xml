@@ -30,6 +30,12 @@
 
     <!-- Snackbars -->
 
-    <dimen name="md_snackbar_background">#ff323232</dimen>
+    <color name="md_snackbar_background">#ff323232</color>
+
+
+    <!-- Subheaders -->
+
+    <color name="md_subheader_dark_text">@color/md_dark_secondary_text_54</color>
+    <color name="md_subheader_light_text">@color/md_light_secondary_text_70</color>
 
 </resources>

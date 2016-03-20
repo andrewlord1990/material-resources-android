@@ -133,4 +133,12 @@
     <dimen name="md_snackbar_text">14sp</dimen>
     <dimen name="md_snackbar_action">14sp</dimen>
 
+
+    <!-- Subheaders -->
+
+    <dimen name="md_subheader_height">48dp</dimen>
+    <dimen name="md_subheader_text">14sp</dimen>
+    <dimen name="md_subheader_text_padding">16dp</dimen>
+    <dimen name="md_subheader_text_below_fab_padding">72dp</dimen>
+
 </resources>

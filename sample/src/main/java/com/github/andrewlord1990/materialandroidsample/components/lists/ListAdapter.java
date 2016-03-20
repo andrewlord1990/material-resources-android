@@ -32,18 +32,18 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     @LayoutRes
     private int getLayout(int listType) {
         int[] layouts = new int[]{
-                R.layout.list_single_line,
-                R.layout.list_single_line_icon,
-                R.layout.list_single_line_avatar,
-                R.layout.list_single_line_avatar_and_icon,
-                R.layout.list_two_line,
-                R.layout.list_two_line_icon,
-                R.layout.list_two_line_avatar,
-                R.layout.list_two_line_avatar_and_icon,
-                R.layout.list_three_line,
-                R.layout.list_three_line_icon,
-                R.layout.list_three_line_avatar,
-                R.layout.list_three_line_avatar_and_icon
+                R.layout.md_list_single_line,
+                R.layout.md_list_single_line_icon,
+                R.layout.md_list_single_line_avatar,
+                R.layout.md_list_single_line_avatar_and_icon,
+                R.layout.md_list_two_line,
+                R.layout.md_list_two_line_icon,
+                R.layout.md_list_two_line_avatar,
+                R.layout.md_list_two_line_avatar_and_icon,
+                R.layout.md_list_three_line,
+                R.layout.md_list_three_line_icon,
+                R.layout.md_list_three_line_avatar,
+                R.layout.md_list_three_line_avatar_and_icon
         };
         return listType < layouts.length ? layouts[listType] : layouts[0];
     }

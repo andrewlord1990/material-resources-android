@@ -57,15 +57,15 @@ public class GridAdapter extends RecyclerView.Adapter<GridViewHolder> {
     @LayoutRes
     private int getLayout(int gridType) {
         int[] layouts = new int[]{
-                R.layout.grid_list_label_single_line,
-                R.layout.grid_list_label_single_line_icon_start,
-                R.layout.grid_list_label_single_line_icon_end,
-                R.layout.grid_list_label_two_line_same,
-                R.layout.grid_list_label_two_line_different,
-                R.layout.grid_list_label_two_line_same_icon_start,
-                R.layout.grid_list_label_two_line_same_icon_end,
-                R.layout.grid_list_label_two_line_different_icon_start,
-                R.layout.grid_list_label_two_line_different_icon_end
+                R.layout.md_grid_list_label_single_line,
+                R.layout.md_grid_list_label_single_line_icon_start,
+                R.layout.md_grid_list_label_single_line_icon_end,
+                R.layout.md_grid_list_label_two_line_same,
+                R.layout.md_grid_list_label_two_line_different,
+                R.layout.md_grid_list_label_two_line_same_icon_start,
+                R.layout.md_grid_list_label_two_line_same_icon_end,
+                R.layout.md_grid_list_label_two_line_different_icon_start,
+                R.layout.md_grid_list_label_two_line_different_icon_end
         };
         return gridType < layouts.length ? layouts[gridType] : layouts[0];
     }

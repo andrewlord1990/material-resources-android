@@ -161,4 +161,19 @@
     <dimen name="md_subheader_text_padding">16dp</dimen>
     <dimen name="md_subheader_text_below_fab_padding">72dp</dimen>
 
+
+    <!-- Tooltips Desktop -->
+
+    <dimen name="md_tooltip_desktop_height">22dp</dimen>
+    <dimen name="md_tooltip_desktop_text">10sp</dimen>
+    <dimen name="md_tooltip_desktop_padding_horizontal">16dp</dimen>
+    <dimen name="md_tooltip_desktop_margin_from_anchor">14dp</dimen>
+
+    <!-- Tooltips Mobile -->
+
+    <dimen name="md_tooltip_mobile_height">32dp</dimen>
+    <dimen name="md_tooltip_mobile_text">14sp</dimen>
+    <dimen name="md_tooltip_mobile_padding_horizontal">16dp</dimen>
+    <dimen name="md_tooltip_mobile_margin_from_anchor">24dp</dimen>
+
 </resources>

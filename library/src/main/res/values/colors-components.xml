@@ -38,4 +38,9 @@
     <color name="md_subheader_dark_text">@color/md_dark_secondary_text_54</color>
     <color name="md_subheader_light_text">@color/md_light_secondary_text_70</color>
 
+
+    <!-- Tooltips -->
+
+    <color name="md_tooltip_background">#e6616161</color>
+
 </resources>

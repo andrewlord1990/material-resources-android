@@ -31,6 +31,7 @@
     <dimen name="md_grid_list_two_line_label_text_type_diff_secondary">12sp</dimen>
     <dimen name="md_grid_list_two_line_label_text_type_same">14sp</dimen>
 
+
     <!-- Lists -->
 
     <dimen name="md_list_top_padding">8dp</dimen>
@@ -77,5 +78,13 @@
 
     <dimen name="md_list_three_line_with_avatar_item_height">88dp</dimen>
     <dimen name="md_list_dense_three_line_with_avatar_item_height">76dp</dimen>
+
+
+    <!-- Menus -->
+
+    <dimen name="md_menu_padding_top">8dp</dimen>
+    <dimen name="md_menu_item_height">48dp</dimen>
+    <dimen name="md_menu_item_padding_start">16dp</dimen>
+    <dimen name="md_menu_item_text">16sp</dimen>
 
 </resources>

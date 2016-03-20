@@ -12,6 +12,44 @@
   -->
 <resources>
 
+    <!-- Buttons -->
+
+    <dimen name="md_button_touch_area_height">48dp</dimen>
+    <dimen name="md_button_padding_horizontal">16dp</dimen>
+    <dimen name="md_button_minimum_width">88dp</dimen>
+
+    <!-- Buttons Flat -->
+
+    <dimen name="md_button_flat_height">36dp</dimen>
+
+    <!-- Buttons Raised Regular -->
+
+    <dimen name="md_button_raised_text">14sp</dimen>
+    <dimen name="md_button_raised_height">36dp</dimen>
+    <dimen name="md_button_raised_elevation">2dp</dimen>
+
+    <!-- Buttons Raised Dense -->
+
+    <dimen name="md_button_raised_dense_text">13sp</dimen>
+    <dimen name="md_button_raised_dense_height">32dp</dimen>
+    <dimen name="md_button_raised_dense_elevation">2dp</dimen>
+
+
+    <!-- Dialogs -->
+
+    <dimen name="md_dialog_text_padding">24dp</dimen>
+    <dimen name="md_dialog_button_container_height">54dp</dimen>
+    <dimen name="md_dialog_button_padding">8dp</dimen>
+    <dimen name="md_dialog_button_minimum_width">64dp</dimen>
+
+
+    <!-- Floating Action Button (FAB) -->
+
+    <dimen name="md_fab_icon_size">24dp</dimen>
+    <dimen name="md_fab_circle_size">56dp</dimen>
+    <dimen name="md_fab_mini_circle_size">40dp</dimen>
+
+
     <!-- Grid Lists -->
 
     <dimen name="md_grid_list_cell_spacing">4dp</dimen>

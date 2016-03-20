@@ -13,6 +13,21 @@
 
 <resources>
 
+    <!-- Buttons Flat -->
+
+    <color name="md_button_flat_light_background_pressed">#67999999</color>
+    <color name="md_button_flat_light_text_disabled">#43000000</color>
+    <color name="md_button_flat_dark_background_pressed">#41cccccc</color>
+    <color name="md_button_flat_dark_text_disabled">#4dffffff</color>
+
+    <!-- Buttons Raised -->
+
+    <color name="md_button_raised_light_text_disabled">#43000000</color>
+    <color name="md_button_raised_light_background_disabled">#1f000000</color>
+    <color name="md_button_raised_dark_text_disabled">#4dffffff</color>
+    <color name="md_button_raised_dark_background_disabled">#1fffffff</color>
+
+
     <!-- Snackbars -->
 
     <dimen name="md_snackbar_background">#ff323232</dimen>

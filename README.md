@@ -12,7 +12,7 @@ Access Material Design resource values, such as colours, text sizes and dimensio
 
 Download via Gradle:
 ```groovy
-compile 'com.github.andrewlord1990:materialandroid:0.2.0'
+compile 'com.github.andrewlord1990:materialandroid:0.3.0'
 ```
 
 Available on Bintray (JCenter).

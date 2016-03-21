@@ -191,6 +191,40 @@
     <dimen name="md_subheader_text_below_fab_padding">72dp</dimen>
 
 
+    <!-- Text Fields -->
+
+    <dimen name="md_text_field_input_text">16sp</dimen>
+    <dimen name="md_text_field_hint_text">16sp</dimen>
+    <dimen name="md_text_field_input_padding_bottom">16dp</dimen>
+    <dimen name="md_text_field_input_padding_below_line">8dp</dimen>
+    <dimen name="md_text_field_padding_top">16dp</dimen>
+    <dimen name="md_text_field_icon_start">24dp</dimen>
+    <dimen name="md_text_field_character_count_text">12sp</dimen>
+
+    <dimen name="md_text_field_dense_input_text">13sp</dimen>
+    <dimen name="md_text_field_dense_hint_text">13sp</dimen>
+    <dimen name="md_text_field_dense_input_padding_bottom">12dp</dimen>
+    <dimen name="md_text_field_dense_input_padding_below_line">4dp</dimen>
+    <dimen name="md_text_field_dense_padding_top">12dp</dimen>
+    <dimen name="md_text_field_dense_icon_start">20dp</dimen>
+
+    <!-- Text Fields Floating Label -->
+
+    <dimen name="md_text_field_label_text">12sp</dimen>
+    <dimen name="md_text_field_label_padding_bottom">8dp</dimen>
+
+    <dimen name="md_text_field_dense_label_text">13sp</dimen>
+    <dimen name="md_text_field_dense_label_padding_bottom">4dp</dimen>
+
+    <!-- Text Fields Full-Width -->
+
+    <dimen name="md_text_field_full_width_padding_vertical">20dp</dimen>
+    <dimen name="md_text_field_full_width_height">54dp</dimen>
+
+    <dimen name="md_text_field_dense_full_width_padding_vertical">16dp</dimen>
+    <dimen name="md_text_field_dense_full_width_height">48dp</dimen>
+
+
     <!-- Tooltips Desktop -->
 
     <dimen name="md_tooltip_desktop_height">22dp</dimen>

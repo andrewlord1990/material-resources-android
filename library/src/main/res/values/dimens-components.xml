@@ -35,6 +35,27 @@
     <dimen name="md_button_raised_dense_elevation">2dp</dimen>
 
 
+    <!-- Cards -->
+
+    <dimen name="md_card_title_large_text">24sp</dimen>
+    <dimen name="md_card_title_large_padding_top">24dp</dimen>
+    <dimen name="md_card_title_small_text">14sp</dimen>
+    <dimen name="md_card_title_small_padding_top">16dp</dimen>
+    <dimen name="md_card_subtitle_text">14sp</dimen>
+    <dimen name="md_card_title_area_padding_horizontal">16dp</dimen>
+    <dimen name="md_card_title_area_height">72dp</dimen>
+    <dimen name="md_card_padding_bottom">24dp</dimen>
+    <dimen name="md_card_padding_between_sections">16dp</dimen>
+    <dimen name="md_card_supporting_text">14sp</dimen>
+    <dimen name="md_card_supporting_text_padding_horizontal">16dp</dimen>
+    <dimen name="md_card_action_padding">8dp</dimen>
+    <dimen name="md_card_stacked_action_between_padding">4dp</dimen>
+    <dimen name="md_card_margin_outside_card">8dp</dimen>
+    <dimen name="md_card_elevation_resting_default">2dp</dimen>
+    <dimen name="md_card_elevation_resting_desktop">0dp</dimen>
+    <dimen name="md_card_elevation_raised">8dp</dimen>
+
+
     <!-- Chips -->
 
     <dimen name="md_chip_height">32dp</dimen>

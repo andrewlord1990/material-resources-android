@@ -12,7 +12,9 @@
 
 package com.github.andrewlord1990.materialandroid.color;
 
-public class MaterialColor {
+import android.support.annotation.ColorInt;
+
+public final class MaterialColor {
 
     public static final int RED_50 = 0xffffebee;
     public static final int RED_100 = 0xffffcdd2;
@@ -334,4 +336,19 @@ public class MaterialColor {
     public static final int WHITE_50 = 0x80ffffff;
     public static final int WHITE_12 = 0x1fffffff;
 
+    @ColorInt
+    private int color;
+
+    public MaterialColor(@ColorInt int color) {
+        this.color = color;
+    }
+
+    @ColorInt
+    public int getColor() {
+        return color;
+    }
+
+    public static MaterialColor fromInt(@ColorInt int color) {
+        return new MaterialColor(color);
+    }
 }

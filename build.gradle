@@ -67,6 +67,7 @@ ext.deps = [
         support_v7: 'com.android.support:appcompat-v7:23.2.1',
         support_design: 'com.android.support:design:23.2.1',
         support_vector_drawable: 'com.android.support:support-vector-drawable:23.2.1',
+        support_annotations: 'com.android.support:support-annotations:22.2.0',
 
         picasso: 'com.squareup.picasso:picasso:2.5.2',
 

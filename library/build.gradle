@@ -22,9 +22,17 @@ android {
         versionCode rootProject.ext.generateVersionCode()
         versionName rootProject.ext.generateVersionName()
     }
+
+    lintOptions {
+        abortOnError true
+    }
 }
 
 dependencies {
+
+    // App
+
+    compile deps.support_annotations
 
     // Test
 

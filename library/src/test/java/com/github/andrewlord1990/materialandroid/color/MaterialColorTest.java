@@ -382,4 +382,28 @@ public class MaterialColorTest {
         assertThat(MaterialColor.WHITE_12).isEqualTo(0x1fffffff);
     }
 
+    @Test
+    public void whenCreated_thenContainsColor() {
+        //Given
+        int expected = MaterialColor.AMBER_300;
+
+        //When
+        MaterialColor actual = new MaterialColor(expected);
+
+        //Then
+        assertThat(actual.getColor()).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenFromInt_thenContainsColor() {
+        //Given
+        int expected = MaterialColor.AMBER_300;
+
+        //When
+        MaterialColor actual = MaterialColor.fromInt(expected);
+
+        //Then
+        assertThat(actual.getColor()).isEqualTo(expected);
+    }
+
 }

@@ -219,9 +219,11 @@
     <!-- Text Fields Full-Width -->
 
     <dimen name="md_text_field_full_width_padding_vertical">20dp</dimen>
+    <dimen name="md_text_field_full_width_padding_horizontal">16dp</dimen>
     <dimen name="md_text_field_full_width_height">54dp</dimen>
 
     <dimen name="md_text_field_dense_full_width_padding_vertical">16dp</dimen>
+    <dimen name="md_text_field_dense_full_width_padding_horizontal">16dp</dimen>
     <dimen name="md_text_field_dense_full_width_height">48dp</dimen>
 
 

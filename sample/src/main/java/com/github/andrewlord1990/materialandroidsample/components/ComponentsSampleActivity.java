@@ -31,6 +31,7 @@ public class ComponentsSampleActivity extends BaseSampleActivity {
         setupToolbar();
         setupListsButton();
         setupGridsButton();
+        setupTextFieldsButton();
     }
 
     @Override
@@ -105,6 +106,23 @@ public class ComponentsSampleActivity extends BaseSampleActivity {
     private void onGridsButtonPressed() {
         Intent intent = new Intent(this, GridsSampleActivity.class);
         intent.putExtra(GridsSampleActivity.EXTRA_GRID_TYPE, lastGridType);
+        startActivity(intent);
+    }
+
+    private void setupTextFieldsButton() {
+        Button textFields = (Button) findViewById(R.id.textFields);
+        if (textFields != null) {
+            textFields.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onTextFieldsButtonPressed();
+                }
+            });
+        }
+    }
+
+    private void onTextFieldsButtonPressed() {
+        Intent intent = new Intent(this, TextFieldsSampleActivity.class);
         startActivity(intent);
     }
 

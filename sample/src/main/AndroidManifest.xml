@@ -72,6 +72,14 @@
                 android:value=".components.ComponentsSampleActivity"/>
         </activity>
 
+        <activity
+            android:name=".components.TextFieldsSampleActivity"
+            android:parentActivityName=".components.ComponentsSampleActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".components.ComponentsSampleActivity"/>
+        </activity>
+
 
     </application>
 

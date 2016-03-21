@@ -32,7 +32,7 @@ dependencies {
 
     // App
 
-    compile deps.support_annotations
+    compile deps.support_v7
 
     // Test
 

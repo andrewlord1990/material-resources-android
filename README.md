@@ -12,7 +12,7 @@ Access Material Design resource values, such as colours, text sizes and dimensio
 
 Download via Gradle:
 ```groovy
-compile 'com.github.andrewlord1990:materialandroid:0.1.0'
+compile 'com.github.andrewlord1990:materialandroid:0.2.0'
 ```
 
 Available on Bintray (JCenter).
@@ -58,9 +58,9 @@ Text colours are included for display on both light and dark backgrounds. Materi
 
 Text colours and sizes are available for different types of text, such as buttons, captions and titles, as well
 
-<!--### Keylines and Components-->
+### Keylines and Components
 
-<!--Styling for various different components are included, through dimensions, colours and text sizes.-->
+Styling for various different components are included, through layouts, dimensions, colours and text sizes.
 
 ## Sample
 

@@ -10,7 +10,7 @@
  *  See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.github.andrewlord1990.materialandroid;
+package com.github.andrewlord1990.materialandroid.component.textfield;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -34,9 +34,12 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.github.andrewlord1990.materialandroid.R;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+//TODO Add comments to public API methods
 public class PasswordEditText extends AppCompatEditText {
 
     private static final int TOGGLE_OPACTITY = 0;
@@ -47,8 +50,8 @@ public class PasswordEditText extends AppCompatEditText {
     public @interface ToggleType {
     }
 
-    private final static int OPACITY_SHOWN = (int) (255 * 0.54f);
-    private final static int OPACITY_HIDDEN = (int) (255 * 0.38f);
+    private final static int ALPHA_SHOWN = (int) (255 * 0.54f);
+    private final static int ALPHA_HIDDEN = (int) (255 * 0.38f);
 
     private Drawable shownIcon;
     private Drawable hiddenIcon;
@@ -104,17 +107,17 @@ public class PasswordEditText extends AppCompatEditText {
     }
 
     private void setShownIcon() {
-        shownIcon = getIcon(R.drawable.ic_password_visibility_shown);
-        shownIcon.setAlpha(OPACITY_SHOWN);
+        shownIcon = getIcon(R.drawable.ic_password_visibility_default);
+        shownIcon.setAlpha(ALPHA_SHOWN);
     }
 
     private void setHiddenIconFromType(int type) {
         if (type == TOGGLE_OPACTITY) {
-            hiddenIcon = getIcon(R.drawable.ic_password_visibility_shown);
-            hiddenIcon.setAlpha(OPACITY_HIDDEN);
+            hiddenIcon = getIcon(R.drawable.ic_password_visibility_default);
+            hiddenIcon.setAlpha(ALPHA_HIDDEN);
         } else if (type == TOGGLE_STRIKETHROUGH) {
-            hiddenIcon = getIcon(R.drawable.ic_password_visibility_hidden);
-            hiddenIcon.setAlpha(OPACITY_SHOWN);
+            hiddenIcon = getIcon(R.drawable.ic_password_visibility_strikethrough);
+            hiddenIcon.setAlpha(ALPHA_SHOWN);
         }
     }
 
@@ -181,7 +184,7 @@ public class PasswordEditText extends AppCompatEditText {
         setSelection(selectionStart, selectionEnd);
     }
 
-    private Drawable[] getDrawables() {
+    Drawable[] getDrawables() {
         if (VERSION.SDK_INT >= VERSION_CODES.JELLY_BEAN_MR1) {
             return getCompoundDrawablesRelative();
         }
@@ -235,31 +238,38 @@ public class PasswordEditText extends AppCompatEditText {
 
     public void setTintColor(@ColorInt int tintColor) {
         this.tintColor = tintColor;
+        setPasswordVisibility();
     }
 
     public void setTintColorRes(@ColorRes int tintColorRes) {
         this.tintColor = ContextCompat.getColor(getContext(), tintColorRes);
+        setPasswordVisibility();
     }
 
     public void setShownDrawable(Drawable shownDrawable) {
         shownIcon = shownDrawable;
+        setPasswordVisibility();
     }
 
     public void setShownDrawable(@DrawableRes int shownDrawableRes) {
         shownIcon = ContextCompat.getDrawable(getContext(), shownDrawableRes);
+        setPasswordVisibility();
     }
 
     public void setHiddenDrawable(Drawable hiddenDrawable) {
         hiddenIcon = hiddenDrawable;
+        setPasswordVisibility();
     }
 
     public void setHiddenDrawable(@DrawableRes int hiddenDrawableRes) {
         hiddenIcon = ContextCompat.getDrawable(getContext(), hiddenDrawableRes);
+        setPasswordVisibility();
     }
 
     public void setToggleType(@ToggleType int toggleType) {
         setShownIcon();
         setHiddenIconFromType(toggleType);
+        setPasswordVisibility();
     }
 
 }

@@ -32,6 +32,7 @@
     <string name="sample_components_lists_button">Show List Sample</string>
     <string name="sample_components_grids_button">Show Grid Sample</string>
     <string name="sample_components_text_fields_button">Show Text Fields Sample</string>
+    <string name="sample_components_password_button">Show Password Sample</string>
 
     <string name="sample_lists_title">Lists Sample</string>
     <string name="sample_lists_single_item">Single-line item</string>
@@ -53,5 +54,8 @@
     <string name="sample_text_fields_1_hint">To</string>
     <string name="sample_text_fields_2_hint">Subject</string>
     <string name="sample_text_fields_3_hint">Message</string>
+
+    <string name="sample_password_title">Password Field Sample</string>
+    <string name="sample_password_text">Password</string>
 
 </resources>

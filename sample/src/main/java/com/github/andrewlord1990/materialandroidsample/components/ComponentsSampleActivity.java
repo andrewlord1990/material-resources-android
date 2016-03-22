@@ -32,6 +32,7 @@ public class ComponentsSampleActivity extends BaseSampleActivity {
         setupListsButton();
         setupGridsButton();
         setupTextFieldsButton();
+        setupPasswordButton();
     }
 
     @Override
@@ -123,6 +124,23 @@ public class ComponentsSampleActivity extends BaseSampleActivity {
 
     private void onTextFieldsButtonPressed() {
         Intent intent = new Intent(this, TextFieldsSampleActivity.class);
+        startActivity(intent);
+    }
+
+    private void setupPasswordButton() {
+        Button password = (Button) findViewById(R.id.password);
+        if (password != null) {
+            password.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onPasswordButtonPressed();
+                }
+            });
+        }
+    }
+
+    private void onPasswordButtonPressed() {
+        Intent intent = new Intent(this, PasswordFieldsSampleActivity.class);
         startActivity(intent);
     }
 

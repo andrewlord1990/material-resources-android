@@ -17,11 +17,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:clipToPadding="false"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_text_fields_sample"
-    tools:context=".components.TextFieldsSampleActivity">
+    tools:context=".components.TextFieldsSampleActivity"
+    tools:showIn="@layout/activity_text_fields_sample">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,22 +30,22 @@
 
         <EditText
             style="@style/MDFullWidthEditText"
-            android:inputType="textEmailAddress"
-            android:hint="@string/sample_text_fields_1_hint"/>
+            android:hint="@string/sample_text_fields_1_hint"
+            android:inputType="textEmailAddress"/>
 
         <include layout="@layout/md_divider_horizontal_dark"/>
 
         <EditText
             style="@style/MDFullWidthEditText"
-            android:inputType="textEmailSubject"
-            android:hint="@string/sample_text_fields_2_hint"/>
+            android:hint="@string/sample_text_fields_2_hint"
+            android:inputType="textEmailSubject"/>
 
         <include layout="@layout/md_divider_horizontal_dark"/>
 
         <EditText
             style="@style/MDFullWidthEditText"
-            android:inputType="textMultiLine"
-            android:hint="@string/sample_text_fields_3_hint"/>
+            android:hint="@string/sample_text_fields_3_hint"
+            android:inputType="textMultiLine"/>
 
     </LinearLayout>
 

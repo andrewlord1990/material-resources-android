@@ -13,7 +13,7 @@
 <manifest package="com.github.andrewlord1990.materialandroidsample"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -74,6 +74,14 @@
 
         <activity
             android:name=".components.TextFieldsSampleActivity"
+            android:parentActivityName=".components.ComponentsSampleActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".components.ComponentsSampleActivity"/>
+        </activity>
+
+        <activity
+            android:name=".components.PasswordFieldsSampleActivity"
             android:parentActivityName=".components.ComponentsSampleActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

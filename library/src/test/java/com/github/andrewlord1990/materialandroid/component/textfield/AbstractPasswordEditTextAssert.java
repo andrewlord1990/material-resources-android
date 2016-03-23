@@ -60,17 +60,13 @@ public abstract class AbstractPasswordEditTextAssert<S extends AbstractPasswordE
     public AbstractPasswordEditTextAssert hasStrikethroughToggle() {
         isNotNull();
         assertThatToggleHasResId(R.drawable.ic_password_visibility_strikethrough);
+        hasToggleShownAlpha();
         return myself;
     }
 
-    public AbstractPasswordEditTextAssert hasToggle(Drawable drawable) {
+    public AbstractPasswordEditTextAssert hasToggle(@DrawableRes int drawableRes) {
         isNotNull();
-        Drawable[] drawables = actual.getDrawables();
-        assertThat(drawables[2])
-                .overridingErrorMessage("Expected toggle <%s> but was <%s>.",
-                        drawable, drawables[2])
-                .isNotNull()
-                .isEqualTo(drawable);
+        assertThatToggleHasResId(drawableRes);
         return myself;
     }
 

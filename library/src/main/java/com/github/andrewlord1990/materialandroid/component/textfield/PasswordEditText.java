@@ -33,13 +33,22 @@ import android.text.InputType;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 
 import com.github.andrewlord1990.materialandroid.R;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-//TODO Add comments to public API methods
+/**
+ * An EditText view which meets the Material Design specification for a password input field. It
+ * features a visibility toggle that switches between showing plain text and showing asterisk
+ * characters instead. The password is hidden by default, however, this can be changed using the
+ * md_password_shown attribute.
+ * The view can be customised through various setter methods, XML attributes passed to the view or
+ * by assigning a style to use for all PasswordEditTexts to the mdPasswordEditTextStyle theme
+ * attribute.
+ */
 public class PasswordEditText extends AppCompatEditText {
 
     private static final int TOGGLE_OPACTITY = 0;
@@ -61,16 +70,41 @@ public class PasswordEditText extends AppCompatEditText {
 
     private boolean passwordVisible;
 
+    /**
+     * Create a PasswordEditText view using default settings, which can be customised later.
+     *
+     * @param context The Context the view is running in, through which it can
+     *                access the current theme, resources, etc.
+     */
     public PasswordEditText(Context context) {
         super(context);
         loadDefaults();
     }
 
+    /**
+     * Create a PasswordEditText view through XML inflation using settings from provided
+     * attributes and from the style assigned to the global theme attribute mdPasswordEditTextStyle.
+     *
+     * @param context The Context the view is running in, through which it can
+     *                access the current theme, resources, etc.
+     * @param attrs   The attributes of the XML tag that is inflating the view.
+     */
     public PasswordEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
         loadThemeAttributes(attrs);
     }
 
+    /**
+     * Create a PasswordEditText view through XML inflation using settings from provided
+     * attributes and from the style assigned to the global theme attribute mdPasswordEditTextStyle.
+     *
+     * @param context      The Context the view is running in, through which it can
+     *                     access the current theme, resources, etc.
+     * @param attrs        The attributes of the XML tag that is inflating the view.
+     * @param defStyleAttr An attribute in the current theme that contains a
+     *                     reference to a style resource that supplies default values for
+     *                     the view. Can be 0 to not look for defaults.
+     */
     public PasswordEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         loadThemeAttributes(attrs);
@@ -172,6 +206,16 @@ public class PasswordEditText extends AppCompatEditText {
         }
     }
 
+    /**
+     * Set the type of the content with a constant as defined for {@link EditorInfo#inputType}.
+     * When the input type is set to be a password, by default Android sets the typeface of the
+     * view to Monospace. This view instead will maintain whichever typeface the view currently
+     * has, meaning if you set a custom typeface it won't be lost when changing the input type. It
+     * also maintains the position of the insertion point within the EditText.
+     *
+     * @param type The input type to apply to this view.
+     * @see android.text.InputType
+     */
     @Override
     public void setInputType(int type) {
         Typeface typeface = getTypeface();
@@ -191,6 +235,14 @@ public class PasswordEditText extends AppCompatEditText {
         return getCompoundDrawables();
     }
 
+    /**
+     * This will be fired when a touch-screen motion event occurs. It is used to handle the
+     * visibility toggle being pressed on.
+     *
+     * @param event The touch-screen motion event which has occurred.
+     * @return Whether the event has been consumed. It will be consumed if the visibility toggle
+     * has been pressed.
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_UP) {
@@ -218,54 +270,116 @@ public class PasswordEditText extends AppCompatEditText {
         return !(config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL);
     }
 
+    /**
+     * Returns whether the password is currently visible within the view.
+     *
+     * @return Whether the password is currently visible.
+     */
     public boolean isPasswordVisible() {
         return passwordVisible;
     }
 
+    /**
+     * Toggle the visibility of the password. If it is current visible, it will hidden and
+     * replaced with asterisk characters. If it is currently hidden then it will be displayed in
+     * plain text.
+     */
     public void togglePasswordVisibility() {
         setPasswordVisible(!passwordVisible);
     }
 
+    /**
+     * Set the visibility of the password.
+     *
+     * @param visible Whether the password should be displayed in plain text.
+     */
     public void setPasswordVisible(boolean visible) {
         passwordVisible = visible;
         setPasswordVisibility();
     }
 
+    /**
+     * Get the tint color which be applied to the visibility toggle. This was assigned either
+     * through the setter, an XML attribute when the view was inflated or through the global style.
+     *
+     * @return The visiblity toggle tint color.
+     */
     @ColorInt
     public int getTintColor() {
         return tintColor;
     }
 
+    /**
+     * Set the tint color to apply to the visibility toggle to the specified color value.
+     *
+     * @param tintColor The tint color to apply.
+     */
     public void setTintColor(@ColorInt int tintColor) {
         this.tintColor = tintColor;
         setPasswordVisibility();
     }
 
+    /**
+     * Set the tint color to apply to the visibility toggle to the color linked to by the
+     * specified color resource.
+     *
+     * @param tintColorRes The resource of the tint color to apply.
+     */
     public void setTintColorRes(@ColorRes int tintColorRes) {
         this.tintColor = ContextCompat.getColor(getContext(), tintColorRes);
         setPasswordVisibility();
     }
 
+    /**
+     * Set the drawable to use for the visibility toggle when the password is currently being
+     * shown.
+     *
+     * @param shownDrawable Drawable to use for visibility toggle whilst password is being shown.
+     */
     public void setShownDrawable(Drawable shownDrawable) {
         shownIcon = shownDrawable;
         setPasswordVisibility();
     }
 
+    /**
+     * Set the drawable to use for the visibility toggle when the password is currently being
+     * shown.
+     *
+     * @param shownDrawableRes Drawable to use for visibility toggle whilst password is being shown.
+     */
     public void setShownDrawable(@DrawableRes int shownDrawableRes) {
         shownIcon = ContextCompat.getDrawable(getContext(), shownDrawableRes);
         setPasswordVisibility();
     }
 
+    /**
+     * Set the drawable to use for the visibility toggle when the password is currently hidden and
+     * being displayed as asterisk characters.
+     *
+     * @param hiddenDrawable Drawable to use for visibility toggle whilst password is being hidden.
+     */
     public void setHiddenDrawable(Drawable hiddenDrawable) {
         hiddenIcon = hiddenDrawable;
         setPasswordVisibility();
     }
 
+    /**
+     * Set the drawable to use for the visibility toggle when the password is currently hidden and
+     * being displayed as asterisk characters.
+     *
+     * @param hiddenDrawableRes Drawable to use for visibility toggle whilst password is being hidden.
+     */
     public void setHiddenDrawable(@DrawableRes int hiddenDrawableRes) {
         hiddenIcon = ContextCompat.getDrawable(getContext(), hiddenDrawableRes);
         setPasswordVisibility();
     }
 
+    /**
+     * Set the type of visibility toggle to use. When the password is hidden, then either change
+     * the toggle's opacity or replace it with an icon with a strike through it.
+     *
+     * @param toggleType The type of visibility toggle to use.
+     */
     public void setToggleType(@ToggleType int toggleType) {
         setShownIcon();
         setHiddenIconFromType(toggleType);

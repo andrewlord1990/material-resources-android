@@ -13,6 +13,9 @@
 package com.github.andrewlord1990.materialandroid.component.textfield;
 
 import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 
 import com.github.andrewlord1990.materialandroid.R;
@@ -178,12 +181,64 @@ public class PasswordEditTextTest {
     //TODO setTintColor
     //TODO setTintColorRes
 
-    //TODO setShownDrawable
-    //TODO setShownDrawableRes
+    @Test
+    public void givenDrawable_whenSetShownDrawable_thenToggleShownDrawableUpdated() {
+        //Given
+        PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application);
+        actual.setPasswordVisible(true);
 
-    //TODO setHiddenDrawable
-    //TODO setHiddenDrawableRes
+        //When
+        actual.setShownDrawable(getDrawable(R.drawable.ic_icon_square));
+
+        //Then
+        assertThat(actual)
+                .hasToggle(R.drawable.ic_icon_square);
+    }
+
+    @Test
+    public void givenDrawableResource_whenSetShownDrawable_thenToggleShownDrawableUpdated() {
+        //Given
+        PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application);
+        actual.setPasswordVisible(true);
+
+        //When
+        actual.setShownDrawable(R.drawable.ic_icon_square);
+
+        //Then
+        assertThat(actual)
+                .hasToggle(R.drawable.ic_icon_square);
+    }
+
+    @Test
+    public void givenDrawable_whenSetHiddenDrawable_thenToggleHiddenDrawableUpdated() {
+        //Given
+        PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application);
+
+        //When
+        actual.setHiddenDrawable(getDrawable(R.drawable.ic_avatar_circle));
+
+        //Then
+        assertThat(actual)
+                .hasToggle(R.drawable.ic_avatar_circle);
+    }
+
+    @Test
+    public void givenDrawableResource_whenSetHiddenDrawable_thenToggleHiddenDrawableUpdated() {
+        //Given
+        PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application);
+
+        //When
+        actual.setHiddenDrawable(R.drawable.ic_avatar_circle);
+
+        //Then
+        assertThat(actual)
+                .hasToggle(R.drawable.ic_avatar_circle);
+    }
 
     //TODO setToggleType
+
+    private Drawable getDrawable(@DrawableRes int drawableRes) {
+        return ContextCompat.getDrawable(RuntimeEnvironment.application, drawableRes);
+    }
 
 }

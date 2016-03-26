@@ -51,8 +51,8 @@ import java.lang.annotation.RetentionPolicy;
  */
 public class PasswordEditText extends AppCompatEditText {
 
-    private static final int TOGGLE_OPACTITY = 0;
-    private static final int TOGGLE_STRIKETHROUGH = 1;
+    public static final int TOGGLE_OPACTITY = 0;
+    public static final int TOGGLE_STRIKETHROUGH = 1;
 
     @IntDef({TOGGLE_OPACTITY, TOGGLE_STRIKETHROUGH})
     @Retention(RetentionPolicy.SOURCE)

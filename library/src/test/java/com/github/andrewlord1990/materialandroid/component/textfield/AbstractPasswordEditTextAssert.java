@@ -40,6 +40,7 @@ public abstract class AbstractPasswordEditTextAssert<S extends AbstractPasswordE
         assertThat(actual)
                 .overridingErrorMessage("Expected password hidden but was visible.")
                 .hasInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        Assertions.assertThat(actual.isPasswordVisible()).isFalse();
         return myself;
     }
 
@@ -48,6 +49,7 @@ public abstract class AbstractPasswordEditTextAssert<S extends AbstractPasswordE
         assertThat(actual)
                 .overridingErrorMessage("Expected password visible but was hidden.")
                 .hasInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+        Assertions.assertThat(actual.isPasswordVisible()).isTrue();
         return myself;
     }
 

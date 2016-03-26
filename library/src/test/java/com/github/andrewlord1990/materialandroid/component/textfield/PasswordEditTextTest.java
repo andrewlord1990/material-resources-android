@@ -13,10 +13,15 @@
 package com.github.andrewlord1990.materialandroid.component.textfield;
 
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
 import android.support.annotation.DrawableRes;
 import android.support.v4.content.ContextCompat;
+import android.text.InputType;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.View;
 
 import com.github.andrewlord1990.materialandroid.R;
 
@@ -42,9 +47,13 @@ public class PasswordEditTextTest {
 
     private static final String PACKAGE = "com.github.andrewlord1990.materialandroid";
 
+    private PasswordEditText passwordView;
+
     @Before
     public void before() {
         MockitoAnnotations.initMocks(this);
+
+        passwordView = new PasswordEditText(RuntimeEnvironment.application);
     }
 
     @Test
@@ -171,12 +180,96 @@ public class PasswordEditTextTest {
 
     //TODO Create with API < 17 (tests getting drawables and LTR layout))
 
-    //TODO setInputType
+    @Test
+    public void whenSetInputType_thenTypefaceUnchanged() {
+        //Given
+        passwordView.setTypeface(Typeface.DEFAULT_BOLD);
+
+        //When
+        passwordView.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+
+        //Then
+        assertThat(passwordView)
+                .hasInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD)
+                .hasTypeface(Typeface.DEFAULT_BOLD);
+    }
+
+    @Test
+    public void whenSetInputType_thenSelectionUnchanged() {
+        //Given
+        int start = 10;
+        int end = 12;
+        passwordView.setText("a really long string with lots of content");
+        passwordView.setSelection(start, end);
+
+        //When
+        passwordView.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+
+        //Then
+        assertThat(passwordView)
+                .hasInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD)
+                .hasSelectionStart(start)
+                .hasSelectionEnd(end);
+    }
 
     //TODO onTouchEvent
 
-    //TODO togglePasswordVisibility
-    //TODO setPasswordVisible
+    @Test
+    public void givenPasswordCurrentlyVisible_whenTogglePasswordVisibility_thenPasswordHidden() {
+        //Given
+        passwordView.setPasswordVisible(true);
+
+        //When
+        passwordView.togglePasswordVisibility();
+
+        //Then
+        assertThat(passwordView)
+                .hasHiddenPassword()
+                .hasToggleHiddenAlpha()
+                .hasDefaultToggle();
+    }
+
+    @Test
+    public void givenPasswordCurrentlyHidden_whenTogglePasswordVisibility_thenPasswordShown() {
+        //Given
+        passwordView.setPasswordVisible(false);
+
+        //When
+        passwordView.togglePasswordVisibility();
+
+        //Then
+        assertThat(passwordView)
+                .hasVisiblePassword()
+                .hasToggleShownAlpha()
+                .hasDefaultToggle();
+    }
+
+    @Test
+    public void givenBeingSetToVisible_whenSetPasswordVisible_thenPasswordShownWithShownToggle() {
+        //When
+        passwordView.setPasswordVisible(true);
+
+        //Then
+        assertThat(passwordView)
+                .hasVisiblePassword()
+                .hasToggleShownAlpha()
+                .hasDefaultToggle();
+    }
+
+    @Test
+    public void givenBeingSetToHidden_whenSetPasswordVisible_thenPasswordHiddenWithHiddenToggle() {
+        //Given
+        passwordView.setPasswordVisible(true);
+
+        //When
+        passwordView.setPasswordVisible(false);
+
+        //Then
+        assertThat(passwordView)
+                .hasHiddenPassword()
+                .hasToggleHiddenAlpha()
+                .hasDefaultToggle();
+    }
 
     //TODO setTintColor
     //TODO setTintColorRes
@@ -184,61 +277,92 @@ public class PasswordEditTextTest {
     @Test
     public void givenDrawable_whenSetShownDrawable_thenToggleShownDrawableUpdated() {
         //Given
-        PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application);
-        actual.setPasswordVisible(true);
+        passwordView.setPasswordVisible(true);
 
         //When
-        actual.setShownDrawable(getDrawable(R.drawable.ic_icon_square));
+        passwordView.setShownDrawable(getDrawable(R.drawable.ic_icon_square));
 
         //Then
-        assertThat(actual)
+        assertThat(passwordView)
                 .hasToggle(R.drawable.ic_icon_square);
     }
 
     @Test
     public void givenDrawableResource_whenSetShownDrawable_thenToggleShownDrawableUpdated() {
         //Given
-        PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application);
-        actual.setPasswordVisible(true);
+        passwordView.setPasswordVisible(true);
 
         //When
-        actual.setShownDrawable(R.drawable.ic_icon_square);
+        passwordView.setShownDrawable(R.drawable.ic_icon_square);
 
         //Then
-        assertThat(actual)
+        assertThat(passwordView)
                 .hasToggle(R.drawable.ic_icon_square);
     }
 
     @Test
     public void givenDrawable_whenSetHiddenDrawable_thenToggleHiddenDrawableUpdated() {
-        //Given
-        PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application);
-
         //When
-        actual.setHiddenDrawable(getDrawable(R.drawable.ic_avatar_circle));
+        passwordView.setHiddenDrawable(getDrawable(R.drawable.ic_avatar_circle));
 
         //Then
-        assertThat(actual)
+        assertThat(passwordView)
                 .hasToggle(R.drawable.ic_avatar_circle);
     }
 
     @Test
     public void givenDrawableResource_whenSetHiddenDrawable_thenToggleHiddenDrawableUpdated() {
-        //Given
-        PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application);
-
         //When
-        actual.setHiddenDrawable(R.drawable.ic_avatar_circle);
+        passwordView.setHiddenDrawable(R.drawable.ic_avatar_circle);
 
         //Then
-        assertThat(actual)
+        assertThat(passwordView)
                 .hasToggle(R.drawable.ic_avatar_circle);
     }
 
-    //TODO setToggleType
+    @Test
+    public void givenOpacity_whenSetToggleType_thenToggleOpacityChanged() {
+        //Given
+        passwordView.setPasswordVisible(false);
+
+        //When
+        passwordView.setToggleType(PasswordEditText.TOGGLE_OPACTITY);
+
+        //Then
+        assertThat(passwordView)
+                .hasToggleHiddenAlpha()
+                .hasDefaultToggle();
+    }
+
+    @Test
+    public void givenStrikeThrough_whenSetToggleType_thenToggleDrawableChanged() {
+        //Given
+        passwordView.setPasswordVisible(false);
+
+        //When
+        passwordView.setToggleType(PasswordEditText.TOGGLE_STRIKETHROUGH);
+
+        //Then
+        assertThat(passwordView)
+                .hasToggleShownAlpha()
+                .hasStrikethroughToggle();
+    }
 
     private Drawable getDrawable(@DrawableRes int drawableRes) {
         return ContextCompat.getDrawable(RuntimeEnvironment.application, drawableRes);
+    }
+
+    private void fireTouchEvent(View view, float x, float y) {
+        MotionEvent motionEvent = MotionEvent.obtain(
+                SystemClock.uptimeMillis(),
+                SystemClock.uptimeMillis(),
+                MotionEvent.ACTION_UP,
+                x,
+                y,
+                0
+        );
+
+        view.dispatchTouchEvent(motionEvent);
     }
 
 }

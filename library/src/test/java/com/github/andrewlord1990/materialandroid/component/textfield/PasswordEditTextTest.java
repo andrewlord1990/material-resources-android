@@ -12,16 +12,20 @@
 
 package com.github.andrewlord1990.materialandroid.component.textfield;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import android.support.annotation.DrawableRes;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewCompat;
 import android.text.InputType;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
+import android.view.inputmethod.InputMethodManager;
 
 import com.github.andrewlord1990.materialandroid.R;
 
@@ -31,10 +35,12 @@ import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
 import org.robolectric.RobolectricGradleTestRunner;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
 import org.robolectric.internal.ShadowExtractor;
 import org.robolectric.res.Attribute;
 import org.robolectric.res.ResourceLoader;
 import org.robolectric.shadows.RoboAttributeSet;
+import org.robolectric.shadows.ShadowInputMethodManager;
 import org.robolectric.shadows.ShadowResources;
 
 import java.util.ArrayList;
@@ -54,6 +60,9 @@ public class PasswordEditTextTest {
         MockitoAnnotations.initMocks(this);
 
         passwordView = new PasswordEditText(RuntimeEnvironment.application);
+        LayoutParams params = new LayoutParams(
+                LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        passwordView.setLayoutParams(params);
     }
 
     @Test
@@ -178,8 +187,6 @@ public class PasswordEditTextTest {
         return (ShadowResources) ShadowExtractor.extract(actual);
     }
 
-    //TODO Create with API < 17 (tests getting drawables and LTR layout))
-
     @Test
     public void whenSetInputType_thenTypefaceUnchanged() {
         //Given
@@ -212,7 +219,53 @@ public class PasswordEditTextTest {
                 .hasSelectionEnd(end);
     }
 
-    //TODO onTouchEvent
+    @Test
+    public void givenLeftToRightTouchWithinToggle_whenOnTouchEvent_thenPasswordVisibilityToggled() {
+        //Given
+        passwordView.setPasswordVisible(false);
+        float x = passwordView.getRight() - 10;
+        float y = passwordView.getTop() + 10;
+
+        //When
+        fireActionUpTouchEvent(passwordView, x, y);
+
+        //Then
+        assertThat(passwordView)
+                .hasVisiblePassword();
+    }
+
+    @Test
+    @Config(sdk = 16)
+    public void givenLessThanSdk17TouchWithinToggle_whenOnTouchEvent_thenPasswordVisibilityToggled() {
+        //Given
+        ViewCompat.setLayoutDirection(passwordView, ViewCompat.LAYOUT_DIRECTION_RTL);
+        passwordView.setPasswordVisible(false);
+        float x = passwordView.getRight() - 10;
+        float y = passwordView.getTop() + 10;
+
+        //When
+        fireActionUpTouchEvent(passwordView, x, y);
+
+        //Then
+        assertThat(passwordView)
+                .hasVisiblePassword();
+    }
+
+    @Test
+    public void givenRightToLeftTouchWithinToggle_whenOnTouchEvent_thenPasswordVisibilityToggled() {
+        //Given
+        ViewCompat.setLayoutDirection(passwordView, ViewCompat.LAYOUT_DIRECTION_RTL);
+        passwordView.setPasswordVisible(false);
+        float x = passwordView.getLeft() + 10;
+        float y = passwordView.getTop() + 10;
+
+        //When
+        fireActionUpTouchEvent(passwordView, x, y);
+
+        //Then
+        assertThat(passwordView)
+                .hasVisiblePassword();
+    }
 
     @Test
     public void givenPasswordCurrentlyVisible_whenTogglePasswordVisibility_thenPasswordHidden() {
@@ -352,17 +405,31 @@ public class PasswordEditTextTest {
         return ContextCompat.getDrawable(RuntimeEnvironment.application, drawableRes);
     }
 
-    private void fireTouchEvent(View view, float x, float y) {
+    private void fireActionUpTouchEvent(View view, float x, float y) {
+        fireTouchEvent(view, x, y, MotionEvent.ACTION_UP);
+    }
+
+    private void fireActionDownTouchEvent(View view, float x, float y) {
+        fireTouchEvent(view, x, y, MotionEvent.ACTION_DOWN);
+    }
+
+    private void fireTouchEvent(View view, float x, float y, int actionDown) {
         MotionEvent motionEvent = MotionEvent.obtain(
                 SystemClock.uptimeMillis(),
                 SystemClock.uptimeMillis(),
-                MotionEvent.ACTION_UP,
+                actionDown,
                 x,
                 y,
                 0
         );
-
         view.dispatchTouchEvent(motionEvent);
+    }
+
+    private ShadowInputMethodManager getInputManager() {
+        InputMethodManager inputMethodManager = (InputMethodManager) RuntimeEnvironment.application
+                .getSystemService(Context.INPUT_METHOD_SERVICE);
+        return (ShadowInputMethodManager)
+                ShadowExtractor.extract(inputMethodManager);
     }
 
 }

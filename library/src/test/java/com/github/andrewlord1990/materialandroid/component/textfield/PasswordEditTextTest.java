@@ -13,6 +13,7 @@
 package com.github.andrewlord1990.materialandroid.component.textfield;
 
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
@@ -412,6 +413,26 @@ public class PasswordEditTextTest {
         assertThat(passwordView)
                 .hasToggleShownAlpha()
                 .hasStrikethroughToggle();
+    }
+
+    @Test
+    public void whenSetTintColor_thenDrawableTinted() {
+        //When
+        passwordView.setTintColor(Color.RED);
+
+        //Then
+        assertThat(passwordView)
+                .hasTintColor(Color.RED);
+    }
+
+    @Test
+    public void whenSetTintColorRes_thenDrawableTinted() {
+        //When
+        passwordView.setTintColorRes(R.color.md_amber_100);
+
+        //Then
+        assertThat(passwordView)
+                .hasTintColorRes(R.color.md_amber_100);
     }
 
     private Drawable getDrawable(@DrawableRes int drawableRes) {

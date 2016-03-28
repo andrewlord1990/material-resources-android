@@ -13,7 +13,10 @@
 package com.github.andrewlord1990.materialandroid.component.textfield;
 
 import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
+import android.support.v4.content.ContextCompat;
 import android.text.InputType;
 
 import com.github.andrewlord1990.materialandroid.R;
@@ -87,6 +90,19 @@ public abstract class AbstractPasswordEditTextAssert<S extends AbstractPasswordE
         assertThat(drawables[2])
                 .isNotNull()
                 .hasAlpha(ALPHA_HIDDEN);
+        return myself;
+    }
+
+    public AbstractPasswordEditTextAssert hasTintColorRes(@ColorRes int tintColorRes) {
+        isNotNull();
+        Assertions.assertThat(actual.getTintColor())
+                .isEqualTo(ContextCompat.getColor(actual.getContext(), tintColorRes));
+        return myself;
+    }
+
+    public AbstractPasswordEditTextAssert hasTintColor(@ColorInt int tintColor) {
+        isNotNull();
+        Assertions.assertThat(actual.getTintColor()).isEqualTo(tintColor);
         return myself;
     }
 

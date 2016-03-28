@@ -39,6 +39,12 @@
     <color name="md_subheader_light_text">@color/md_light_secondary_text_70</color>
 
 
+    <!-- Tabs -->
+
+    <color name="md_tab_active_text">@color/md_white</color>
+    <color name="md_tab_unfocused_text">@color/md_light_secondary_text_70</color>
+
+
     <!-- Tooltips -->
 
     <color name="md_tooltip_background">#e6616161</color>

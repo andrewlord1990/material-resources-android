@@ -191,6 +191,36 @@
     <dimen name="md_subheader_text_below_fab_padding">72dp</dimen>
 
 
+    <!-- Tabs -->
+
+    <dimen name="md_tab_indicator_height">2dp</dimen>
+    <dimen name="md_tab_text_padding_horizontal">12dp</dimen>
+    <dimen name="md_tab_text_padding_horizontal_desktop">24dp</dimen>
+    <dimen name="md_tab_text_padding_desktop_first_tab_left">80dp</dimen>
+    <dimen name="md_tab_text_single_line">14sp</dimen>
+    <dimen name="md_tab_text_two_line">12sp</dimen>
+    <dimen name="md_tab_text_desktop">13sp</dimen>
+
+    <!-- Tabs Text-only -->
+
+    <dimen name="md_tab_text_only_height">48dp</dimen>
+    <dimen name="md_tab_text_only_padding_bottom_single_line">20dp</dimen>
+    <dimen name="md_tab_text_only_padding_bottom_two_line">12dp</dimen>
+
+    <!-- Tabs Text and Icon -->
+
+    <dimen name="md_tab_text_and_icon_height">72dp</dimen>
+    <dimen name="md_tab_text_and_icon_size_icon">24dp</dimen>
+    <dimen name="md_tab_text_and_icon_padding_icon_bottom">10dp</dimen>
+    <dimen name="md_tab_text_and_icon_padding_text_bottom">16dp</dimen>
+
+    <!-- Tabs Icon-only -->
+
+    <dimen name="md_tab_icon_only_height">48dp</dimen>
+    <dimen name="md_tab_icon_only_size_icon">24dp</dimen>
+    <dimen name="md_tab_icon_only_padding_icon_bottom">12dp</dimen>
+
+
     <!-- Text Fields -->
 
     <dimen name="md_text_field_input_text">16sp</dimen>

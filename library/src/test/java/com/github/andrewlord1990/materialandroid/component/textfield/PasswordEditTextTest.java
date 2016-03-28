@@ -12,7 +12,6 @@
 
 package com.github.andrewlord1990.materialandroid.component.textfield;
 
-import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -25,7 +24,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import android.view.inputmethod.InputMethodManager;
 
 import com.github.andrewlord1990.materialandroid.R;
 
@@ -40,7 +38,6 @@ import org.robolectric.internal.ShadowExtractor;
 import org.robolectric.res.Attribute;
 import org.robolectric.res.ResourceLoader;
 import org.robolectric.shadows.RoboAttributeSet;
-import org.robolectric.shadows.ShadowInputMethodManager;
 import org.robolectric.shadows.ShadowResources;
 
 import java.util.ArrayList;
@@ -59,10 +56,12 @@ public class PasswordEditTextTest {
     public void before() {
         MockitoAnnotations.initMocks(this);
 
-        passwordView = new PasswordEditText(RuntimeEnvironment.application);
         LayoutParams params = new LayoutParams(
                 LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+
+        passwordView = new PasswordEditText(RuntimeEnvironment.application);
         passwordView.setLayoutParams(params);
+        passwordView.layout(0, 0, 500, 1000);
     }
 
     @Test
@@ -252,9 +251,8 @@ public class PasswordEditTextTest {
     }
 
     @Test
-    public void givenRightToLeftTouchWithinToggle_whenOnTouchEvent_thenPasswordVisibilityToggled() {
+    public void givenTouchOutsideToggle_whenOnTouchEvent_thenPasswordVisibilityNotToggled() {
         //Given
-        ViewCompat.setLayoutDirection(passwordView, ViewCompat.LAYOUT_DIRECTION_RTL);
         passwordView.setPasswordVisible(false);
         float x = passwordView.getLeft() + 10;
         float y = passwordView.getTop() + 10;
@@ -264,7 +262,22 @@ public class PasswordEditTextTest {
 
         //Then
         assertThat(passwordView)
-                .hasVisiblePassword();
+                .hasHiddenPassword();
+    }
+
+    @Test
+    public void givenTouchActionDown_whenOnTouchEvent_thenPasswordVisibilityNotToggled() {
+        //Given
+        passwordView.setPasswordVisible(false);
+        float x = passwordView.getLeft() + 10;
+        float y = passwordView.getTop() + 10;
+
+        //When
+        fireActionDownTouchEvent(passwordView, x, y);
+
+        //Then
+        assertThat(passwordView)
+                .hasHiddenPassword();
     }
 
     @Test
@@ -423,13 +436,6 @@ public class PasswordEditTextTest {
                 0
         );
         view.dispatchTouchEvent(motionEvent);
-    }
-
-    private ShadowInputMethodManager getInputManager() {
-        InputMethodManager inputMethodManager = (InputMethodManager) RuntimeEnvironment.application
-                .getSystemService(Context.INPUT_METHOD_SERVICE);
-        return (ShadowInputMethodManager)
-                ShadowExtractor.extract(inputMethodManager);
     }
 
 }

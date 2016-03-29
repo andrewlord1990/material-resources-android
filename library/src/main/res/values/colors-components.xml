@@ -13,6 +13,21 @@
 
 <resources>
 
+    <!-- Bottom Sheets -->
+
+    <color name="md_bottom_sheet_title">@color/md_dark_secondary_text_54</color>
+    <color name="md_bottom_sheet_background_default">@color/md_white</color>
+    <color name="md_bottom_sheet_background_translucent">#34ffffff</color>
+
+    <!-- Bottom Sheets List -->
+
+    <color name="md_bottom_sheet_list_text">@color/md_dark_primary_text_87</color>
+
+    <!-- Bottom Sheets Grid -->
+
+    <color name="md_bottom_sheet_grid_text">@color/md_dark_secondary_text_54</color>
+
+
     <!-- Buttons Flat -->
 
     <color name="md_button_flat_light_background_pressed">#67999999</color>

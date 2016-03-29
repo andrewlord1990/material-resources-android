@@ -12,6 +12,29 @@
   -->
 <resources>
 
+    <!-- Bottom Sheets -->
+
+    <dimen name="md_bottom_sheet_title">16sp</dimen>
+    <dimen name="md_bottom_sheet_title_height">56dp</dimen>
+
+    <!-- Bottom Sheets List -->
+
+    <dimen name="md_bottom_sheet_list_text">16sp</dimen>
+    <dimen name="md_bottom_sheet_list_padding_horizontal">16dp</dimen>
+    <dimen name="md_bottom_sheet_list_padding_vertical">8dp</dimen>
+    <dimen name="md_bottom_sheet_list_icon_text_spacing">32dp</dimen>
+    <dimen name="md_bottom_sheet_list_item_height">48dp</dimen>
+    <dimen name="md_bottom_sheet_list_icon">24dp</dimen>
+
+    <!-- Bottom Sheets Grid -->
+
+    <dimen name="md_bottom_sheet_grid_padding_horizontal">24dp</dimen>
+    <dimen name="md_bottom_sheet_grid_padding_top">16dp</dimen>
+    <dimen name="md_bottom_sheet_grid_padding_bottom">24dp</dimen>
+    <dimen name="md_bottom_sheet_grid_icon">48dp</dimen>
+    <dimen name="md_bottom_sheet_grid_text">12sp</dimen>
+
+
     <!-- Buttons -->
 
     <dimen name="md_button_touch_area_height">48dp</dimen>

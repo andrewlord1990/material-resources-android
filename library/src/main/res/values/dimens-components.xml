@@ -12,6 +12,26 @@
   -->
 <resources>
 
+    <!-- Bottom Navigation -->
+
+    <dimen name="md_bottom_nav_height">56dp</dimen>
+    <dimen name="md_bottom_nav_icon">24dp</dimen>
+    <dimen name="md_bottom_nav_icon_padding_top_active">6dp</dimen>
+    <dimen name="md_bottom_nav_text_padding_horizontal">12dp</dimen>
+    <dimen name="md_bottom_nav_text_active">14sp</dimen>
+    <dimen name="md_bottom_nav_elevation">8dp</dimen>
+
+    <!-- Bottom Navigation Fixed -->
+
+    <dimen name="md_bottom_nav_fixed_icon_padding_top_inactive">8dp</dimen>
+    <dimen name="md_bottom_nav_fixed_text_padding_bottom">10dp</dimen>
+    <dimen name="md_bottom_nav_fixed_text_inactive">12sp</dimen>
+
+    <!-- Bottom Navigation Shifting -->
+
+    <dimen name="md_bottom_nav_shifting_inactive_icon_padding_vertical">16dp</dimen>
+
+
     <!-- Bottom Sheets -->
 
     <dimen name="md_bottom_sheet_title">16sp</dimen>

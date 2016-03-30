@@ -1,6 +1,7 @@
 package com.github.andrewlord1990.materialandroidsample.components.lists;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
@@ -14,7 +15,10 @@ import android.widget.TextView;
 
 import com.github.andrewlord1990.materialandroidsample.R;
 
-public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
+public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
+
+    private static final int TYPE_HEADER = 0;
+    private static final int TYPE_ITEM = 1;
 
     private Context context;
 
@@ -59,23 +63,49 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     }
 
     @Override
-    public ListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(layout, parent, false);
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if (viewType == TYPE_HEADER) {
+            return createHeader(parent);
+        }
+        View view = LayoutInflater.from(context).inflate(layout, parent, false);
         return new ListViewHolder(view, primaryText);
     }
 
+    private ViewHolder createHeader(ViewGroup parent) {
+        TextView view = (TextView) LayoutInflater.from(context).inflate(
+                R.layout.md_subheader, parent, false);
+        view.setText(R.string.sample_lists_subheader);
+        view.setTextColor(ContextCompat.getColor(context, R.color.md_red_a200));
+        return new HeaderViewHolder(view);
+    }
+
     @Override
-    public void onBindViewHolder(ListViewHolder holder, int position) {
-        if (!(position % 2 == 0)) {
-            int color = ContextCompat.getColor(context, R.color.alternate_list_item_background);
-            holder.itemView.setBackgroundColor(color);
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        if (getItemViewType(position) == TYPE_ITEM) {
+            if (shouldHighlightItem(position)) {
+                int color = ContextCompat.getColor(context, R.color.alternate_list_item_background);
+                holder.itemView.setBackgroundColor(color);
+            } else {
+                holder.itemView.setBackgroundColor(Color.TRANSPARENT);
+            }
         }
+    }
+
+    private boolean shouldHighlightItem(int position) {
+        return position % 2 == 0;
     }
 
     @Override
     public int getItemCount() {
-        return 20;
+        return 24;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (position % 6 == 0) {
+            return TYPE_HEADER;
+        }
+        return TYPE_ITEM;
     }
 
     public static class ListViewHolder extends ViewHolder {
@@ -110,7 +140,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
                 avatarView.setImageResource(R.drawable.ic_avatar);
             }
         }
+    }
 
+    public static class HeaderViewHolder extends ViewHolder {
 
+        public HeaderViewHolder(View itemView) {
+            super(itemView);
+        }
     }
 }

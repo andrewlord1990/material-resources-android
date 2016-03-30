@@ -35,6 +35,7 @@
     <string name="sample_components_password_button">Show Password Sample</string>
 
     <string name="sample_lists_title">Lists Sample</string>
+    <string name="sample_lists_subheader">Subheader</string>
     <string name="sample_lists_single_item">Single-line item</string>
     <string name="sample_lists_two_item_primary">Two-line item</string>
     <string name="sample_lists_three_item_primary">Three-line item</string>

@@ -43,6 +43,22 @@
     <color name="md_button_raised_dark_background_disabled">#1fffffff</color>
 
 
+    <!-- Data Tables -->
+
+    <color name="md_data_table_text">@color/md_dark_primary_text_87</color>
+    <color name="md_data_table_text_header">@color/md_dark_secondary_text_54</color>
+    <color name="md_data_table_text_header_sorted">@color/md_dark_primary_text_87</color>
+    <color name="md_data_table_text_header_sort_icon">@color/md_dark_primary_text_87</color>
+    <color name="md_data_table_text_header_sort_icon_hover">@color/md_dark_disabled_hint_text_38</color>
+    <color name="md_data_table_row_background_hover">@color/md_grey_200</color>
+    <color name="md_data_table_row_background_selected">@color/md_grey_100</color>
+    <color name="md_data_table_edit_field_placeholder_text">@color/md_dark_disabled_hint_text_38</color>
+    <color name="md_data_table_edit_icon">@color/md_dark_secondary_text_54</color>
+    <color name="md_data_table_card_title">@color/md_dark_primary_text_87</color>
+    <color name="md_data_table_card_action">@color/md_dark_secondary_text_54</color>
+    <color name="md_data_table_card_footer_pagination">@color/md_dark_secondary_text_54</color>
+
+
     <!-- Snackbars -->
 
     <color name="md_snackbar_background">#ff323232</color>

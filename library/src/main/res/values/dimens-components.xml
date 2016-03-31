@@ -119,6 +119,34 @@
     <dimen name="md_chip_contact_open_address_text">14sp</dimen>
 
 
+    <!-- Data Tables -->
+
+    <dimen name="md_data_table_text">13sp</dimen>
+    <dimen name="md_data_table_text_header">12sp</dimen>
+    <dimen name="md_data_table_text_header_sort_icon_size">16dp</dimen>
+    <dimen name="md_data_table_small_edit_dialog_padding_horizontal">24dp</dimen>
+    <dimen name="md_data_table_edit_icon_size">18dp</dimen>
+    <dimen name="md_data_table_title">20sp</dimen>
+    <dimen name="md_data_table_action">24dp</dimen>
+    <dimen name="md_data_table_footer_pagination">12sp</dimen>
+    <dimen name="md_data_table_footer_pagination_icon_size">24dp</dimen>
+    <dimen name="md_data_table_title_area_height">64dp</dimen>
+    <dimen name="md_data_table_headers_area_height">56dp</dimen>
+    <dimen name="md_data_table_row_height">48dp</dimen>
+    <dimen name="md_data_table_footer_pagination_height">56dp</dimen>
+    <dimen name="md_data_table_padding_vertical">24dp</dimen>
+    <dimen name="md_data_table_padding_between_actions">24dp</dimen>
+    <dimen name="md_data_table_padding_action_to_edge_horizontal">14dp</dimen>
+    <dimen name="md_data_table_padding_pagination_to_edge_horizontal">14dp</dimen>
+    <dimen name="md_data_table_padding_between_pagination_arrows">24dp</dimen>
+    <dimen name="md_data_table_padding_between_footer_control_sets">32dp</dimen>
+    <dimen name="md_data_table_padding_between_footer_row_count_and_label">40dp</dimen>
+    <dimen name="md_data_table_row_checkbox_size">18dp</dimen>
+    <dimen name="md_data_table_row_padding_horizontal">24dp</dimen>
+    <dimen name="md_data_table_row_checkbox_padding_end">24dp</dimen>
+    <dimen name="md_data_table_row_column_padding">56dp</dimen>
+
+
     <!-- Dialogs -->
 
     <dimen name="md_dialog_text_padding">24dp</dimen>

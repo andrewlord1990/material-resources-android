@@ -160,7 +160,7 @@ public class PasswordEditText extends AppCompatEditText {
     }
 
     private void loadToggleTintColor(TypedArray attrs) {
-        tintColor = attrs.getColor(R.styleable.MDPasswordEditText_md_drawable_tint_color, 0);
+        tintColor = attrs.getColor(R.styleable.MDPasswordEditText_md_password_toggle_tint_color, 0);
     }
 
     private void loadPasswordShown(TypedArray attrs) {

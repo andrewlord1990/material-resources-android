@@ -90,7 +90,8 @@ public class PasswordEditText extends AppCompatEditText {
      * @param attrs   The attributes of the XML tag that is inflating the view.
      */
     public PasswordEditText(Context context, AttributeSet attrs) {
-        this(context, attrs, R.attr.mdPasswordEditTextStyle);
+        super(context, attrs);
+        loadThemeAttributes(attrs);
     }
 
     /**
@@ -106,9 +107,12 @@ public class PasswordEditText extends AppCompatEditText {
      */
     public PasswordEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        loadThemeAttributes(attrs);
+    }
 
+    private void loadThemeAttributes(AttributeSet attrs) {
         TypedArray typedAttrs = getContext().getTheme().obtainStyledAttributes(
-                attrs, R.styleable.MDPasswordEditText, defStyleAttr, 0);
+                attrs, R.styleable.MDPasswordEditText, R.attr.mdPasswordEditTextStyle, 0);
         try {
             loadIcons(typedAttrs);
             loadToggleType(typedAttrs);

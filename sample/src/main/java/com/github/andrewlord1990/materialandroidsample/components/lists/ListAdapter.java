@@ -2,7 +2,6 @@ package com.github.andrewlord1990.materialandroidsample.components.lists;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
@@ -10,9 +9,11 @@ import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 
+import com.github.andrewlord1990.materialandroid.component.list.ListItemView;
+import com.github.andrewlord1990.materialandroid.component.list.ListItemView.Variant;
 import com.github.andrewlord1990.materialandroidsample.R;
 
 public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
@@ -22,34 +23,14 @@ public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     private Context context;
 
-    @LayoutRes
-    private int layout = 0;
+    private int listType;
 
     private String primaryText;
 
-    public ListAdapter(Context context, int listType) {
+    public ListAdapter(Context context, @Variant int listType) {
         this.context = context;
-        layout = getLayout(listType);
+        this.listType = listType;
         primaryText = getPrimaryText(listType);
-    }
-
-    @LayoutRes
-    private int getLayout(int listType) {
-        int[] layouts = new int[]{
-                R.layout.md_list_single_line,
-                R.layout.md_list_single_line_icon,
-                R.layout.md_list_single_line_avatar,
-                R.layout.md_list_single_line_avatar_and_icon,
-                R.layout.md_list_two_line,
-                R.layout.md_list_two_line_icon,
-                R.layout.md_list_two_line_avatar,
-                R.layout.md_list_two_line_avatar_and_icon,
-                R.layout.md_list_three_line,
-                R.layout.md_list_three_line_icon,
-                R.layout.md_list_three_line_avatar,
-                R.layout.md_list_three_line_avatar_and_icon
-        };
-        return listType < layouts.length ? layouts[listType] : layouts[0];
     }
 
     private String getPrimaryText(int listType) {
@@ -67,7 +48,11 @@ public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
         if (viewType == TYPE_HEADER) {
             return createHeader(parent);
         }
-        View view = LayoutInflater.from(context).inflate(layout, parent, false);
+        ListItemView view = new ListItemView(parent.getContext());
+        LayoutParams params = new RecyclerView.LayoutParams(
+                LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        view.setLayoutParams(params);
+        view.setVariant(listType);
         return new ListViewHolder(view, primaryText);
     }
 
@@ -110,35 +95,14 @@ public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     public static class ListViewHolder extends ViewHolder {
 
-        private TextView primaryTextView;
-        private TextView secondaryTextView;
-        private TextView tertiaryTextView;
-        private ImageView iconView;
-        private ImageView avatarView;
-
-        public ListViewHolder(View itemView, String primaryText) {
+        public ListViewHolder(ListItemView itemView, String primaryText) {
             super(itemView);
 
-            primaryTextView = (TextView) itemView.findViewById(R.id.list_primary_text);
-            if (primaryTextView != null) {
-                primaryTextView.setText(primaryText);
-            }
-            secondaryTextView = (TextView) itemView.findViewById(R.id.list_secondary_text);
-            if (secondaryTextView != null) {
-                secondaryTextView.setText(R.string.sample_lists_secondary);
-            }
-            tertiaryTextView = (TextView) itemView.findViewById(R.id.list_tertiary_text);
-            if (tertiaryTextView != null) {
-                tertiaryTextView.setText(R.string.sample_lists_tertiary);
-            }
-            iconView = (ImageView) itemView.findViewById(R.id.list_icon);
-            if (iconView != null) {
-                iconView.setImageResource(R.drawable.ic_star);
-            }
-            avatarView = (ImageView) itemView.findViewById(R.id.list_avatar);
-            if (avatarView != null) {
-                avatarView.setImageResource(R.drawable.ic_avatar);
-            }
+            itemView.setTextPrimary(primaryText);
+            itemView.setTextSecondary(R.string.sample_lists_secondary);
+            itemView.setTextTertiary(R.string.sample_lists_tertiary);
+            itemView.setIcon(R.drawable.ic_star);
+            itemView.setAvatar(R.drawable.ic_avatar);
         }
     }
 

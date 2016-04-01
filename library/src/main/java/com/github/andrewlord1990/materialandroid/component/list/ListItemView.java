@@ -20,6 +20,7 @@ import android.support.annotation.AttrRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IntDef;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.StringRes;
 import android.support.annotation.StyleRes;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -150,14 +151,6 @@ public class ListItemView extends FrameLayout {
         setVariant(variant);
     }
 
-    private void setVariant(@Variant int variant) {
-        this.variant = variant;
-        @LayoutRes int layout = getLayoutFromVariant(variant);
-        LayoutInflater inflater = LayoutInflater.from(getContext());
-        inflater.inflate(layout, this);
-        findChildViews();
-    }
-
     private void loadText(TypedArray typedAttrs) {
         String primaryText = typedAttrs.getString(R.styleable.MDListItemView_md_list_text_primary);
         setTextPrimary(primaryText);
@@ -231,6 +224,20 @@ public class ListItemView extends FrameLayout {
     }
 
     /**
+     * Set the variant to be displayed.
+     *
+     * @param variant The variant.
+     */
+    public void setVariant(@Variant int variant) {
+        this.variant = variant;
+        @LayoutRes int layout = getLayoutFromVariant(variant);
+        removeAllViews();
+        LayoutInflater inflater = LayoutInflater.from(getContext());
+        inflater.inflate(layout, this);
+        findChildViews();
+    }
+
+    /**
      * Get the primary text (line 1).
      *
      * @return The primary text.
@@ -246,6 +253,15 @@ public class ListItemView extends FrameLayout {
      */
     public void setTextPrimary(CharSequence text) {
         primaryTextView.setText(text);
+    }
+
+    /**
+     * Set the primary text (line 1).
+     *
+     * @param textRes The primary text.
+     */
+    public void setTextPrimary(@StringRes int textRes) {
+        primaryTextView.setText(textRes);
     }
 
     /**
@@ -272,6 +288,17 @@ public class ListItemView extends FrameLayout {
     }
 
     /**
+     * Set the secondary text (line 2).
+     *
+     * @param textRes The secondary text.
+     */
+    public void setTextSecondary(@StringRes int textRes) {
+        if (secondaryTextView != null) {
+            secondaryTextView.setText(textRes);
+        }
+    }
+
+    /**
      * Get the tertiary text (line 3).
      *
      * @return The tertiary text.
@@ -291,6 +318,17 @@ public class ListItemView extends FrameLayout {
     public void setTextTertiary(CharSequence text) {
         if (tertiaryTextView != null) {
             tertiaryTextView.setText(text);
+        }
+    }
+
+    /**
+     * Set the tertiary text (line 3).
+     *
+     * @param textRes The tertiary text.
+     */
+    public void setTextTertiary(@StringRes int textRes) {
+        if (tertiaryTextView != null) {
+            tertiaryTextView.setText(textRes);
         }
     }
 

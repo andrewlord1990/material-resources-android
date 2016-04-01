@@ -393,7 +393,7 @@ public class PasswordEditTextTest {
         passwordView.setPasswordVisible(false);
 
         //When
-        passwordView.setToggleType(PasswordEditText.TOGGLE_OPACTITY);
+        passwordView.setToggleType(PasswordEditText.TOGGLE_OPACITY);
 
         //Then
         assertThat(passwordView)

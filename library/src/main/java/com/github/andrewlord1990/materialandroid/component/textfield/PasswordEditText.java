@@ -51,10 +51,10 @@ import java.lang.annotation.RetentionPolicy;
  */
 public class PasswordEditText extends AppCompatEditText {
 
-    public static final int TOGGLE_OPACTITY = 0;
+    public static final int TOGGLE_OPACITY = 0;
     public static final int TOGGLE_STRIKETHROUGH = 1;
 
-    @IntDef({TOGGLE_OPACTITY, TOGGLE_STRIKETHROUGH})
+    @IntDef({TOGGLE_OPACITY, TOGGLE_STRIKETHROUGH})
     @Retention(RetentionPolicy.SOURCE)
     public @interface ToggleType {
     }
@@ -83,20 +83,19 @@ public class PasswordEditText extends AppCompatEditText {
 
     /**
      * Create a PasswordEditText view through XML inflation using settings from provided
-     * attributes and from the style assigned to the global theme attribute mdPasswordEditTextStyle.
+     * attributes and from the style assigned to the theme attribute mdPasswordEditTextStyle.
      *
      * @param context The Context the view is running in, through which it can
      *                access the current theme, resources, etc.
      * @param attrs   The attributes of the XML tag that is inflating the view.
      */
     public PasswordEditText(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        loadThemeAttributes(attrs);
+        this(context, attrs, R.attr.mdPasswordEditTextStyle);
     }
 
     /**
      * Create a PasswordEditText view through XML inflation using settings from provided
-     * attributes and from the style assigned to the global theme attribute mdPasswordEditTextStyle.
+     * attributes and from the style assigned to the specified theme attribute.
      *
      * @param context      The Context the view is running in, through which it can
      *                     access the current theme, resources, etc.
@@ -107,12 +106,9 @@ public class PasswordEditText extends AppCompatEditText {
      */
     public PasswordEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        loadThemeAttributes(attrs);
-    }
 
-    private void loadThemeAttributes(AttributeSet attrs) {
         TypedArray typedAttrs = getContext().getTheme().obtainStyledAttributes(
-                attrs, R.styleable.MDPasswordEditText, R.attr.mdPasswordEditTextStyle, 0);
+                attrs, R.styleable.MDPasswordEditText, defStyleAttr, 0);
         try {
             loadIcons(typedAttrs);
             loadToggleType(typedAttrs);
@@ -131,7 +127,7 @@ public class PasswordEditText extends AppCompatEditText {
 
     private void loadToggleType(TypedArray attrs) {
         int type = attrs.getInt(
-                R.styleable.MDPasswordEditText_md_password_toggle_type, TOGGLE_OPACTITY);
+                R.styleable.MDPasswordEditText_md_password_toggle_type, TOGGLE_OPACITY);
         if (shownIcon == null) {
             setShownIcon();
         }
@@ -146,11 +142,11 @@ public class PasswordEditText extends AppCompatEditText {
     }
 
     private void setHiddenIconFromType(int type) {
-        if (type == TOGGLE_OPACTITY) {
+        if (type == TOGGLE_OPACITY) {
             hiddenIcon = getIcon(R.drawable.ic_password_visibility_default);
             hiddenIcon.setAlpha(ALPHA_HIDDEN);
         } else if (type == TOGGLE_STRIKETHROUGH) {
-            hiddenIcon = getIcon(R.drawable.ic_password_visibility_strikethrough);
+            hiddenIcon = getIcon(R.drawable.ic_password_visibility_strike_through);
             hiddenIcon.setAlpha(ALPHA_SHOWN);
         }
     }
@@ -169,7 +165,7 @@ public class PasswordEditText extends AppCompatEditText {
 
     private void loadDefaults() {
         setShownIcon();
-        setHiddenIconFromType(TOGGLE_OPACTITY);
+        setHiddenIconFromType(TOGGLE_OPACITY);
         setPasswordVisibility();
     }
 
@@ -302,7 +298,7 @@ public class PasswordEditText extends AppCompatEditText {
      * Get the tint color which be applied to the visibility toggle. This was assigned either
      * through the setter, an XML attribute when the view was inflated or through the global style.
      *
-     * @return The visiblity toggle tint color.
+     * @return The visibility toggle tint color.
      */
     @ColorInt
     public int getTintColor() {

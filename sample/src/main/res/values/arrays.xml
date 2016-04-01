@@ -2,10 +2,10 @@
 <resources>
 
     <string-array name="list_sample_types">
-        <item>Single-line (Text only)</item>
-        <item>Single-line (Icon with Text)</item>
-        <item>Single-line (Avatar with Text)</item>
-        <item>Single-line (Avatar with Text and Icon)</item>
+        <item>One-line (Text only)</item>
+        <item>One-line (Icon with Text)</item>
+        <item>One-line (Avatar with Text)</item>
+        <item>One-line (Avatar with Text and Icon)</item>
         <item>Two-line (Text only)</item>
         <item>Two-line (Icon with Text)</item>
         <item>Two-line (Avatar with Text)</item>
@@ -17,9 +17,9 @@
     </string-array>
 
     <string-array name="grid_sample_types">
-        <item>Single-line (Text only)</item>
-        <item>Single-line (Text with icon at start)</item>
-        <item>Single-line (Text with icon at end)</item>
+        <item>One-line (Text only)</item>
+        <item>One-line (Text with icon at start)</item>
+        <item>One-line (Text with icon at end)</item>
         <item>Two-line (Text same size)</item>
         <item>Two-line (Text different sizes)</item>
         <item>Two-line (Text same size with icon at start)</item>

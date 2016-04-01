@@ -146,7 +146,7 @@ public class PasswordEditText extends AppCompatEditText {
             hiddenIcon = getIcon(R.drawable.ic_password_visibility_default);
             hiddenIcon.setAlpha(ALPHA_HIDDEN);
         } else if (type == TOGGLE_STRIKETHROUGH) {
-            hiddenIcon = getIcon(R.drawable.ic_password_visibility_strike_through);
+            hiddenIcon = getIcon(R.drawable.ic_password_visibility_strikethrough);
             hiddenIcon.setAlpha(ALPHA_SHOWN);
         }
     }

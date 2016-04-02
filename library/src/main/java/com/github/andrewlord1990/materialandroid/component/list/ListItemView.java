@@ -209,8 +209,9 @@ public class ListItemView extends FrameLayout {
                 return R.layout.md_list_three_line_avatar;
             case VARIANT_THREE_LINE_TEXT_ICON_AVATAR:
                 return R.layout.md_list_three_line_avatar_and_icon;
+            default:
+                return R.layout.md_list_single_line;
         }
-        return R.layout.md_list_single_line;
     }
 
     private void findChildViews() {

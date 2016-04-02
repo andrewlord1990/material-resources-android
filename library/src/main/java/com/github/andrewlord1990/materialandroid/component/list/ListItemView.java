@@ -22,6 +22,7 @@ import android.support.annotation.IntDef;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
 import android.support.annotation.StyleRes;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
@@ -67,6 +68,12 @@ public class ListItemView extends FrameLayout {
     private TextView tertiaryTextView;
     private ImageView iconView;
     private ImageView avatarView;
+
+    private CharSequence primaryText;
+    private CharSequence secondaryText;
+    private CharSequence tertiaryText;
+    private Drawable icon;
+    private Drawable avatar;
 
     @Variant
     private int variant;
@@ -146,7 +153,8 @@ public class ListItemView extends FrameLayout {
     }
 
     private void loadVariant(TypedArray typedAttrs) {
-        @Variant int variant = typedAttrs.getInt(R.styleable.MDListItemView_md_list_item_variant,
+        @Variant
+        int variant = typedAttrs.getInt(R.styleable.MDListItemView_md_list_item_variant,
                 VARIANT_ONE_LINE_TEXT);
         setVariant(variant);
     }
@@ -235,6 +243,19 @@ public class ListItemView extends FrameLayout {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         inflater.inflate(layout, this);
         findChildViews();
+        setTexts();
+        setDrawables();
+    }
+
+    private void setTexts() {
+        setTextPrimary(primaryText);
+        setTextSecondary(secondaryText);
+        setTextTertiary(tertiaryText);
+    }
+
+    private void setDrawables() {
+        setIcon(icon);
+        setAvatar(avatar);
     }
 
     /**
@@ -252,6 +273,7 @@ public class ListItemView extends FrameLayout {
      * @param text The primary text.
      */
     public void setTextPrimary(CharSequence text) {
+        primaryText = text;
         primaryTextView.setText(text);
     }
 
@@ -261,7 +283,7 @@ public class ListItemView extends FrameLayout {
      * @param textRes The primary text.
      */
     public void setTextPrimary(@StringRes int textRes) {
-        primaryTextView.setText(textRes);
+        setTextPrimary(getContext().getString(textRes));
     }
 
     /**
@@ -282,6 +304,7 @@ public class ListItemView extends FrameLayout {
      * @param text The secondary text.
      */
     public void setTextSecondary(CharSequence text) {
+        secondaryText = text;
         if (secondaryTextView != null) {
             secondaryTextView.setText(text);
         }
@@ -293,9 +316,7 @@ public class ListItemView extends FrameLayout {
      * @param textRes The secondary text.
      */
     public void setTextSecondary(@StringRes int textRes) {
-        if (secondaryTextView != null) {
-            secondaryTextView.setText(textRes);
-        }
+        setTextSecondary(getContext().getString(textRes));
     }
 
     /**
@@ -316,6 +337,7 @@ public class ListItemView extends FrameLayout {
      * @param text The tertiary text.
      */
     public void setTextTertiary(CharSequence text) {
+        tertiaryText = text;
         if (tertiaryTextView != null) {
             tertiaryTextView.setText(text);
         }
@@ -327,9 +349,7 @@ public class ListItemView extends FrameLayout {
      * @param textRes The tertiary text.
      */
     public void setTextTertiary(@StringRes int textRes) {
-        if (tertiaryTextView != null) {
-            tertiaryTextView.setText(textRes);
-        }
+        setTextTertiary(getContext().getString(textRes));
     }
 
     /**
@@ -350,6 +370,7 @@ public class ListItemView extends FrameLayout {
      * @param icon The icon to display.
      */
     public void setIcon(Drawable icon) {
+        this.icon = icon;
         if (iconView != null) {
             iconView.setImageDrawable(icon);
         }
@@ -361,9 +382,7 @@ public class ListItemView extends FrameLayout {
      * @param iconRes The icon to display.
      */
     public void setIcon(@DrawableRes int iconRes) {
-        if (iconView != null) {
-            iconView.setImageResource(iconRes);
-        }
+        setIcon(ContextCompat.getDrawable(getContext(), iconRes));
     }
 
     /**
@@ -384,6 +403,7 @@ public class ListItemView extends FrameLayout {
      * @param avatar The avatar to display.
      */
     public void setAvatar(Drawable avatar) {
+        this.avatar = avatar;
         if (avatarView != null) {
             avatarView.setImageDrawable(avatar);
         }
@@ -395,9 +415,7 @@ public class ListItemView extends FrameLayout {
      * @param avatarRes The avatar to display.
      */
     public void setAvatar(@DrawableRes int avatarRes) {
-        if (avatarView != null) {
-            avatarView.setImageResource(avatarRes);
-        }
+        setAvatar(ContextCompat.getDrawable(getContext(), avatarRes));
     }
 
 }

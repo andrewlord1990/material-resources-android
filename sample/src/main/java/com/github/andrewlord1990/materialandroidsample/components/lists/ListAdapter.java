@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 
 import com.github.andrewlord1990.materialandroid.component.list.ListItemView;
@@ -48,12 +47,13 @@ public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
         if (viewType == TYPE_HEADER) {
             return createHeader(parent);
         }
-        ListItemView view = new ListItemView(parent.getContext());
-        LayoutParams params = new RecyclerView.LayoutParams(
-                LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        view.setLayoutParams(params);
-        view.setVariant(listType);
-        return new ListViewHolder(view, primaryText);
+        ListItemView view = (ListItemView) LayoutInflater.from(context)
+                .inflate(R.layout.list_row, parent, false);
+        if (listType != ListItemView.VARIANT_ONE_LINE_TEXT) {
+            view.setVariant(listType);
+        }
+        view.setTextPrimary(primaryText);
+        return new ListViewHolder(view);
     }
 
     private ViewHolder createHeader(ViewGroup parent) {
@@ -95,14 +95,8 @@ public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     public static class ListViewHolder extends ViewHolder {
 
-        public ListViewHolder(ListItemView itemView, String primaryText) {
+        public ListViewHolder(ListItemView itemView) {
             super(itemView);
-
-            itemView.setTextPrimary(primaryText);
-            itemView.setTextSecondary(R.string.sample_lists_secondary);
-            itemView.setTextTertiary(R.string.sample_lists_tertiary);
-            itemView.setIcon(R.drawable.ic_star);
-            itemView.setAvatar(R.drawable.ic_avatar);
         }
     }
 

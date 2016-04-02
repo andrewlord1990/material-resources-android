@@ -255,19 +255,11 @@ public class PasswordEditText extends AppCompatEditText {
     }
 
     private boolean isTouchEventWithinToggle(MotionEvent event) {
-        int left = getViewLeft();
-        int right = left + getMeasuredWidth();
-        int x = (int) event.getX() + left;
+        int x = (int) event.getX();
         Rect bounds = getDrawables()[2].getBounds();
-        boolean withinIconLeftToRight = isLeftToRight() && (x >= right - bounds.width());
-        boolean withinIconRightToLeft = !isLeftToRight() && (x <= left + bounds.width());
+        boolean withinIconLeftToRight = isLeftToRight() && (x >= getWidth() - bounds.width());
+        boolean withinIconRightToLeft = !isLeftToRight() && (x <= bounds.width());
         return withinIconLeftToRight || withinIconRightToLeft;
-    }
-
-    private int getViewLeft() {
-        int[] viewPosition = new int[2];
-        getLocationOnScreen(viewPosition);
-        return viewPosition[0];
     }
 
     private boolean isLeftToRight() {

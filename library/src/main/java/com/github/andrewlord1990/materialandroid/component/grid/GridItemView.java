@@ -10,13 +10,14 @@
  *  See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.github.andrewlord1990.materialandroid.component.list;
+package com.github.andrewlord1990.materialandroid.component.grid;
 
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.AttrRes;
+import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IntDef;
 import android.support.annotation.LayoutRes;
@@ -35,74 +36,71 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * A view that meets the Material Design specification for a list item view. It supports many
- * different variants, containing one to three lines of text, an icon at the end (right) and an
- * avatar at the start (left).
+ * A view that meets the Material Design specification for a grid item view. It supports many
+ * different variants, containing one or two lines of text and an icon at the start (left) or end
+ * (right). When using two lines of text, the lines of text can either have the same text size
+ * or different text sizes.
  */
-public class ListItemView extends FrameLayout {
+public class GridItemView extends FrameLayout {
 
     public static final int VARIANT_ONE_LINE_TEXT = 0;
     public static final int VARIANT_ONE_LINE_TEXT_ICON = 1;
-    public static final int VARIANT_ONE_LINE_TEXT_AVATAR = 2;
-    public static final int VARIANT_ONE_LINE_TEXT_ICON_AVATAR = 3;
-    public static final int VARIANT_TWO_LINE_TEXT = 4;
-    public static final int VARIANT_TWO_LINE_TEXT_ICON = 5;
-    public static final int VARIANT_TWO_LINE_TEXT_AVATAR = 6;
-    public static final int VARIANT_TWO_LINE_TEXT_ICON_AVATAR = 7;
-    public static final int VARIANT_THREE_LINE_TEXT = 8;
-    public static final int VARIANT_THREE_LINE_TEXT_ICON = 9;
-    public static final int VARIANT_THREE_LINE_TEXT_AVATAR = 10;
-    public static final int VARIANT_THREE_LINE_TEXT_ICON_AVATAR = 11;
+    public static final int VARIANT_TWO_LINE_TEXT = 2;
+    public static final int VARIANT_TWO_LINE_TEXT_ICON = 3;
 
-    @IntDef({VARIANT_ONE_LINE_TEXT, VARIANT_ONE_LINE_TEXT_ICON, VARIANT_ONE_LINE_TEXT_AVATAR,
-            VARIANT_ONE_LINE_TEXT_ICON_AVATAR, VARIANT_TWO_LINE_TEXT, VARIANT_TWO_LINE_TEXT_ICON,
-            VARIANT_TWO_LINE_TEXT_AVATAR, VARIANT_TWO_LINE_TEXT_ICON_AVATAR,
-            VARIANT_THREE_LINE_TEXT, VARIANT_THREE_LINE_TEXT_ICON, VARIANT_THREE_LINE_TEXT_AVATAR,
-            VARIANT_THREE_LINE_TEXT_ICON_AVATAR})
+    @IntDef({VARIANT_ONE_LINE_TEXT, VARIANT_ONE_LINE_TEXT_ICON,
+            VARIANT_TWO_LINE_TEXT, VARIANT_TWO_LINE_TEXT_ICON})
     @Retention(RetentionPolicy.SOURCE)
-    public @interface ListItemVariant {
+    public @interface GridItemVariant {
+    }
+
+    public static final int ICON_GRAVITY_START = 0;
+    public static final int ICON_GRAVITY_END = 1;
+
+    @IntDef({ICON_GRAVITY_START, ICON_GRAVITY_END})
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface IconGravity {
     }
 
     private TextView primaryTextView;
     private TextView secondaryTextView;
-    private TextView tertiaryTextView;
     private ImageView iconView;
-    private ImageView avatarView;
 
     private CharSequence primaryText;
     private CharSequence secondaryText;
-    private CharSequence tertiaryText;
     private Drawable icon;
-    private Drawable avatar;
 
-    @ListItemVariant
+    @GridItemVariant
     private int variant;
 
+    @IconGravity
+    private int iconGravity;
+
     /**
-     * Create a list item view using the default settings, which can then be customised later.
+     * Create a grid item view using the default settings, which can then be customised later.
      *
      * @param context The Context the view is running in, through which it can
      *                access the current theme, resources, etc.
      */
-    public ListItemView(Context context) {
+    public GridItemView(Context context) {
         super(context);
         loadDefaults();
     }
 
     /**
-     * Create a list item view through XML inflation using settings from provided
-     * attributes and from the style assigned to the theme attribute mdListItemViewStyle.
+     * Create a grid item view through XML inflation using settings from provided
+     * attributes and from the style assigned to the theme attribute mdGridItemViewStyle.
      *
      * @param context The Context the view is running in, through which it can
      *                access the current theme, resources, etc.
      * @param attrs   The attributes of the XML tag that is inflating the view.
      */
-    public ListItemView(Context context, AttributeSet attrs) {
-        this(context, attrs, R.attr.mdListItemViewStyle);
+    public GridItemView(Context context, AttributeSet attrs) {
+        this(context, attrs, R.attr.mdGridItemViewStyle);
     }
 
     /**
-     * Create a list item view through XML inflation using settings from provided
+     * Create a grid item view through XML inflation using settings from provided
      * attributes and from the style assigned to the specified theme attribute.
      *
      * @param context      The Context the view is running in, through which it can
@@ -112,13 +110,13 @@ public class ListItemView extends FrameLayout {
      *                     reference to a style resource that supplies default values for
      *                     the view. Can be 0 to not look for defaults.
      */
-    public ListItemView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public GridItemView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         loadThemeAttributes(attrs, defStyleAttr, 0);
     }
 
     /**
-     * Create a list item view through XML inflation using settings from provided
+     * Create a grid item view through XML inflation using settings from provided
      * attributes, from the style assigned to the specified theme attribute and from the
      * specified style.
      *
@@ -134,92 +132,87 @@ public class ListItemView extends FrameLayout {
      *                     to not look for defaults.
      */
     @TargetApi(21)
-    public ListItemView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public GridItemView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         loadThemeAttributes(attrs, defStyleAttr, defStyleRes);
     }
 
     private void loadThemeAttributes(AttributeSet attrs, @AttrRes int themeAttribute, @StyleRes int styleRes) {
         TypedArray typedAttrs = getContext().getTheme().obtainStyledAttributes(
-                attrs, R.styleable.MDListItemView, themeAttribute, styleRes);
+                attrs, R.styleable.MDGridItemView, themeAttribute, styleRes);
         try {
+            loadIcon(typedAttrs);
             loadVariant(typedAttrs);
             loadText(typedAttrs);
-            loadIcon(typedAttrs);
-            loadAvatar(typedAttrs);
         } finally {
             typedAttrs.recycle();
         }
     }
 
+    private void loadIcon(TypedArray typedAttrs) {
+        Drawable icon = typedAttrs.getDrawable(R.styleable.MDGridItemView_md_grid_icon);
+        setIcon(icon);
+        @IconGravity
+        int iconGravity = typedAttrs.getInt(
+                R.styleable.MDGridItemView_md_grid_icon_gravity, ICON_GRAVITY_START);
+        this.iconGravity = iconGravity;
+    }
+
     private void loadVariant(TypedArray typedAttrs) {
-        @ListItemVariant
-        int variant = typedAttrs.getInt(R.styleable.MDListItemView_md_list_item_variant,
+        @GridItemVariant
+        int variant = typedAttrs.getInt(R.styleable.MDGridItemView_md_grid_item_variant,
                 VARIANT_ONE_LINE_TEXT);
         setVariant(variant);
     }
 
     private void loadText(TypedArray typedAttrs) {
-        String primaryText = typedAttrs.getString(R.styleable.MDListItemView_md_list_text_primary);
+        String primaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_text_primary);
         setTextPrimary(primaryText);
-        String secondaryText = typedAttrs.getString(R.styleable.MDListItemView_md_list_text_secondary);
+        String secondaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_text_secondary);
         setTextSecondary(secondaryText);
-        String tertiaryText = typedAttrs.getString(R.styleable.MDListItemView_md_list_text_tertiary);
-        setTextTertiary(tertiaryText);
-    }
-
-    private void loadIcon(TypedArray typedAttrs) {
-        Drawable icon = typedAttrs.getDrawable(R.styleable.MDListItemView_md_list_icon);
-        setIcon(icon);
-    }
-
-    private void loadAvatar(TypedArray typedAttrs) {
-        Drawable avatar = typedAttrs.getDrawable(R.styleable.MDListItemView_md_list_avatar);
-        setAvatar(avatar);
     }
 
     private void loadDefaults() {
+        iconGravity = ICON_GRAVITY_START;
         setVariant(VARIANT_ONE_LINE_TEXT);
     }
 
     @LayoutRes
-    private int getLayoutFromVariant(@ListItemVariant int variant) {
+    private int getLayoutFromVariant(@GridItemVariant int variant) {
         switch (variant) {
             case VARIANT_ONE_LINE_TEXT:
-                return R.layout.md_list_single_line;
+                return R.layout.md_grid_list_label_single_line;
             case VARIANT_ONE_LINE_TEXT_ICON:
-                return R.layout.md_list_single_line_icon;
-            case VARIANT_ONE_LINE_TEXT_AVATAR:
-                return R.layout.md_list_single_line_avatar;
-            case VARIANT_ONE_LINE_TEXT_ICON_AVATAR:
-                return R.layout.md_list_single_line_avatar_and_icon;
+                return getOneLineIconLayout();
             case VARIANT_TWO_LINE_TEXT:
-                return R.layout.md_list_two_line;
+                return R.layout.md_grid_list_label_two_line_same;
             case VARIANT_TWO_LINE_TEXT_ICON:
-                return R.layout.md_list_two_line_icon;
-            case VARIANT_TWO_LINE_TEXT_AVATAR:
-                return R.layout.md_list_two_line_avatar;
-            case VARIANT_TWO_LINE_TEXT_ICON_AVATAR:
-                return R.layout.md_list_two_line_avatar_and_icon;
-            case VARIANT_THREE_LINE_TEXT:
-                return R.layout.md_list_three_line;
-            case VARIANT_THREE_LINE_TEXT_ICON:
-                return R.layout.md_list_three_line_icon;
-            case VARIANT_THREE_LINE_TEXT_AVATAR:
-                return R.layout.md_list_three_line_avatar;
-            case VARIANT_THREE_LINE_TEXT_ICON_AVATAR:
-                return R.layout.md_list_three_line_avatar_and_icon;
+                return getTwoLineIconLayout();
             default:
-                return R.layout.md_list_single_line;
+                return R.layout.md_grid_list_label_single_line;
         }
     }
 
+    @LayoutRes
+    private int getOneLineIconLayout() {
+        if (iconGravity == ICON_GRAVITY_END) {
+            return R.layout.md_grid_list_label_single_line_icon_end;
+        }
+        return R.layout.md_grid_list_label_single_line_icon_start;
+    }
+
+    @LayoutRes
+    private int getTwoLineIconLayout() {
+        if (iconGravity == ICON_GRAVITY_END) {
+            return R.layout.md_grid_list_label_two_line_same_icon_end;
+        }
+        return R.layout.md_grid_list_label_two_line_same_icon_start;
+    }
+
     private void findChildViews() {
-        primaryTextView = (TextView) findViewById(R.id.list_primary_text);
-        secondaryTextView = (TextView) findViewById(R.id.list_secondary_text);
-        tertiaryTextView = (TextView) findViewById(R.id.list_tertiary_text);
-        iconView = (ImageView) findViewById(R.id.list_icon);
-        avatarView = (ImageView) findViewById(R.id.list_avatar);
+        primaryTextView = (TextView) findViewById(R.id.grid_list_label_line_1);
+        secondaryTextView = (TextView) findViewById(R.id.grid_list_label_line_2);
+        iconView = (ImageView) findViewById(R.id.grid_list_label_icon);
     }
 
     /**
@@ -227,7 +220,7 @@ public class ListItemView extends FrameLayout {
      *
      * @return The variant.
      */
-    @ListItemVariant
+    @GridItemVariant
     public int getVariant() {
         return variant;
     }
@@ -237,7 +230,7 @@ public class ListItemView extends FrameLayout {
      *
      * @param variant The variant.
      */
-    public void setVariant(@ListItemVariant int variant) {
+    public void setVariant(@GridItemVariant int variant) {
         this.variant = variant;
         @LayoutRes int layout = getLayoutFromVariant(variant);
         removeAllViews();
@@ -245,18 +238,12 @@ public class ListItemView extends FrameLayout {
         inflater.inflate(layout, this);
         findChildViews();
         setTexts();
-        setDrawables();
+        setIcon(icon);
     }
 
     private void setTexts() {
         setTextPrimary(primaryText);
         setTextSecondary(secondaryText);
-        setTextTertiary(tertiaryText);
-    }
-
-    private void setDrawables() {
-        setIcon(icon);
-        setAvatar(avatar);
     }
 
     /**
@@ -285,6 +272,15 @@ public class ListItemView extends FrameLayout {
      */
     public void setTextPrimary(@StringRes int textRes) {
         setTextPrimary(getContext().getString(textRes));
+    }
+
+    /**
+     * Get the primary text view, so you can customise it.
+     *
+     * @return The primary text view.
+     */
+    public TextView getTextPrimaryView() {
+        return primaryTextView;
     }
 
     /**
@@ -321,36 +317,12 @@ public class ListItemView extends FrameLayout {
     }
 
     /**
-     * Get the tertiary text (line 3).
+     * Get the secondary text view, so you can customise it.
      *
-     * @return The tertiary text.
+     * @return The secondary text view.
      */
-    public CharSequence getTextTertiary() {
-        if (tertiaryTextView != null) {
-            return tertiaryTextView.getText();
-        }
-        return null;
-    }
-
-    /**
-     * Set the tertiary text (line 3).
-     *
-     * @param text The tertiary text.
-     */
-    public void setTextTertiary(CharSequence text) {
-        tertiaryText = text;
-        if (tertiaryTextView != null) {
-            tertiaryTextView.setText(text);
-        }
-    }
-
-    /**
-     * Set the tertiary text (line 3).
-     *
-     * @param textRes The tertiary text.
-     */
-    public void setTextTertiary(@StringRes int textRes) {
-        setTextTertiary(getContext().getString(textRes));
+    public TextView getTextSecondaryView() {
+        return secondaryTextView;
     }
 
     /**
@@ -387,36 +359,25 @@ public class ListItemView extends FrameLayout {
     }
 
     /**
-     * Get the avatar being displayed.
+     * Get the icon gravity. Can be start (to display before the text - or on the left), or
+     * can be end (to display after the text - or on the right).
      *
-     * @return The displayed avatar.
+     * @return The gravity of the icon.
      */
-    public Drawable getAvatar() {
-        if (avatarView != null) {
-            return avatarView.getDrawable();
-        }
-        return null;
+    @IconGravity
+    public int getIconGravity() {
+        return iconGravity;
     }
 
     /**
-     * Set the avatar to display at the start (on the left).
+     * Set the gravity of the icon. Can be start (to display before the text - or on the left), or
+     * can be end (to display after the text - or on the right).
      *
-     * @param avatar The avatar to display.
+     * @param iconGravity The gravity for the icon.
      */
-    public void setAvatar(Drawable avatar) {
-        this.avatar = avatar;
-        if (avatarView != null) {
-            avatarView.setImageDrawable(avatar);
-        }
-    }
-
-    /**
-     * Set the avatar to display at the start (on the left).
-     *
-     * @param avatarRes The avatar to display.
-     */
-    public void setAvatar(@DrawableRes int avatarRes) {
-        setAvatar(ContextCompat.getDrawable(getContext(), avatarRes));
+    public void setIconGravity(@IconGravity int iconGravity) {
+        this.iconGravity = iconGravity;
+        setVariant(variant);
     }
 
 }

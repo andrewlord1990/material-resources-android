@@ -17,6 +17,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 
 import com.github.andrewlord1990.materialandroidsample.BaseSampleActivity;
 import com.github.andrewlord1990.materialandroidsample.R;
@@ -39,6 +40,8 @@ public class GridsSampleActivity extends BaseSampleActivity {
         setupToolbar();
         setupFab();
         setupList();
+        setupIconGravityButton();
+        setupTextSizesButton();
     }
 
     private void setupToolbar() {
@@ -68,6 +71,30 @@ public class GridsSampleActivity extends BaseSampleActivity {
             list.setAdapter(adapter);
             int spacing = getResources().getDimensionPixelSize(R.dimen.md_grid_list_cell_spacing_small);
             list.addItemDecoration(new GridListSpacingItemDecoration(spacing));
+        }
+    }
+
+    private void setupIconGravityButton() {
+        Button iconGravityButton = (Button) findViewById(R.id.iconGravity);
+        if (iconGravityButton != null) {
+            iconGravityButton.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    adapter.toggleIconGravity();
+                }
+            });
+        }
+    }
+
+    private void setupTextSizesButton() {
+        Button textSizesButton = (Button) findViewById(R.id.textSizes);
+        if (textSizesButton != null) {
+            textSizesButton.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
         }
     }
 

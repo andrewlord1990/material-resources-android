@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.github.andrewlord1990.materialandroid.component.list.ListItemView;
-import com.github.andrewlord1990.materialandroid.component.list.ListItemView.Variant;
+import com.github.andrewlord1990.materialandroid.component.list.ListItemView.ListItemVariant;
 import com.github.andrewlord1990.materialandroidsample.R;
 
 public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
@@ -26,7 +26,7 @@ public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     private String primaryText;
 
-    public ListAdapter(Context context, @Variant int listType) {
+    public ListAdapter(Context context, @ListItemVariant int listType) {
         this.context = context;
         this.listType = listType;
         primaryText = getPrimaryText(listType);

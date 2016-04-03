@@ -24,7 +24,7 @@
         tools:background="@color/md_amber_500"
         android:contentDescription="@string/sample_grids_image_cd"/>
 
-    <FrameLayout
+    <com.github.andrewlord1990.materialandroid.component.grid.GridItemView
         android:id="@+id/label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

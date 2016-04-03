@@ -16,7 +16,7 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 
 import com.github.andrewlord1990.materialandroid.R;
-import com.github.andrewlord1990.materialandroid.component.list.ListItemView.Variant;
+import com.github.andrewlord1990.materialandroid.component.list.ListItemView.ListItemVariant;
 
 import org.assertj.android.api.widget.AbstractFrameLayoutAssert;
 import org.assertj.core.api.Assertions;
@@ -30,7 +30,7 @@ public abstract class AbstractListItemViewAssert<S extends AbstractListItemViewA
         super(actual, selfType);
     }
 
-    public AbstractListItemViewAssert hasVariant(@Variant int expectedVariant) {
+    public AbstractListItemViewAssert hasVariant(@ListItemVariant int expectedVariant) {
         isNotNull();
         Assertions.assertThat(actual.getVariant())
                 .overridingErrorMessage("Expected variant <%s> but was <%s>.",

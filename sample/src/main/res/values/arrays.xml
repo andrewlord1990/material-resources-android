@@ -18,14 +18,9 @@
 
     <string-array name="grid_sample_types">
         <item>One-line (Text only)</item>
-        <item>One-line (Text with icon at start)</item>
-        <item>One-line (Text with icon at end)</item>
-        <item>Two-line (Text same size)</item>
-        <item>Two-line (Text different sizes)</item>
-        <item>Two-line (Text same size with icon at start)</item>
-        <item>Two-line (Text same size with icon at end)</item>
-        <item>Two-line (Text different sizes with icon at start)</item>
-        <item>Two-line (Text different sizes with icon at end)</item>
+        <item>One-line (Text with icon)</item>
+        <item>Two-line (Text only)</item>
+        <item>Two-line (Text with icon)</item>
     </string-array>
 
     <string-array name="grid_sample_images">

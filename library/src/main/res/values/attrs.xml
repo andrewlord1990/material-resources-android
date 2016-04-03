@@ -50,4 +50,22 @@
         <attr name="md_list_avatar" format="reference"/>
     </declare-styleable>
 
+    <attr name="mdGridItemViewStyle" format="reference"/>
+
+    <declare-styleable name="MDGridItemView">
+        <attr name="md_grid_item_variant" format="enum">
+            <enum name="one_line_text" value="0"/>
+            <enum name="one_line_text_icon" value="1"/>
+            <enum name="two_line_text" value="2"/>
+            <enum name="two_line_text_icon" value="3"/>
+        </attr>
+        <attr name="md_grid_text_primary" format="string"/>
+        <attr name="md_grid_text_secondary" format="string"/>
+        <attr name="md_grid_icon" format="reference"/>
+        <attr name="md_grid_icon_gravity" format="enum">
+            <enum name="start" value="0"/>
+            <enum name="end" value="1"/>
+        </attr>
+    </declare-styleable>
+
 </resources>

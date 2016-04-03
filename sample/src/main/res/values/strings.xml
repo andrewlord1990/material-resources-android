@@ -50,6 +50,8 @@
     <string name="sample_grids_secondary">Secondary text</string>
     <string name="sample_grids_star_cd">Star</string>
     <string name="sample_grids_image_cd">Image</string>
+    <string name="sample_grids_button_icon_gravity">Icon Gravity</string>
+    <string name="sample_grids_button_text_sizes">Text Sizes</string>
 
     <string name="sample_text_fields_title">Text Fields Sample</string>
     <string name="sample_text_fields_1_hint">To</string>

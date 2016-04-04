@@ -93,7 +93,6 @@ public class ListItemViewTest {
         //Then
         assertThat(view)
                 .hasVariant(ListItemView.VARIANT_TWO_LINE_TEXT_ICON)
-                .hasPrimaryTextView()
                 .hasSecondaryTextView()
                 .hasIconView();
     }
@@ -113,10 +112,9 @@ public class ListItemViewTest {
 
         //Then
         assertThat(view)
-                .hasTextPrimary(PRIMARY)
-                .hasTextSecondary(SECONDARY)
-                .hasTextTertiary(TERTIARY)
-                .hasPrimaryTextView()
+                .hasPrimaryText(PRIMARY)
+                .hasSecondaryText(SECONDARY)
+                .hasTertiaryText(TERTIARY)
                 .hasSecondaryTextView()
                 .hasTertiaryTextView();
     }
@@ -163,7 +161,6 @@ public class ListItemViewTest {
         //Then
         assertThat(listItemView)
                 .hasVariant(ListItemView.VARIANT_ONE_LINE_TEXT)
-                .hasPrimaryTextView()
                 .doesNotHaveSecondaryTextView()
                 .doesNotHaveTertiaryTextView()
                 .doesNotHaveIconView()
@@ -178,7 +175,6 @@ public class ListItemViewTest {
         //Then
         assertThat(listItemView)
                 .hasVariant(ListItemView.VARIANT_ONE_LINE_TEXT_ICON)
-                .hasPrimaryTextView()
                 .hasIconView()
                 .doesNotHaveSecondaryTextView()
                 .doesNotHaveTertiaryTextView()
@@ -193,7 +189,6 @@ public class ListItemViewTest {
         //Then
         assertThat(listItemView)
                 .hasVariant(ListItemView.VARIANT_ONE_LINE_TEXT_AVATAR)
-                .hasPrimaryTextView()
                 .hasAvatarView()
                 .doesNotHaveSecondaryTextView()
                 .doesNotHaveTertiaryTextView()
@@ -208,7 +203,6 @@ public class ListItemViewTest {
         //Then
         assertThat(listItemView)
                 .hasVariant(ListItemView.VARIANT_ONE_LINE_TEXT_ICON_AVATAR)
-                .hasPrimaryTextView()
                 .hasIconView()
                 .hasAvatarView()
                 .doesNotHaveSecondaryTextView()
@@ -223,7 +217,6 @@ public class ListItemViewTest {
         //Then
         assertThat(listItemView)
                 .hasVariant(ListItemView.VARIANT_TWO_LINE_TEXT)
-                .hasPrimaryTextView()
                 .hasSecondaryTextView()
                 .doesNotHaveTertiaryTextView()
                 .doesNotHaveIconView()
@@ -238,7 +231,6 @@ public class ListItemViewTest {
         //Then
         assertThat(listItemView)
                 .hasVariant(ListItemView.VARIANT_TWO_LINE_TEXT_ICON)
-                .hasPrimaryTextView()
                 .hasSecondaryTextView()
                 .hasIconView()
                 .doesNotHaveTertiaryTextView()
@@ -253,7 +245,6 @@ public class ListItemViewTest {
         //Then
         assertThat(listItemView)
                 .hasVariant(ListItemView.VARIANT_TWO_LINE_TEXT_AVATAR)
-                .hasPrimaryTextView()
                 .hasSecondaryTextView()
                 .hasAvatarView()
                 .doesNotHaveTertiaryTextView()
@@ -268,7 +259,6 @@ public class ListItemViewTest {
         //Then
         assertThat(listItemView)
                 .hasVariant(ListItemView.VARIANT_TWO_LINE_TEXT_ICON_AVATAR)
-                .hasPrimaryTextView()
                 .hasSecondaryTextView()
                 .hasIconView()
                 .hasAvatarView()
@@ -283,7 +273,6 @@ public class ListItemViewTest {
         //Then
         assertThat(listItemView)
                 .hasVariant(ListItemView.VARIANT_THREE_LINE_TEXT)
-                .hasPrimaryTextView()
                 .hasSecondaryTextView()
                 .hasTertiaryTextView()
                 .doesNotHaveIconView()
@@ -298,7 +287,6 @@ public class ListItemViewTest {
         //Then
         assertThat(listItemView)
                 .hasVariant(ListItemView.VARIANT_THREE_LINE_TEXT_ICON)
-                .hasPrimaryTextView()
                 .hasSecondaryTextView()
                 .hasTertiaryTextView()
                 .hasIconView()
@@ -313,7 +301,6 @@ public class ListItemViewTest {
         //Then
         assertThat(listItemView)
                 .hasVariant(ListItemView.VARIANT_THREE_LINE_TEXT_AVATAR)
-                .hasPrimaryTextView()
                 .hasSecondaryTextView()
                 .hasTertiaryTextView()
                 .hasAvatarView()
@@ -328,7 +315,6 @@ public class ListItemViewTest {
         //Then
         assertThat(listItemView)
                 .hasVariant(ListItemView.VARIANT_THREE_LINE_TEXT_ICON_AVATAR)
-                .hasPrimaryTextView()
                 .hasSecondaryTextView()
                 .hasTertiaryTextView()
                 .hasIconView()
@@ -342,7 +328,6 @@ public class ListItemViewTest {
 
         //Then
         assertThat(listItemView)
-                .hasPrimaryTextView()
                 .doesNotHaveSecondaryTextView()
                 .doesNotHaveTertiaryTextView()
                 .doesNotHaveIconView()
@@ -350,59 +335,59 @@ public class ListItemViewTest {
     }
 
     @Test
-    public void givenStringResource_whenSetTextPrimary_thenHasPrimaryText() {
+    public void givenStringResource_whenSetPrimaryText_thenHasPrimaryText() {
         //When
-        listItemView.setTextPrimary(R.string.list_item_avatar_cd);
+        listItemView.setPrimaryText(R.string.list_item_avatar_cd);
 
         //Then
         assertThat(listItemView)
-                .hasTextPrimary("Avatar");
+                .hasPrimaryText("Avatar");
     }
 
     @Test
-    public void givenNoSecondaryTextView_whenGetTextSecondary_thenNull() {
+    public void givenNoSecondaryTextView_whenGetSecondaryText_thenNull() {
         //Given
         listItemView.setVariant(ListItemView.VARIANT_ONE_LINE_TEXT);
 
         //When
-        CharSequence actual = listItemView.getTextSecondary();
+        CharSequence actual = listItemView.getSecondaryText();
 
         //Then
         Assertions.assertThat(actual).isNull();
     }
 
     @Test
-    public void givenStringResource_whenSetTextSecondary_thenHasSecondaryText() {
+    public void givenStringResource_whenSetSecondaryText_thenHasSecondaryText() {
         //When
-        listItemView.setTextSecondary(R.string.list_item_icon_cd);
+        listItemView.setSecondaryText(R.string.list_item_icon_cd);
         listItemView.setVariant(ListItemView.VARIANT_TWO_LINE_TEXT);
 
         //Then
         assertThat(listItemView)
-                .hasTextSecondary("Icon");
+                .hasSecondaryText("Icon");
     }
 
     @Test
-    public void givenNoTertiaryTextView_whenGetTextTertiary_thenNull() {
+    public void givenNoTertiaryTextView_whenGetTertiaryText_thenNull() {
         //Given
         listItemView.setVariant(ListItemView.VARIANT_TWO_LINE_TEXT);
 
         //When
-        CharSequence actual = listItemView.getTextTertiary();
+        CharSequence actual = listItemView.getTertiaryText();
 
         //Then
         Assertions.assertThat(actual).isNull();
     }
 
     @Test
-    public void givenStringResource_whenSetTextTertiary_thenHasTertiaryText() {
+    public void givenStringResource_whenSetTertiaryText_thenHasTertiaryText() {
         //When
-        listItemView.setTextTertiary(R.string.list_item_avatar_cd);
+        listItemView.setTertiaryText(R.string.list_item_avatar_cd);
         listItemView.setVariant(ListItemView.VARIANT_THREE_LINE_TEXT);
 
         //Then
         assertThat(listItemView)
-                .hasTextTertiary("Avatar");
+                .hasTertiaryText("Avatar");
     }
 
     @Test

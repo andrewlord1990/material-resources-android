@@ -52,7 +52,7 @@ public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
         if (listType != ListItemView.VARIANT_ONE_LINE_TEXT) {
             view.setVariant(listType);
         }
-        view.setTextPrimary(primaryText);
+        view.setPrimaryText(primaryText);
         return new ListViewHolder(view);
     }
 

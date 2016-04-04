@@ -161,11 +161,11 @@ public class ListItemView extends FrameLayout {
 
     private void loadText(TypedArray typedAttrs) {
         String primaryText = typedAttrs.getString(R.styleable.MDListItemView_md_list_text_primary);
-        setTextPrimary(primaryText);
+        setPrimaryText(primaryText);
         String secondaryText = typedAttrs.getString(R.styleable.MDListItemView_md_list_text_secondary);
-        setTextSecondary(secondaryText);
+        setSecondaryText(secondaryText);
         String tertiaryText = typedAttrs.getString(R.styleable.MDListItemView_md_list_text_tertiary);
-        setTextTertiary(tertiaryText);
+        setTertiaryText(tertiaryText);
     }
 
     private void loadIcon(TypedArray typedAttrs) {
@@ -249,9 +249,9 @@ public class ListItemView extends FrameLayout {
     }
 
     private void setTexts() {
-        setTextPrimary(primaryText);
-        setTextSecondary(secondaryText);
-        setTextTertiary(tertiaryText);
+        setPrimaryText(primaryText);
+        setSecondaryText(secondaryText);
+        setTertiaryText(tertiaryText);
     }
 
     private void setDrawables() {
@@ -264,7 +264,7 @@ public class ListItemView extends FrameLayout {
      *
      * @return The primary text.
      */
-    public CharSequence getTextPrimary() {
+    public CharSequence getPrimaryText() {
         return primaryTextView.getText();
     }
 
@@ -273,7 +273,7 @@ public class ListItemView extends FrameLayout {
      *
      * @param text The primary text.
      */
-    public void setTextPrimary(CharSequence text) {
+    public void setPrimaryText(CharSequence text) {
         primaryText = text;
         primaryTextView.setText(text);
     }
@@ -283,8 +283,8 @@ public class ListItemView extends FrameLayout {
      *
      * @param textRes The primary text.
      */
-    public void setTextPrimary(@StringRes int textRes) {
-        setTextPrimary(getContext().getString(textRes));
+    public void setPrimaryText(@StringRes int textRes) {
+        setPrimaryText(getContext().getString(textRes));
     }
 
     /**
@@ -292,7 +292,7 @@ public class ListItemView extends FrameLayout {
      *
      * @return The secondary text.
      */
-    public CharSequence getTextSecondary() {
+    public CharSequence getSecondaryText() {
         if (secondaryTextView != null) {
             return secondaryTextView.getText();
         }
@@ -304,7 +304,7 @@ public class ListItemView extends FrameLayout {
      *
      * @param text The secondary text.
      */
-    public void setTextSecondary(CharSequence text) {
+    public void setSecondaryText(CharSequence text) {
         secondaryText = text;
         if (secondaryTextView != null) {
             secondaryTextView.setText(text);
@@ -316,8 +316,8 @@ public class ListItemView extends FrameLayout {
      *
      * @param textRes The secondary text.
      */
-    public void setTextSecondary(@StringRes int textRes) {
-        setTextSecondary(getContext().getString(textRes));
+    public void setSecondaryText(@StringRes int textRes) {
+        setSecondaryText(getContext().getString(textRes));
     }
 
     /**
@@ -325,7 +325,7 @@ public class ListItemView extends FrameLayout {
      *
      * @return The tertiary text.
      */
-    public CharSequence getTextTertiary() {
+    public CharSequence getTertiaryText() {
         if (tertiaryTextView != null) {
             return tertiaryTextView.getText();
         }
@@ -337,7 +337,7 @@ public class ListItemView extends FrameLayout {
      *
      * @param text The tertiary text.
      */
-    public void setTextTertiary(CharSequence text) {
+    public void setTertiaryText(CharSequence text) {
         tertiaryText = text;
         if (tertiaryTextView != null) {
             tertiaryTextView.setText(text);
@@ -349,8 +349,8 @@ public class ListItemView extends FrameLayout {
      *
      * @param textRes The tertiary text.
      */
-    public void setTextTertiary(@StringRes int textRes) {
-        setTextTertiary(getContext().getString(textRes));
+    public void setTertiaryText(@StringRes int textRes) {
+        setTertiaryText(getContext().getString(textRes));
     }
 
     /**

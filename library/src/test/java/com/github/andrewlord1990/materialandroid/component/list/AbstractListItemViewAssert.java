@@ -39,22 +39,6 @@ public abstract class AbstractListItemViewAssert<S extends AbstractListItemViewA
         return myself;
     }
 
-    public AbstractListItemViewAssert hasPrimaryTextView() {
-        isNotNull();
-        Assertions.assertThat(actual.findViewById(R.id.list_primary_text))
-                .overridingErrorMessage("Expected primary text view to be present but it is not.")
-                .isNotNull();
-        return myself;
-    }
-
-    public AbstractListItemViewAssert doesNotHavePrimaryTextView() {
-        isNotNull();
-        Assertions.assertThat(actual.findViewById(R.id.list_primary_text))
-                .overridingErrorMessage("Expected primary text view not to be present but it is.")
-                .isNull();
-        return myself;
-    }
-
     public AbstractListItemViewAssert hasSecondaryTextView() {
         isNotNull();
         Assertions.assertThat(actual.findViewById(R.id.list_secondary_text))
@@ -120,29 +104,29 @@ public abstract class AbstractListItemViewAssert<S extends AbstractListItemViewA
         return myself;
     }
 
-    public AbstractListItemViewAssert hasTextPrimary(String expectedText) {
+    public AbstractListItemViewAssert hasPrimaryText(String expectedText) {
         isNotNull();
-        Assertions.assertThat(actual.getTextPrimary())
+        Assertions.assertThat(actual.getPrimaryText())
                 .overridingErrorMessage("Expected primary text <%s> but was <%s>.",
-                        expectedText, actual.getTextPrimary())
+                        expectedText, actual.getPrimaryText())
                 .isEqualTo(expectedText);
         return myself;
     }
 
-    public AbstractListItemViewAssert hasTextSecondary(String expectedText) {
+    public AbstractListItemViewAssert hasSecondaryText(String expectedText) {
         isNotNull();
-        Assertions.assertThat(actual.getTextSecondary())
+        Assertions.assertThat(actual.getSecondaryText())
                 .overridingErrorMessage("Expected secondary text <%s> but was <%s>.",
-                        expectedText, actual.getTextSecondary())
+                        expectedText, actual.getSecondaryText())
                 .isEqualTo(expectedText);
         return myself;
     }
 
-    public AbstractListItemViewAssert hasTextTertiary(String expectedText) {
+    public AbstractListItemViewAssert hasTertiaryText(String expectedText) {
         isNotNull();
-        Assertions.assertThat(actual.getTextTertiary())
+        Assertions.assertThat(actual.getTertiaryText())
                 .overridingErrorMessage("Expected tertiary text <%s> but was <%s>.",
-                        expectedText, actual.getTextTertiary())
+                        expectedText, actual.getTertiaryText())
                 .isEqualTo(expectedText);
         return myself;
     }

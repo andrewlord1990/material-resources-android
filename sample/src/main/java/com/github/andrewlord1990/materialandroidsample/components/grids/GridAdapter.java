@@ -24,7 +24,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
-import android.widget.TextView;
 
 import com.github.andrewlord1990.materialandroid.component.grid.GridItemView;
 import com.github.andrewlord1990.materialandroid.component.grid.GridItemView.GridItemVariant;
@@ -126,18 +125,11 @@ public class GridAdapter extends RecyclerView.Adapter<GridViewHolder> {
 
             imageView = (ImageView) itemView.findViewById(R.id.image);
             labelView = (GridItemView) itemView.findViewById(R.id.label);
-            labelView.setTextPrimary(primaryText);
-            labelView.getTextPrimaryView().setTextColor(getColor(R.color.md_light_primary_text_100));
-            labelView.setTextSecondary(R.string.sample_lists_secondary);
-            TextView secondaryTextView = labelView.getTextSecondaryView();
-            if (secondaryTextView != null) {
-                secondaryTextView.setTextColor(getColor(R.color.md_light_primary_text_100));
-            }
+            labelView.setPrimaryText(primaryText);
+            labelView.setPrimaryTextColorRes(R.color.md_light_primary_text_100);
+            labelView.setSecondaryText(R.string.sample_lists_secondary);
+            labelView.setSecondaryTextColorRes(R.color.md_light_primary_text_100);
             labelView.setIcon(R.drawable.ic_star_white);
-        }
-
-        private int getColor(@ColorRes int colorRes) {
-            return ContextCompat.getColor(itemView.getContext(), colorRes);
         }
     }
 }

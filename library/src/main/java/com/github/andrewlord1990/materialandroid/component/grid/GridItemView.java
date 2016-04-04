@@ -14,10 +14,12 @@ package com.github.andrewlord1990.materialandroid.component.grid;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.AttrRes;
 import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IntDef;
 import android.support.annotation.LayoutRes;
@@ -69,6 +71,15 @@ public class GridItemView extends FrameLayout {
     private CharSequence primaryText;
     private CharSequence secondaryText;
     private Drawable icon;
+
+    @ColorInt
+    private int primaryTextColor;
+
+    @ColorInt
+    private int secondaryTextColor;
+
+    private ColorStateList primaryTextColorStateList;
+    private ColorStateList secondaryTextColorStateList;
 
     @GridItemVariant
     private int variant;
@@ -167,9 +178,9 @@ public class GridItemView extends FrameLayout {
 
     private void loadText(TypedArray typedAttrs) {
         String primaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_text_primary);
-        setTextPrimary(primaryText);
+        setPrimaryText(primaryText);
         String secondaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_text_secondary);
-        setTextSecondary(secondaryText);
+        setSecondaryText(secondaryText);
     }
 
     private void loadDefaults() {
@@ -242,8 +253,28 @@ public class GridItemView extends FrameLayout {
     }
 
     private void setTexts() {
-        setTextPrimary(primaryText);
-        setTextSecondary(secondaryText);
+        setPrimaryText(primaryText);
+        setPrimaryTextColors();
+        setSecondaryText(secondaryText);
+        setSecondaryTextColors();
+    }
+
+    private void setPrimaryTextColors() {
+        if (primaryTextColorStateList != null) {
+            setPrimaryTextColor(primaryTextColorStateList);
+        }
+        if (primaryTextColor != 0) {
+            setPrimaryTextColor(primaryTextColor);
+        }
+    }
+
+    private void setSecondaryTextColors() {
+        if (secondaryTextColorStateList != null) {
+            setSecondaryTextColor(secondaryTextColorStateList);
+        }
+        if (secondaryTextColor != 0) {
+            setSecondaryTextColor(secondaryTextColor);
+        }
     }
 
     /**
@@ -251,7 +282,7 @@ public class GridItemView extends FrameLayout {
      *
      * @return The primary text.
      */
-    public CharSequence getTextPrimary() {
+    public CharSequence getPrimaryText() {
         return primaryTextView.getText();
     }
 
@@ -260,7 +291,7 @@ public class GridItemView extends FrameLayout {
      *
      * @param text The primary text.
      */
-    public void setTextPrimary(CharSequence text) {
+    public void setPrimaryText(CharSequence text) {
         primaryText = text;
         primaryTextView.setText(text);
     }
@@ -270,17 +301,56 @@ public class GridItemView extends FrameLayout {
      *
      * @param textRes The primary text.
      */
-    public void setTextPrimary(@StringRes int textRes) {
-        setTextPrimary(getContext().getString(textRes));
+    public void setPrimaryText(@StringRes int textRes) {
+        setPrimaryText(getContext().getString(textRes));
     }
 
     /**
-     * Get the primary text view, so you can customise it.
+     * Get the primary text color state list (line 1).
      *
-     * @return The primary text view.
+     * @return The primary text color state list.
      */
-    public TextView getTextPrimaryView() {
-        return primaryTextView;
+    public ColorStateList getPrimaryTextColors() {
+        return primaryTextView.getTextColors();
+    }
+
+    /**
+     * Get the primary text color (line 1).
+     *
+     * @return The primary text color.
+     */
+    @ColorInt
+    public int getCurrentPrimaryTextColor() {
+        return primaryTextView.getCurrentTextColor();
+    }
+
+    /**
+     * Set the primary text color (line 1).
+     *
+     * @param color The primary text color.
+     */
+    public void setPrimaryTextColor(ColorStateList color) {
+        primaryTextColorStateList = color;
+        primaryTextView.setTextColor(color);
+    }
+
+    /**
+     * Set the primary text color (line 1).
+     *
+     * @param color The primary text color.
+     */
+    public void setPrimaryTextColor(@ColorInt int color) {
+        primaryTextColor = color;
+        primaryTextView.setTextColor(color);
+    }
+
+    /**
+     * Set the primary text color (line 1).
+     *
+     * @param colorRes The primary text color.
+     */
+    public void setPrimaryTextColorRes(@ColorRes int colorRes) {
+        setPrimaryTextColor(getColor(colorRes));
     }
 
     /**
@@ -288,7 +358,7 @@ public class GridItemView extends FrameLayout {
      *
      * @return The secondary text.
      */
-    public CharSequence getTextSecondary() {
+    public CharSequence getSecondaryText() {
         if (secondaryTextView != null) {
             return secondaryTextView.getText();
         }
@@ -300,7 +370,7 @@ public class GridItemView extends FrameLayout {
      *
      * @param text The secondary text.
      */
-    public void setTextSecondary(CharSequence text) {
+    public void setSecondaryText(CharSequence text) {
         secondaryText = text;
         if (secondaryTextView != null) {
             secondaryTextView.setText(text);
@@ -312,17 +382,66 @@ public class GridItemView extends FrameLayout {
      *
      * @param textRes The secondary text.
      */
-    public void setTextSecondary(@StringRes int textRes) {
-        setTextSecondary(getContext().getString(textRes));
+    public void setSecondaryText(@StringRes int textRes) {
+        setSecondaryText(getContext().getString(textRes));
     }
 
     /**
-     * Get the secondary text view, so you can customise it.
+     * Get the secondary text color state list (line 2).
      *
-     * @return The secondary text view.
+     * @return The secondary text color state list.
      */
-    public TextView getTextSecondaryView() {
-        return secondaryTextView;
+    public ColorStateList getSecondaryTextColors() {
+        if (secondaryTextView != null) {
+            return secondaryTextView.getTextColors();
+        }
+        return null;
+    }
+
+    /**
+     * Get the secondary text color (line 2).
+     *
+     * @return The secondary text color.
+     */
+    @ColorInt
+    public int getCurrentSecondaryTextColor() {
+        if (secondaryTextView != null) {
+            return secondaryTextView.getCurrentTextColor();
+        }
+        return 0;
+    }
+
+    /**
+     * Set the secondary text color (line 2).
+     *
+     * @param color The secondary text color.
+     */
+    public void setSecondaryTextColor(ColorStateList color) {
+        if (secondaryTextView != null) {
+            secondaryTextColorStateList = color;
+            secondaryTextView.setTextColor(color);
+        }
+    }
+
+    /**
+     * Set the secondary text color (line 2).
+     *
+     * @param color The secondary text color.
+     */
+    public void setSecondaryTextColor(@ColorInt int color) {
+        if (secondaryTextView != null) {
+            secondaryTextColor = color;
+            secondaryTextView.setTextColor(color);
+        }
+    }
+
+    /**
+     * Set the secondary text color (line 2).
+     *
+     * @param colorRes The secondary text color.
+     */
+    public void setSecondaryTextColorRes(@ColorRes int colorRes) {
+        setSecondaryTextColor(getColor(colorRes));
     }
 
     /**
@@ -378,6 +497,10 @@ public class GridItemView extends FrameLayout {
     public void setIconGravity(@IconGravity int iconGravity) {
         this.iconGravity = iconGravity;
         setVariant(variant);
+    }
+
+    private int getColor(@ColorRes int colorRes) {
+        return ContextCompat.getColor(getContext(), colorRes);
     }
 
 }

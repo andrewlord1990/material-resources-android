@@ -155,6 +155,7 @@ public class GridItemView extends FrameLayout {
             loadIcon(typedAttrs);
             loadVariant(typedAttrs);
             loadText(typedAttrs);
+            loadTextColors(typedAttrs);
         } finally {
             typedAttrs.recycle();
         }
@@ -177,10 +178,21 @@ public class GridItemView extends FrameLayout {
     }
 
     private void loadText(TypedArray typedAttrs) {
-        String primaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_text_primary);
+        String primaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_primary_text);
         setPrimaryText(primaryText);
-        String secondaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_text_secondary);
+        String secondaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_secondary_text);
         setSecondaryText(secondaryText);
+    }
+
+    private void loadTextColors(TypedArray typedAttrs) {
+        int primaryTextColor = typedAttrs.getColor(R.styleable.MDGridItemView_md_grid_primary_text_color, 0);
+        if (primaryTextColor != 0) {
+            setPrimaryTextColor(primaryTextColor);
+        }
+        int secondaryTextColor = typedAttrs.getColor(R.styleable.MDGridItemView_md_grid_secondary_text_color, 0);
+        if (secondaryTextColor != 0) {
+            setSecondaryTextColor(secondaryTextColor);
+        }
     }
 
     private void loadDefaults() {
@@ -417,8 +429,8 @@ public class GridItemView extends FrameLayout {
      * @param color The secondary text color.
      */
     public void setSecondaryTextColor(ColorStateList color) {
+        secondaryTextColorStateList = color;
         if (secondaryTextView != null) {
-            secondaryTextColorStateList = color;
             secondaryTextView.setTextColor(color);
         }
     }
@@ -429,8 +441,8 @@ public class GridItemView extends FrameLayout {
      * @param color The secondary text color.
      */
     public void setSecondaryTextColor(@ColorInt int color) {
+        secondaryTextColor = color;
         if (secondaryTextView != null) {
-            secondaryTextColor = color;
             secondaryTextView.setTextColor(color);
         }
     }

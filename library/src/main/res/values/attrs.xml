@@ -59,8 +59,10 @@
             <enum name="two_line_text" value="2"/>
             <enum name="two_line_text_icon" value="3"/>
         </attr>
-        <attr name="md_grid_text_primary" format="string"/>
-        <attr name="md_grid_text_secondary" format="string"/>
+        <attr name="md_grid_primary_text" format="string"/>
+        <attr name="md_grid_primary_text_color" format="color"/>
+        <attr name="md_grid_secondary_text" format="string"/>
+        <attr name="md_grid_secondary_text_color" format="color"/>
         <attr name="md_grid_icon" format="reference"/>
         <attr name="md_grid_icon_gravity" format="enum">
             <enum name="start" value="0"/>

@@ -13,9 +13,7 @@
 package com.github.andrewlord1990.materialandroidsample.components.grids;
 
 import android.content.Context;
-import android.support.annotation.ColorRes;
 import android.support.annotation.StringRes;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
@@ -126,10 +124,6 @@ public class GridAdapter extends RecyclerView.Adapter<GridViewHolder> {
             imageView = (ImageView) itemView.findViewById(R.id.image);
             labelView = (GridItemView) itemView.findViewById(R.id.label);
             labelView.setPrimaryText(primaryText);
-            labelView.setPrimaryTextColorRes(R.color.md_light_primary_text_100);
-            labelView.setSecondaryText(R.string.sample_lists_secondary);
-            labelView.setSecondaryTextColorRes(R.color.md_light_primary_text_100);
-            labelView.setIcon(R.drawable.ic_star_white);
         }
     }
 }

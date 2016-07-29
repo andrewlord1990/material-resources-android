@@ -15,7 +15,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.0.0-rc1'
+        classpath 'com.android.tools.build:gradle:2.1.2'
         classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.1x'
         classpath 'com.novoda:bintray-release:0.3.4'
     }
@@ -36,11 +36,9 @@ ext {
     versionMinor = 3
     versionPatch = 0
 
-    targetSdk = 23
-    compileSdk = 23
+    targetSdk = 24
+    compileSdk = 24
     minSdk = 7
-
-    buildToolsVersion = '23.0.2'
 
     sourceCompatibilityVersion = JavaVersion.VERSION_1_7
     targetCompatibilityVersion = JavaVersion.VERSION_1_7
@@ -58,23 +56,3 @@ ext {
     }
 }
 
-ext.deps = [
-
-        // App
-
-        libs: fileTree(dir: 'libs', include: ['*.jar']),
-
-        support_v7: 'com.android.support:appcompat-v7:23.2.1',
-        support_design: 'com.android.support:design:23.2.1',
-        support_vector_drawable: 'com.android.support:support-vector-drawable:23.2.1',
-
-        picasso: 'com.squareup.picasso:picasso:2.5.2',
-
-        // Test
-
-        junit: 'junit:junit:4.12',
-        mockito: 'org.mockito:mockito-core:1.10.19',
-        assertj_core: 'org.assertj:assertj-core:1.7.1',
-        assertj_android: 'com.squareup.assertj:assertj-android:1.1.1',
-        robolectric: 'org.robolectric:robolectric:3.0',
-]

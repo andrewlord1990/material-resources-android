@@ -14,7 +14,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion rootProject.ext.compileSdk
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    buildToolsVersion "24.0.1"
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdk
@@ -30,20 +30,18 @@ android {
 
 dependencies {
 
-    // App
-
-    compile deps.support_v7
+    compile 'com.android.support:support-v4:24.1.1'
+    compile 'com.android.support:appcompat-v7:24.1.1'
 
     // Test
 
-    testCompile deps.junit
-    testCompile deps.robolectric
-    testCompile deps.assertj_core
-    testCompile (deps.assertj_android) {
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.robolectric:robolectric:3.0'
+    testCompile 'org.assertj:assertj-core:1.7.1'
+    testCompile ('com.squareup.assertj:assertj-android:1.1.1') {
         exclude module: 'support-annotations'
     }
-    testCompile deps.mockito
-    testCompile deps.support_v7
+    testCompile 'org.mockito:mockito-core:1.10.19'
 }
 
 apply from: 'bintray-upload.gradle'

@@ -75,7 +75,7 @@ public class GridItemView extends FrameLayout {
    * @param context The Context the view is running in, through which it can access the current theme, resources, etc.
    */
   public GridItemView(Context context) {
-    super(context, null);
+    this(context, null);
   }
 
   /**

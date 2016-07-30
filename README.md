@@ -26,9 +26,9 @@ repositories {
 
 ### [Colour palette]
 
-All the material colours are named in the form md_{colourName}_{colourValue}
+All the material colours are included both as colour resources and through the `MaterialColor` class. The colour resources are named in the form md_{colourName}_{colourValue}
 
-They are available as colour resources, for example:
+For example:
 
 XML: @color/md_red_500, @color/md_blue_700, @color/md_purple_a200
 Code: R.color.md_orange_100, R.color.md_teal_a700
@@ -56,15 +56,71 @@ Text colours are included for display on both light and dark backgrounds. Materi
 | Disabled / Hint text | #ffffff | 50%     | md_light_disabled_hint_text_50 |
 
 
-Text colours and sizes are available for different types of text, such as buttons, captions and titles, as well
+Text colours and sizes are available for different types of text, such as buttons, captions and titles, as well.
 
 ### Keylines and Components
 
 Styling for various different components are included, through layouts, dimensions, colours and text sizes.
 
+- Bottom Navigation
+- Bottom Sheets
+- Buttons
+- Cards
+- Chips
+- Data Tables
+- Dialogs
+- Dividers
+- Floating Action Button
+- Grid Lists
+- Lists
+- Menus
+- Snackbars
+- Subheaders
+- Tabs
+- Text Fields
+- Tooltips
+
+### Styles
+
+A full width text field style has been applied which you can use with an `EditText`. This removes the underline and displays it as a full-width input field. You can see it in action within the sample app.
+
+### Custom Views
+
+#### PasswordEditText
+
+An `EditText` class which meets the Material Design guidelines for a password input field. It features a visibility toggle that switches between hiding and showing the text entered. It features customisation options to change the toggle and the default visibility state for the text.
+
+#### GridItemView
+
+A view which meets the Material Design guidelines for grid lists. It contains multiple different variants and other customisation options.
+
+- Single line of text
+- Single line of text with an icon
+- Two lines of text
+- Two lines of text with an icon
+- Icon gravity (either left/start or right/end)
+
+#### ListItemView
+
+A view which meets the Material Design guidelines for lists. It contains many different variants and other customisation options.
+
+- One, two or three lines of text
+- Icon (on right/end)
+- Avatar (on left/start)
+- Icon and avatar
+
 ## Sample
 
-The sample app demonstrates all of the Material resources in use. It also provides a colour sample where you can select your primary and accent colour and see what they look like next to each other. This can help you easily select the colour scheme for your app.
+The sample app contains many different parts. It allows you to try out the Material Design palette - you can select a primary and accent colour and see what they look like next to each other.
+
+You can try out the different typography on both a light and dark background.
+
+You can use the different components included:
+
+- The password input field
+- Grid lists
+- Lists
+- A full width text field
 
 
 [Colour palette]: https://www.google.com/design/spec/style/color.html#color-color-palette

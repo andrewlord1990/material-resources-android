@@ -18,6 +18,10 @@ package com.github.andrewlord1990.materialandroid.color;
 
 import android.support.annotation.ColorInt;
 
+/**
+ * Constants for all of the Material Design colors. You can also create a MaterialColor instance, allowing you to show
+ * the intent that the color should be a member of the Material Design color palette.
+ */
 public final class MaterialColor {
 
   public static final int RED_50 = 0xffffebee;
@@ -323,14 +327,25 @@ public final class MaterialColor {
   @ColorInt
   private int color;
 
-  public MaterialColor(@ColorInt int color) {
+  private MaterialColor(@ColorInt int color) {
     this.color = color;
   }
 
+  /**
+   * Create a MaterialColor from the provided color value.
+   *
+   * @param color The color value.
+   * @return A new MaterialColor instance.
+   */
   public static MaterialColor fromInt(@ColorInt int color) {
     return new MaterialColor(color);
   }
 
+  /**
+   * Retrieve the color value stored within the MaterialColor.
+   *
+   * @return The color value.
+   */
   @ColorInt
   public int getColor() {
     return color;

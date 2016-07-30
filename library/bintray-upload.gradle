@@ -15,24 +15,24 @@ apply plugin: 'com.novoda.bintray-release'
 Properties properties = new Properties()
 def propertiesFile = project.rootProject.file('local.properties')
 if (propertiesFile.exists()) {
-    properties.load(propertiesFile.newDataInputStream())
+  properties.load(propertiesFile.newDataInputStream())
 }
 
 publish {
-    userOrg = 'andrewlord1990'
+  userOrg = 'andrewlord1990'
 
-    groupId = 'com.github.andrewlord1990'
-    artifactId = 'materialandroid'
-    uploadName = 'materialandroid'
+  groupId = 'com.github.andrewlord1990'
+  artifactId = 'materialandroid'
+  uploadName = 'materialandroid'
 
-    publishVersion = rootProject.ext.generateVersionName()
+  publishVersion = rootProject.ext.generateVersionName()
 
-    desc = 'Material Design resources such as colours, text sizes and dimensions through a simple dependency.'
+  desc = 'Material Design resources such as colours, text sizes and dimensions through a simple dependency.'
 
-    website = 'https://github.com/andrewlord1990/materialandroid'
+  website = 'https://github.com/andrewlord1990/materialandroid'
 
-    licences = ["Apache-2.0"]
+  licences = ["Apache-2.0"]
 
-    bintrayUser = properties.getProperty("bintray.user")
-    bintrayKey = properties.getProperty("bintray.apikey")
+  bintrayUser = properties.getProperty("bintray.user")
+  bintrayKey = properties.getProperty("bintray.apikey")
 }

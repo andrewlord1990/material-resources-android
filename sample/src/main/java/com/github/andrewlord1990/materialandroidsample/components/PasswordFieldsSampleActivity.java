@@ -19,18 +19,18 @@ import com.github.andrewlord1990.materialandroidsample.R;
 
 public class PasswordFieldsSampleActivity extends BaseSampleActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_password_sample);
+    setContentView(R.layout.activity_password_sample);
 
-        setupToolbar();
-    }
+    setupToolbar();
+  }
 
-    private void setupToolbar() {
-        setTitle(R.string.sample_password_title);
-        showUpButton();
-    }
+  private void setupToolbar() {
+    setTitle(R.string.sample_password_title);
+    showUpButton();
+  }
 
 }

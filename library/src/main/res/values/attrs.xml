@@ -13,61 +13,61 @@
 
 <resources>
 
-    <attr name="mdPasswordEditTextStyle" format="reference"/>
+  <attr name="mdPasswordEditTextStyle" format="reference"/>
 
-    <declare-styleable name="MDPasswordEditText">
-        <attr name="md_password_toggle_type" format="enum">
-            <enum name="opacity" value="0"/>
-            <enum name="strikethrough" value="1"/>
-        </attr>
-        <attr name="md_password_toggle_tint_color" format="color"/>
-        <attr name="md_password_hidden_drawable" format="reference"/>
-        <attr name="md_password_shown_drawable" format="reference"/>
-        <attr name="md_password_shown" format="boolean"/>
-    </declare-styleable>
+  <declare-styleable name="MDPasswordEditText">
+    <attr name="md_password_toggle_type" format="enum">
+      <enum name="opacity" value="0"/>
+      <enum name="strikethrough" value="1"/>
+    </attr>
+    <attr name="md_password_toggle_tint_color" format="color"/>
+    <attr name="md_password_hidden_drawable" format="reference"/>
+    <attr name="md_password_shown_drawable" format="reference"/>
+    <attr name="md_password_shown" format="boolean"/>
+  </declare-styleable>
 
-    <attr name="mdListItemViewStyle" format="reference"/>
+  <attr name="mdListItemViewStyle" format="reference"/>
 
-    <declare-styleable name="MDListItemView">
-        <attr name="md_list_item_variant" format="enum">
-            <enum name="one_line_text" value="0"/>
-            <enum name="one_line_text_icon" value="1"/>
-            <enum name="one_line_text_avatar" value="2"/>
-            <enum name="one_line_text_icon_avatar" value="3"/>
-            <enum name="two_line_text" value="4"/>
-            <enum name="two_line_text_icon" value="5"/>
-            <enum name="two_line_text_avatar" value="6"/>
-            <enum name="two_line_text_icon_avatar" value="7"/>
-            <enum name="three_line_text" value="8"/>
-            <enum name="three_line_text_icon" value="9"/>
-            <enum name="three_line_text_avatar" value="10"/>
-            <enum name="three_line_text_icon_avatar" value="11"/>
-        </attr>
-        <attr name="md_list_text_primary" format="string"/>
-        <attr name="md_list_text_secondary" format="string"/>
-        <attr name="md_list_text_tertiary" format="string"/>
-        <attr name="md_list_icon" format="reference"/>
-        <attr name="md_list_avatar" format="reference"/>
-    </declare-styleable>
+  <declare-styleable name="MDListItemView">
+    <attr name="md_list_item_variant" format="enum">
+      <enum name="one_line_text" value="0"/>
+      <enum name="one_line_text_icon" value="1"/>
+      <enum name="one_line_text_avatar" value="2"/>
+      <enum name="one_line_text_icon_avatar" value="3"/>
+      <enum name="two_line_text" value="4"/>
+      <enum name="two_line_text_icon" value="5"/>
+      <enum name="two_line_text_avatar" value="6"/>
+      <enum name="two_line_text_icon_avatar" value="7"/>
+      <enum name="three_line_text" value="8"/>
+      <enum name="three_line_text_icon" value="9"/>
+      <enum name="three_line_text_avatar" value="10"/>
+      <enum name="three_line_text_icon_avatar" value="11"/>
+    </attr>
+    <attr name="md_list_text_primary" format="string"/>
+    <attr name="md_list_text_secondary" format="string"/>
+    <attr name="md_list_text_tertiary" format="string"/>
+    <attr name="md_list_icon" format="reference"/>
+    <attr name="md_list_avatar" format="reference"/>
+  </declare-styleable>
 
-    <attr name="mdGridItemViewStyle" format="reference"/>
+  <attr name="mdGridItemViewStyle" format="reference"/>
 
-    <declare-styleable name="MDGridItemView">
-        <attr name="md_grid_item_variant" format="enum">
-            <enum name="one_line_text" value="0"/>
-            <enum name="one_line_text_icon" value="1"/>
-            <enum name="two_line_text" value="2"/>
-            <enum name="two_line_text_icon" value="3"/>
-        </attr>
-        <attr name="md_grid_primary_text" format="string"/>
-        <attr name="md_grid_primary_text_color" format="color"/>
-        <attr name="md_grid_secondary_text" format="string"/>
-        <attr name="md_grid_secondary_text_color" format="color"/>
-        <attr name="md_grid_icon" format="reference"/>
-        <attr name="md_grid_icon_gravity" format="enum">
-            <enum name="start" value="0"/>
-            <enum name="end" value="1"/>
-        </attr>
-    </declare-styleable>
+  <declare-styleable name="MDGridItemView">
+    <attr name="md_grid_item_variant" format="enum">
+      <enum name="one_line_text" value="0"/>
+      <enum name="one_line_text_icon" value="1"/>
+      <enum name="two_line_text" value="2"/>
+      <enum name="two_line_text_icon" value="3"/>
+    </attr>
+    <attr name="md_grid_primary_text" format="string"/>
+    <attr name="md_grid_primary_text_color" format="color"/>
+    <attr name="md_grid_secondary_text" format="string"/>
+    <attr name="md_grid_secondary_text_color" format="color"/>
+    <attr name="md_grid_icon" format="reference"/>
+    <attr name="md_grid_icon_gravity" format="enum">
+      <enum name="start" value="0"/>
+      <enum name="end" value="1"/>
+    </attr>
+  </declare-styleable>
 
 </resources>

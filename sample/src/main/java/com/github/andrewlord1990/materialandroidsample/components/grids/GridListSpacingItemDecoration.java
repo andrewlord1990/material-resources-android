@@ -19,24 +19,24 @@ import android.view.View;
 
 public class GridListSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
-    private int spacing;
+  private int spacing;
 
-    public GridListSpacingItemDecoration(int spacingPixels) {
-        spacing = spacingPixels;
+  public GridListSpacingItemDecoration(int spacingPixels) {
+    spacing = spacingPixels;
+  }
+
+  @Override
+  public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+    GridLayoutManager layoutManager = (GridLayoutManager) parent.getLayoutManager();
+
+    int spanCount = layoutManager.getSpanCount();
+    int position = parent.getChildAdapterPosition(view);
+    int column = position % spanCount;
+
+    outRect.left = column * spacing / spanCount;
+    outRect.right = spacing - (column + 1) * spacing / spanCount;
+    if (position >= spanCount) {
+      outRect.top = spacing;
     }
-
-    @Override
-    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-        GridLayoutManager layoutManager = (GridLayoutManager) parent.getLayoutManager();
-
-        int spanCount = layoutManager.getSpanCount();
-        int position = parent.getChildAdapterPosition(view);
-        int column = position % spanCount;
-
-        outRect.left = column * spacing / spanCount;
-        outRect.right = spacing - (column + 1) * spacing / spanCount;
-        if (position >= spanCount) {
-            outRect.top = spacing;
-        }
-    }
+  }
 }

@@ -17,108 +17,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:clipToPadding="false"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/md_screen_edge_margin_horizontal"
     android:paddingRight="@dimen/md_screen_edge_margin_horizontal"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:clipToPadding="false"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".SampleActivity"
     tools:showIn="@layout/activity_sample">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <FrameLayout
-                android:layout_width="@dimen/color_square_bg_size"
-                android:layout_height="@dimen/color_square_bg_size"
-                android:layout_margin="@dimen/control_padding"
-                android:background="@color/color_square_background">
-
-                <View
-                    android:id="@+id/primary_color_square"
-                    android:layout_width="@dimen/color_square_size"
-                    android:layout_height="@dimen/color_square_size"
-                    android:layout_gravity="center"
-                    tools:background="@color/md_cyan_500"/>
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="@dimen/color_square_bg_size"
-                android:layout_height="@dimen/color_square_bg_size"
-                android:layout_margin="@dimen/control_padding"
-                android:background="@color/color_square_background">
-
-                <View
-                    android:id="@+id/accent_color_square"
-                    android:layout_width="@dimen/color_square_size"
-                    android:layout_height="@dimen/color_square_size"
-                    android:layout_gravity="center"
-                    tools:background="@color/md_red_a200"/>
-
-            </FrameLayout>
-
-            <Button
-                android:id="@+id/color_sample_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/control_padding"
-                android:layout_marginStart="@dimen/control_padding"
-                android:text="@string/sample_color"/>
-
-        </LinearLayout>
+      <FrameLayout
+          android:layout_width="@dimen/color_square_bg_size"
+          android:layout_height="@dimen/color_square_bg_size"
+          android:layout_margin="@dimen/control_padding"
+          android:background="@color/color_square_background">
 
         <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/divider_height"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:background="@color/md_dark_divider_12"/>
+            android:id="@+id/primary_color_square"
+            android:layout_width="@dimen/color_square_size"
+            android:layout_height="@dimen/color_square_size"
+            android:layout_gravity="center"
+            tools:background="@color/md_cyan_500"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/control_padding">
+      </FrameLayout>
 
-            <Button
-                android:id="@+id/typography_sample_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="@string/sample_typography"/>
-
-        </RelativeLayout>
+      <FrameLayout
+          android:layout_width="@dimen/color_square_bg_size"
+          android:layout_height="@dimen/color_square_bg_size"
+          android:layout_margin="@dimen/control_padding"
+          android:background="@color/color_square_background">
 
         <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/divider_height"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:background="@color/md_dark_divider_12"/>
+            android:id="@+id/accent_color_square"
+            android:layout_width="@dimen/color_square_size"
+            android:layout_height="@dimen/color_square_size"
+            android:layout_gravity="center"
+            tools:background="@color/md_red_a200"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/control_padding">
+      </FrameLayout>
 
-            <Button
-                android:id="@+id/components_sample_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="@string/sample_components"/>
-
-        </RelativeLayout>
+      <Button
+          android:id="@+id/color_sample_button"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+          android:layout_marginLeft="@dimen/control_padding"
+          android:layout_marginStart="@dimen/control_padding"
+          android:text="@string/sample_color"/>
 
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@color/md_dark_divider_12"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/control_padding">
+
+      <Button
+          android:id="@+id/typography_sample_button"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:text="@string/sample_typography"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@color/md_dark_divider_12"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/control_padding">
+
+      <Button
+          android:id="@+id/components_sample_button"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:text="@string/sample_components"/>
+
+    </RelativeLayout>
+
+  </LinearLayout>
 
 </ScrollView>

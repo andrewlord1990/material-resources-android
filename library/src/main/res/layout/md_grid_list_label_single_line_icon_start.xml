@@ -17,28 +17,28 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/md_grid_list_single_line_label_height">
 
-    <ImageView
-        android:id="@+id/grid_list_label_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/md_grid_list_label_padding"
-        android:layout_marginStart="@dimen/md_grid_list_label_padding"
-        android:layout_marginRight="@dimen/md_grid_list_label_padding"
-        android:layout_marginEnd="@dimen/md_grid_list_label_padding"
-        tools:src="@drawable/ic_icon_square"
-        android:contentDescription="@string/list_item_icon_cd"/>
+  <ImageView
+      android:id="@+id/grid_list_label_icon"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:layout_marginEnd="@dimen/md_grid_list_label_padding"
+      android:layout_marginLeft="@dimen/md_grid_list_label_padding"
+      android:layout_marginRight="@dimen/md_grid_list_label_padding"
+      android:layout_marginStart="@dimen/md_grid_list_label_padding"
+      android:contentDescription="@string/list_item_icon_cd"
+      tools:src="@drawable/ic_icon_square"/>
 
-    <TextView
-        android:id="@+id/grid_list_label_line_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/grid_list_label_icon"
-        android:layout_toRightOf="@id/grid_list_label_icon"
-        android:layout_marginRight="@dimen/md_grid_list_label_start_icon_label_padding_end"
-        android:layout_marginEnd="@dimen/md_grid_list_label_start_icon_label_padding_end"
-        android:textSize="@dimen/md_grid_list_single_line_label_text"
-        android:layout_centerVertical="true"
-        tools:text="Single-line"/>
+  <TextView
+      android:id="@+id/grid_list_label_line_1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:layout_marginEnd="@dimen/md_grid_list_label_start_icon_label_padding_end"
+      android:layout_marginRight="@dimen/md_grid_list_label_start_icon_label_padding_end"
+      android:layout_toEndOf="@id/grid_list_label_icon"
+      android:layout_toRightOf="@id/grid_list_label_icon"
+      android:textSize="@dimen/md_grid_list_single_line_label_text"
+      tools:text="Single-line"/>
 
 </RelativeLayout>

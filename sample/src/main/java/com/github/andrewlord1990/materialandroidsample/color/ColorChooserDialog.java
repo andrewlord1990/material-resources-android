@@ -34,77 +34,77 @@ import java.util.List;
 
 public class ColorChooserDialog extends DialogFragment {
 
-    public static final String TAG = "ColorChooserDialog";
+  public static final String TAG = "ColorChooserDialog";
 
-    public static final String ARG_REQUEST_CODE = "argRequestCode";
-    public static final String ARG_TITLE = "argTitle";
-    public static final String ARG_COLORS = "argColors";
+  public static final String ARG_REQUEST_CODE = "argRequestCode";
+  public static final String ARG_TITLE = "argTitle";
+  public static final String ARG_COLORS = "argColors";
 
-    private int requestCode;
-    private String title;
-    private List<Integer> colors;
+  private int requestCode;
+  private String title;
+  private List<Integer> colors;
 
-    private Listener listener;
+  private Listener listener;
 
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
+  @Override
+  public void onAttach(Activity activity) {
+    super.onAttach(activity);
 
-        listener = (Listener) activity;
-    }
+    listener = (Listener) activity;
+  }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
+  @Override
+  public void onDetach() {
+    super.onDetach();
 
-        listener = null;
-    }
+    listener = null;
+  }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+  @Override
+  public void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
 
-        requestCode = getArguments().getInt(ARG_REQUEST_CODE);
-        title = getArguments().getString(ARG_TITLE);
-        colors = getArguments().getIntegerArrayList(ARG_COLORS);
-    }
+    requestCode = getArguments().getInt(ARG_REQUEST_CODE);
+    title = getArguments().getString(ARG_TITLE);
+    colors = getArguments().getIntegerArrayList(ARG_COLORS);
+  }
 
-    @NonNull
-    @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog dialog = new AlertDialog.Builder(getContext())
-                .setTitle(title)
-                .setPositiveButton(R.string.sample_color_chooser_cancel, new OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
-                .create();
-        dialog.setView(setupCustomView(dialog));
-        return dialog;
-    }
+  @NonNull
+  @Override
+  public Dialog onCreateDialog(Bundle savedInstanceState) {
+    AlertDialog dialog = new AlertDialog.Builder(getContext())
+        .setTitle(title)
+        .setPositiveButton(R.string.sample_color_chooser_cancel, new OnClickListener() {
+          @Override
+          public void onClick(DialogInterface dialog, int which) {
+            dialog.dismiss();
+          }
+        })
+        .create();
+    dialog.setView(setupCustomView(dialog));
+    return dialog;
+  }
 
-    private View setupCustomView(final AlertDialog dialog) {
-        Context context = dialog.getContext();
-        View customView = LayoutInflater.from(context)
-                .inflate(R.layout.color_chooser, null);
-        GridView grid = (GridView) customView.findViewById(R.id.colorChooserGrid);
-        ColorGridAdapter adapter = new ColorGridAdapter(context, colors);
-        grid.setAdapter(adapter);
-        grid.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (listener != null) {
-                    listener.onColorSelected(requestCode, colors.get(position));
-                }
-                dialog.dismiss();
-            }
-        });
-        return customView;
-    }
+  private View setupCustomView(final AlertDialog dialog) {
+    Context context = dialog.getContext();
+    View customView = LayoutInflater.from(context)
+        .inflate(R.layout.color_chooser, null);
+    GridView grid = (GridView) customView.findViewById(R.id.colorChooserGrid);
+    ColorGridAdapter adapter = new ColorGridAdapter(context, colors);
+    grid.setAdapter(adapter);
+    grid.setOnItemClickListener(new OnItemClickListener() {
+      @Override
+      public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (listener != null) {
+          listener.onColorSelected(requestCode, colors.get(position));
+        }
+        dialog.dismiss();
+      }
+    });
+    return customView;
+  }
 
-    public interface Listener {
-        void onColorSelected(int requestCode, int color);
-    }
+  public interface Listener {
+    void onColorSelected(int requestCode, int color);
+  }
 }

@@ -13,10 +13,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.github.andrewlord1990.materialandroid">
 
-    <application android:allowBackup="true"
-                 android:supportsRtl="true"
-        >
+  <application
+      android:allowBackup="true"
+      android:supportsRtl="true"
+      >
 
-    </application>
+  </application>
 
 </manifest>

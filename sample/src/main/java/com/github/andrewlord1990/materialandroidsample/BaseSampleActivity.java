@@ -23,55 +23,55 @@ import android.view.ViewGroup.LayoutParams;
 
 public class BaseSampleActivity extends AppCompatActivity {
 
-    protected Toolbar toolbar;
+  protected Toolbar toolbar;
 
-    @Override
-    public void setContentView(@LayoutRes int layoutResId) {
-        super.setContentView(layoutResId);
+  @Override
+  public void setContentView(@LayoutRes int layoutResId) {
+    super.setContentView(layoutResId);
 
-        setContentView();
+    setContentView();
+  }
+
+  @Override
+  public void setContentView(View view) {
+    super.setContentView(view);
+
+    setContentView();
+  }
+
+  @Override
+  public void setContentView(View view, LayoutParams params) {
+    super.setContentView(view, params);
+
+    setContentView();
+  }
+
+  protected void setContentView() {
+    toolbar = (Toolbar) findViewById(R.id.toolbar);
+    if (toolbar != null) {
+      setSupportActionBar(toolbar);
     }
+  }
 
-    @Override
-    public void setContentView(View view) {
-        super.setContentView(view);
-
-        setContentView();
+  protected void showUpButton() {
+    ActionBar actionBar = getSupportActionBar();
+    if (actionBar != null) {
+      actionBar.setDisplayHomeAsUpEnabled(true);
     }
+  }
 
-    @Override
-    public void setContentView(View view, LayoutParams params) {
-        super.setContentView(view, params);
-
-        setContentView();
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+      case android.R.id.home:
+        onUpPressed();
+        return true;
     }
+    return false;
+  }
 
-    protected void setContentView() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        if (toolbar != null) {
-            setSupportActionBar(toolbar);
-        }
-    }
-
-    protected void showUpButton() {
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onUpPressed();
-                return true;
-        }
-        return false;
-    }
-
-    public void onUpPressed() {
-        NavUtils.navigateUpFromSameTask(this);
-    }
+  public void onUpPressed() {
+    NavUtils.navigateUpFromSameTask(this);
+  }
 
 }

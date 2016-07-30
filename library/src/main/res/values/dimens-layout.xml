@@ -13,11 +13,11 @@
 
 <resources>
 
-    <dimen name="md_screen_edge_margin_horizontal">@dimen/md_screen_edge_margin_horizontal_mobile</dimen>
-    <dimen name="md_screen_edge_margin_horizontal_mobile">16dp</dimen>
-    <dimen name="md_screen_edge_margin_horizontal_tablet">24dp</dimen>
+  <dimen name="md_screen_edge_margin_horizontal">@dimen/md_screen_edge_margin_horizontal_mobile</dimen>
+  <dimen name="md_screen_edge_margin_horizontal_mobile">16dp</dimen>
+  <dimen name="md_screen_edge_margin_horizontal_tablet">24dp</dimen>
 
-    <dimen name="md_status_bar_height">24dp</dimen>
-    <dimen name="md_toolbar_height">?android:attr/actionBarSize</dimen>
+  <dimen name="md_status_bar_height">24dp</dimen>
+  <dimen name="md_toolbar_height">?android:attr/actionBarSize</dimen>
 
 </resources>

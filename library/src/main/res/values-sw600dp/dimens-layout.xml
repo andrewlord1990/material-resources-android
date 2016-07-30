@@ -13,6 +13,6 @@
 
 <resources>
 
-    <dimen name="md_screen_edge_margin_horizontal">@dimen/md_screen_edge_margin_horizontal_tablet</dimen>
+  <dimen name="md_screen_edge_margin_horizontal">@dimen/md_screen_edge_margin_horizontal_tablet</dimen>
 
 </resources>

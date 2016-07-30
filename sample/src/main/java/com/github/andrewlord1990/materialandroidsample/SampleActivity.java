@@ -30,134 +30,132 @@ import java.util.ArrayList;
 
 public class SampleActivity extends BaseSampleActivity implements ColorChooserDialog.Listener {
 
-    private static final int REQUEST_PRIMARY_COLOR = 0;
-    private static final int REQUEST_ACCENT_COLOR = 1;
+  private static final int REQUEST_PRIMARY_COLOR = 0;
+  private static final int REQUEST_ACCENT_COLOR = 1;
+  private static int primaryColor;
+  private static int accentColor;
+  private View primaryColorSquare;
+  private View accentColorSquare;
 
-    private View primaryColorSquare;
-    private View accentColorSquare;
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
 
-    private static int primaryColor;
-    private static int accentColor;
+    initialiseColors();
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_sample);
 
-        initialiseColors();
+    setTitle(R.string.app_name);
+    setupColorSample();
+    setupTypographySample();
+    setupComponentsSample();
+  }
 
-        setContentView(R.layout.activity_sample);
-
-        setTitle(R.string.app_name);
-        setupColorSample();
-        setupTypographySample();
-        setupComponentsSample();
+  private void initialiseColors() {
+    if (primaryColor == 0) {
+      primaryColor = ContextCompat.getColor(this, R.color.md_cyan_500);
     }
-
-    private void initialiseColors() {
-        if (primaryColor == 0) {
-            primaryColor = ContextCompat.getColor(this, R.color.md_cyan_500);
-        }
-        if (accentColor == 0) {
-            accentColor = ContextCompat.getColor(this, R.color.md_red_a200);
-        }
+    if (accentColor == 0) {
+      accentColor = ContextCompat.getColor(this, R.color.md_red_a200);
     }
+  }
 
-    private void setupColorSample() {
-        primaryColorSquare = findViewById(R.id.primary_color_square);
-        if (primaryColorSquare != null) {
-            refreshPrimaryColorSquare();
-            primaryColorSquare.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    showColorChooser(
-                            REQUEST_PRIMARY_COLOR,
-                            R.string.sample_primary_color,
-                            Colors.getPrimaryColors(v.getContext()));
-                }
-            });
+  private void setupColorSample() {
+    primaryColorSquare = findViewById(R.id.primary_color_square);
+    if (primaryColorSquare != null) {
+      refreshPrimaryColorSquare();
+      primaryColorSquare.setOnClickListener(new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          showColorChooser(
+              REQUEST_PRIMARY_COLOR,
+              R.string.sample_primary_color,
+              Colors.getPrimaryColors(v.getContext()));
         }
-        accentColorSquare = findViewById(R.id.accent_color_square);
+      });
+    }
+    accentColorSquare = findViewById(R.id.accent_color_square);
+    refreshAccentColorSquare();
+    accentColorSquare.setOnClickListener(new OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        showColorChooser(
+            REQUEST_ACCENT_COLOR,
+            R.string.sample_accent_color,
+            Colors.getAccentColors(v.getContext()));
+      }
+    });
+    Button colorSample = (Button) findViewById(R.id.color_sample_button);
+    if (colorSample != null) {
+      colorSample.setOnClickListener(new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          onColorSampleSelected();
+        }
+      });
+    }
+  }
+
+  private void showColorChooser(int requestCode, @StringRes int title, ArrayList<Integer> colors) {
+    Bundle args = new Bundle();
+    args.putInt(ColorChooserDialog.ARG_REQUEST_CODE, requestCode);
+    args.putString(ColorChooserDialog.ARG_TITLE, getString(title));
+    args.putIntegerArrayList(ColorChooserDialog.ARG_COLORS, colors);
+    ColorChooserDialog dialog = new ColorChooserDialog();
+    dialog.setArguments(args);
+    dialog.show(getSupportFragmentManager(), ColorChooserDialog.TAG);
+  }
+
+  private void onColorSampleSelected() {
+    Intent intent = new Intent(this, ColorSampleActivity.class);
+    intent.putExtra(ColorSampleActivity.EXTRA_PRIMARY_COLOR, primaryColor);
+    intent.putExtra(ColorSampleActivity.EXTRA_ACCENT_COLOR, accentColor);
+    startActivity(intent);
+  }
+
+  @Override
+  public void onColorSelected(int requestCode, int color) {
+    switch (requestCode) {
+      case REQUEST_PRIMARY_COLOR:
+        primaryColor = color;
+        refreshPrimaryColorSquare();
+        break;
+      case REQUEST_ACCENT_COLOR:
+        accentColor = color;
         refreshAccentColorSquare();
-        accentColorSquare.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showColorChooser(
-                        REQUEST_ACCENT_COLOR,
-                        R.string.sample_accent_color,
-                        Colors.getAccentColors(v.getContext()));
-            }
-        });
-        Button colorSample = (Button) findViewById(R.id.color_sample_button);
-        if (colorSample != null) {
-            colorSample.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onColorSampleSelected();
-                }
-            });
+        break;
+    }
+  }
+
+  private void refreshPrimaryColorSquare() {
+    primaryColorSquare.setBackgroundColor(primaryColor);
+  }
+
+  private void refreshAccentColorSquare() {
+    accentColorSquare.setBackgroundColor(accentColor);
+  }
+
+  private void setupTypographySample() {
+    Button button = (Button) findViewById(R.id.typography_sample_button);
+    if (button != null) {
+      button.setOnClickListener(new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          startActivity(new Intent(SampleActivity.this, TypographySampleActivity.class));
         }
+      });
     }
+  }
 
-    private void showColorChooser(int requestCode, @StringRes int title, ArrayList<Integer> colors) {
-        Bundle args = new Bundle();
-        args.putInt(ColorChooserDialog.ARG_REQUEST_CODE, requestCode);
-        args.putString(ColorChooserDialog.ARG_TITLE, getString(title));
-        args.putIntegerArrayList(ColorChooserDialog.ARG_COLORS, colors);
-        ColorChooserDialog dialog = new ColorChooserDialog();
-        dialog.setArguments(args);
-        dialog.show(getSupportFragmentManager(), ColorChooserDialog.TAG);
-    }
-
-    private void onColorSampleSelected() {
-        Intent intent = new Intent(this, ColorSampleActivity.class);
-        intent.putExtra(ColorSampleActivity.EXTRA_PRIMARY_COLOR, primaryColor);
-        intent.putExtra(ColorSampleActivity.EXTRA_ACCENT_COLOR, accentColor);
-        startActivity(intent);
-    }
-
-    @Override
-    public void onColorSelected(int requestCode, int color) {
-        switch (requestCode) {
-            case REQUEST_PRIMARY_COLOR:
-                primaryColor = color;
-                refreshPrimaryColorSquare();
-                break;
-            case REQUEST_ACCENT_COLOR:
-                accentColor = color;
-                refreshAccentColorSquare();
-                break;
+  private void setupComponentsSample() {
+    Button button = (Button) findViewById(R.id.components_sample_button);
+    if (button != null) {
+      button.setOnClickListener(new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          startActivity(new Intent(SampleActivity.this, ComponentsSampleActivity.class));
         }
+      });
     }
-
-    private void refreshPrimaryColorSquare() {
-        primaryColorSquare.setBackgroundColor(primaryColor);
-    }
-
-    private void refreshAccentColorSquare() {
-        accentColorSquare.setBackgroundColor(accentColor);
-    }
-
-    private void setupTypographySample() {
-        Button button = (Button) findViewById(R.id.typography_sample_button);
-        if (button != null) {
-            button.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(SampleActivity.this, TypographySampleActivity.class));
-                }
-            });
-        }
-    }
-
-    private void setupComponentsSample() {
-        Button button = (Button) findViewById(R.id.components_sample_button);
-        if (button != null) {
-            button.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(SampleActivity.this, ComponentsSampleActivity.class));
-                }
-            });
-        }
-    }
+  }
 }

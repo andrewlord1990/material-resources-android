@@ -17,32 +17,32 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/md_grid_list_two_line_label_height"
     android:orientation="vertical"
+    android:paddingEnd="@dimen/md_grid_list_label_padding"
     android:paddingLeft="@dimen/md_grid_list_label_padding"
-    android:paddingStart="@dimen/md_grid_list_label_padding"
     android:paddingRight="@dimen/md_grid_list_label_padding"
-    android:paddingEnd="@dimen/md_grid_list_label_padding">
+    android:paddingStart="@dimen/md_grid_list_label_padding">
 
-    <LinearLayout
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center_vertical"
+      android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/grid_list_label_line_1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/md_list_item_line_spacing"
+        android:textSize="@dimen/md_grid_list_two_line_label_text_type_same"
+        tools:text="Two-line item"/>
 
-        <TextView
-            android:id="@+id/grid_list_label_line_1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/md_grid_list_two_line_label_text_type_same"
-            android:layout_marginBottom="@dimen/md_list_item_line_spacing"
-            tools:text="Two-line item"/>
+    <TextView
+        android:id="@+id/grid_list_label_line_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/md_grid_list_two_line_label_text_type_same"
+        tools:text="Secondary text"/>
 
-        <TextView
-            android:id="@+id/grid_list_label_line_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/md_grid_list_two_line_label_text_type_same"
-            tools:text="Secondary text"/>
-
-    </LinearLayout>
+  </LinearLayout>
 
 </LinearLayout>

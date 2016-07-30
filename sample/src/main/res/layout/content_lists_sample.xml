@@ -18,9 +18,9 @@
     android:id="@+id/recyclerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:clipToPadding="false"
     android:paddingBottom="@dimen/md_list_top_padding"
     android:paddingTop="@dimen/md_list_top_padding"
-    android:clipToPadding="false"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".components.lists.ListsSampleActivity"
     tools:showIn="@layout/activity_lists_sample"/>

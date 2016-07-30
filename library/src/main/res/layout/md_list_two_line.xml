@@ -17,34 +17,34 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/md_list_two_line_item_height"
     android:orientation="vertical"
+    android:paddingEnd="@dimen/md_list_item_horizontal_edges_padding"
     android:paddingLeft="@dimen/md_list_item_horizontal_edges_padding"
-    android:paddingStart="@dimen/md_list_item_horizontal_edges_padding"
     android:paddingRight="@dimen/md_list_item_horizontal_edges_padding"
-    android:paddingEnd="@dimen/md_list_item_horizontal_edges_padding">
+    android:paddingStart="@dimen/md_list_item_horizontal_edges_padding">
 
-    <LinearLayout
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center_vertical"
+      android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/list_primary_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/md_list_item_line_spacing"
+        android:textColor="@color/md_dark_primary_text_87"
+        android:textSize="@dimen/md_list_item_primary_text"
+        tools:text="Two-line item"/>
 
-        <TextView
-            android:id="@+id/list_primary_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/md_list_item_primary_text"
-            android:layout_marginBottom="@dimen/md_list_item_line_spacing"
-            android:textColor="@color/md_dark_primary_text_87"
-            tools:text="Two-line item"/>
+    <TextView
+        android:id="@+id/list_secondary_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/md_dark_secondary_text_54"
+        android:textSize="@dimen/md_list_item_secondary_text"
+        tools:text="Secondary text"/>
 
-        <TextView
-            android:id="@+id/list_secondary_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/md_list_item_secondary_text"
-            android:textColor="@color/md_dark_secondary_text_54"
-            tools:text="Secondary text"/>
-
-    </LinearLayout>
+  </LinearLayout>
 
 </LinearLayout>

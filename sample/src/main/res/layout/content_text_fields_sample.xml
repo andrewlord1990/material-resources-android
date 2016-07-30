@@ -23,30 +23,30 @@
     tools:context=".components.TextFieldsSampleActivity"
     tools:showIn="@layout/activity_text_fields_sample">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
 
-        <EditText
-            style="@style/MDFullWidthEditText"
-            android:hint="@string/sample_text_fields_1_hint"
-            android:inputType="textEmailAddress"/>
+    <EditText
+        style="@style/MDFullWidthEditText"
+        android:hint="@string/sample_text_fields_1_hint"
+        android:inputType="textEmailAddress"/>
 
-        <include layout="@layout/md_divider_horizontal_dark"/>
+    <include layout="@layout/md_divider_horizontal_dark"/>
 
-        <EditText
-            style="@style/MDFullWidthEditText"
-            android:hint="@string/sample_text_fields_2_hint"
-            android:inputType="textEmailSubject"/>
+    <EditText
+        style="@style/MDFullWidthEditText"
+        android:hint="@string/sample_text_fields_2_hint"
+        android:inputType="textEmailSubject"/>
 
-        <include layout="@layout/md_divider_horizontal_dark"/>
+    <include layout="@layout/md_divider_horizontal_dark"/>
 
-        <EditText
-            style="@style/MDFullWidthEditText"
-            android:hint="@string/sample_text_fields_3_hint"
-            android:inputType="textMultiLine"/>
+    <EditText
+        style="@style/MDFullWidthEditText"
+        android:hint="@string/sample_text_fields_3_hint"
+        android:inputType="textMultiLine"/>
 
-    </LinearLayout>
+  </LinearLayout>
 
 </ScrollView>

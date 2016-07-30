@@ -24,38 +24,38 @@ import java.util.List;
 
 public class ColorGridAdapter extends BaseAdapter {
 
-    private Context context;
-    private List<Integer> colors;
+  private Context context;
+  private List<Integer> colors;
 
-    public ColorGridAdapter(Context context, List<Integer> colors) {
-        this.context = context;
-        this.colors = colors;
-    }
+  public ColorGridAdapter(Context context, List<Integer> colors) {
+    this.context = context;
+    this.colors = colors;
+  }
 
-    @Override
-    public int getCount() {
-        return colors.size();
-    }
+  @Override
+  public int getCount() {
+    return colors.size();
+  }
 
-    @Override
-    public Object getItem(int position) {
-        return colors.get(position);
-    }
+  @Override
+  public Object getItem(int position) {
+    return colors.get(position);
+  }
 
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
+  @Override
+  public long getItemId(int position) {
+    return 0;
+  }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View cellView = convertView;
-        if (cellView == null) {
-            cellView = LayoutInflater.from(context).inflate(R.layout.color_chooser_cell, parent, false);
-        }
-        View colorSquare = cellView.findViewById(R.id.color_square);
-        colorSquare.setBackgroundColor(colors.get(position));
-        return cellView;
+  @Override
+  public View getView(int position, View convertView, ViewGroup parent) {
+    View cellView = convertView;
+    if (cellView == null) {
+      cellView = LayoutInflater.from(context).inflate(R.layout.color_chooser_cell, parent, false);
     }
+    View colorSquare = cellView.findViewById(R.id.color_square);
+    colorSquare.setBackgroundColor(colors.get(position));
+    return cellView;
+  }
 
 }

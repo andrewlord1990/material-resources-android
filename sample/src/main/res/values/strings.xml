@@ -11,54 +11,54 @@
   -->
 
 <resources>
-    <string name="app_name">Material Android Sample</string>
-    <string name="action_settings">Settings</string>
+  <string name="app_name">Material Android Sample</string>
+  <string name="action_settings">Settings</string>
 
-    <string name="sample_color">View Colours Sample</string>
-    <string name="sample_primary_color">Select primary colour</string>
-    <string name="sample_accent_color">Select accent colour</string>
-    <string name="sample_color_chooser_cancel">Cancel</string>
-    <string name="sample_typography">View Typography Sample</string>
-    <string name="sample_components">View Components Sample</string>
+  <string name="sample_color">View Colours Sample</string>
+  <string name="sample_primary_color">Select primary colour</string>
+  <string name="sample_accent_color">Select accent colour</string>
+  <string name="sample_color_chooser_cancel">Cancel</string>
+  <string name="sample_typography">View Typography Sample</string>
+  <string name="sample_components">View Components Sample</string>
 
-    <string name="sample_color_title">Colour Sample</string>
-    <string name="sample_color_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed elit ut sapien mollis egestas non dapibus turpis. Fusce non erat eu augue pharetra scelerisque nec ac lorem. Aenean vel lobortis lacus, eu blandit urna. Etiam non tristique magna, in iaculis mauris. Vivamus euismod, mi euismod porta feugiat, massa lorem pulvinar tortor, non porttitor enim nisl at mauris.</string>
+  <string name="sample_color_title">Colour Sample</string>
+  <string name="sample_color_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed elit ut sapien mollis egestas non dapibus turpis. Fusce non erat eu augue pharetra scelerisque nec ac lorem. Aenean vel lobortis lacus, eu blandit urna. Etiam non tristique magna, in iaculis mauris. Vivamus euismod, mi euismod porta feugiat, massa lorem pulvinar tortor, non porttitor enim nisl at mauris.</string>
 
-    <string name="sample_typography_title">Typography Sample</string>
-    <string name="sample_typography_dark">Dark text on light background</string>
-    <string name="sample_typography_light">Light text on dark background</string>
+  <string name="sample_typography_title">Typography Sample</string>
+  <string name="sample_typography_dark">Dark text on light background</string>
+  <string name="sample_typography_light">Light text on dark background</string>
 
-    <string name="sample_components_title">Components Sample</string>
-    <string name="sample_components_lists_button">Show List Sample</string>
-    <string name="sample_components_grids_button">Show Grid Sample</string>
-    <string name="sample_components_text_fields_button">Show Text Fields Sample</string>
-    <string name="sample_components_password_button">Show Password Sample</string>
+  <string name="sample_components_title">Components Sample</string>
+  <string name="sample_components_lists_button">Show List Sample</string>
+  <string name="sample_components_grids_button">Show Grid Sample</string>
+  <string name="sample_components_text_fields_button">Show Text Fields Sample</string>
+  <string name="sample_components_password_button">Show Password Sample</string>
 
-    <string name="sample_lists_title">Lists Sample</string>
-    <string name="sample_lists_subheader">Subheader</string>
-    <string name="sample_lists_single_item">Single-line item</string>
-    <string name="sample_lists_two_item_primary">Two-line item</string>
-    <string name="sample_lists_three_item_primary">Three-line item</string>
-    <string name="sample_lists_secondary">Secondary text</string>
-    <string name="sample_lists_tertiary">Tertiary text</string>
-    <string name="sample_lists_star_cd">Star</string>
-    <string name="sample_lists_avatar_cd">Avatar</string>
+  <string name="sample_lists_title">Lists Sample</string>
+  <string name="sample_lists_subheader">Subheader</string>
+  <string name="sample_lists_single_item">Single-line item</string>
+  <string name="sample_lists_two_item_primary">Two-line item</string>
+  <string name="sample_lists_three_item_primary">Three-line item</string>
+  <string name="sample_lists_secondary">Secondary text</string>
+  <string name="sample_lists_tertiary">Tertiary text</string>
+  <string name="sample_lists_star_cd">Star</string>
+  <string name="sample_lists_avatar_cd">Avatar</string>
 
-    <string name="sample_grids_title">Grids Sample</string>
-    <string name="sample_grids_single_item">Single-line</string>
-    <string name="sample_grids_two_item_primary">Two-line</string>
-    <string name="sample_grids_secondary">Secondary text</string>
-    <string name="sample_grids_star_cd">Star</string>
-    <string name="sample_grids_image_cd">Image</string>
-    <string name="sample_grids_button_icon_gravity">Icon Gravity</string>
-    <string name="sample_grids_button_text_sizes">Text Sizes</string>
+  <string name="sample_grids_title">Grids Sample</string>
+  <string name="sample_grids_single_item">Single-line</string>
+  <string name="sample_grids_two_item_primary">Two-line</string>
+  <string name="sample_grids_secondary">Secondary text</string>
+  <string name="sample_grids_star_cd">Star</string>
+  <string name="sample_grids_image_cd">Image</string>
+  <string name="sample_grids_button_icon_gravity">Icon Gravity</string>
+  <string name="sample_grids_button_text_sizes">Text Sizes</string>
 
-    <string name="sample_text_fields_title">Text Fields Sample</string>
-    <string name="sample_text_fields_1_hint">To</string>
-    <string name="sample_text_fields_2_hint">Subject</string>
-    <string name="sample_text_fields_3_hint">Message</string>
+  <string name="sample_text_fields_title">Text Fields Sample</string>
+  <string name="sample_text_fields_1_hint">To</string>
+  <string name="sample_text_fields_2_hint">Subject</string>
+  <string name="sample_text_fields_3_hint">Message</string>
 
-    <string name="sample_password_title">Password Field Sample</string>
-    <string name="sample_password_text">Password</string>
+  <string name="sample_password_title">Password Field Sample</string>
+  <string name="sample_password_text">Password</string>
 
 </resources>

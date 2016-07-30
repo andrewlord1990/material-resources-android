@@ -14,19 +14,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:paddingTop="@dimen/color_chooser_padding_top"
     android:paddingBottom="@dimen/color_chooser_padding"
     android:paddingLeft="@dimen/color_chooser_padding"
-    android:paddingRight="@dimen/color_chooser_padding">
+    android:paddingRight="@dimen/color_chooser_padding"
+    android:paddingTop="@dimen/color_chooser_padding_top">
 
-    <GridView
-        android:id="@+id/colorChooserGrid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:columnWidth="@dimen/color_chooser_column_width"
-        android:horizontalSpacing="@dimen/color_chooser_column_spacing"
-        android:numColumns="auto_fit"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="@dimen/color_chooser_column_spacing"/>
+  <GridView
+      android:id="@+id/colorChooserGrid"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:columnWidth="@dimen/color_chooser_column_width"
+      android:horizontalSpacing="@dimen/color_chooser_column_spacing"
+      android:numColumns="auto_fit"
+      android:stretchMode="columnWidth"
+      android:verticalSpacing="@dimen/color_chooser_column_spacing"/>
 
 </FrameLayout>

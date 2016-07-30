@@ -20,36 +20,36 @@ import com.github.andrewlord1990.materialandroidsample.R;
 
 public class ColorSampleActivity extends BaseSampleActivity {
 
-    public static final String EXTRA_PRIMARY_COLOR = "extraPrimaryColor";
-    public static final String EXTRA_ACCENT_COLOR = "extraAccentColor";
+  public static final String EXTRA_PRIMARY_COLOR = "extraPrimaryColor";
+  public static final String EXTRA_ACCENT_COLOR = "extraAccentColor";
 
-    private int primaryColor;
-    private int accentColor;
+  private int primaryColor;
+  private int accentColor;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
 
-        primaryColor = getIntent().getIntExtra(EXTRA_PRIMARY_COLOR, 0);
-        accentColor = getIntent().getIntExtra(EXTRA_ACCENT_COLOR, 0);
+    primaryColor = getIntent().getIntExtra(EXTRA_PRIMARY_COLOR, 0);
+    accentColor = getIntent().getIntExtra(EXTRA_ACCENT_COLOR, 0);
 
-        setContentView(R.layout.activity_color_sample);
+    setContentView(R.layout.activity_color_sample);
 
-        setupToolbar();
-        setupViews();
+    setupToolbar();
+    setupViews();
+  }
+
+  private void setupToolbar() {
+    toolbar.setBackgroundColor(primaryColor);
+    setTitle(R.string.sample_color_title);
+    showUpButton();
+  }
+
+  private void setupViews() {
+    View button = findViewById(R.id.button);
+    if (button != null) {
+      button.setBackgroundColor(accentColor);
     }
-
-    private void setupToolbar() {
-        toolbar.setBackgroundColor(primaryColor);
-        setTitle(R.string.sample_color_title);
-        showUpButton();
-    }
-
-    private void setupViews() {
-        View button = findViewById(R.id.button);
-        if (button != null) {
-            button.setBackgroundColor(accentColor);
-        }
-    }
+  }
 
 }

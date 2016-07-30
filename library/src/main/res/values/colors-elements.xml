@@ -13,15 +13,15 @@
 
 <resources>
 
-    <!-- Dark Element on Light Background -->
+  <!-- Dark Element on Light Background -->
 
-    <color name="md_dark_icon_38">#62000000</color>
-    <color name="md_dark_divider_12">#1f000000</color>
+  <color name="md_dark_icon_38">#62000000</color>
+  <color name="md_dark_divider_12">#1f000000</color>
 
 
-    <!-- Light Element on Dark Background -->
+  <!-- Light Element on Dark Background -->
 
-    <color name="md_light_icon_50">#80ffffff</color>
-    <color name="md_light_divider_12">#1fffffff</color>
+  <color name="md_light_icon_50">#80ffffff</color>
+  <color name="md_light_divider_12">#1fffffff</color>
 
 </resources>

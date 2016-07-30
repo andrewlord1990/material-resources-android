@@ -24,137 +24,136 @@ import org.robolectric.internal.ShadowExtractor;
 import org.robolectric.shadows.ShadowDrawable;
 
 public abstract class AbstractListItemViewAssert<S extends AbstractListItemViewAssert<S, A>,
-        A extends ListItemView> extends AbstractFrameLayoutAssert<S, A> {
+    A extends ListItemView> extends AbstractFrameLayoutAssert<S, A> {
 
-    protected AbstractListItemViewAssert(A actual, Class<S> selfType) {
-        super(actual, selfType);
-    }
+  protected AbstractListItemViewAssert(A actual, Class<S> selfType) {
+    super(actual, selfType);
+  }
 
-    public AbstractListItemViewAssert hasVariant(@ListItemVariant int expectedVariant) {
-        isNotNull();
-        Assertions.assertThat(actual.getVariant())
-                .overridingErrorMessage("Expected variant <%s> but was <%s>.",
-                        expectedVariant, actual.getVariant())
-                .isEqualTo(expectedVariant);
-        return myself;
-    }
+  private static ShadowDrawable shadowOf(Drawable actual) {
+    return (ShadowDrawable) ShadowExtractor.extract(actual);
+  }
 
-    public AbstractListItemViewAssert hasSecondaryTextView() {
-        isNotNull();
-        Assertions.assertThat(actual.findViewById(R.id.list_secondary_text))
-                .overridingErrorMessage("Expected secondary text view to be present but it is not.")
-                .isNotNull();
-        return myself;
-    }
+  public AbstractListItemViewAssert hasVariant(@ListItemVariant int expectedVariant) {
+    isNotNull();
+    Assertions.assertThat(actual.getVariant())
+        .overridingErrorMessage("Expected variant <%s> but was <%s>.",
+            expectedVariant, actual.getVariant())
+        .isEqualTo(expectedVariant);
+    return myself;
+  }
 
+  public AbstractListItemViewAssert hasSecondaryTextView() {
+    isNotNull();
+    Assertions.assertThat(actual.findViewById(R.id.list_secondary_text))
+        .overridingErrorMessage("Expected secondary text view to be present but it is not.")
+        .isNotNull();
+    return myself;
+  }
 
-    public AbstractListItemViewAssert doesNotHaveSecondaryTextView() {
-        isNotNull();
-        Assertions.assertThat(actual.findViewById(R.id.list_secondary_text))
-                .overridingErrorMessage("Expected secondary text view not to be present but it is.")
-                .isNull();
-        return myself;
-    }
+  public AbstractListItemViewAssert doesNotHaveSecondaryTextView() {
+    isNotNull();
+    Assertions.assertThat(actual.findViewById(R.id.list_secondary_text))
+        .overridingErrorMessage("Expected secondary text view not to be present but it is.")
+        .isNull();
+    return myself;
+  }
 
-    public AbstractListItemViewAssert hasTertiaryTextView() {
-        isNotNull();
-        Assertions.assertThat(actual.findViewById(R.id.list_tertiary_text))
-                .overridingErrorMessage("Expected tertiary text view to be present but it is not.")
-                .isNotNull();
-        return myself;
-    }
+  public AbstractListItemViewAssert hasTertiaryTextView() {
+    isNotNull();
+    Assertions.assertThat(actual.findViewById(R.id.list_tertiary_text))
+        .overridingErrorMessage("Expected tertiary text view to be present but it is not.")
+        .isNotNull();
+    return myself;
+  }
 
-    public AbstractListItemViewAssert doesNotHaveTertiaryTextView() {
-        isNotNull();
-        Assertions.assertThat(actual.findViewById(R.id.list_tertiary_text))
-                .overridingErrorMessage("Expected tertiary text view not to be present but it is.")
-                .isNull();
-        return myself;
-    }
+  public AbstractListItemViewAssert doesNotHaveTertiaryTextView() {
+    isNotNull();
+    Assertions.assertThat(actual.findViewById(R.id.list_tertiary_text))
+        .overridingErrorMessage("Expected tertiary text view not to be present but it is.")
+        .isNull();
+    return myself;
+  }
 
-    public AbstractListItemViewAssert hasIconView() {
-        isNotNull();
-        Assertions.assertThat(actual.findViewById(R.id.list_icon))
-                .overridingErrorMessage("Expected icon view to be present but it is not.")
-                .isNotNull();
-        return myself;
-    }
+  public AbstractListItemViewAssert hasIconView() {
+    isNotNull();
+    Assertions.assertThat(actual.findViewById(R.id.list_icon))
+        .overridingErrorMessage("Expected icon view to be present but it is not.")
+        .isNotNull();
+    return myself;
+  }
 
-    public AbstractListItemViewAssert doesNotHaveIconView() {
-        isNotNull();
-        Assertions.assertThat(actual.findViewById(R.id.list_icon))
-                .overridingErrorMessage("Expected icon view not to be present but it is.")
-                .isNull();
-        return myself;
-    }
+  public AbstractListItemViewAssert doesNotHaveIconView() {
+    isNotNull();
+    Assertions.assertThat(actual.findViewById(R.id.list_icon))
+        .overridingErrorMessage("Expected icon view not to be present but it is.")
+        .isNull();
+    return myself;
+  }
 
-    public AbstractListItemViewAssert hasAvatarView() {
-        isNotNull();
-        Assertions.assertThat(actual.findViewById(R.id.list_avatar))
-                .overridingErrorMessage("Expected avatar view to be present but it is not.")
-                .isNotNull();
-        return myself;
-    }
+  public AbstractListItemViewAssert hasAvatarView() {
+    isNotNull();
+    Assertions.assertThat(actual.findViewById(R.id.list_avatar))
+        .overridingErrorMessage("Expected avatar view to be present but it is not.")
+        .isNotNull();
+    return myself;
+  }
 
-    public AbstractListItemViewAssert doesNotHaveAvatarView() {
-        isNotNull();
-        Assertions.assertThat(actual.findViewById(R.id.list_avatar))
-                .overridingErrorMessage("Expected avatar view not to be present but it is.")
-                .isNull();
-        return myself;
-    }
+  public AbstractListItemViewAssert doesNotHaveAvatarView() {
+    isNotNull();
+    Assertions.assertThat(actual.findViewById(R.id.list_avatar))
+        .overridingErrorMessage("Expected avatar view not to be present but it is.")
+        .isNull();
+    return myself;
+  }
 
-    public AbstractListItemViewAssert hasPrimaryText(String expectedText) {
-        isNotNull();
-        Assertions.assertThat(actual.getPrimaryText())
-                .overridingErrorMessage("Expected primary text <%s> but was <%s>.",
-                        expectedText, actual.getPrimaryText())
-                .isEqualTo(expectedText);
-        return myself;
-    }
+  public AbstractListItemViewAssert hasPrimaryText(String expectedText) {
+    isNotNull();
+    Assertions.assertThat(actual.getPrimaryText())
+        .overridingErrorMessage("Expected primary text <%s> but was <%s>.",
+            expectedText, actual.getPrimaryText())
+        .isEqualTo(expectedText);
+    return myself;
+  }
 
-    public AbstractListItemViewAssert hasSecondaryText(String expectedText) {
-        isNotNull();
-        Assertions.assertThat(actual.getSecondaryText())
-                .overridingErrorMessage("Expected secondary text <%s> but was <%s>.",
-                        expectedText, actual.getSecondaryText())
-                .isEqualTo(expectedText);
-        return myself;
-    }
+  public AbstractListItemViewAssert hasSecondaryText(String expectedText) {
+    isNotNull();
+    Assertions.assertThat(actual.getSecondaryText())
+        .overridingErrorMessage("Expected secondary text <%s> but was <%s>.",
+            expectedText, actual.getSecondaryText())
+        .isEqualTo(expectedText);
+    return myself;
+  }
 
-    public AbstractListItemViewAssert hasTertiaryText(String expectedText) {
-        isNotNull();
-        Assertions.assertThat(actual.getTertiaryText())
-                .overridingErrorMessage("Expected tertiary text <%s> but was <%s>.",
-                        expectedText, actual.getTertiaryText())
-                .isEqualTo(expectedText);
-        return myself;
-    }
+  public AbstractListItemViewAssert hasTertiaryText(String expectedText) {
+    isNotNull();
+    Assertions.assertThat(actual.getTertiaryText())
+        .overridingErrorMessage("Expected tertiary text <%s> but was <%s>.",
+            expectedText, actual.getTertiaryText())
+        .isEqualTo(expectedText);
+    return myself;
+  }
 
-    public AbstractListItemViewAssert hasIcon(@DrawableRes int expectedIcon) {
-        isNotNull();
-        ShadowDrawable shadowIcon = shadowOf(actual.getIcon());
-        int createdFromResId = shadowIcon.getCreatedFromResId();
-        Assertions.assertThat(createdFromResId)
-                .overridingErrorMessage("Expected icon res ID <%s> but was <%s>.",
-                        expectedIcon, createdFromResId)
-                .isEqualTo(expectedIcon);
-        return myself;
-    }
+  public AbstractListItemViewAssert hasIcon(@DrawableRes int expectedIcon) {
+    isNotNull();
+    ShadowDrawable shadowIcon = shadowOf(actual.getIcon());
+    int createdFromResId = shadowIcon.getCreatedFromResId();
+    Assertions.assertThat(createdFromResId)
+        .overridingErrorMessage("Expected icon res ID <%s> but was <%s>.",
+            expectedIcon, createdFromResId)
+        .isEqualTo(expectedIcon);
+    return myself;
+  }
 
-    public AbstractListItemViewAssert hasAvatar(@DrawableRes int expectedAvatar) {
-        isNotNull();
-        ShadowDrawable shadowAvatar = shadowOf(actual.getAvatar());
-        int createdFromResId = shadowAvatar.getCreatedFromResId();
-        Assertions.assertThat(createdFromResId)
-                .overridingErrorMessage("Expected avatar res ID <%s> but was <%s>.",
-                        expectedAvatar, createdFromResId)
-                .isEqualTo(expectedAvatar);
-        return myself;
-    }
-
-    private static ShadowDrawable shadowOf(Drawable actual) {
-        return (ShadowDrawable) ShadowExtractor.extract(actual);
-    }
+  public AbstractListItemViewAssert hasAvatar(@DrawableRes int expectedAvatar) {
+    isNotNull();
+    ShadowDrawable shadowAvatar = shadowOf(actual.getAvatar());
+    int createdFromResId = shadowAvatar.getCreatedFromResId();
+    Assertions.assertThat(createdFromResId)
+        .overridingErrorMessage("Expected avatar res ID <%s> but was <%s>.",
+            expectedAvatar, createdFromResId)
+        .isEqualTo(expectedAvatar);
+    return myself;
+  }
 
 }

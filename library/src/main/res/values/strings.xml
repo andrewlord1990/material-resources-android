@@ -12,6 +12,6 @@
   -->
 
 <resources>
-    <string name="list_item_avatar_cd">Avatar</string>
-    <string name="list_item_icon_cd">Icon</string>
+  <string name="list_item_avatar_cd">Avatar</string>
+  <string name="list_item_icon_cd">Icon</string>
 </resources>

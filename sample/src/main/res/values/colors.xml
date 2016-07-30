@@ -13,7 +13,7 @@
 
 <resources>
 
-    <color name="color_square_background">@color/md_grey_300</color>
-    <color name="alternate_list_item_background">@color/md_grey_300</color>
+  <color name="color_square_background">@color/md_grey_300</color>
+  <color name="alternate_list_item_background">@color/md_grey_300</color>
 
 </resources>

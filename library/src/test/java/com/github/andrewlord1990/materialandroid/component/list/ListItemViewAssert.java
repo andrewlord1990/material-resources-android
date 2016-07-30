@@ -13,14 +13,14 @@
 package com.github.andrewlord1990.materialandroid.component.list;
 
 public class ListItemViewAssert extends AbstractListItemViewAssert<
-        ListItemViewAssert, ListItemView> {
+    ListItemViewAssert, ListItemView> {
 
-    protected ListItemViewAssert(ListItemView actual) {
-        super(actual, ListItemViewAssert.class);
-    }
+  protected ListItemViewAssert(ListItemView actual) {
+    super(actual, ListItemViewAssert.class);
+  }
 
-    public static ListItemViewAssert assertThat(ListItemView actual) {
-        return new ListItemViewAssert(actual);
-    }
+  public static ListItemViewAssert assertThat(ListItemView actual) {
+    return new ListItemViewAssert(actual);
+  }
 
 }

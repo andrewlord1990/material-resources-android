@@ -13,14 +13,14 @@
 package com.github.andrewlord1990.materialandroid.component.textfield;
 
 public class PasswordEditTextAssert extends AbstractPasswordEditTextAssert<
-        PasswordEditTextAssert, PasswordEditText> {
+    PasswordEditTextAssert, PasswordEditText> {
 
-    protected PasswordEditTextAssert(PasswordEditText actual) {
-        super(actual, PasswordEditTextAssert.class);
-    }
+  protected PasswordEditTextAssert(PasswordEditText actual) {
+    super(actual, PasswordEditTextAssert.class);
+  }
 
-    public static PasswordEditTextAssert assertThat(PasswordEditText actual) {
-        return new PasswordEditTextAssert(actual);
-    }
+  public static PasswordEditTextAssert assertThat(PasswordEditText actual) {
+    return new PasswordEditTextAssert(actual);
+  }
 
 }

@@ -19,11 +19,11 @@
     android:layout_margin="@dimen/control_padding"
     android:background="@color/color_square_background">
 
-    <View
-        android:id="@+id/color_square"
-        tools:background="@color/md_red_a200"
-        android:layout_width="@dimen/color_square_size"
-        android:layout_height="@dimen/color_square_size"
-        android:layout_gravity="center"/>
+  <View
+      android:id="@+id/color_square"
+      android:layout_width="@dimen/color_square_size"
+      android:layout_height="@dimen/color_square_size"
+      android:layout_gravity="center"
+      tools:background="@color/md_red_a200"/>
 
 </FrameLayout>

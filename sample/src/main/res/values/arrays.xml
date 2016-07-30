@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="list_sample_types">
-        <item>One-line (Text only)</item>
-        <item>One-line (Icon with Text)</item>
-        <item>One-line (Avatar with Text)</item>
-        <item>One-line (Avatar with Text and Icon)</item>
-        <item>Two-line (Text only)</item>
-        <item>Two-line (Icon with Text)</item>
-        <item>Two-line (Avatar with Text)</item>
-        <item>Two-line (Avatar with Text and Icon)</item>
-        <item>Three-line (Text only)</item>
-        <item>Three-line (Icon with Text)</item>
-        <item>Three-line (Avatar with Text)</item>
-        <item>Three-line (Avatar with Text and Icon)</item>
-    </string-array>
+  <string-array name="list_sample_types">
+    <item>One-line (Text only)</item>
+    <item>One-line (Icon with Text)</item>
+    <item>One-line (Avatar with Text)</item>
+    <item>One-line (Avatar with Text and Icon)</item>
+    <item>Two-line (Text only)</item>
+    <item>Two-line (Icon with Text)</item>
+    <item>Two-line (Avatar with Text)</item>
+    <item>Two-line (Avatar with Text and Icon)</item>
+    <item>Three-line (Text only)</item>
+    <item>Three-line (Icon with Text)</item>
+    <item>Three-line (Avatar with Text)</item>
+    <item>Three-line (Avatar with Text and Icon)</item>
+  </string-array>
 
-    <string-array name="grid_sample_types">
-        <item>One-line (Text only)</item>
-        <item>One-line (Text with icon)</item>
-        <item>Two-line (Text only)</item>
-        <item>Two-line (Text with icon)</item>
-    </string-array>
+  <string-array name="grid_sample_types">
+    <item>One-line (Text only)</item>
+    <item>One-line (Text with icon)</item>
+    <item>Two-line (Text only)</item>
+    <item>Two-line (Text with icon)</item>
+  </string-array>
 
-    <string-array name="grid_sample_images">
-        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo0.jpg</item>
-        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo1.jpg</item>
-        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo2.jpg</item>
-        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo3.jpg</item>
-        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo4.jpg</item>
-        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo5.jpg</item>
-        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo6.jpg</item>
-        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo7.jpg</item>
-        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo8.jpg</item>
-        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo9.jpg</item>
-        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo10.jpg</item>
-        <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo11.jpg</item>
-    </string-array>
+  <string-array name="grid_sample_images">
+    <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo0.jpg</item>
+    <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo1.jpg</item>
+    <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo2.jpg</item>
+    <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo3.jpg</item>
+    <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo4.jpg</item>
+    <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo5.jpg</item>
+    <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo6.jpg</item>
+    <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo7.jpg</item>
+    <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo8.jpg</item>
+    <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo9.jpg</item>
+    <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo10.jpg</item>
+    <item>https://raw.githubusercontent.com/andrewlord1990/materialandroid/master/sample-photos/photo11.jpg</item>
+  </string-array>
 
 </resources>

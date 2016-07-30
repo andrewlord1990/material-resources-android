@@ -70,14 +70,12 @@ public class GridItemView extends FrameLayout {
   @IconGravity private int iconGravity;
 
   /**
-   * Create a grid item view using the default settings, which can then be customised later.
+   * Create a grid item view using the settings from the style assigned to the theme attribute mdGridItemViewStyle.
    *
    * @param context The Context the view is running in, through which it can access the current theme, resources, etc.
    */
   public GridItemView(Context context) {
-    super(context);
-
-    loadDefaults();
+    super(context, null);
   }
 
   /**
@@ -171,11 +169,6 @@ public class GridItemView extends FrameLayout {
     if (secondaryTextColor != 0) {
       setSecondaryTextColor(secondaryTextColor);
     }
-  }
-
-  private void loadDefaults() {
-    iconGravity = ICON_GRAVITY_START;
-    setVariant(VARIANT_ONE_LINE_TEXT);
   }
 
   @LayoutRes

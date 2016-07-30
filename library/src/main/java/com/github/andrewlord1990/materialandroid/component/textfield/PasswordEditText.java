@@ -25,6 +25,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
+import android.support.annotation.AttrRes;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
@@ -65,14 +66,13 @@ public class PasswordEditText extends AppCompatEditText {
   private boolean passwordVisible;
 
   /**
-   * Create a PasswordEditText view using default settings, which can be customised later.
+   * Create a PasswordEditText view using settings from the style assigned to the theme attribute
+   * mdPasswordEditTextStyle.
    *
    * @param context The Context the view is running in, through which it can access the current theme, resources, etc.
    */
   public PasswordEditText(Context context) {
-    super(context);
-
-    loadDefaults();
+    this(context, null);
   }
 
   /**
@@ -83,16 +83,15 @@ public class PasswordEditText extends AppCompatEditText {
    * @param attrs   The attributes of the XML tag that is inflating the view.
    */
   public PasswordEditText(Context context, AttributeSet attrs) {
-    super(context, attrs);
-
-    loadThemeAttributes(attrs);
+    this(context, attrs, R.attr.mdPasswordEditTextStyle);
   }
 
   /**
    * Create a PasswordEditText view through XML inflation using settings from provided attributes and from the style
    * assigned to the specified theme attribute.
    *
-   * @param context      The Context the view is running in, through which it can access the current theme, resources, etc.
+   * @param context      The Context the view is running in, through which it can access the current theme, resources,
+   *                     etc.
    * @param attrs        The attributes of the XML tag that is inflating the view.
    * @param defStyleAttr An attribute in the current theme that contains a reference to a style resource that supplies
    *                     default values for the view. Can be 0 to not look for defaults.
@@ -100,12 +99,12 @@ public class PasswordEditText extends AppCompatEditText {
   public PasswordEditText(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
 
-    loadThemeAttributes(attrs);
+    loadThemeAttributes(attrs, defStyleAttr);
   }
 
-  private void loadThemeAttributes(AttributeSet attrs) {
+  private void loadThemeAttributes(AttributeSet attrs, @AttrRes int themeAttribute) {
     TypedArray typedAttrs = getContext().getTheme().obtainStyledAttributes(
-        attrs, R.styleable.MDPasswordEditText, R.attr.mdPasswordEditTextStyle, 0);
+        attrs, R.styleable.MDPasswordEditText, themeAttribute, 0);
     try {
       loadIcons(typedAttrs);
       loadToggleType(typedAttrs);
@@ -158,12 +157,6 @@ public class PasswordEditText extends AppCompatEditText {
 
   private void loadPasswordShown(TypedArray attrs) {
     passwordVisible = attrs.getBoolean(R.styleable.MDPasswordEditText_md_password_shown, false);
-  }
-
-  private void loadDefaults() {
-    setShownIcon();
-    setHiddenIconFromType(TOGGLE_OPACITY);
-    setPasswordVisibility();
   }
 
   private void setPasswordVisibility() {

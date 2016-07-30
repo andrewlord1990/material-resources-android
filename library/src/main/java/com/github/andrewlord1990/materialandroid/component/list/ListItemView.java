@@ -72,14 +72,12 @@ public class ListItemView extends FrameLayout {
   @ListItemVariant private int variant;
 
   /**
-   * Create a list item view using the default settings, which can then be customised later.
+   * Create a list item view using the settings from the style assigned to the theme attribute mdListItemViewStyle.
    *
    * @param context The Context the view is running in, through which it can access the current theme, resources, etc.
    */
   public ListItemView(Context context) {
-    super(context);
-
-    loadDefaults();
+    super(context, null);
   }
 
   /**
@@ -166,10 +164,6 @@ public class ListItemView extends FrameLayout {
   private void loadAvatar(TypedArray typedAttrs) {
     Drawable avatar = typedAttrs.getDrawable(R.styleable.MDListItemView_md_list_avatar);
     setAvatar(avatar);
-  }
-
-  private void loadDefaults() {
-    setVariant(VARIANT_ONE_LINE_TEXT);
   }
 
   @LayoutRes

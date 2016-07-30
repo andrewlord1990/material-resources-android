@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!--
-  ~ Copyright (C) 2016 Andrew Lord
+  ~  Copyright (C) 2016 Andrew Lord
   ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
+  ~  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+  ~  the License.
+  ~
+  ~  You may obtain a copy of the License at
   ~
   ~  http://www.apache.org/licenses/LICENSE-2.0
   ~
-  ~  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed
+  ~  on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~  See the License for the specific language governing permissions and limitations under the License.
--->
+  -->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="com.github.andrewlord1990.materialandroidsample">
 
   <uses-permission android:name="android.permission.INTERNET"/>
@@ -33,7 +39,8 @@
 
     <activity
         android:name=".color.ColorSampleActivity"
-        android:parentActivityName=".SampleActivity">
+        android:parentActivityName=".SampleActivity"
+        tools:targetApi="jelly_bean">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".SampleActivity"/>
@@ -41,7 +48,8 @@
 
     <activity
         android:name=".typography.TypographySampleActivity"
-        android:parentActivityName=".SampleActivity">
+        android:parentActivityName=".SampleActivity"
+        tools:targetApi="jelly_bean">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".SampleActivity"/>
@@ -49,7 +57,8 @@
 
     <activity
         android:name=".components.ComponentsSampleActivity"
-        android:parentActivityName=".SampleActivity">
+        android:parentActivityName=".SampleActivity"
+        tools:targetApi="jelly_bean">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".SampleActivity"/>
@@ -57,7 +66,8 @@
 
     <activity
         android:name=".components.lists.ListsSampleActivity"
-        android:parentActivityName=".components.ComponentsSampleActivity">
+        android:parentActivityName=".components.ComponentsSampleActivity"
+        tools:targetApi="jelly_bean">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".components.ComponentsSampleActivity"/>
@@ -65,7 +75,8 @@
 
     <activity
         android:name=".components.grids.GridsSampleActivity"
-        android:parentActivityName=".components.ComponentsSampleActivity">
+        android:parentActivityName=".components.ComponentsSampleActivity"
+        tools:targetApi="jelly_bean">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".components.ComponentsSampleActivity"/>
@@ -73,7 +84,8 @@
 
     <activity
         android:name=".components.TextFieldsSampleActivity"
-        android:parentActivityName=".components.ComponentsSampleActivity">
+        android:parentActivityName=".components.ComponentsSampleActivity"
+        tools:targetApi="jelly_bean">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".components.ComponentsSampleActivity"/>
@@ -81,12 +93,12 @@
 
     <activity
         android:name=".components.PasswordFieldsSampleActivity"
-        android:parentActivityName=".components.ComponentsSampleActivity">
+        android:parentActivityName=".components.ComponentsSampleActivity"
+        tools:targetApi="jelly_bean">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".components.ComponentsSampleActivity"/>
     </activity>
-
 
   </application>
 

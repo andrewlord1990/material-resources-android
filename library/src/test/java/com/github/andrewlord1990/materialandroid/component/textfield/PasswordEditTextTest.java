@@ -1,12 +1,16 @@
 /*
  *  Copyright (C) 2016 Andrew Lord
  *
- *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+ *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ *  the License.
+ *
  *  You may obtain a copy of the License at
  *
  *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ *  an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *
  *  See the License for the specific language governing permissions and limitations under the License.
  */
 
@@ -223,11 +227,11 @@ public class PasswordEditTextTest {
   public void givenLeftToRightTouchWithinToggle_whenOnTouchEvent_thenPasswordVisibilityToggled() {
     //Given
     passwordView.setPasswordVisible(false);
-    float x = passwordView.getRight() - 10;
-    float y = passwordView.getTop() + 10;
+    float xPosition = passwordView.getRight() - 10;
+    float yPosition = passwordView.getTop() + 10;
 
     //When
-    fireActionUpTouchEvent(passwordView, x, y);
+    fireActionUpTouchEvent(passwordView, xPosition, yPosition);
 
     //Then
     assertThat(passwordView)
@@ -240,11 +244,11 @@ public class PasswordEditTextTest {
     //Given
     ViewCompat.setLayoutDirection(passwordView, ViewCompat.LAYOUT_DIRECTION_RTL);
     passwordView.setPasswordVisible(false);
-    float x = passwordView.getRight() - 10;
-    float y = passwordView.getTop() + 10;
+    float xPosition = passwordView.getRight() - 10;
+    float yPosition = passwordView.getTop() + 10;
 
     //When
-    fireActionUpTouchEvent(passwordView, x, y);
+    fireActionUpTouchEvent(passwordView, xPosition, yPosition);
 
     //Then
     assertThat(passwordView)
@@ -255,11 +259,11 @@ public class PasswordEditTextTest {
   public void givenTouchOutsideToggle_whenOnTouchEvent_thenPasswordVisibilityNotToggled() {
     //Given
     passwordView.setPasswordVisible(false);
-    float x = passwordView.getLeft() + 10;
-    float y = passwordView.getTop() + 10;
+    float xPosition = passwordView.getLeft() + 10;
+    float yPosition = passwordView.getTop() + 10;
 
     //When
-    fireActionUpTouchEvent(passwordView, x, y);
+    fireActionUpTouchEvent(passwordView, xPosition, yPosition);
 
     //Then
     assertThat(passwordView)
@@ -270,11 +274,11 @@ public class PasswordEditTextTest {
   public void givenTouchActionDown_whenOnTouchEvent_thenPasswordVisibilityNotToggled() {
     //Given
     passwordView.setPasswordVisible(false);
-    float x = passwordView.getLeft() + 10;
-    float y = passwordView.getTop() + 10;
+    float xPosition = passwordView.getLeft() + 10;
+    float yPosition = passwordView.getTop() + 10;
 
     //When
-    fireActionDownTouchEvent(passwordView, x, y);
+    fireActionDownTouchEvent(passwordView, xPosition, yPosition);
 
     //Then
     assertThat(passwordView)
@@ -439,21 +443,21 @@ public class PasswordEditTextTest {
     return ContextCompat.getDrawable(RuntimeEnvironment.application, drawableRes);
   }
 
-  private void fireActionUpTouchEvent(View view, float x, float y) {
-    fireTouchEvent(view, x, y, MotionEvent.ACTION_UP);
+  private void fireActionUpTouchEvent(View view, float xPosition, float yPosition) {
+    fireTouchEvent(view, xPosition, yPosition, MotionEvent.ACTION_UP);
   }
 
-  private void fireActionDownTouchEvent(View view, float x, float y) {
-    fireTouchEvent(view, x, y, MotionEvent.ACTION_DOWN);
+  private void fireActionDownTouchEvent(View view, float xPosition, float yPosition) {
+    fireTouchEvent(view, xPosition, yPosition, MotionEvent.ACTION_DOWN);
   }
 
-  private void fireTouchEvent(View view, float x, float y, int actionDown) {
+  private void fireTouchEvent(View view, float xPosition, float yPosition, int actionDown) {
     MotionEvent motionEvent = MotionEvent.obtain(
         SystemClock.uptimeMillis(),
         SystemClock.uptimeMillis(),
         actionDown,
-        x,
-        y,
+        xPosition,
+        yPosition,
         0
     );
     view.dispatchTouchEvent(motionEvent);

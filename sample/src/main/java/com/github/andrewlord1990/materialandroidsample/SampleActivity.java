@@ -1,12 +1,16 @@
 /*
- * Copyright (C) 2016 Andrew Lord
+ *  Copyright (C) 2016 Andrew Lord
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ *  the License.
+ *
+ *  You may obtain a copy of the License at
  *
  *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ *  an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *
  *  See the License for the specific language governing permissions and limitations under the License.
  */
 
@@ -66,11 +70,11 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
       refreshPrimaryColorSquare();
       primaryColorSquare.setOnClickListener(new OnClickListener() {
         @Override
-        public void onClick(View v) {
+        public void onClick(View view) {
           showColorChooser(
               REQUEST_PRIMARY_COLOR,
               R.string.sample_primary_color,
-              Colors.getPrimaryColors(v.getContext()));
+              Colors.getPrimaryColors(view.getContext()));
         }
       });
     }
@@ -78,18 +82,18 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
     refreshAccentColorSquare();
     accentColorSquare.setOnClickListener(new OnClickListener() {
       @Override
-      public void onClick(View v) {
+      public void onClick(View view) {
         showColorChooser(
             REQUEST_ACCENT_COLOR,
             R.string.sample_accent_color,
-            Colors.getAccentColors(v.getContext()));
+            Colors.getAccentColors(view.getContext()));
       }
     });
     Button colorSample = (Button) findViewById(R.id.color_sample_button);
     if (colorSample != null) {
       colorSample.setOnClickListener(new OnClickListener() {
         @Override
-        public void onClick(View v) {
+        public void onClick(View view) {
           onColorSampleSelected();
         }
       });
@@ -124,6 +128,8 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
         accentColor = color;
         refreshAccentColorSquare();
         break;
+      default:
+        break;
     }
   }
 
@@ -140,7 +146,7 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
     if (button != null) {
       button.setOnClickListener(new OnClickListener() {
         @Override
-        public void onClick(View v) {
+        public void onClick(View view) {
           startActivity(new Intent(SampleActivity.this, TypographySampleActivity.class));
         }
       });
@@ -152,7 +158,7 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
     if (button != null) {
       button.setOnClickListener(new OnClickListener() {
         @Override
-        public void onClick(View v) {
+        public void onClick(View view) {
           startActivity(new Intent(SampleActivity.this, ComponentsSampleActivity.class));
         }
       });

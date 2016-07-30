@@ -19,39 +19,39 @@
 
   <!-- Dark Text on Light Background -->
 
-  <color name="md_dark_primary_text_87">#df000000</color>
-  <color name="md_dark_secondary_text_54">#8a000000</color>
-  <color name="md_dark_disabled_hint_text_38">#62000000</color>
+  <color name="md_text_dark_primary_87">#df000000</color>
+  <color name="md_text_dark_secondary_54">#8a000000</color>
+  <color name="md_text_dark_disabled_hint_38">#62000000</color>
 
-  <color name="md_dark_text_button">@color/md_dark_primary_text_87</color>
-  <color name="md_dark_text_menu">@color/md_dark_primary_text_87</color>
-  <color name="md_dark_text_caption">@color/md_dark_secondary_text_54</color>
-  <color name="md_dark_text_body_1">@color/md_dark_primary_text_87</color>
-  <color name="md_dark_text_subheading">@color/md_dark_primary_text_87</color>
-  <color name="md_dark_text_title">@color/md_dark_primary_text_87</color>
-  <color name="md_dark_text_headline">@color/md_dark_primary_text_87</color>
-  <color name="md_dark_text_display_1">@color/md_dark_secondary_text_54</color>
-  <color name="md_dark_text_display_2">@color/md_dark_secondary_text_54</color>
-  <color name="md_dark_text_display_3">@color/md_dark_secondary_text_54</color>
-  <color name="md_dark_text_display_4">@color/md_dark_secondary_text_54</color>
+  <color name="md_text_dark_button">@color/md_text_dark_primary_87</color>
+  <color name="md_text_dark_menu">@color/md_text_dark_primary_87</color>
+  <color name="md_text_dark_caption">@color/md_text_dark_secondary_54</color>
+  <color name="md_text_dark_body_1">@color/md_text_dark_primary_87</color>
+  <color name="md_text_dark_subheading">@color/md_text_dark_primary_87</color>
+  <color name="md_text_dark_title">@color/md_text_dark_primary_87</color>
+  <color name="md_text_dark_headline">@color/md_text_dark_primary_87</color>
+  <color name="md_text_dark_display_1">@color/md_text_dark_secondary_54</color>
+  <color name="md_text_dark_display_2">@color/md_text_dark_secondary_54</color>
+  <color name="md_text_dark_display_3">@color/md_text_dark_secondary_54</color>
+  <color name="md_text_dark_display_4">@color/md_text_dark_secondary_54</color>
 
 
   <!-- Light Text on Dark Background -->
 
-  <color name="md_light_primary_text_100">#ffffffff</color>
-  <color name="md_light_secondary_text_70">#b3ffffff</color>
-  <color name="md_light_disabled_hint_text_50">#80ffffff</color>
+  <color name="md_text_light_primary_100">#ffffffff</color>
+  <color name="md_text_light_secondary_70">#b3ffffff</color>
+  <color name="md_text_light_disabled_hint_50">#80ffffff</color>
 
-  <color name="md_light_text_button">@color/md_light_primary_text_100</color>
-  <color name="md_light_text_menu">@color/md_light_primary_text_100</color>
-  <color name="md_light_text_caption">@color/md_light_secondary_text_70</color>
-  <color name="md_light_text_body_1">@color/md_light_primary_text_100</color>
-  <color name="md_light_text_subheading">@color/md_light_primary_text_100</color>
-  <color name="md_light_text_title">@color/md_light_primary_text_100</color>
-  <color name="md_light_text_headline">@color/md_light_primary_text_100</color>
-  <color name="md_light_text_display_1">@color/md_light_secondary_text_70</color>
-  <color name="md_light_text_display_2">@color/md_light_secondary_text_70</color>
-  <color name="md_light_text_display_3">@color/md_light_secondary_text_70</color>
-  <color name="md_light_text_display_4">@color/md_light_secondary_text_70</color>
+  <color name="md_text_light_button">@color/md_text_light_primary_100</color>
+  <color name="md_text_light_menu">@color/md_text_light_primary_100</color>
+  <color name="md_text_light_caption">@color/md_text_light_secondary_70</color>
+  <color name="md_text_light_body_1">@color/md_text_light_primary_100</color>
+  <color name="md_text_light_subheading">@color/md_text_light_primary_100</color>
+  <color name="md_text_light_title">@color/md_text_light_primary_100</color>
+  <color name="md_text_light_headline">@color/md_text_light_primary_100</color>
+  <color name="md_text_light_display_1">@color/md_text_light_secondary_70</color>
+  <color name="md_text_light_display_2">@color/md_text_light_secondary_70</color>
+  <color name="md_text_light_display_3">@color/md_text_light_secondary_70</color>
+  <color name="md_text_light_display_4">@color/md_text_light_secondary_70</color>
 
 </resources>

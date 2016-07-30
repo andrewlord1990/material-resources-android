@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/md_list_item_line_spacing"
-        android:textColor="@color/md_dark_primary_text_87"
+        android:textColor="@color/md_text_dark_primary_87"
         android:textSize="@dimen/md_list_item_primary_text"
         tools:text="Three-line item"/>
 
@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/md_list_item_line_spacing"
-        android:textColor="@color/md_dark_secondary_text_54"
+        android:textColor="@color/md_text_dark_secondary_54"
         android:textSize="@dimen/md_list_item_secondary_text"
         tools:text="Secondary text"/>
 
@@ -54,7 +54,7 @@
         android:id="@+id/list_tertiary_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/md_dark_secondary_text_54"
+        android:textColor="@color/md_text_dark_secondary_54"
         android:textSize="@dimen/md_list_item_secondary_text"
         tools:text="Tertiary text"/>
 

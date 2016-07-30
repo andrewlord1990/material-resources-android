@@ -63,28 +63,35 @@
   <!-- Buttons -->
 
   <dimen name="md_button_touch_area_height">48dp</dimen>
-  <dimen name="md_button_padding_horizontal">16dp</dimen>
   <dimen name="md_button_minimum_width">88dp</dimen>
+  <dimen name="md_button_corner_radius">2dp</dimen>
 
   <!-- Buttons Flat -->
 
+  <dimen name="md_button_flat_text">14sp</dimen>
   <dimen name="md_button_flat_height">36dp</dimen>
+  <dimen name="md_button_float_elevation">0dp</dimen>
+  <dimen name="md_button_flat_padding_horizontal">8dp</dimen>
+  <dimen name="md_button_flat_margin_horizontal">8dp</dimen>
 
   <!-- Buttons Raised Regular -->
 
   <dimen name="md_button_raised_text">14sp</dimen>
   <dimen name="md_button_raised_height">36dp</dimen>
   <dimen name="md_button_raised_elevation">2dp</dimen>
+  <dimen name="md_button_raised_padding_horizontal">16dp</dimen>
 
   <!-- Buttons Raised Dense -->
 
   <dimen name="md_button_raised_dense_text">13sp</dimen>
   <dimen name="md_button_raised_dense_height">32dp</dimen>
   <dimen name="md_button_raised_dense_elevation">2dp</dimen>
+  <dimen name="md_button_raised_dense_padding_horizontal">16dp</dimen>
 
 
   <!-- Cards -->
 
+  <dimen name="md_card_corner_radius">2dp</dimen>
   <dimen name="md_card_title_large_text">24sp</dimen>
   <dimen name="md_card_title_large_padding_top">24dp</dimen>
   <dimen name="md_card_title_small_text">14sp</dimen>

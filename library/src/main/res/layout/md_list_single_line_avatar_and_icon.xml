@@ -54,7 +54,7 @@
       android:layout_marginStart="@dimen/md_list_item_text_edge_padding_start"
       android:layout_toLeftOf="@id/list_icon"
       android:layout_toStartOf="@id/list_icon"
-      android:textColor="@color/md_dark_primary_text_87"
+      android:textColor="@color/md_text_dark_primary_87"
       android:textSize="@dimen/md_list_item_primary_text"
       tools:text="Single-line item"/>
 

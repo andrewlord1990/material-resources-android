@@ -26,6 +26,6 @@
     android:paddingLeft="@dimen/md_list_item_horizontal_edges_padding"
     android:paddingRight="@dimen/md_list_item_horizontal_edges_padding"
     android:paddingStart="@dimen/md_list_item_horizontal_edges_padding"
-    android:textColor="@color/md_dark_primary_text_87"
+    android:textColor="@color/md_text_dark_primary_87"
     android:textSize="@dimen/md_list_item_primary_text"
     tools:text="Single-line item"/>

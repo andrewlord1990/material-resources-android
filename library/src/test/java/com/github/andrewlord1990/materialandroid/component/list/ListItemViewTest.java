@@ -353,6 +353,19 @@ public class ListItemViewTest {
   }
 
   @Test
+  public void whenSetPrimaryText_thenHasPrimaryText() {
+    //Given
+    final String expectedText = "someText";
+
+    //When
+    listItemView.setPrimaryText(expectedText);
+
+    //Then
+    assertThat(listItemView)
+        .hasPrimaryText(expectedText);
+  }
+
+  @Test
   public void givenNoSecondaryTextView_whenGetSecondaryText_thenNull() {
     //Given
     listItemView.setVariant(ListItemView.VARIANT_ONE_LINE_TEXT);
@@ -376,6 +389,20 @@ public class ListItemViewTest {
   }
 
   @Test
+  public void whenSetSecondaryText_thenHasSecondaryText() {
+    //Given
+    final String expectedText = "someText";
+
+    //When
+    listItemView.setSecondaryText(expectedText);
+    listItemView.setVariant(ListItemView.VARIANT_TWO_LINE_TEXT);
+
+    //Then
+    assertThat(listItemView)
+        .hasSecondaryText(expectedText);
+  }
+
+  @Test
   public void givenNoTertiaryTextView_whenGetTertiaryText_thenNull() {
     //Given
     listItemView.setVariant(ListItemView.VARIANT_TWO_LINE_TEXT);
@@ -396,6 +423,20 @@ public class ListItemViewTest {
     //Then
     assertThat(listItemView)
         .hasTertiaryText("Avatar");
+  }
+
+  @Test
+  public void whenSetTertiaryText_thenHasTertiaryText() {
+    //Given
+    final String expectedText = "someText";
+
+    //When
+    listItemView.setTertiaryText(expectedText);
+    listItemView.setVariant(ListItemView.VARIANT_THREE_LINE_TEXT);
+
+    //Then
+    assertThat(listItemView)
+        .hasTertiaryText(expectedText);
   }
 
   @Test

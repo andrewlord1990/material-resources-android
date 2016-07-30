@@ -27,10 +27,10 @@ import org.assertj.core.api.Assertions;
 import org.robolectric.internal.ShadowExtractor;
 import org.robolectric.shadows.ShadowDrawable;
 
-public abstract class AbstractListItemViewAssert<S extends AbstractListItemViewAssert<S, A>,
-    A extends ListItemView> extends AbstractFrameLayoutAssert<S, A> {
+public abstract class AbstractListItemViewAssert<AssertT extends AbstractListItemViewAssert<AssertT, ViewT>,
+    ViewT extends ListItemView> extends AbstractFrameLayoutAssert<AssertT, ViewT> {
 
-  protected AbstractListItemViewAssert(A actual, Class<S> selfType) {
+  protected AbstractListItemViewAssert(ViewT actual, Class<AssertT> selfType) {
     super(actual, selfType);
   }
 

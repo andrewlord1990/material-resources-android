@@ -14,16 +14,16 @@
  *  See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.github.andrewlord1990.materialandroid.component.list;
+package com.github.andrewlord1990.materialandroid.component.grid;
 
-public class ListItemViewAssert extends AbstractListItemViewAssert<ListItemViewAssert, ListItemView> {
+public class GridItemViewAssert extends AbstractGridItemViewAssert<GridItemViewAssert, GridItemView> {
 
-  protected ListItemViewAssert(ListItemView actual) {
-    super(actual, ListItemViewAssert.class);
+  protected GridItemViewAssert(GridItemView actual) {
+    super(actual, GridItemViewAssert.class);
   }
 
-  public static ListItemViewAssert assertThat(ListItemView actual) {
-    return new ListItemViewAssert(actual);
+  public static GridItemViewAssert assertThat(GridItemView actual) {
+    return new GridItemViewAssert(actual);
   }
 
 }

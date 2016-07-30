@@ -152,20 +152,20 @@ public class GridItemView extends FrameLayout {
   }
 
   private void loadText(TypedArray typedAttrs) {
-    String primaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_primary_text);
+    String primaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_text_primary);
     setPrimaryText(primaryText);
 
-    String secondaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_secondary_text);
+    String secondaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_text_secondary);
     setSecondaryText(secondaryText);
   }
 
   private void loadTextColors(TypedArray typedAttrs) {
-    int primaryTextColor = typedAttrs.getColor(R.styleable.MDGridItemView_md_grid_primary_text_color, 0);
+    int primaryTextColor = typedAttrs.getColor(R.styleable.MDGridItemView_md_grid_text_primary_color, 0);
     if (primaryTextColor != 0) {
       setPrimaryTextColor(primaryTextColor);
     }
 
-    int secondaryTextColor = typedAttrs.getColor(R.styleable.MDGridItemView_md_grid_secondary_text_color, 0);
+    int secondaryTextColor = typedAttrs.getColor(R.styleable.MDGridItemView_md_grid_text_secondary_color, 0);
     if (secondaryTextColor != 0) {
       setSecondaryTextColor(secondaryTextColor);
     }

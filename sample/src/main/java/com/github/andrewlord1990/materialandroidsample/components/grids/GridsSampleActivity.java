@@ -19,10 +19,13 @@ package com.github.andrewlord1990.materialandroidsample.components.grids;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 
+import com.github.andrewlord1990.materialandroid.component.grid.GridItemView;
 import com.github.andrewlord1990.materialandroidsample.BaseSampleActivity;
 import com.github.andrewlord1990.materialandroidsample.R;
 
@@ -42,27 +45,12 @@ public class GridsSampleActivity extends BaseSampleActivity {
     setContentView(R.layout.activity_grids_sample);
 
     setupToolbar();
-    setupFab();
     setupList();
-    setupIconGravityButton();
-    setupTextSizesButton();
   }
 
   private void setupToolbar() {
     setTitle(R.string.sample_grids_title);
     showUpButton();
-  }
-
-  private void setupFab() {
-    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-    if (fab != null) {
-      fab.setOnClickListener(new OnClickListener() {
-        @Override
-        public void onClick(View view) {
-          adapter.toggleType();
-        }
-      });
-    }
   }
 
   private void setupList() {
@@ -78,28 +66,32 @@ public class GridsSampleActivity extends BaseSampleActivity {
     }
   }
 
-  private void setupIconGravityButton() {
-    Button iconGravityButton = (Button) findViewById(R.id.iconGravity);
-    if (iconGravityButton != null) {
-      iconGravityButton.setOnClickListener(new OnClickListener() {
-        @Override
-        public void onClick(View view) {
-          adapter.toggleIconGravity();
-        }
-      });
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.menu_sample_grids, menu);
+    menu.findItem(R.id.action_icon_gravity)
+        .setVisible(shouldShowIconGravityAction());
+    return super.onCreateOptionsMenu(menu);
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+      case R.id.action_icon_gravity:
+        adapter.toggleIconGravity();
+        return true;
+      case R.id.action_label_position:
+        adapter.toggleType();
+        return true;
+      default:
+        return super.onOptionsItemSelected(item);
     }
   }
 
-  private void setupTextSizesButton() {
-    Button textSizesButton = (Button) findViewById(R.id.textSizes);
-    if (textSizesButton != null) {
-      textSizesButton.setOnClickListener(new OnClickListener() {
-        @Override
-        public void onClick(View view) {
-          // Not implemented yet
-        }
-      });
-    }
+  private boolean shouldShowIconGravityAction() {
+    return gridType == GridItemView.VARIANT_ONE_LINE_TEXT_ICON
+        || gridType == GridItemView.VARIANT_TWO_LINE_TEXT_ICON;
   }
 
 }

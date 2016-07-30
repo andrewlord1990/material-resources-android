@@ -49,8 +49,7 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    restoreColorsFromState(savedInstanceState);
-    initialiseColors();
+    setupColors(savedInstanceState);
 
     setContentView(R.layout.activity_sample);
 
@@ -58,6 +57,14 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
     setupColorSample();
     setupTypographySample();
     setupComponentsSample();
+  }
+
+  private void setupColors(Bundle savedInstanceState) {
+    if (savedInstanceState == null) {
+      initialiseColors();
+    } else {
+      restoreColorsFromState(savedInstanceState);
+    }
   }
 
   private void restoreColorsFromState(Bundle savedInstanceState) {

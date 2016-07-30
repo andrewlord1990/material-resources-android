@@ -18,10 +18,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
-      tools:context="com.github.andrewlord1990.materialandroidsample.SampleActivity">
+      tools:context=".components.grids.GridsSampleActivity">
+
   <item
-      android:id="@+id/action_settings"
-      android:orderInCategory="100"
-      android:title="@string/action_settings"
+      android:id="@+id/action_icon_gravity"
+      android:title="@string/sample_grids_menu_action_icon_gravity"
       app:showAsAction="never"/>
+
+  <item
+      android:id="@+id/action_label_position"
+      android:title="@string/sample_grids_menu_action_label_position"
+      app:showAsAction="never"/>
+
 </menu>

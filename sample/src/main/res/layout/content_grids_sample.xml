@@ -24,34 +24,10 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-  <LinearLayout
-      android:id="@+id/buttons"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_alignParentBottom="true"
-      android:orientation="horizontal">
-
-    <Button
-        android:id="@+id/iconGravity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/sample_grids_button_icon_gravity"/>
-
-    <Button
-        android:id="@+id/textSizes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/sample_grids_button_text_sizes"/>
-
-  </LinearLayout>
-
   <android.support.v7.widget.RecyclerView
       android:id="@+id/recyclerView"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:layout_above="@id/buttons"
       android:clipToPadding="false"
       android:paddingBottom="@dimen/md_grid_list_cell_spacing_small"
       android:paddingTop="@dimen/md_grid_list_cell_spacing_small"

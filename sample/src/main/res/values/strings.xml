@@ -17,7 +17,6 @@
 
 <resources>
   <string name="app_name">Material Android Sample</string>
-  <string name="action_settings">Settings</string>
 
   <string name="sample_color">View Colours Sample</string>
   <string name="sample_primary_color">Select primary colour</string>
@@ -55,8 +54,8 @@
   <string name="sample_grids_secondary">Secondary text</string>
   <string name="sample_grids_star_cd">Star</string>
   <string name="sample_grids_image_cd">Image</string>
-  <string name="sample_grids_button_icon_gravity">Icon Gravity</string>
-  <string name="sample_grids_button_text_sizes">Text Sizes</string>
+  <string name="sample_grids_menu_action_icon_gravity">Icon Gravity</string>
+  <string name="sample_grids_menu_action_label_position">Label Position</string>
 
   <string name="sample_text_fields_title">Text Fields Sample</string>
   <string name="sample_text_fields_1_hint">To</string>

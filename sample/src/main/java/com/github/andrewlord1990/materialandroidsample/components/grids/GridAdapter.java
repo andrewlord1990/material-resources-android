@@ -39,8 +39,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridViewHolder> {
   private static final int TYPE_FOOTER = 0;
   private static final int TYPE_HEADER = 1;
 
-  private static int type = TYPE_FOOTER;
-
+  private int type = TYPE_FOOTER;
   @IconGravity private int iconGravity = GridItemView.ICON_GRAVITY_START;
 
   private final Context context;

@@ -42,10 +42,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * A view that meets the Material Design specification for a grid item view. It supports many
- * different variants, containing one or two lines of text and an icon at the start (left) or end
- * (right). When using two lines of text, the lines of text can either have the same text size
- * or different text sizes.
+ * A view that meets the Material Design specification for a grid item view. It supports many different variants,
+ * containing one or two lines of text and an icon at the start (left) or end (right). When using two lines of text,
+ * the lines of text can either have the same text size or different text sizes.
  */
 public class GridItemView extends FrameLayout {
 
@@ -55,40 +54,37 @@ public class GridItemView extends FrameLayout {
   public static final int VARIANT_TWO_LINE_TEXT_ICON = 3;
   public static final int ICON_GRAVITY_START = 0;
   public static final int ICON_GRAVITY_END = 1;
+
   private TextView primaryTextView;
   private TextView secondaryTextView;
   private ImageView iconView;
+
   private CharSequence primaryText;
   private CharSequence secondaryText;
   private Drawable icon;
-  @ColorInt
-  private int primaryTextColor;
-  @ColorInt
-  private int secondaryTextColor;
+  @ColorInt private int primaryTextColor;
+  @ColorInt private int secondaryTextColor;
   private ColorStateList primaryTextColorStateList;
   private ColorStateList secondaryTextColorStateList;
-  @GridItemVariant
-  private int variant;
-  @IconGravity
-  private int iconGravity;
+  @GridItemVariant private int variant;
+  @IconGravity private int iconGravity;
 
   /**
    * Create a grid item view using the default settings, which can then be customised later.
    *
-   * @param context The Context the view is running in, through which it can
-   *                access the current theme, resources, etc.
+   * @param context The Context the view is running in, through which it can access the current theme, resources, etc.
    */
   public GridItemView(Context context) {
     super(context);
+
     loadDefaults();
   }
 
   /**
-   * Create a grid item view through XML inflation using settings from provided
-   * attributes and from the style assigned to the theme attribute mdGridItemViewStyle.
+   * Create a grid item view through XML inflation using settings from provided attributes and from the style assigned
+   * to the theme attribute mdGridItemViewStyle.
    *
-   * @param context The Context the view is running in, through which it can
-   *                access the current theme, resources, etc.
+   * @param context The Context the view is running in, through which it can access the current theme, resources, etc.
    * @param attrs   The attributes of the XML tag that is inflating the view.
    */
   public GridItemView(Context context, AttributeSet attrs) {
@@ -96,40 +92,37 @@ public class GridItemView extends FrameLayout {
   }
 
   /**
-   * Create a grid item view through XML inflation using settings from provided
-   * attributes and from the style assigned to the specified theme attribute.
+   * Create a grid item view through XML inflation using settings from provided attributes and from the style assigned
+   * to the specified theme attribute.
    *
-   * @param context      The Context the view is running in, through which it can
-   *                     access the current theme, resources, etc.
+   * @param context      The Context the view is running in, through which it can access the current theme, resources,
+   *                     etc.
    * @param attrs        The attributes of the XML tag that is inflating the view.
-   * @param defStyleAttr An attribute in the current theme that contains a
-   *                     reference to a style resource that supplies default values for
-   *                     the view. Can be 0 to not look for defaults.
+   * @param defStyleAttr An attribute in the current theme that contains a reference to a style resource that supplies
+   *                     default values for the view. Can be 0 to not look for defaults.
    */
   public GridItemView(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
+
     loadThemeAttributes(attrs, defStyleAttr, 0);
   }
 
   /**
-   * Create a grid item view through XML inflation using settings from provided
-   * attributes, from the style assigned to the specified theme attribute and from the
-   * specified style.
+   * Create a grid item view through XML inflation using settings from provided attributes, from the style assigned to
+   * the specified theme attribute and from the specified style.
    *
-   * @param context      The Context the view is running in, through which it can
-   *                     access the current theme, resources, etc.
+   * @param context      The Context the view is running in, through which it can access the current theme, resources,
+   *                     etc.
    * @param attrs        The attributes of the XML tag that is inflating the view.
-   * @param defStyleAttr An attribute in the current theme that contains a
-   *                     reference to a style resource that supplies default values for
-   *                     the view. Can be 0 to not look for defaults.
-   * @param defStyleRes  A resource identifier of a style resource that
-   *                     supplies default values for the view, used only if
-   *                     defStyleAttr is 0 or can not be found in the theme. Can be 0
-   *                     to not look for defaults.
+   * @param defStyleAttr An attribute in the current theme that contains a reference to a style resource that supplies
+   *                     default values for the view. Can be 0 to not look for defaults.
+   * @param defStyleRes  A resource identifier of a style resource that supplies default values for the view, used
+   *                     only if defStyleAttr is 0 or can not be found in the theme. Can be 0 to not look for defaults.
    */
   @TargetApi(21)
   public GridItemView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
     super(context, attrs, defStyleAttr, defStyleRes);
+
     loadThemeAttributes(attrs, defStyleAttr, defStyleRes);
   }
 
@@ -149,22 +142,21 @@ public class GridItemView extends FrameLayout {
   private void loadIcon(TypedArray typedAttrs) {
     Drawable icon = typedAttrs.getDrawable(R.styleable.MDGridItemView_md_grid_icon);
     setIcon(icon);
-    @IconGravity
-    int iconGravity = typedAttrs.getInt(
-        R.styleable.MDGridItemView_md_grid_icon_gravity, ICON_GRAVITY_START);
+    @IconGravity int iconGravity = typedAttrs
+        .getInt(R.styleable.MDGridItemView_md_grid_icon_gravity, ICON_GRAVITY_START);
     this.iconGravity = iconGravity;
   }
 
   private void loadVariant(TypedArray typedAttrs) {
-    @GridItemVariant
-    int variant = typedAttrs.getInt(R.styleable.MDGridItemView_md_grid_item_variant,
-        VARIANT_ONE_LINE_TEXT);
+    @GridItemVariant int variant = typedAttrs
+        .getInt(R.styleable.MDGridItemView_md_grid_item_variant, VARIANT_ONE_LINE_TEXT);
     setVariant(variant);
   }
 
   private void loadText(TypedArray typedAttrs) {
     String primaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_primary_text);
     setPrimaryText(primaryText);
+
     String secondaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_secondary_text);
     setSecondaryText(secondaryText);
   }
@@ -174,6 +166,7 @@ public class GridItemView extends FrameLayout {
     if (primaryTextColor != 0) {
       setPrimaryTextColor(primaryTextColor);
     }
+
     int secondaryTextColor = typedAttrs.getColor(R.styleable.MDGridItemView_md_grid_secondary_text_color, 0);
     if (secondaryTextColor != 0) {
       setSecondaryTextColor(secondaryTextColor);
@@ -475,8 +468,8 @@ public class GridItemView extends FrameLayout {
   }
 
   /**
-   * Get the icon gravity. Can be start (to display before the text - or on the left), or
-   * can be end (to display after the text - or on the right).
+   * Get the icon gravity. Can be start (to display before the text - or on the left), or can be end (to display after
+   * the text - or on the right).
    *
    * @return The gravity of the icon.
    */
@@ -486,8 +479,8 @@ public class GridItemView extends FrameLayout {
   }
 
   /**
-   * Set the gravity of the icon. Can be start (to display before the text - or on the left), or
-   * can be end (to display after the text - or on the right).
+   * Set the gravity of the icon. Can be start (to display before the text - or on the left), or can be end (to display
+   * after the text - or on the right).
    *
    * @param iconGravity The gravity for the icon.
    */
@@ -500,12 +493,18 @@ public class GridItemView extends FrameLayout {
     return ContextCompat.getColor(getContext(), colorRes);
   }
 
+  /**
+   * Specifies that an int variable should only contain one of the grid item variant types.
+   */
   @IntDef( {VARIANT_ONE_LINE_TEXT, VARIANT_ONE_LINE_TEXT_ICON,
       VARIANT_TWO_LINE_TEXT, VARIANT_TWO_LINE_TEXT_ICON})
   @Retention(RetentionPolicy.SOURCE)
   public @interface GridItemVariant {
   }
 
+  /**
+   * Specifies that an int variable should only contain one of the grid item icon gravity values.
+   */
   @IntDef( {ICON_GRAVITY_START, ICON_GRAVITY_END})
   @Retention(RetentionPolicy.SOURCE)
   public @interface IconGravity {

@@ -24,6 +24,7 @@ import android.support.annotation.AttrRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IntDef;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.annotation.StyleRes;
 import android.support.v4.content.ContextCompat;
@@ -39,9 +40,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * A view that meets the Material Design specification for a list item view. It supports many
- * different variants, containing one to three lines of text, an icon at the end (right) and an
- * avatar at the start (left).
+ * A view that meets the Material Design specification for a list item view. It supports many different variants,
+ * containing one to three lines of text, an icon at the end (right) and an avatar at the start (left).
  */
 public class ListItemView extends FrameLayout {
 
@@ -57,36 +57,36 @@ public class ListItemView extends FrameLayout {
   public static final int VARIANT_THREE_LINE_TEXT_ICON = 9;
   public static final int VARIANT_THREE_LINE_TEXT_AVATAR = 10;
   public static final int VARIANT_THREE_LINE_TEXT_ICON_AVATAR = 11;
+
   private TextView primaryTextView;
   private TextView secondaryTextView;
   private TextView tertiaryTextView;
   private ImageView iconView;
   private ImageView avatarView;
+
   private CharSequence primaryText;
   private CharSequence secondaryText;
   private CharSequence tertiaryText;
   private Drawable icon;
   private Drawable avatar;
-  @ListItemVariant
-  private int variant;
+  @ListItemVariant private int variant;
 
   /**
    * Create a list item view using the default settings, which can then be customised later.
    *
-   * @param context The Context the view is running in, through which it can
-   *                access the current theme, resources, etc.
+   * @param context The Context the view is running in, through which it can access the current theme, resources, etc.
    */
   public ListItemView(Context context) {
     super(context);
+
     loadDefaults();
   }
 
   /**
-   * Create a list item view through XML inflation using settings from provided
-   * attributes and from the style assigned to the theme attribute mdListItemViewStyle.
+   * Create a list item view through XML inflation using settings from provided attributes and from the style assigned
+   * to the theme attribute mdListItemViewStyle.
    *
-   * @param context The Context the view is running in, through which it can
-   *                access the current theme, resources, etc.
+   * @param context The Context the view is running in, through which it can access the current theme, resources, etc.
    * @param attrs   The attributes of the XML tag that is inflating the view.
    */
   public ListItemView(Context context, AttributeSet attrs) {
@@ -94,40 +94,37 @@ public class ListItemView extends FrameLayout {
   }
 
   /**
-   * Create a list item view through XML inflation using settings from provided
-   * attributes and from the style assigned to the specified theme attribute.
+   * Create a list item view through XML inflation using settings from provided attributes and from the style assigned
+   * to the specified theme attribute.
    *
-   * @param context      The Context the view is running in, through which it can
-   *                     access the current theme, resources, etc.
+   * @param context      The Context the view is running in, through which it can access the current theme, resources,
+   *                     etc.
    * @param attrs        The attributes of the XML tag that is inflating the view.
-   * @param defStyleAttr An attribute in the current theme that contains a
-   *                     reference to a style resource that supplies default values for
-   *                     the view. Can be 0 to not look for defaults.
+   * @param defStyleAttr An attribute in the current theme that contains a reference to a style resource that supplies
+   *                     default values for the view. Can be 0 to not look for defaults.
    */
   public ListItemView(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
+
     loadThemeAttributes(attrs, defStyleAttr, 0);
   }
 
   /**
-   * Create a list item view through XML inflation using settings from provided
-   * attributes, from the style assigned to the specified theme attribute and from the
-   * specified style.
+   * Create a list item view through XML inflation using settings from provided attributes, from the style assigned to
+   * the specified theme attribute and from the specified style.
    *
-   * @param context      The Context the view is running in, through which it can
-   *                     access the current theme, resources, etc.
+   * @param context      The Context the view is running in, through which it can access the current theme, resources,
+   *                     etc.
    * @param attrs        The attributes of the XML tag that is inflating the view.
-   * @param defStyleAttr An attribute in the current theme that contains a
-   *                     reference to a style resource that supplies default values for
-   *                     the view. Can be 0 to not look for defaults.
-   * @param defStyleRes  A resource identifier of a style resource that
-   *                     supplies default values for the view, used only if
-   *                     defStyleAttr is 0 or can not be found in the theme. Can be 0
-   *                     to not look for defaults.
+   * @param defStyleAttr An attribute in the current theme that contains a reference to a style resource that supplies
+   *                     default values for the view. Can be 0 to not look for defaults.
+   * @param defStyleRes  A resource identifier of a style resource that supplies default values for the view, used
+   *                     only if defStyleAttr is 0 or can not be found in the theme. Can be 0 to not look for defaults.
    */
   @TargetApi(21)
   public ListItemView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
     super(context, attrs, defStyleAttr, defStyleRes);
+
     loadThemeAttributes(attrs, defStyleAttr, defStyleRes);
   }
 
@@ -145,17 +142,18 @@ public class ListItemView extends FrameLayout {
   }
 
   private void loadVariant(TypedArray typedAttrs) {
-    @ListItemVariant
-    int variant = typedAttrs.getInt(R.styleable.MDListItemView_md_list_item_variant,
-        VARIANT_ONE_LINE_TEXT);
+    @ListItemVariant int variant = typedAttrs
+        .getInt(R.styleable.MDListItemView_md_list_item_variant, VARIANT_ONE_LINE_TEXT);
     setVariant(variant);
   }
 
   private void loadText(TypedArray typedAttrs) {
     String primaryText = typedAttrs.getString(R.styleable.MDListItemView_md_list_text_primary);
     setPrimaryText(primaryText);
+
     String secondaryText = typedAttrs.getString(R.styleable.MDListItemView_md_list_text_secondary);
     setSecondaryText(secondaryText);
+
     String tertiaryText = typedAttrs.getString(R.styleable.MDListItemView_md_list_text_tertiary);
     setTertiaryText(tertiaryText);
   }
@@ -231,11 +229,13 @@ public class ListItemView extends FrameLayout {
    */
   public void setVariant(@ListItemVariant int variant) {
     this.variant = variant;
+
     @LayoutRes int layout = getLayoutFromVariant(variant);
     removeAllViews();
     LayoutInflater inflater = LayoutInflater.from(getContext());
     inflater.inflate(layout, this);
     findChildViews();
+
     setTexts();
     setDrawables();
   }
@@ -282,8 +282,9 @@ public class ListItemView extends FrameLayout {
   /**
    * Get the secondary text (line 2).
    *
-   * @return The secondary text.
+   * @return The secondary text. Will be null if there is no secondary TextView.
    */
+  @Nullable
   public CharSequence getSecondaryText() {
     if (secondaryTextView != null) {
       return secondaryTextView.getText();
@@ -315,8 +316,9 @@ public class ListItemView extends FrameLayout {
   /**
    * Get the tertiary text (line 3).
    *
-   * @return The tertiary text.
+   * @return The tertiary text. Will be null if there is no tertiary TextView.
    */
+  @Nullable
   public CharSequence getTertiaryText() {
     if (tertiaryTextView != null) {
       return tertiaryTextView.getText();
@@ -348,8 +350,9 @@ public class ListItemView extends FrameLayout {
   /**
    * Get the icon being displayed.
    *
-   * @return The displayed icon.
+   * @return The displayed icon drawable. Will be null if there is no icon ImageView.
    */
+  @Nullable
   public Drawable getIcon() {
     if (iconView != null) {
       return iconView.getDrawable();
@@ -381,8 +384,9 @@ public class ListItemView extends FrameLayout {
   /**
    * Get the avatar being displayed.
    *
-   * @return The displayed avatar.
+   * @return The displayed avatar drawable. Will be null if there is no avatar ImageView.
    */
+  @Nullable
   public Drawable getAvatar() {
     if (avatarView != null) {
       return avatarView.getDrawable();
@@ -411,6 +415,9 @@ public class ListItemView extends FrameLayout {
     }
   }
 
+  /**
+   * Specifies that an int variable should contain one of the list item variant types.
+   */
   @IntDef( {VARIANT_ONE_LINE_TEXT, VARIANT_ONE_LINE_TEXT_ICON, VARIANT_ONE_LINE_TEXT_AVATAR,
       VARIANT_ONE_LINE_TEXT_ICON_AVATAR, VARIANT_TWO_LINE_TEXT, VARIANT_TWO_LINE_TEXT_ICON,
       VARIANT_TWO_LINE_TEXT_AVATAR, VARIANT_TWO_LINE_TEXT_ICON_AVATAR,

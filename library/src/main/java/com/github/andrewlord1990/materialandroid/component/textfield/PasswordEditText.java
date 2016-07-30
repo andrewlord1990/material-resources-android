@@ -374,8 +374,7 @@ public class PasswordEditText extends AppCompatEditText {
   }
 
   /**
-   * Specifies that an int variable must contain the type of toggle to display in the PasswordEditText. It can either be
-   * TOGGLE_OPACITY or TOGGLE_STRIKETHROUGH.
+   * Specifies that an int variable must contain the type of toggle to display in the PasswordEditText.
    */
   @IntDef( {TOGGLE_OPACITY, TOGGLE_STRIKETHROUGH})
   @Retention(RetentionPolicy.SOURCE)

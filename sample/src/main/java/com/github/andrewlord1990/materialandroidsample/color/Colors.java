@@ -18,20 +18,19 @@ package com.github.andrewlord1990.materialandroidsample.color;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.IntentCompat;
 
 import com.github.andrewlord1990.materialandroidsample.R;
 
 import java.util.ArrayList;
 
-public class Colors {
+public final class Colors {
 
-  private static Colors colors;
+  private Colors() {
+  }
 
-  private ArrayList<Integer> primaryColors;
-  private ArrayList<Integer> accentColors;
-
-  private Colors(Context context) {
-    primaryColors = new ArrayList<>();
+  public static ArrayList<Integer> primaryColors(Context context) {
+    ArrayList<Integer> primaryColors = new ArrayList<>();
     primaryColors.add(ContextCompat.getColor(context, R.color.md_red_500));
     primaryColors.add(ContextCompat.getColor(context, R.color.md_pink_500));
     primaryColors.add(ContextCompat.getColor(context, R.color.md_purple_500));
@@ -51,8 +50,11 @@ public class Colors {
     primaryColors.add(ContextCompat.getColor(context, R.color.md_brown_500));
     primaryColors.add(ContextCompat.getColor(context, R.color.md_grey_500));
     primaryColors.add(ContextCompat.getColor(context, R.color.md_blue_grey_500));
+    return primaryColors;
+  }
 
-    accentColors = new ArrayList<>();
+  public static ArrayList<Integer> accentColors(Context context) {
+    ArrayList<Integer> accentColors = new ArrayList<>();
     accentColors.add(ContextCompat.getColor(context, R.color.md_red_a200));
     accentColors.add(ContextCompat.getColor(context, R.color.md_pink_a200));
     accentColors.add(ContextCompat.getColor(context, R.color.md_purple_a200));
@@ -69,20 +71,7 @@ public class Colors {
     accentColors.add(ContextCompat.getColor(context, R.color.md_amber_a200));
     accentColors.add(ContextCompat.getColor(context, R.color.md_orange_a200));
     accentColors.add(ContextCompat.getColor(context, R.color.md_deep_orange_a200));
-  }
-
-  public static ArrayList<Integer> getPrimaryColors(Context context) {
-    if (colors == null) {
-      colors = new Colors(context);
-    }
-    return colors.primaryColors;
-  }
-
-  public static ArrayList<Integer> getAccentColors(Context context) {
-    if (colors == null) {
-      colors = new Colors(context);
-    }
-    return colors.accentColors;
+    return accentColors;
   }
 
 }

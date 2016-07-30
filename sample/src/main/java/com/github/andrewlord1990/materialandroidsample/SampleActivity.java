@@ -84,7 +84,7 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
           showColorChooser(
               REQUEST_PRIMARY_COLOR,
               R.string.sample_primary_color,
-              Colors.getPrimaryColors(view.getContext()));
+              Colors.primaryColors(view.getContext()));
         }
       });
     }
@@ -96,7 +96,7 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
         showColorChooser(
             REQUEST_ACCENT_COLOR,
             R.string.sample_accent_color,
-            Colors.getAccentColors(view.getContext()));
+            Colors.accentColors(view.getContext()));
       }
     });
     Button colorSample = (Button) findViewById(R.id.color_sample_button);

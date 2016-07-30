@@ -41,17 +41,12 @@ public class GridAdapter extends RecyclerView.Adapter<GridViewHolder> {
 
   private static int type = TYPE_FOOTER;
 
-  @IconGravity
-  private static int iconGravity = GridItemView.ICON_GRAVITY_START;
+  @IconGravity private int iconGravity = GridItemView.ICON_GRAVITY_START;
 
-  private Context context;
-
-  @GridItemVariant
-  private int variant;
-
-  private String primaryText;
-
-  private String[] images;
+  private final Context context;
+  @GridItemVariant private final int variant;
+  private final String primaryText;
+  private final String[] images;
 
   public GridAdapter(Context context, @GridItemVariant int gridType) {
     this.context = context;
@@ -112,7 +107,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridViewHolder> {
   }
 
   public void toggleIconGravity() {
-    iconGravity = iconGravity == GridItemView.ICON_GRAVITY_START
+    iconGravity = (iconGravity == GridItemView.ICON_GRAVITY_START)
         ? GridItemView.ICON_GRAVITY_END : GridItemView.ICON_GRAVITY_START;
     notifyDataSetChanged();
   }

@@ -66,13 +66,11 @@ public class BaseSampleActivity extends AppCompatActivity {
 
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
-    switch (item.getItemId()) {
-      case android.R.id.home:
-        onUpPressed();
-        return true;
-      default:
-        return false;
+    if (item.getItemId() == android.R.id.home) {
+      onUpPressed();
+      return true;
     }
+    return false;
   }
 
   public void onUpPressed() {

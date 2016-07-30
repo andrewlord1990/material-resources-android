@@ -28,8 +28,8 @@ import java.util.List;
 
 public class ColorGridAdapter extends BaseAdapter {
 
-  private Context context;
-  private List<Integer> colors;
+  private final Context context;
+  private final List<Integer> colors;
 
   public ColorGridAdapter(Context context, List<Integer> colors) {
     this.context = context;

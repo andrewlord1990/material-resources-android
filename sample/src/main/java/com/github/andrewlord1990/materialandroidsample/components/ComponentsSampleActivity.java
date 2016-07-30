@@ -75,6 +75,7 @@ public class ComponentsSampleActivity extends BaseSampleActivity {
 
         @Override
         public void onNothingSelected(AdapterView<?> parent) {
+          // Not needed
         }
       });
     }
@@ -106,6 +107,7 @@ public class ComponentsSampleActivity extends BaseSampleActivity {
 
         @Override
         public void onNothingSelected(AdapterView<?> parent) {
+          // Not needed
         }
       });
     }

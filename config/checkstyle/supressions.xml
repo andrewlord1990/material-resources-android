@@ -5,6 +5,6 @@
     "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
 
 <suppressions>
-  <suppress checks="JavadocMethod" files=".*/src/test/java/*" />
-  <suppress checks="JavadocMethod" files=".*/sample/src/*" />
+  <suppress checks="JavadocMethod" files=".*/src/test/java/*"/>
+  <suppress checks="JavadocMethod" files=".*/sample/src/*"/>
 </suppressions>

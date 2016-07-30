@@ -286,20 +286,20 @@ public class GridItemView extends FrameLayout {
   /**
    * Set the primary text (line 1).
    *
-   * @param text The primary text.
+   * @param textRes The primary text.
    */
-  public void setPrimaryText(CharSequence text) {
-    primaryText = text;
-    primaryTextView.setText(text);
+  public void setPrimaryText(@StringRes int textRes) {
+    setPrimaryText(getContext().getString(textRes));
   }
 
   /**
    * Set the primary text (line 1).
    *
-   * @param textRes The primary text.
+   * @param text The primary text.
    */
-  public void setPrimaryText(@StringRes int textRes) {
-    setPrimaryText(getContext().getString(textRes));
+  public void setPrimaryText(CharSequence text) {
+    primaryText = text;
+    primaryTextView.setText(text);
   }
 
   /**
@@ -365,6 +365,15 @@ public class GridItemView extends FrameLayout {
   /**
    * Set the secondary text (line 2).
    *
+   * @param textRes The secondary text.
+   */
+  public void setSecondaryText(@StringRes int textRes) {
+    setSecondaryText(getContext().getString(textRes));
+  }
+
+  /**
+   * Set the secondary text (line 2).
+   *
    * @param text The secondary text.
    */
   public void setSecondaryText(CharSequence text) {
@@ -372,15 +381,6 @@ public class GridItemView extends FrameLayout {
     if (secondaryTextView != null) {
       secondaryTextView.setText(text);
     }
-  }
-
-  /**
-   * Set the secondary text (line 2).
-   *
-   * @param textRes The secondary text.
-   */
-  public void setSecondaryText(@StringRes int textRes) {
-    setSecondaryText(getContext().getString(textRes));
   }
 
   /**
@@ -456,6 +456,15 @@ public class GridItemView extends FrameLayout {
   /**
    * Set the icon to display at the end (on the right).
    *
+   * @param iconRes The icon to display.
+   */
+  public void setIcon(@DrawableRes int iconRes) {
+    setIcon(ContextCompat.getDrawable(getContext(), iconRes));
+  }
+
+  /**
+   * Set the icon to display at the end (on the right).
+   *
    * @param icon The icon to display.
    */
   public void setIcon(Drawable icon) {
@@ -463,15 +472,6 @@ public class GridItemView extends FrameLayout {
     if (iconView != null) {
       iconView.setImageDrawable(icon);
     }
-  }
-
-  /**
-   * Set the icon to display at the end (on the right).
-   *
-   * @param iconRes The icon to display.
-   */
-  public void setIcon(@DrawableRes int iconRes) {
-    setIcon(ContextCompat.getDrawable(getContext(), iconRes));
   }
 
   /**

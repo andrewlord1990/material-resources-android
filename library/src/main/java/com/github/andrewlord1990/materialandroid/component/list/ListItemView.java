@@ -259,20 +259,20 @@ public class ListItemView extends FrameLayout {
   /**
    * Set the primary text (line 1).
    *
-   * @param textRes The primary text.
-   */
-  public void setPrimaryText(@StringRes int textRes) {
-    setPrimaryText(getContext().getString(textRes));
-  }
-
-  /**
-   * Set the primary text (line 1).
-   *
    * @param text The primary text.
    */
   public void setPrimaryText(CharSequence text) {
     primaryText = text;
     primaryTextView.setText(text);
+  }
+
+  /**
+   * Set the primary text (line 1).
+   *
+   * @param textRes The primary text.
+   */
+  public void setPrimaryText(@StringRes int textRes) {
+    setPrimaryText(getContext().getString(textRes));
   }
 
   /**
@@ -290,15 +290,6 @@ public class ListItemView extends FrameLayout {
   /**
    * Set the secondary text (line 2).
    *
-   * @param textRes The secondary text.
-   */
-  public void setSecondaryText(@StringRes int textRes) {
-    setSecondaryText(getContext().getString(textRes));
-  }
-
-  /**
-   * Set the secondary text (line 2).
-   *
    * @param text The secondary text.
    */
   public void setSecondaryText(CharSequence text) {
@@ -306,6 +297,15 @@ public class ListItemView extends FrameLayout {
     if (secondaryTextView != null) {
       secondaryTextView.setText(text);
     }
+  }
+
+  /**
+   * Set the secondary text (line 2).
+   *
+   * @param textRes The secondary text.
+   */
+  public void setSecondaryText(@StringRes int textRes) {
+    setSecondaryText(getContext().getString(textRes));
   }
 
   /**
@@ -323,15 +323,6 @@ public class ListItemView extends FrameLayout {
   /**
    * Set the tertiary text (line 3).
    *
-   * @param textRes The tertiary text.
-   */
-  public void setTertiaryText(@StringRes int textRes) {
-    setTertiaryText(getContext().getString(textRes));
-  }
-
-  /**
-   * Set the tertiary text (line 3).
-   *
    * @param text The tertiary text.
    */
   public void setTertiaryText(CharSequence text) {
@@ -339,6 +330,15 @@ public class ListItemView extends FrameLayout {
     if (tertiaryTextView != null) {
       tertiaryTextView.setText(text);
     }
+  }
+
+  /**
+   * Set the tertiary text (line 3).
+   *
+   * @param textRes The tertiary text.
+   */
+  public void setTertiaryText(@StringRes int textRes) {
+    setTertiaryText(getContext().getString(textRes));
   }
 
   /**
@@ -356,15 +356,6 @@ public class ListItemView extends FrameLayout {
   /**
    * Set the icon to display at the end (on the right).
    *
-   * @param iconRes The icon to display.
-   */
-  public void setIcon(@DrawableRes int iconRes) {
-    setIcon(ContextCompat.getDrawable(getContext(), iconRes));
-  }
-
-  /**
-   * Set the icon to display at the end (on the right).
-   *
    * @param icon The icon to display.
    */
   public void setIcon(Drawable icon) {
@@ -372,6 +363,15 @@ public class ListItemView extends FrameLayout {
     if (iconView != null) {
       iconView.setImageDrawable(icon);
     }
+  }
+
+  /**
+   * Set the icon to display at the end (on the right).
+   *
+   * @param iconRes The icon to display.
+   */
+  public void setIcon(@DrawableRes int iconRes) {
+    setIcon(ContextCompat.getDrawable(getContext(), iconRes));
   }
 
   /**
@@ -389,15 +389,6 @@ public class ListItemView extends FrameLayout {
   /**
    * Set the avatar to display at the start (on the left).
    *
-   * @param avatarRes The avatar to display.
-   */
-  public void setAvatar(@DrawableRes int avatarRes) {
-    setAvatar(ContextCompat.getDrawable(getContext(), avatarRes));
-  }
-
-  /**
-   * Set the avatar to display at the start (on the left).
-   *
    * @param avatar The avatar to display.
    */
   public void setAvatar(Drawable avatar) {
@@ -405,6 +396,15 @@ public class ListItemView extends FrameLayout {
     if (avatarView != null) {
       avatarView.setImageDrawable(avatar);
     }
+  }
+
+  /**
+   * Set the avatar to display at the start (on the left).
+   *
+   * @param avatarRes The avatar to display.
+   */
+  public void setAvatar(@DrawableRes int avatarRes) {
+    setAvatar(ContextCompat.getDrawable(getContext(), avatarRes));
   }
 
   @IntDef( {VARIANT_ONE_LINE_TEXT, VARIANT_ONE_LINE_TEXT_ICON, VARIANT_ONE_LINE_TEXT_AVATAR,

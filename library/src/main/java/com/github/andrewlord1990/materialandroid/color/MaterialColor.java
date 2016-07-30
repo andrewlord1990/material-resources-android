@@ -32,7 +32,6 @@ public final class MaterialColor {
   public static final int RED_A400 = 0xffff1744;
   public static final int RED_A700 = 0xffd50000;
 
-
   public static final int PINK_50 = 0xfffce4ec;
   public static final int PINK_100 = 0xfff8bbd0;
   public static final int PINK_200 = 0xfff48fb1;
@@ -48,7 +47,6 @@ public final class MaterialColor {
   public static final int PINK_A200 = 0xffff4081;
   public static final int PINK_A400 = 0xfff50057;
   public static final int PINK_A700 = 0xffc51162;
-
 
   public static final int PURPLE_50 = 0xfff3e5f5;
   public static final int PURPLE_100 = 0xffe1bee7;
@@ -66,7 +64,6 @@ public final class MaterialColor {
   public static final int PURPLE_A400 = 0xffd500f9;
   public static final int PURPLE_A700 = 0xffaa00ff;
 
-
   public static final int DEEP_PURPLE_50 = 0xffede7f6;
   public static final int DEEP_PURPLE_100 = 0xffd1c4e9;
   public static final int DEEP_PURPLE_200 = 0xffb39ddb;
@@ -82,7 +79,6 @@ public final class MaterialColor {
   public static final int DEEP_PURPLE_A200 = 0xff7c4dff;
   public static final int DEEP_PURPLE_A400 = 0xff651fff;
   public static final int DEEP_PURPLE_A700 = 0xff6200ea;
-
 
   public static final int INDIGO_50 = 0xffe8eaf6;
   public static final int INDIGO_100 = 0xffc5cae9;
@@ -100,7 +96,6 @@ public final class MaterialColor {
   public static final int INDIGO_A400 = 0xff3d5afe;
   public static final int INDIGO_A700 = 0xff304ffe;
 
-
   public static final int BLUE_50 = 0xffe3f2fd;
   public static final int BLUE_100 = 0xffbbdefb;
   public static final int BLUE_200 = 0xff90caf9;
@@ -116,7 +111,6 @@ public final class MaterialColor {
   public static final int BLUE_A200 = 0xff448aff;
   public static final int BLUE_A400 = 0xff2979ff;
   public static final int BLUE_A700 = 0xff2962ff;
-
 
   public static final int LIGHT_BLUE_50 = 0xffe1f5fe;
   public static final int LIGHT_BLUE_100 = 0xffb3e5fc;
@@ -134,7 +128,6 @@ public final class MaterialColor {
   public static final int LIGHT_BLUE_A400 = 0xff00b0ff;
   public static final int LIGHT_BLUE_A700 = 0xff0091ea;
 
-
   public static final int CYAN_50 = 0xffe0f7fa;
   public static final int CYAN_100 = 0xffb2ebf2;
   public static final int CYAN_200 = 0xff80deea;
@@ -150,7 +143,6 @@ public final class MaterialColor {
   public static final int CYAN_A200 = 0xff18ffff;
   public static final int CYAN_A400 = 0xff00e5ff;
   public static final int CYAN_A700 = 0xff00b8d4;
-
 
   public static final int TEAL_50 = 0xffe0f2f1;
   public static final int TEAL_100 = 0xffb2dfdb;
@@ -168,7 +160,6 @@ public final class MaterialColor {
   public static final int TEAL_A400 = 0xff1de9b6;
   public static final int TEAL_A700 = 0xff00bfa5;
 
-
   public static final int GREEN_50 = 0xffe8f5e9;
   public static final int GREEN_100 = 0xffc8e6c9;
   public static final int GREEN_200 = 0xffa5d6a7;
@@ -184,7 +175,6 @@ public final class MaterialColor {
   public static final int GREEN_A200 = 0xff69f0ae;
   public static final int GREEN_A400 = 0xff00e676;
   public static final int GREEN_A700 = 0xff00c853;
-
 
   public static final int LIGHT_GREEN_50 = 0xfff1f8e9;
   public static final int LIGHT_GREEN_100 = 0xffdcedc8;
@@ -202,7 +192,6 @@ public final class MaterialColor {
   public static final int LIGHT_GREEN_A400 = 0xff76ff03;
   public static final int LIGHT_GREEN_A700 = 0xff64dd17;
 
-
   public static final int LIME_50 = 0xfff9fbe7;
   public static final int LIME_100 = 0xfff0f4c3;
   public static final int LIME_200 = 0xffe6ee9c;
@@ -218,7 +207,6 @@ public final class MaterialColor {
   public static final int LIME_A200 = 0xffeeff41;
   public static final int LIME_A400 = 0xffc6ff00;
   public static final int LIME_A700 = 0xffaeea00;
-
 
   public static final int YELLOW_50 = 0xfffffde7;
   public static final int YELLOW_100 = 0xfffff9c4;
@@ -236,7 +224,6 @@ public final class MaterialColor {
   public static final int YELLOW_A400 = 0xffffea00;
   public static final int YELLOW_A700 = 0xffffd600;
 
-
   public static final int AMBER_50 = 0xfffff8e1;
   public static final int AMBER_100 = 0xffffecb3;
   public static final int AMBER_200 = 0xffffe082;
@@ -252,7 +239,6 @@ public final class MaterialColor {
   public static final int AMBER_A200 = 0xffffd740;
   public static final int AMBER_A400 = 0xffffc400;
   public static final int AMBER_A700 = 0xffffab00;
-
 
   public static final int ORANGE_50 = 0xfffff3e0;
   public static final int ORANGE_100 = 0xffffe0b2;
@@ -270,7 +256,6 @@ public final class MaterialColor {
   public static final int ORANGE_A400 = 0xffff9100;
   public static final int ORANGE_A700 = 0xffff6d00;
 
-
   public static final int DEEP_ORANGE_50 = 0xfffbe9e7;
   public static final int DEEP_ORANGE_100 = 0xffffccbc;
   public static final int DEEP_ORANGE_200 = 0xffffab91;
@@ -287,7 +272,6 @@ public final class MaterialColor {
   public static final int DEEP_ORANGE_A400 = 0xffff3d00;
   public static final int DEEP_ORANGE_A700 = 0xffdd2c00;
 
-
   public static final int BROWN_50 = 0xffefebe9;
   public static final int BROWN_100 = 0xffd7ccc8;
   public static final int BROWN_200 = 0xffbcaaa4;
@@ -298,7 +282,6 @@ public final class MaterialColor {
   public static final int BROWN_700 = 0xff5d4037;
   public static final int BROWN_800 = 0xff4e342e;
   public static final int BROWN_900 = 0xff3e2723;
-
 
   public static final int GRAY_50 = 0xfffafafa;
   public static final int GRAY_100 = 0xfff5f5f5;
@@ -311,7 +294,6 @@ public final class MaterialColor {
   public static final int GRAY_800 = 0xff424242;
   public static final int GRAY_900 = 0xff212121;
 
-
   public static final int BLUE_GRAY_50 = 0xffeceff1;
   public static final int BLUE_GRAY_100 = 0xffcfd8dc;
   public static final int BLUE_GRAY_200 = 0xffb0bec5;
@@ -323,13 +305,11 @@ public final class MaterialColor {
   public static final int BLUE_GRAY_800 = 0xff37474f;
   public static final int BLUE_GRAY_900 = 0xff263238;
 
-
   public static final int BLACK = 0xff000000;
   public static final int BLACK_87 = 0xdf000000;
   public static final int BLACK_54 = 0x8a000000;
   public static final int BLACK_38 = 0x62000000;
   public static final int BLACK_12 = 0x1f000000;
-
 
   public static final int WHITE = 0xffffffff;
   public static final int WHITE_70 = 0xb3ffffff;

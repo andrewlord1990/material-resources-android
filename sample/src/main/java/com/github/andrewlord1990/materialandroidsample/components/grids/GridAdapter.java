@@ -114,8 +114,8 @@ public class GridAdapter extends RecyclerView.Adapter<GridViewHolder> {
 
   public static class GridViewHolder extends ViewHolder {
 
-    private ImageView imageView;
-    private GridItemView labelView;
+    private final ImageView imageView;
+    private final GridItemView labelView;
 
     public GridViewHolder(View itemView, String primaryText) {
       super(itemView);

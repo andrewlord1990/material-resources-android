@@ -96,7 +96,7 @@ public class GridsSampleActivity extends BaseSampleActivity {
       textSizesButton.setOnClickListener(new OnClickListener() {
         @Override
         public void onClick(View view) {
-
+          // Not implemented yet
         }
       });
     }

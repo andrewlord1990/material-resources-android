@@ -324,8 +324,7 @@ public final class MaterialColor {
   public static final int WHITE_50 = 0x80ffffff;
   public static final int WHITE_12 = 0x1fffffff;
 
-  @ColorInt
-  private int color;
+  @ColorInt private final int color;
 
   private MaterialColor(@ColorInt int color) {
     this.color = color;

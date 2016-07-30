@@ -36,11 +36,9 @@ public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
   private static final int TYPE_HEADER = 0;
   private static final int TYPE_ITEM = 1;
 
-  private Context context;
-
-  private int listType;
-
-  private String primaryText;
+  private final Context context;
+  private final int listType;
+  private final String primaryText;
 
   public ListAdapter(Context context, @ListItemVariant int listType) {
     this.context = context;

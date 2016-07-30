@@ -23,7 +23,6 @@ import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.support.annotation.AttrRes;
@@ -230,11 +229,9 @@ public class PasswordEditText extends AppCompatEditText {
    */
   @Override
   public boolean onTouchEvent(MotionEvent event) {
-    if (event.getAction() == MotionEvent.ACTION_UP) {
-      if (isTouchEventWithinToggle(event)) {
-        togglePasswordVisibility();
-        return true;
-      }
+    if (event.getAction() == MotionEvent.ACTION_UP && isTouchEventWithinToggle(event)) {
+      togglePasswordVisibility();
+      return true;
     }
     return super.onTouchEvent(event);
   }
@@ -254,7 +251,7 @@ public class PasswordEditText extends AppCompatEditText {
   @TargetApi(VERSION_CODES.JELLY_BEAN_MR1)
   private boolean isLeftToRightLayoutDirection() {
     Configuration config = getResources().getConfiguration();
-    return !(config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL);
+    return config.getLayoutDirection() != View.LAYOUT_DIRECTION_RTL;
   }
 
   /**

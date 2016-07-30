@@ -23,7 +23,7 @@ import android.view.View;
 
 public class GridListSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
-  private int spacing;
+  private final int spacing;
 
   public GridListSpacingItemDecoration(int spacingPixels) {
     spacing = spacingPixels;

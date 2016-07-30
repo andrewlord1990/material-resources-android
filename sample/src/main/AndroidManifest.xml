@@ -39,8 +39,7 @@
 
     <activity
         android:name=".color.ColorSampleActivity"
-        android:parentActivityName=".SampleActivity"
-        tools:targetApi="jelly_bean">
+        android:parentActivityName=".SampleActivity">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".SampleActivity"/>
@@ -48,8 +47,7 @@
 
     <activity
         android:name=".typography.TypographySampleActivity"
-        android:parentActivityName=".SampleActivity"
-        tools:targetApi="jelly_bean">
+        android:parentActivityName=".SampleActivity">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".SampleActivity"/>
@@ -57,8 +55,7 @@
 
     <activity
         android:name=".components.ComponentsSampleActivity"
-        android:parentActivityName=".SampleActivity"
-        tools:targetApi="jelly_bean">
+        android:parentActivityName=".SampleActivity">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".SampleActivity"/>
@@ -66,8 +63,7 @@
 
     <activity
         android:name=".components.lists.ListsSampleActivity"
-        android:parentActivityName=".components.ComponentsSampleActivity"
-        tools:targetApi="jelly_bean">
+        android:parentActivityName=".components.ComponentsSampleActivity">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".components.ComponentsSampleActivity"/>
@@ -75,8 +71,7 @@
 
     <activity
         android:name=".components.grids.GridsSampleActivity"
-        android:parentActivityName=".components.ComponentsSampleActivity"
-        tools:targetApi="jelly_bean">
+        android:parentActivityName=".components.ComponentsSampleActivity">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".components.ComponentsSampleActivity"/>
@@ -84,8 +79,7 @@
 
     <activity
         android:name=".components.TextFieldsSampleActivity"
-        android:parentActivityName=".components.ComponentsSampleActivity"
-        tools:targetApi="jelly_bean">
+        android:parentActivityName=".components.ComponentsSampleActivity">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".components.ComponentsSampleActivity"/>
@@ -93,8 +87,7 @@
 
     <activity
         android:name=".components.PasswordFieldsSampleActivity"
-        android:parentActivityName=".components.ComponentsSampleActivity"
-        tools:targetApi="jelly_bean">
+        android:parentActivityName=".components.ComponentsSampleActivity">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".components.ComponentsSampleActivity"/>

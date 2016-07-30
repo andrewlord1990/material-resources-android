@@ -16,6 +16,7 @@
 
 package com.github.andrewlord1990.materialandroid.component.textfield;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
@@ -247,9 +248,11 @@ public class PasswordEditText extends AppCompatEditText {
   }
 
   private boolean isLeftToRight() {
-    if (VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
-      return true;
-    }
+    return VERSION.SDK_INT < VERSION_CODES.JELLY_BEAN_MR1 || isLeftToRightLayoutDirection();
+  }
+
+  @TargetApi(VERSION_CODES.JELLY_BEAN_MR1)
+  private boolean isLeftToRightLayoutDirection() {
     Configuration config = getResources().getConfiguration();
     return !(config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL);
   }

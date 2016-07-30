@@ -34,10 +34,14 @@ import java.util.ArrayList;
 
 public class SampleActivity extends BaseSampleActivity implements ColorChooserDialog.Listener {
 
+  private static final String STATE_PRIMARY_COLOR = "statePrimaryColor";
+  private static final String STATE_ACCENT_COLOR = "stateAccentColor";
+
   private static final int REQUEST_PRIMARY_COLOR = 0;
   private static final int REQUEST_ACCENT_COLOR = 1;
-  private static int primaryColor;
-  private static int accentColor;
+
+  private int primaryColor;
+  private int accentColor;
   private View primaryColorSquare;
   private View accentColorSquare;
 
@@ -45,6 +49,7 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
+    restoreColorsFromState(savedInstanceState);
     initialiseColors();
 
     setContentView(R.layout.activity_sample);
@@ -53,6 +58,11 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
     setupColorSample();
     setupTypographySample();
     setupComponentsSample();
+  }
+
+  private void restoreColorsFromState(Bundle savedInstanceState) {
+    primaryColor = savedInstanceState.getInt(STATE_PRIMARY_COLOR);
+    accentColor = savedInstanceState.getInt(STATE_ACCENT_COLOR);
   }
 
   private void initialiseColors() {
@@ -163,5 +173,13 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
         }
       });
     }
+  }
+
+  @Override
+  protected void onSaveInstanceState(Bundle outState) {
+    super.onSaveInstanceState(outState);
+
+    outState.putInt(STATE_PRIMARY_COLOR, primaryColor);
+    outState.putInt(STATE_ACCENT_COLOR, accentColor);
   }
 }

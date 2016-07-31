@@ -1,5 +1,35 @@
 # Changelog
 
+## v0.4.0
+
+### Custom Views
+
+- Password input field (with text visibility toggle)
+- List items (with many variants)
+- Grid list items (with multiple variants)
+
+### Resources
+
+- Text fields
+- Full width text field style to apply to `EditText` views.
+- Tabs
+- Subheaders
+- Bottom sheets
+- Bottom navigation
+- Data tables
+
+### Samples
+
+- Text fields (full width text field style)
+- Password input field (showing different options)
+- Added subheaders to lists sample
+- List and grid item samples using new custom views
+
+### Project
+
+- Code quality checking using CheckStyle, FindBugs and PMD
+- Reformatted code style
+
 ## v0.3.0
 
 ### Code

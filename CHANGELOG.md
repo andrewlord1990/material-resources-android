@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.4.0
+## v0.4.0 (31/07/16)
 
 ### Custom Views
 
@@ -32,7 +32,7 @@
 - Update to target Api 24
 - Updated Android support library dependencies to v24.1.1
 
-## v0.3.0
+## v0.3.0 (21/03/16)
 
 ### Code
 
@@ -62,14 +62,14 @@
 - Added Support-v7 AppCompat dependency.
 
 
-## v0.2.0
+## v0.2.0 (18/03/16)
 
 - Sample app: Test out combinations of primary and accent colour, view the text sizes and colours with both light and dark backgrounds.
 - Lists: dimensions, text sizes, colours and layouts. (Including sample showing them all.)
 - Code constants of the Material palette colours.
 
 
-## v0.1.0
+## v0.1.0 (15/03/16)
 
 - Material palette colours as resources.
 - Text colours as resources.

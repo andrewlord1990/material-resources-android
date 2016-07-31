@@ -29,6 +29,8 @@
 
 - Code quality checking using CheckStyle, FindBugs and PMD
 - Reformatted code style
+- Update to target Api 24
+- Updated Android support library dependencies to v24.1.1
 
 ## v0.3.0
 

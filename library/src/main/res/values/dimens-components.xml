@@ -176,6 +176,16 @@
   <dimen name="md_divider_thickness">1dp</dimen>
 
 
+  <!-- Expansion Panels -->
+
+  <dimen name="md_expansion_panel_label_text">16sp</dimen>
+  <dimen name="md_expansion_panel_padding_edge_vertical">16dp</dimen>
+  <dimen name="md_expansion_panel_padding_edge_horizontal">24dp</dimen>
+  <dimen name="md_expansion_panel_padding_between_labels">16dp</dimen>
+  <dimen name="md_expansion_panel_bar_height_collapsed">48dp</dimen>
+  <dimen name="md_expansion_panel_bar_height_expanded">64dp</dimen>
+
+
   <!-- Floating Action Button (FAB) -->
 
   <dimen name="md_fab_icon_size">24dp</dimen>

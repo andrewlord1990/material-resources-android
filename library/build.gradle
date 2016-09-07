@@ -18,7 +18,7 @@ apply plugin: 'com.android.library'
 
 android {
   compileSdkVersion rootProject.ext.compileSdk
-  buildToolsVersion "24.0.1"
+  buildToolsVersion "24.0.2"
 
   defaultConfig {
     minSdkVersion rootProject.ext.minSdk
@@ -34,8 +34,8 @@ android {
 
 dependencies {
 
-  compile 'com.android.support:support-v4:24.1.1'
-  compile 'com.android.support:appcompat-v7:24.1.1'
+  compile 'com.android.support:support-v4:24.2.0'
+  compile 'com.android.support:appcompat-v7:24.2.0'
 
   // Test
 

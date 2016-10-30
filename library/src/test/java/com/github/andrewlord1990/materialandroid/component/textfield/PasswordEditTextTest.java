@@ -16,7 +16,6 @@
 
 package com.github.andrewlord1990.materialandroid.component.textfield;
 
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -31,35 +30,28 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 
 import com.github.andrewlord1990.materialandroid.R;
+import com.github.andrewlord1990.materialandroid.robolectric.LibraryRobolectricTestRunner;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
-import org.robolectric.RobolectricGradleTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
-import org.robolectric.internal.ShadowExtractor;
+import org.robolectric.fakes.RoboAttributeSet;
 import org.robolectric.res.Attribute;
-import org.robolectric.res.ResourceLoader;
-import org.robolectric.shadows.RoboAttributeSet;
-import org.robolectric.shadows.ShadowResources;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.github.andrewlord1990.materialandroid.component.textfield.PasswordEditTextAssert.assertThat;
 
-@RunWith(RobolectricGradleTestRunner.class)
+@RunWith(LibraryRobolectricTestRunner.class)
 public class PasswordEditTextTest {
 
   private static final String PACKAGE = "com.github.andrewlord1990.materialandroid";
 
   private PasswordEditText passwordView;
-
-  private static ShadowResources shadowOf(Resources actual) {
-    return (ShadowResources) ShadowExtractor.extract(actual);
-  }
 
   @Before
   public void before() {
@@ -75,10 +67,8 @@ public class PasswordEditTextTest {
 
   @Test
   public void givenContext_whenCreated_thenSetupWithDefaults() {
-    //When
     PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application);
 
-    //Then
     assertThat(actual)
         .hasHiddenPassword()
         .hasDefaultToggle()
@@ -87,13 +77,10 @@ public class PasswordEditTextTest {
 
   @Test
   public void givenAttrsWithNoCustomAttributes_whenCreated_thenSetupWithDefaults() {
-    //Given
     AttributeSet attrs = createAttributeSet(new ArrayList<Attribute>());
 
-    //When
     PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application, attrs);
 
-    //Then
     assertThat(actual)
         .hasDefaultToggle()
         .hasToggleHiddenAlpha()
@@ -102,51 +89,39 @@ public class PasswordEditTextTest {
 
   @Test
   public void givenCustomIconsInAttrs_whenCreated_thenHasCustomHiddenIcon() {
-    //Given
     AttributeSet attrs = createCustomIconsAttributeSet();
 
-    //When
     PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application, attrs);
 
-    //Then
     assertThat(actual).hasToggle(R.drawable.ic_avatar_circle);
   }
 
   @Test
   public void givenCustomIconsInAttrs_whenCreatedAndVisibilityToggled_thenHasCustomShownIcon() {
-    //Given
     AttributeSet attrs = createCustomIconsAttributeSet();
 
-    //When
     PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application, attrs, 0);
     actual.togglePasswordVisibility();
 
-    //Then
     assertThat(actual).hasToggle(R.drawable.ic_icon_square);
   }
 
   @Test
   public void givenStrikeThroughTypeInAttrs_whenCreated_thenHasStrikeThroughToggle() {
-    //Given
     AttributeSet attrs = createStrikeThroughAttributeSet();
 
-    //When
     PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application, attrs);
 
-    //Then
     assertThat(actual).hasStrikethroughToggle();
   }
 
   @Test
   public void givenStrikeThroughTypeInAttrs_whenCreatedAndVisibilityToggled_thenHasDefaultToggle() {
-    //Given
     AttributeSet attrs = createStrikeThroughAttributeSet();
 
-    //When
     PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application, attrs, 0);
     actual.togglePasswordVisibility();
 
-    //Then
     assertThat(actual)
         .hasDefaultToggle()
         .hasToggleShownAlpha();
@@ -154,15 +129,12 @@ public class PasswordEditTextTest {
 
   @Test
   public void givenPasswordShownInAttrs_whenCreated_thenPasswordShown() {
-    //Given
     List<Attribute> attributes = new ArrayList<>();
     attributes.add(createAttribute("md_password_shown", "true"));
     AttributeSet attrs = createAttributeSet(attributes);
 
-    //When
     PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application, attrs);
 
-    //Then
     assertThat(actual)
         .hasVisiblePassword()
         .hasToggleShownAlpha();
@@ -186,20 +158,15 @@ public class PasswordEditTextTest {
   }
 
   private AttributeSet createAttributeSet(List<Attribute> attributes) {
-    Resources resources = RuntimeEnvironment.application.getResources();
-    ResourceLoader resourceLoader = shadowOf(resources).getResourceLoader();
-    return new RoboAttributeSet(attributes, resourceLoader);
+    return RoboAttributeSet.create(RuntimeEnvironment.application, attributes);
   }
 
   @Test
   public void whenSetInputType_thenTypefaceUnchanged() {
-    //Given
     passwordView.setTypeface(Typeface.DEFAULT_BOLD);
 
-    //When
     passwordView.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
 
-    //Then
     assertThat(passwordView)
         .hasInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD)
         .hasTypeface(Typeface.DEFAULT_BOLD);
@@ -207,16 +174,14 @@ public class PasswordEditTextTest {
 
   @Test
   public void whenSetInputType_thenSelectionUnchanged() {
-    //Given
     int start = 10;
     int end = 12;
-    passwordView.setText("a really long string with lots of content");
+    String text = "a really long string with lots of content";
+    passwordView.setText(text);
     passwordView.setSelection(start, end);
 
-    //When
     passwordView.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
 
-    //Then
     assertThat(passwordView)
         .hasInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD)
         .hasSelectionStart(start)
@@ -225,15 +190,12 @@ public class PasswordEditTextTest {
 
   @Test
   public void givenLeftToRightTouchWithinToggle_whenOnTouchEvent_thenPasswordVisibilityToggled() {
-    //Given
     passwordView.setPasswordVisible(false);
     float xPosition = passwordView.getRight() - 10;
     float yPosition = passwordView.getTop() + 10;
 
-    //When
     fireActionUpTouchEvent(passwordView, xPosition, yPosition);
 
-    //Then
     assertThat(passwordView)
         .hasVisiblePassword();
   }
@@ -241,59 +203,47 @@ public class PasswordEditTextTest {
   @Test
   @Config(sdk = 16)
   public void givenLessThanSdk17TouchWithinToggle_whenOnTouchEvent_thenPasswordVisibilityToggled() {
-    //Given
     ViewCompat.setLayoutDirection(passwordView, ViewCompat.LAYOUT_DIRECTION_RTL);
     passwordView.setPasswordVisible(false);
     float xPosition = passwordView.getRight() - 10;
     float yPosition = passwordView.getTop() + 10;
 
-    //When
     fireActionUpTouchEvent(passwordView, xPosition, yPosition);
 
-    //Then
     assertThat(passwordView)
         .hasVisiblePassword();
   }
 
   @Test
   public void givenTouchOutsideToggle_whenOnTouchEvent_thenPasswordVisibilityNotToggled() {
-    //Given
     passwordView.setPasswordVisible(false);
     float xPosition = passwordView.getLeft() + 10;
     float yPosition = passwordView.getTop() + 10;
 
-    //When
     fireActionUpTouchEvent(passwordView, xPosition, yPosition);
 
-    //Then
     assertThat(passwordView)
         .hasHiddenPassword();
   }
 
   @Test
   public void givenTouchActionDown_whenOnTouchEvent_thenPasswordVisibilityNotToggled() {
-    //Given
     passwordView.setPasswordVisible(false);
     float xPosition = passwordView.getLeft() + 10;
     float yPosition = passwordView.getTop() + 10;
 
-    //When
     fireActionDownTouchEvent(passwordView, xPosition, yPosition);
 
-    //Then
     assertThat(passwordView)
         .hasHiddenPassword();
   }
 
   @Test
   public void givenPasswordCurrentlyVisible_whenTogglePasswordVisibility_thenPasswordHidden() {
-    //Given
     passwordView.setPasswordVisible(true);
 
-    //When
     passwordView.togglePasswordVisibility();
 
-    //Then
     assertThat(passwordView)
         .hasHiddenPassword()
         .hasToggleHiddenAlpha()
@@ -302,13 +252,10 @@ public class PasswordEditTextTest {
 
   @Test
   public void givenPasswordCurrentlyHidden_whenTogglePasswordVisibility_thenPasswordShown() {
-    //Given
     passwordView.setPasswordVisible(false);
 
-    //When
     passwordView.togglePasswordVisibility();
 
-    //Then
     assertThat(passwordView)
         .hasVisiblePassword()
         .hasToggleShownAlpha()
@@ -317,10 +264,8 @@ public class PasswordEditTextTest {
 
   @Test
   public void givenBeingSetToVisible_whenSetPasswordVisible_thenPasswordShownWithShownToggle() {
-    //When
     passwordView.setPasswordVisible(true);
 
-    //Then
     assertThat(passwordView)
         .hasVisiblePassword()
         .hasToggleShownAlpha()
@@ -329,13 +274,10 @@ public class PasswordEditTextTest {
 
   @Test
   public void givenBeingSetToHidden_whenSetPasswordVisible_thenPasswordHiddenWithHiddenToggle() {
-    //Given
     passwordView.setPasswordVisible(true);
 
-    //When
     passwordView.setPasswordVisible(false);
 
-    //Then
     assertThat(passwordView)
         .hasHiddenPassword()
         .hasToggleHiddenAlpha()
@@ -347,59 +289,46 @@ public class PasswordEditTextTest {
 
   @Test
   public void givenDrawable_whenSetShownDrawable_thenToggleShownDrawableUpdated() {
-    //Given
     passwordView.setPasswordVisible(true);
 
-    //When
     passwordView.setShownDrawable(getDrawable(R.drawable.ic_icon_square));
 
-    //Then
     assertThat(passwordView)
         .hasToggle(R.drawable.ic_icon_square);
   }
 
   @Test
   public void givenDrawableResource_whenSetShownDrawable_thenToggleShownDrawableUpdated() {
-    //Given
     passwordView.setPasswordVisible(true);
 
-    //When
     passwordView.setShownDrawable(R.drawable.ic_icon_square);
 
-    //Then
     assertThat(passwordView)
         .hasToggle(R.drawable.ic_icon_square);
   }
 
   @Test
   public void givenDrawable_whenSetHiddenDrawable_thenToggleHiddenDrawableUpdated() {
-    //When
     passwordView.setHiddenDrawable(getDrawable(R.drawable.ic_avatar_circle));
 
-    //Then
     assertThat(passwordView)
         .hasToggle(R.drawable.ic_avatar_circle);
   }
 
   @Test
   public void givenDrawableResource_whenSetHiddenDrawable_thenToggleHiddenDrawableUpdated() {
-    //When
     passwordView.setHiddenDrawable(R.drawable.ic_avatar_circle);
 
-    //Then
     assertThat(passwordView)
         .hasToggle(R.drawable.ic_avatar_circle);
   }
 
   @Test
   public void givenOpacity_whenSetToggleType_thenToggleOpacityChanged() {
-    //Given
     passwordView.setPasswordVisible(false);
 
-    //When
     passwordView.setToggleType(PasswordEditText.TOGGLE_OPACITY);
 
-    //Then
     assertThat(passwordView)
         .hasToggleHiddenAlpha()
         .hasDefaultToggle();
@@ -407,13 +336,10 @@ public class PasswordEditTextTest {
 
   @Test
   public void givenStrikeThrough_whenSetToggleType_thenToggleDrawableChanged() {
-    //Given
     passwordView.setPasswordVisible(false);
 
-    //When
     passwordView.setToggleType(PasswordEditText.TOGGLE_STRIKETHROUGH);
 
-    //Then
     assertThat(passwordView)
         .hasToggleShownAlpha()
         .hasStrikethroughToggle();
@@ -421,20 +347,16 @@ public class PasswordEditTextTest {
 
   @Test
   public void whenSetTintColor_thenDrawableTinted() {
-    //When
     passwordView.setTintColor(Color.RED);
 
-    //Then
     assertThat(passwordView)
         .hasTintColor(Color.RED);
   }
 
   @Test
   public void whenSetTintColorRes_thenDrawableTinted() {
-    //When
     passwordView.setTintColorRes(R.color.md_amber_100);
 
-    //Then
     assertThat(passwordView)
         .hasTintColorRes(R.color.md_amber_100);
   }

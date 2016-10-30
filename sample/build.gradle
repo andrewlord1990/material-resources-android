@@ -18,7 +18,7 @@ apply plugin: 'com.android.application'
 
 android {
   compileSdkVersion rootProject.ext.compileSdk
-  buildToolsVersion "24.0.2"
+  buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
     applicationId "com.github.andrewlord1990.materialandroidsample"
@@ -38,13 +38,9 @@ android {
 
 dependencies {
 
-  compile fileTree(dir: 'libs', include: ['*.jar'])
-
-  compile 'com.android.support:design:24.2.0'
-  compile 'com.android.support:support-vector-drawable:24.2.0'
-
-  compile 'com.squareup.picasso:picasso:2.5.2'
-
   compile project(':library')
+  compile 'com.android.support:design:25.0.0'
+  compile 'com.android.support:support-vector-drawable:25.0.0'
+  compile 'com.squareup.picasso:picasso:2.5.2'
 
 }

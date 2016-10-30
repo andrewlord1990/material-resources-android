@@ -388,13 +388,10 @@ public class MaterialColorTest {
 
   @Test
   public void whenFromInt_thenContainsColor() {
-    //Given
     int expected = MaterialColor.AMBER_300;
 
-    //When
     MaterialColor actual = MaterialColor.fromInt(expected);
 
-    //Then
     assertThat(actual.getColor()).isEqualTo(expected);
   }
 

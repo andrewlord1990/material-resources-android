@@ -20,30 +20,31 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/md_grid_list_single_line_label_height">
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/md_list_item_edges_padding"
+    android:paddingBottom="@dimen/md_list_item_edges_padding">
 
   <ImageView
-      android:id="@+id/grid_list_label_icon"
+      android:id="@+id/list_icon"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_centerVertical="true"
-      android:layout_marginEnd="@dimen/md_grid_list_label_padding"
-      android:layout_marginLeft="@dimen/md_grid_list_label_padding"
-      android:layout_marginRight="@dimen/md_grid_list_label_padding"
-      android:layout_marginStart="@dimen/md_grid_list_label_padding"
+      android:layout_marginLeft="@dimen/md_list_item_edges_padding"
+      android:layout_marginStart="@dimen/md_list_item_edges_padding"
       android:contentDescription="@string/list_item_icon_cd"
       tools:src="@drawable/ic_icon_square"/>
 
   <TextView
-      android:id="@+id/grid_list_label_line_1"
+      android:id="@+id/list_primary_text"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_centerVertical="true"
-      android:layout_marginEnd="@dimen/md_grid_list_label_start_icon_label_padding_end"
-      android:layout_marginRight="@dimen/md_grid_list_label_start_icon_label_padding_end"
-      android:layout_toEndOf="@id/grid_list_label_icon"
-      android:layout_toRightOf="@id/grid_list_label_icon"
-      android:textSize="@dimen/md_grid_list_single_line_label_text"
-      tools:text="Single-line"/>
+      android:layout_marginEnd="@dimen/md_list_item_edges_padding"
+      android:layout_marginLeft="@dimen/md_list_item_text_edge_padding_start"
+      android:layout_marginRight="@dimen/md_list_item_edges_padding"
+      android:layout_marginStart="@dimen/md_list_item_text_edge_padding_start"
+      android:textColor="@color/ma_list_item_primary_text"
+      android:textSize="@dimen/md_list_item_primary_text"
+      tools:text="Single-line item"/>
 
 </RelativeLayout>

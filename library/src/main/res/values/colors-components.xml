@@ -64,6 +64,18 @@
   <color name="md_data_table_card_footer_pagination">@color/md_text_dark_secondary_54</color>
 
 
+  <!-- Grid List Items -->
+
+  <color name="ma_grid_list_item_text">@color/md_text_dark_primary_87</color>
+
+
+  <!-- List Items -->
+
+  <color name="ma_list_item_primary_text">@color/md_text_dark_primary_87</color>
+  <color name="ma_list_item_secondary_text">@color/md_text_dark_secondary_54</color>
+  <color name="ma_list_item_tertiary_text">@color/md_text_dark_secondary_54</color>
+
+
   <!-- Snackbars -->
 
   <color name="md_snackbar_background">#ff323232</color>

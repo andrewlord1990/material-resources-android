@@ -20,14 +20,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/md_list_three_line_item_height">
+    android:layout_height="wrap_content">
 
   <ImageView
       android:id="@+id/list_icon"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginLeft="@dimen/md_list_item_horizontal_edges_padding"
-      android:layout_marginStart="@dimen/md_list_item_horizontal_edges_padding"
+      android:layout_marginLeft="@dimen/md_list_item_edges_padding"
+      android:layout_marginStart="@dimen/md_list_item_edges_padding"
       android:layout_marginTop="@dimen/md_list_multi_line_item_avatar_icon_padding_top"
       android:contentDescription="@string/list_item_avatar_cd"
       tools:src="@drawable/ic_avatar_circle"/>
@@ -36,10 +36,12 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_centerVertical="true"
-      android:layout_marginEnd="@dimen/md_list_item_horizontal_edges_padding"
+      android:layout_marginTop="@dimen/md_list_item_edges_padding"
+      android:layout_marginBottom="@dimen/md_list_item_edges_padding"
       android:layout_marginLeft="@dimen/md_list_item_text_edge_padding_start"
-      android:layout_marginRight="@dimen/md_list_item_horizontal_edges_padding"
       android:layout_marginStart="@dimen/md_list_item_text_edge_padding_start"
+      android:layout_marginRight="@dimen/md_list_item_edges_padding"
+      android:layout_marginEnd="@dimen/md_list_item_edges_padding"
       android:orientation="vertical">
 
     <TextView
@@ -47,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/md_list_item_line_spacing"
-        android:textColor="@color/md_text_dark_primary_87"
+        android:textColor="@color/ma_list_item_primary_text"
         android:textSize="@dimen/md_list_item_primary_text"
         tools:text="Three-line item"/>
 
@@ -56,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/md_list_item_line_spacing"
-        android:textColor="@color/md_text_dark_secondary_54"
+        android:textColor="@color/ma_list_item_secondary_text"
         android:textSize="@dimen/md_list_item_secondary_text"
         tools:text="Secondary text"/>
 
@@ -64,7 +66,7 @@
         android:id="@+id/list_tertiary_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/md_text_dark_secondary_54"
+        android:textColor="@color/ma_list_item_tertiary_text"
         android:textSize="@dimen/md_list_item_secondary_text"
         tools:text="Tertiary text"/>
 

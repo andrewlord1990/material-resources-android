@@ -124,7 +124,7 @@ public class PasswordEditTextTest {
   @Test
   public void givenPasswordShownInAttrs_whenCreated_thenPasswordShown() {
     AttributeSet attrs = Robolectric.buildAttributeSet()
-        .addAttribute(R.attr.md_password_shown, "true")
+        .addAttribute(R.attr.ma_password_shown, "true")
         .build();
 
     PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application, attrs);
@@ -136,14 +136,14 @@ public class PasswordEditTextTest {
 
   private AttributeSet createStrikeThroughAttributeSet() {
     return Robolectric.buildAttributeSet()
-        .addAttribute(R.attr.md_password_toggle_type, "strikethrough")
+        .addAttribute(R.attr.ma_password_toggle_type, "strikethrough")
         .build();
   }
 
   private AttributeSet createCustomIconsAttributeSet() {
     return Robolectric.buildAttributeSet()
-        .addAttribute(R.attr.md_password_hidden_drawable, "@drawable/ic_avatar_circle")
-        .addAttribute(R.attr.md_password_shown_drawable, "@drawable/ic_icon_square")
+        .addAttribute(R.attr.ma_password_hidden_drawable, "@drawable/ic_avatar_circle")
+        .addAttribute(R.attr.ma_password_shown_drawable, "@drawable/ic_icon_square")
         .build();
   }
 

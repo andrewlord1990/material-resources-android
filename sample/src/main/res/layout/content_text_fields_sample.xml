@@ -37,14 +37,14 @@
         android:hint="@string/sample_text_fields_1_hint"
         android:inputType="textEmailAddress"/>
 
-    <include layout="@layout/md_divider_horizontal_dark"/>
+    <include layout="@layout/ma_divider_horizontal_dark"/>
 
     <EditText
         style="@style/MDFullWidthEditText"
         android:hint="@string/sample_text_fields_2_hint"
         android:inputType="textEmailSubject"/>
 
-    <include layout="@layout/md_divider_horizontal_dark"/>
+    <include layout="@layout/ma_divider_horizontal_dark"/>
 
     <EditText
         style="@style/MDFullWidthEditText"

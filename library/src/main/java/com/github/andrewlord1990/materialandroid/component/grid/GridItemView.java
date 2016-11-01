@@ -86,7 +86,7 @@ public class GridItemView extends FrameLayout {
    * @param attrs   The attributes of the XML tag that is inflating the view.
    */
   public GridItemView(Context context, AttributeSet attrs) {
-    this(context, attrs, R.attr.mdGridItemViewStyle);
+    this(context, attrs, R.attr.maGridItemViewStyle);
   }
 
   /**
@@ -126,7 +126,7 @@ public class GridItemView extends FrameLayout {
 
   private void loadThemeAttributes(AttributeSet attrs, @AttrRes int themeAttribute, @StyleRes int styleRes) {
     TypedArray typedAttrs = getContext().getTheme().obtainStyledAttributes(
-        attrs, R.styleable.MDGridItemView, themeAttribute, styleRes);
+        attrs, R.styleable.MAGridItemView, themeAttribute, styleRes);
     try {
       loadIcon(typedAttrs);
       loadVariant(typedAttrs);
@@ -138,34 +138,34 @@ public class GridItemView extends FrameLayout {
   }
 
   private void loadIcon(TypedArray typedAttrs) {
-    Drawable icon = typedAttrs.getDrawable(R.styleable.MDGridItemView_md_grid_icon);
+    Drawable icon = typedAttrs.getDrawable(R.styleable.MAGridItemView_ma_grid_icon);
     setIcon(icon);
     @IconGravity int iconGravity = typedAttrs
-        .getInt(R.styleable.MDGridItemView_md_grid_icon_gravity, ICON_GRAVITY_START);
+        .getInt(R.styleable.MAGridItemView_ma_grid_icon_gravity, ICON_GRAVITY_START);
     this.iconGravity = iconGravity;
   }
 
   private void loadVariant(TypedArray typedAttrs) {
     @GridItemVariant int variant = typedAttrs
-        .getInt(R.styleable.MDGridItemView_md_grid_item_variant, VARIANT_ONE_LINE_TEXT);
+        .getInt(R.styleable.MAGridItemView_ma_grid_item_variant, VARIANT_ONE_LINE_TEXT);
     setVariant(variant);
   }
 
   private void loadText(TypedArray typedAttrs) {
-    String primaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_text_primary);
+    String primaryText = typedAttrs.getString(R.styleable.MAGridItemView_ma_grid_text_primary);
     setPrimaryText(primaryText);
 
-    String secondaryText = typedAttrs.getString(R.styleable.MDGridItemView_md_grid_text_secondary);
+    String secondaryText = typedAttrs.getString(R.styleable.MAGridItemView_ma_grid_text_secondary);
     setSecondaryText(secondaryText);
   }
 
   private void loadTextColors(TypedArray typedAttrs) {
-    int primaryTextColor = typedAttrs.getColor(R.styleable.MDGridItemView_md_grid_text_primary_color, 0);
+    int primaryTextColor = typedAttrs.getColor(R.styleable.MAGridItemView_ma_grid_text_primary_color, 0);
     if (primaryTextColor != 0) {
       setPrimaryTextColor(primaryTextColor);
     }
 
-    int secondaryTextColor = typedAttrs.getColor(R.styleable.MDGridItemView_md_grid_text_secondary_color, 0);
+    int secondaryTextColor = typedAttrs.getColor(R.styleable.MAGridItemView_ma_grid_text_secondary_color, 0);
     if (secondaryTextColor != 0) {
       setSecondaryTextColor(secondaryTextColor);
     }
@@ -175,32 +175,32 @@ public class GridItemView extends FrameLayout {
   private int getLayoutFromVariant(@GridItemVariant int variant) {
     switch (variant) {
       case VARIANT_ONE_LINE_TEXT:
-        return R.layout.md_grid_list_label_single_line;
+        return R.layout.ma_grid_list_label_single_line;
       case VARIANT_ONE_LINE_TEXT_ICON:
         return getOneLineIconLayout();
       case VARIANT_TWO_LINE_TEXT:
-        return R.layout.md_grid_list_label_two_line_same;
+        return R.layout.ma_grid_list_label_two_line_same;
       case VARIANT_TWO_LINE_TEXT_ICON:
         return getTwoLineIconLayout();
       default:
-        return R.layout.md_grid_list_label_single_line;
+        return R.layout.ma_grid_list_label_single_line;
     }
   }
 
   @LayoutRes
   private int getOneLineIconLayout() {
     if (iconGravity == ICON_GRAVITY_END) {
-      return R.layout.md_grid_list_label_single_line_icon_end;
+      return R.layout.ma_grid_list_label_single_line_icon_end;
     }
-    return R.layout.md_grid_list_label_single_line_icon_start;
+    return R.layout.ma_grid_list_label_single_line_icon_start;
   }
 
   @LayoutRes
   private int getTwoLineIconLayout() {
     if (iconGravity == ICON_GRAVITY_END) {
-      return R.layout.md_grid_list_label_two_line_same_icon_end;
+      return R.layout.ma_grid_list_label_two_line_same_icon_end;
     }
-    return R.layout.md_grid_list_label_two_line_same_icon_start;
+    return R.layout.ma_grid_list_label_two_line_same_icon_start;
   }
 
   private void findChildViews() {

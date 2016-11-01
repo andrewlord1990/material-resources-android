@@ -72,7 +72,7 @@ public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
 
   private ViewHolder createHeader(ViewGroup parent) {
     TextView view = (TextView) LayoutInflater.from(context).inflate(
-        R.layout.md_subheader, parent, false);
+        R.layout.ma_subheader, parent, false);
     view.setText(R.string.sample_lists_subheader);
     view.setTextColor(ContextCompat.getColor(context, R.color.md_red_a200));
     return new HeaderViewHolder(view);

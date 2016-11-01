@@ -33,19 +33,14 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
+import org.robolectric.Robolectric;
 import org.robolectric.RuntimeEnvironment;
-import org.robolectric.fakes.RoboAttributeSet;
-import org.robolectric.res.Attribute;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.github.andrewlord1990.materialandroid.component.grid.GridItemViewAssert.assertThat;
 
 @RunWith(LibraryRobolectricTestRunner.class)
 public class GridItemViewTest {
 
-  private static final String PACKAGE = "com.github.andrewlord1990.materialandroid";
   private static final String PRIMARY = "somePrimaryText";
   private static final String SECONDARY = "someSecondaryText";
 
@@ -72,7 +67,7 @@ public class GridItemViewTest {
 
   @Test
   public void givenAttrsWithNoCustomAttributes_whenCreated_thenSetupWithDefaults() {
-    AttributeSet attrs = createAttributeSet(new ArrayList<Attribute>());
+    AttributeSet attrs = Robolectric.buildAttributeSet().build();
 
     GridItemView view = new GridItemView(RuntimeEnvironment.application, attrs);
 
@@ -81,9 +76,9 @@ public class GridItemViewTest {
 
   @Test
   public void givenVariantInAttrs_whenCreated_thenHasVariant() {
-    List<Attribute> attributes = new ArrayList<>();
-    attributes.add(createAttribute("md_grid_item_variant", "two_line_text_icon"));
-    AttributeSet attrs = createAttributeSet(attributes);
+    AttributeSet attrs = Robolectric.buildAttributeSet()
+        .addAttribute(R.attr.md_grid_item_variant, "two_line_text_icon")
+        .build();
 
     GridItemView view = new GridItemView(RuntimeEnvironment.application, attrs);
 
@@ -95,11 +90,11 @@ public class GridItemViewTest {
 
   @Test
   public void givenTextsInAttrs_whenCreated_thenHasTexts() {
-    List<Attribute> attributes = new ArrayList<>();
-    attributes.add(createAttribute("md_grid_item_variant", "two_line_text"));
-    attributes.add(createAttribute("md_grid_text_primary", PRIMARY));
-    attributes.add(createAttribute("md_grid_text_secondary", SECONDARY));
-    AttributeSet attrs = createAttributeSet(attributes);
+    AttributeSet attrs = Robolectric.buildAttributeSet()
+        .addAttribute(R.attr.md_grid_item_variant, "two_line_text")
+        .addAttribute(R.attr.md_grid_text_primary, PRIMARY)
+        .addAttribute(R.attr.md_grid_text_secondary, SECONDARY)
+        .build();
 
     GridItemView view = new GridItemView(RuntimeEnvironment.application, attrs, 0);
 
@@ -111,11 +106,11 @@ public class GridItemViewTest {
 
   @Test
   public void givenTextColorsInAttrs_whenCreated_thenHasTextColors() {
-    List<Attribute> attributes = new ArrayList<>();
-    attributes.add(createAttribute("md_grid_item_variant", "two_line_text"));
-    attributes.add(createAttribute("md_grid_text_primary_color", "@color/md_orange_50"));
-    attributes.add(createAttribute("md_grid_text_secondary_color", "@color/md_light_blue_a700"));
-    AttributeSet attrs = createAttributeSet(attributes);
+    AttributeSet attrs = Robolectric.buildAttributeSet()
+        .addAttribute(R.attr.md_grid_item_variant, "two_line_text")
+        .addAttribute(R.attr.md_grid_text_primary_color, "@color/md_orange_50")
+        .addAttribute(R.attr.md_grid_text_secondary_color, "@color/md_light_blue_a700")
+        .build();
 
     GridItemView view = new GridItemView(RuntimeEnvironment.application, attrs, 0, 0);
 
@@ -126,10 +121,10 @@ public class GridItemViewTest {
 
   @Test
   public void givenIconInAttrs_whenCreated_thenHasIcon() {
-    List<Attribute> attributes = new ArrayList<>();
-    attributes.add(createAttribute("md_grid_item_variant", "one_line_text_icon"));
-    attributes.add(createAttribute("md_grid_icon", "@drawable/ic_icon_square"));
-    AttributeSet attrs = createAttributeSet(attributes);
+    AttributeSet attrs = Robolectric.buildAttributeSet()
+        .addAttribute(R.attr.md_grid_item_variant, "one_line_text_icon")
+        .addAttribute(R.attr.md_grid_icon, "@drawable/ic_icon_square")
+        .build();
 
     GridItemView view = new GridItemView(RuntimeEnvironment.application, attrs, 0);
 
@@ -392,14 +387,6 @@ public class GridItemViewTest {
     gridItemView.setIconGravity(GridItemView.ICON_GRAVITY_END);
 
     assertThat(gridItemView).hasIconGravity(GridItemView.ICON_GRAVITY_END);
-  }
-
-  private Attribute createAttribute(String name, String value) {
-    return new Attribute(PACKAGE + ":attr/" + name, value, PACKAGE);
-  }
-
-  private AttributeSet createAttributeSet(List<Attribute> attributes) {
-    return RoboAttributeSet.create(RuntimeEnvironment.application, attributes);
   }
 
   @ColorInt

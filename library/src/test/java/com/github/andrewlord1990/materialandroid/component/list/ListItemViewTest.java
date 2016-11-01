@@ -28,19 +28,14 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
+import org.robolectric.Robolectric;
 import org.robolectric.RuntimeEnvironment;
-import org.robolectric.fakes.RoboAttributeSet;
-import org.robolectric.res.Attribute;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.github.andrewlord1990.materialandroid.component.list.ListItemViewAssert.assertThat;
 
 @RunWith(LibraryRobolectricTestRunner.class)
 public class ListItemViewTest {
 
-  private static final String PACKAGE = "com.github.andrewlord1990.materialandroid";
   private static final String PRIMARY = "somePrimaryText";
   private static final String SECONDARY = "someSecondaryText";
   private static final String TERTIARY = "someTertiaryText";
@@ -68,7 +63,7 @@ public class ListItemViewTest {
 
   @Test
   public void givenAttrsWithNoCustomAttributes_whenCreated_thenSetupWithDefaults() {
-    AttributeSet attrs = createAttributeSet(new ArrayList<Attribute>());
+    AttributeSet attrs = Robolectric.buildAttributeSet().build();
 
     ListItemView view = new ListItemView(RuntimeEnvironment.application, attrs);
 
@@ -77,9 +72,9 @@ public class ListItemViewTest {
 
   @Test
   public void givenVariantInAttrs_whenCreated_thenHasVariant() {
-    List<Attribute> attributes = new ArrayList<>();
-    attributes.add(createAttribute("md_list_item_variant", "two_line_text_icon"));
-    AttributeSet attrs = createAttributeSet(attributes);
+    AttributeSet attrs = Robolectric.buildAttributeSet()
+        .addAttribute(R.attr.md_list_item_variant, "two_line_text_icon")
+        .build();
 
     ListItemView view = new ListItemView(RuntimeEnvironment.application, attrs);
 
@@ -91,12 +86,12 @@ public class ListItemViewTest {
 
   @Test
   public void givenTextsInAttrs_whenCreated_thenHasTexts() {
-    List<Attribute> attributes = new ArrayList<>();
-    attributes.add(createAttribute("md_list_item_variant", "three_line_text"));
-    attributes.add(createAttribute("md_list_text_primary", PRIMARY));
-    attributes.add(createAttribute("md_list_text_secondary", SECONDARY));
-    attributes.add(createAttribute("md_list_text_tertiary", TERTIARY));
-    AttributeSet attrs = createAttributeSet(attributes);
+    AttributeSet attrs = Robolectric.buildAttributeSet()
+        .addAttribute(R.attr.md_list_item_variant, "three_line_text")
+        .addAttribute(R.attr.md_list_text_primary, PRIMARY)
+        .addAttribute(R.attr.md_list_text_secondary, SECONDARY)
+        .addAttribute(R.attr.md_list_text_tertiary, TERTIARY)
+        .build();
 
     ListItemView view = new ListItemView(RuntimeEnvironment.application, attrs);
 
@@ -110,10 +105,10 @@ public class ListItemViewTest {
 
   @Test
   public void givenIconInAttrs_whenCreated_thenHasIcon() {
-    List<Attribute> attributes = new ArrayList<>();
-    attributes.add(createAttribute("md_list_item_variant", "one_line_text_icon"));
-    attributes.add(createAttribute("md_list_icon", "@drawable/ic_icon_square"));
-    AttributeSet attrs = createAttributeSet(attributes);
+    AttributeSet attrs = Robolectric.buildAttributeSet()
+        .addAttribute(R.attr.md_list_item_variant, "one_line_text_icon")
+        .addAttribute(R.attr.md_list_icon, "@drawable/ic_icon_square")
+        .build();
 
     ListItemView view = new ListItemView(RuntimeEnvironment.application, attrs, 0);
 
@@ -124,10 +119,10 @@ public class ListItemViewTest {
 
   @Test
   public void givenAvatarInAttrs_whenCreated_thenHasAvatar() {
-    List<Attribute> attributes = new ArrayList<>();
-    attributes.add(createAttribute("md_list_item_variant", "one_line_text_avatar"));
-    attributes.add(createAttribute("md_list_avatar", "@drawable/ic_avatar_circle"));
-    AttributeSet attrs = createAttributeSet(attributes);
+    AttributeSet attrs = Robolectric.buildAttributeSet()
+        .addAttribute(R.attr.md_list_item_variant, "one_line_text_avatar")
+        .addAttribute(R.attr.md_list_avatar, "@drawable/ic_avatar_circle")
+        .build();
 
     ListItemView view = new ListItemView(RuntimeEnvironment.application, attrs, 0, 0);
 
@@ -400,14 +395,6 @@ public class ListItemViewTest {
     listItemView.setVariant(ListItemView.VARIANT_ONE_LINE_TEXT_AVATAR);
 
     assertThat(listItemView).hasAvatar(R.drawable.ic_avatar_circle);
-  }
-
-  private Attribute createAttribute(String name, String value) {
-    return new Attribute(PACKAGE + ":attr/" + name, value, PACKAGE);
-  }
-
-  private AttributeSet createAttributeSet(List<Attribute> attributes) {
-    return RoboAttributeSet.create(RuntimeEnvironment.application, attributes);
   }
 
 }

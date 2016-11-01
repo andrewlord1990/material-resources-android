@@ -28,6 +28,7 @@
 
   <string name="sample_color_title">Colour Sample</string>
   <string name="sample_color_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed elit ut sapien mollis egestas non dapibus turpis. Fusce non erat eu augue pharetra scelerisque nec ac lorem. Aenean vel lobortis lacus, eu blandit urna. Etiam non tristique magna, in iaculis mauris. Vivamus euismod, mi euismod porta feugiat, massa lorem pulvinar tortor, non porttitor enim nisl at mauris.</string>
+  <string name="sample_color_button">Button</string>
 
   <string name="sample_typography_title">Typography Sample</string>
   <string name="sample_typography_dark">Dark text on light background</string>

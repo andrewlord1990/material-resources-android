@@ -17,8 +17,8 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.github.andrewlord1990.materialandroidsample">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.github.andrewlord1990.materialandroidsample">
 
   <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -27,6 +27,7 @@
       android:icon="@mipmap/ic_launcher"
       android:label="@string/app_name"
       android:theme="@style/AppTheme.NoActionBar"
+      android:supportsRtl="true"
       tools:ignore="GoogleAppIndexingWarning">
 
     <activity
@@ -41,7 +42,8 @@
 
     <activity
         android:name=".color.ColorSampleActivity"
-        android:parentActivityName=".SampleActivity">
+        android:parentActivityName=".SampleActivity"
+        tools:ignore="UnusedAttribute">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".SampleActivity"/>
@@ -49,7 +51,8 @@
 
     <activity
         android:name=".typography.TypographySampleActivity"
-        android:parentActivityName=".SampleActivity">
+        android:parentActivityName=".SampleActivity"
+        tools:ignore="UnusedAttribute">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".SampleActivity"/>
@@ -57,7 +60,8 @@
 
     <activity
         android:name=".components.ComponentsSampleActivity"
-        android:parentActivityName=".SampleActivity">
+        android:parentActivityName=".SampleActivity"
+        tools:ignore="UnusedAttribute">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".SampleActivity"/>
@@ -65,7 +69,8 @@
 
     <activity
         android:name=".components.lists.ListsSampleActivity"
-        android:parentActivityName=".components.ComponentsSampleActivity">
+        android:parentActivityName=".components.ComponentsSampleActivity"
+        tools:ignore="UnusedAttribute">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".components.ComponentsSampleActivity"/>
@@ -73,7 +78,8 @@
 
     <activity
         android:name=".components.grids.GridsSampleActivity"
-        android:parentActivityName=".components.ComponentsSampleActivity">
+        android:parentActivityName=".components.ComponentsSampleActivity"
+        tools:ignore="UnusedAttribute">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".components.ComponentsSampleActivity"/>
@@ -81,7 +87,8 @@
 
     <activity
         android:name=".components.TextFieldsSampleActivity"
-        android:parentActivityName=".components.ComponentsSampleActivity">
+        android:parentActivityName=".components.ComponentsSampleActivity"
+        tools:ignore="UnusedAttribute">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".components.ComponentsSampleActivity"/>
@@ -89,7 +96,8 @@
 
     <activity
         android:name=".components.PasswordFieldsSampleActivity"
-        android:parentActivityName=".components.ComponentsSampleActivity">
+        android:parentActivityName=".components.ComponentsSampleActivity"
+        tools:ignore="UnusedAttribute">
       <meta-data
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".components.ComponentsSampleActivity"/>

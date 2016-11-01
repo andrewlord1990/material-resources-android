@@ -36,20 +36,14 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
+import org.robolectric.Robolectric;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
-import org.robolectric.fakes.RoboAttributeSet;
-import org.robolectric.res.Attribute;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.github.andrewlord1990.materialandroid.component.textfield.PasswordEditTextAssert.assertThat;
 
 @RunWith(LibraryRobolectricTestRunner.class)
 public class PasswordEditTextTest {
-
-  private static final String PACKAGE = "com.github.andrewlord1990.materialandroid";
 
   private PasswordEditText passwordView;
 
@@ -77,7 +71,7 @@ public class PasswordEditTextTest {
 
   @Test
   public void givenAttrsWithNoCustomAttributes_whenCreated_thenSetupWithDefaults() {
-    AttributeSet attrs = createAttributeSet(new ArrayList<Attribute>());
+    AttributeSet attrs = Robolectric.buildAttributeSet().build();
 
     PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application, attrs);
 
@@ -129,9 +123,9 @@ public class PasswordEditTextTest {
 
   @Test
   public void givenPasswordShownInAttrs_whenCreated_thenPasswordShown() {
-    List<Attribute> attributes = new ArrayList<>();
-    attributes.add(createAttribute("md_password_shown", "true"));
-    AttributeSet attrs = createAttributeSet(attributes);
+    AttributeSet attrs = Robolectric.buildAttributeSet()
+        .addAttribute(R.attr.md_password_shown, "true")
+        .build();
 
     PasswordEditText actual = new PasswordEditText(RuntimeEnvironment.application, attrs);
 
@@ -141,24 +135,16 @@ public class PasswordEditTextTest {
   }
 
   private AttributeSet createStrikeThroughAttributeSet() {
-    List<Attribute> attributes = new ArrayList<>();
-    attributes.add(createAttribute("md_password_toggle_type", "strikethrough"));
-    return createAttributeSet(attributes);
+    return Robolectric.buildAttributeSet()
+        .addAttribute(R.attr.md_password_toggle_type, "strikethrough")
+        .build();
   }
 
   private AttributeSet createCustomIconsAttributeSet() {
-    List<Attribute> attributes = new ArrayList<>();
-    attributes.add(createAttribute("md_password_hidden_drawable", "@drawable/ic_avatar_circle"));
-    attributes.add(createAttribute("md_password_shown_drawable", "@drawable/ic_icon_square"));
-    return createAttributeSet(attributes);
-  }
-
-  private Attribute createAttribute(String name, String value) {
-    return new Attribute(PACKAGE + ":attr/" + name, value, PACKAGE);
-  }
-
-  private AttributeSet createAttributeSet(List<Attribute> attributes) {
-    return RoboAttributeSet.create(RuntimeEnvironment.application, attributes);
+    return Robolectric.buildAttributeSet()
+        .addAttribute(R.attr.md_password_hidden_drawable, "@drawable/ic_avatar_circle")
+        .addAttribute(R.attr.md_password_shown_drawable, "@drawable/ic_icon_square")
+        .build();
   }
 
   @Test

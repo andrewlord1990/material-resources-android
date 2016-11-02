@@ -16,17 +16,8 @@
   ~  See the License for the specific language governing permissions and limitations under the License.
   -->
 
-<TextView
+<View
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list_primary_text"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/md_list_single_line_item_height"
-    android:gravity="center_vertical"
-    android:paddingEnd="@dimen/md_list_item_horizontal_edges_padding"
-    android:paddingLeft="@dimen/md_list_item_horizontal_edges_padding"
-    android:paddingRight="@dimen/md_list_item_horizontal_edges_padding"
-    android:paddingStart="@dimen/md_list_item_horizontal_edges_padding"
-    android:textColor="@color/md_text_dark_primary_87"
-    android:textSize="@dimen/md_list_item_primary_text"
-    tools:text="Single-line item"/>
+    android:layout_width="@dimen/ma_divider_thickness"
+    android:layout_height="match_parent"
+    android:background="@color/ma_divider_dark_12"/>

@@ -19,13 +19,11 @@
 <TextView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/grid_list_label_line_1"
+    android:id="@+id/list_primary_text"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/md_grid_list_single_line_label_height"
+    android:layout_height="wrap_content"
     android:gravity="center_vertical"
-    android:paddingEnd="@dimen/md_grid_list_label_padding"
-    android:paddingLeft="@dimen/md_grid_list_label_padding"
-    android:paddingRight="@dimen/md_grid_list_label_padding"
-    android:paddingStart="@dimen/md_grid_list_label_padding"
-    android:textSize="@dimen/md_grid_list_single_line_label_text"
-    tools:text="Single-line"/>
+    android:padding="@dimen/ma_list_item_edges_padding"
+    android:textColor="@color/ma_list_item_primary_text"
+    android:textSize="@dimen/ma_list_item_primary_text"
+    tools:text="Single-line item"/>

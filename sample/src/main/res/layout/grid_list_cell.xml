@@ -27,18 +27,18 @@
       android:layout_width="match_parent"
       android:layout_height="@dimen/grid_cell_size"
       android:contentDescription="@string/sample_grids_image_cd"
-      tools:background="@color/md_amber_500"/>
+      tools:background="@color/ma_amber_500"/>
 
   <com.github.andrewlord1990.materialandroid.component.grid.GridItemView
       android:id="@+id/label"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:background="@color/md_text_dark_disabled_hint_38"
-      mdgrid:md_grid_icon="@drawable/ic_star_white"
-      mdgrid:md_grid_text_primary_color="@color/md_text_light_primary_100"
-      mdgrid:md_grid_text_secondary="@string/sample_lists_secondary"
-      mdgrid:md_grid_text_secondary_color="@color/md_text_light_primary_100"
+      android:background="@color/ma_text_dark_disabled_hint_38"
+      mdgrid:ma_grid_icon="@drawable/ic_star_white"
+      mdgrid:ma_grid_text_primary_color="@color/ma_text_light_primary_100"
+      mdgrid:ma_grid_text_secondary="@string/sample_lists_secondary"
+      mdgrid:ma_grid_text_secondary_color="@color/ma_text_light_primary_100"
       tools:layout_alignBottom="@id/image"
-      tools:layout_height="@dimen/md_grid_list_single_line_label_height"/>
+      tools:layout_height="48dp"/>
 
 </RelativeLayout>

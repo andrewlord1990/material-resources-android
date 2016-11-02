@@ -28,6 +28,6 @@
       android:layout_width="@dimen/color_square_size"
       android:layout_height="@dimen/color_square_size"
       android:layout_gravity="center"
-      tools:background="@color/md_red_a200"/>
+      tools:background="@color/ma_red_a200"/>
 
 </FrameLayout>

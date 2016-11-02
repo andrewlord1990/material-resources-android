@@ -16,13 +16,13 @@
   ~  See the License for the specific language governing permissions and limitations under the License.
   -->
 
-<resources>
-
-  <dimen name="md_screen_edge_margin_horizontal">@dimen/md_screen_edge_margin_horizontal_mobile</dimen>
-  <dimen name="md_screen_edge_margin_horizontal_mobile">16dp</dimen>
-  <dimen name="md_screen_edge_margin_horizontal_tablet">24dp</dimen>
-
-  <dimen name="md_status_bar_height">24dp</dimen>
-  <dimen name="md_toolbar_height">?android:attr/actionBarSize</dimen>
-
-</resources>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="@dimen/ma_subheader_text_padding"
+    android:textColor="@color/ma_subheader_dark_text"
+    android:textSize="@dimen/ma_subheader_text"
+    tools:text="Subheader"/>

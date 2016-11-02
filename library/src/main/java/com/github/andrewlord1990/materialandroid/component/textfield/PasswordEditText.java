@@ -50,7 +50,8 @@ import java.lang.annotation.RetentionPolicy;
  * toggle that switches between showing plain text and showing asterisk characters instead. The password is hidden by
  * default, however, this can be changed using the md_password_shown attribute. The view can be customised through
  * various setter methods, XML attributes passed to the view or by assigning a style to use for all PasswordEditTexts
- * to the mdPasswordEditTextStyle theme attribute.
+ * to the mdPasswordEditTextStyle theme attribute. For the toggle, you have the choice of either a single icon with two
+ * different opacity values or using an icon with strike-through (or any two icons).
  */
 public class PasswordEditText extends AppCompatEditText {
 
@@ -83,7 +84,7 @@ public class PasswordEditText extends AppCompatEditText {
    * @param attrs   The attributes of the XML tag that is inflating the view.
    */
   public PasswordEditText(Context context, AttributeSet attrs) {
-    this(context, attrs, R.attr.mdPasswordEditTextStyle);
+    this(context, attrs, R.attr.maPasswordEditTextStyle);
   }
 
   /**
@@ -104,7 +105,7 @@ public class PasswordEditText extends AppCompatEditText {
 
   private void loadThemeAttributes(AttributeSet attrs, @AttrRes int themeAttribute) {
     TypedArray typedAttrs = getContext().getTheme().obtainStyledAttributes(
-        attrs, R.styleable.MDPasswordEditText, themeAttribute, 0);
+        attrs, R.styleable.MAPasswordEditText, themeAttribute, 0);
     try {
       loadIcons(typedAttrs);
       loadToggleType(typedAttrs);
@@ -117,13 +118,13 @@ public class PasswordEditText extends AppCompatEditText {
   }
 
   private void loadIcons(TypedArray attrs) {
-    shownIcon = attrs.getDrawable(R.styleable.MDPasswordEditText_md_password_shown_drawable);
-    hiddenIcon = attrs.getDrawable(R.styleable.MDPasswordEditText_md_password_hidden_drawable);
+    shownIcon = attrs.getDrawable(R.styleable.MAPasswordEditText_ma_password_shown_drawable);
+    hiddenIcon = attrs.getDrawable(R.styleable.MAPasswordEditText_ma_password_hidden_drawable);
   }
 
   private void loadToggleType(TypedArray attrs) {
     int type = attrs.getInt(
-        R.styleable.MDPasswordEditText_md_password_toggle_type, TOGGLE_OPACITY);
+        R.styleable.MAPasswordEditText_ma_password_toggle_type, TOGGLE_OPACITY);
     if (shownIcon == null) {
       setShownIcon();
     }
@@ -152,11 +153,11 @@ public class PasswordEditText extends AppCompatEditText {
   }
 
   private void loadToggleTintColor(TypedArray attrs) {
-    tintColor = attrs.getColor(R.styleable.MDPasswordEditText_md_password_toggle_tint_color, 0);
+    tintColor = attrs.getColor(R.styleable.MAPasswordEditText_ma_password_toggle_tint_color, 0);
   }
 
   private void loadPasswordShown(TypedArray attrs) {
-    passwordVisible = attrs.getBoolean(R.styleable.MDPasswordEditText_md_password_shown, false);
+    passwordVisible = attrs.getBoolean(R.styleable.MAPasswordEditText_ma_password_shown, false);
   }
 
   private void setPasswordVisibility() {

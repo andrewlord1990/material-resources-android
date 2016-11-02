@@ -18,351 +18,82 @@
 
 <resources>
 
-  <!-- Bottom Navigation -->
-
-  <dimen name="md_bottom_nav_height">56dp</dimen>
-  <dimen name="md_bottom_nav_icon">24dp</dimen>
-  <dimen name="md_bottom_nav_icon_padding_top_active">6dp</dimen>
-  <dimen name="md_bottom_nav_text_padding_horizontal">12dp</dimen>
-  <dimen name="md_bottom_nav_text_active">14sp</dimen>
-  <dimen name="md_bottom_nav_elevation">8dp</dimen>
-
-  <!-- Bottom Navigation Fixed -->
-
-  <dimen name="md_bottom_nav_fixed_icon_padding_top_inactive">8dp</dimen>
-  <dimen name="md_bottom_nav_fixed_text_padding_bottom">10dp</dimen>
-  <dimen name="md_bottom_nav_fixed_text_inactive">12sp</dimen>
-
-  <!-- Bottom Navigation Shifting -->
-
-  <dimen name="md_bottom_nav_shifting_inactive_icon_padding_vertical">16dp</dimen>
-
-
-  <!-- Bottom Sheets -->
-
-  <dimen name="md_bottom_sheet_title">16sp</dimen>
-  <dimen name="md_bottom_sheet_title_height">56dp</dimen>
-
-  <!-- Bottom Sheets List -->
-
-  <dimen name="md_bottom_sheet_list_text">16sp</dimen>
-  <dimen name="md_bottom_sheet_list_padding_horizontal">16dp</dimen>
-  <dimen name="md_bottom_sheet_list_padding_vertical">8dp</dimen>
-  <dimen name="md_bottom_sheet_list_icon_text_spacing">32dp</dimen>
-  <dimen name="md_bottom_sheet_list_item_height">48dp</dimen>
-  <dimen name="md_bottom_sheet_list_icon">24dp</dimen>
-
-  <!-- Bottom Sheets Grid -->
-
-  <dimen name="md_bottom_sheet_grid_padding_horizontal">24dp</dimen>
-  <dimen name="md_bottom_sheet_grid_padding_top">16dp</dimen>
-  <dimen name="md_bottom_sheet_grid_padding_bottom">24dp</dimen>
-  <dimen name="md_bottom_sheet_grid_icon">48dp</dimen>
-  <dimen name="md_bottom_sheet_grid_text">12sp</dimen>
-
-
-  <!-- Buttons -->
-
-  <dimen name="md_button_touch_area_height">48dp</dimen>
-  <dimen name="md_button_minimum_width">88dp</dimen>
-  <dimen name="md_button_corner_radius">2dp</dimen>
-
-  <!-- Buttons Flat -->
-
-  <dimen name="md_button_flat_text">14sp</dimen>
-  <dimen name="md_button_flat_height">36dp</dimen>
-  <dimen name="md_button_float_elevation">0dp</dimen>
-  <dimen name="md_button_flat_padding_horizontal">8dp</dimen>
-  <dimen name="md_button_flat_margin_horizontal">8dp</dimen>
-
-  <!-- Buttons Raised Regular -->
-
-  <dimen name="md_button_raised_text">14sp</dimen>
-  <dimen name="md_button_raised_height">36dp</dimen>
-  <dimen name="md_button_raised_elevation">2dp</dimen>
-  <dimen name="md_button_raised_padding_horizontal">16dp</dimen>
-
-  <!-- Buttons Raised Dense -->
-
-  <dimen name="md_button_raised_dense_text">13sp</dimen>
-  <dimen name="md_button_raised_dense_height">32dp</dimen>
-  <dimen name="md_button_raised_dense_elevation">2dp</dimen>
-  <dimen name="md_button_raised_dense_padding_horizontal">16dp</dimen>
-
-
-  <!-- Cards -->
-
-  <dimen name="md_card_corner_radius">2dp</dimen>
-  <dimen name="md_card_title_large_text">24sp</dimen>
-  <dimen name="md_card_title_large_padding_top">24dp</dimen>
-  <dimen name="md_card_title_small_text">14sp</dimen>
-  <dimen name="md_card_title_small_padding_top">16dp</dimen>
-  <dimen name="md_card_subtitle_text">14sp</dimen>
-  <dimen name="md_card_title_area_padding_horizontal">16dp</dimen>
-  <dimen name="md_card_title_area_height">72dp</dimen>
-  <dimen name="md_card_padding_bottom">24dp</dimen>
-  <dimen name="md_card_padding_between_sections">16dp</dimen>
-  <dimen name="md_card_supporting_text">14sp</dimen>
-  <dimen name="md_card_supporting_text_padding_horizontal">16dp</dimen>
-  <dimen name="md_card_action_padding">8dp</dimen>
-  <dimen name="md_card_stacked_action_between_padding">4dp</dimen>
-  <dimen name="md_card_margin_outside_card">8dp</dimen>
-  <dimen name="md_card_elevation_resting_default">2dp</dimen>
-  <dimen name="md_card_elevation_resting_desktop">0dp</dimen>
-  <dimen name="md_card_elevation_raised">8dp</dimen>
-
-
-  <!-- Chips -->
-
-  <dimen name="md_chip_height">32dp</dimen>
-  <dimen name="md_chip_text">13sp</dimen>
-  <dimen name="md_chip_padding_edge">12dp</dimen>
-  <dimen name="md_chip_remove_icon_size">24dp</dimen>
-  <dimen name="md_chip_remove_icon_margin">4dp</dimen>
-  <dimen name="md_chip_start_icon_padding">8dp</dimen>
-
-  <!-- Chips Contact Closed -->
-
-  <dimen name="md_chip_contact_text">14sp</dimen>
-
-  <!-- Chips Contact Open -->
-
-  <dimen name="md_chip_contact_open_elevation">8dp</dimen>
-  <dimen name="md_chip_contact_open_name_text">16sp</dimen>
-  <dimen name="md_chip_contact_open_address_text">14sp</dimen>
-
-
-  <!-- Data Tables -->
-
-  <dimen name="md_data_table_text">13sp</dimen>
-  <dimen name="md_data_table_text_header">12sp</dimen>
-  <dimen name="md_data_table_text_header_sort_icon_size">16dp</dimen>
-  <dimen name="md_data_table_small_edit_dialog_padding_horizontal">24dp</dimen>
-  <dimen name="md_data_table_edit_icon_size">18dp</dimen>
-  <dimen name="md_data_table_title">20sp</dimen>
-  <dimen name="md_data_table_action">24dp</dimen>
-  <dimen name="md_data_table_footer_pagination">12sp</dimen>
-  <dimen name="md_data_table_footer_pagination_icon_size">24dp</dimen>
-  <dimen name="md_data_table_title_area_height">64dp</dimen>
-  <dimen name="md_data_table_headers_area_height">56dp</dimen>
-  <dimen name="md_data_table_row_height">48dp</dimen>
-  <dimen name="md_data_table_footer_pagination_height">56dp</dimen>
-  <dimen name="md_data_table_padding_vertical">24dp</dimen>
-  <dimen name="md_data_table_padding_between_actions">24dp</dimen>
-  <dimen name="md_data_table_padding_action_to_edge_horizontal">14dp</dimen>
-  <dimen name="md_data_table_padding_pagination_to_edge_horizontal">14dp</dimen>
-  <dimen name="md_data_table_padding_between_pagination_arrows">24dp</dimen>
-  <dimen name="md_data_table_padding_between_footer_control_sets">32dp</dimen>
-  <dimen name="md_data_table_padding_between_footer_row_count_and_label">40dp</dimen>
-  <dimen name="md_data_table_row_checkbox_size">18dp</dimen>
-  <dimen name="md_data_table_row_padding_horizontal">24dp</dimen>
-  <dimen name="md_data_table_row_checkbox_padding_end">24dp</dimen>
-  <dimen name="md_data_table_row_column_padding">56dp</dimen>
-
-
-  <!-- Dialogs -->
-
-  <dimen name="md_dialog_text_padding">24dp</dimen>
-  <dimen name="md_dialog_title_body_padding">20dp</dimen>
-  <dimen name="md_dialog_button_container_height">52dp</dimen>
-  <dimen name="md_dialog_button_padding">8dp</dimen>
-  <dimen name="md_dialog_between_buttons_spacing">8dp</dimen>
-  <dimen name="md_dialog_stacked_buttons_bottom_spacing">8dp</dimen>
-  <dimen name="md_dialog_button_minimum_width">64dp</dimen>
-
-
-  <!-- Dividers -->
-
-  <dimen name="md_divider_thickness">1dp</dimen>
-
-
-  <!-- Expansion Panels -->
-
-  <dimen name="md_expansion_panel_label_text">16sp</dimen>
-  <dimen name="md_expansion_panel_padding_edge_vertical">16dp</dimen>
-  <dimen name="md_expansion_panel_padding_edge_horizontal">24dp</dimen>
-  <dimen name="md_expansion_panel_padding_between_labels">16dp</dimen>
-  <dimen name="md_expansion_panel_bar_height_collapsed">48dp</dimen>
-  <dimen name="md_expansion_panel_bar_height_expanded">64dp</dimen>
-
-
-  <!-- Floating Action Button (FAB) -->
-
-  <dimen name="md_fab_icon_size">24dp</dimen>
-  <dimen name="md_fab_circle_size">56dp</dimen>
-  <dimen name="md_fab_mini_circle_size">40dp</dimen>
-
-
-  <!-- Grid Lists -->
-
-  <dimen name="md_grid_list_cell_spacing">4dp</dimen>
-  <dimen name="md_grid_list_cell_spacing_small">1dp</dimen>
-  <dimen name="md_grid_list_label_padding">16dp</dimen>
-  <dimen name="md_grid_list_label_start_icon_label_padding_end">8dp</dimen>
-
-  <!-- Grid Lists Single-line -->
-
-  <dimen name="md_grid_list_single_line_label_height">48dp</dimen>
-  <dimen name="md_grid_list_single_line_label_text">16sp</dimen>
-
-  <!-- Grid Lists Two-line -->
-
-  <dimen name="md_grid_list_two_line_label_height">68dp</dimen>
-  <dimen name="md_grid_list_two_line_label_text_type_diff_primary">16sp</dimen>
-  <dimen name="md_grid_list_two_line_label_text_type_diff_secondary">12sp</dimen>
-  <dimen name="md_grid_list_two_line_label_text_type_same">14sp</dimen>
-
-
-  <!-- Lists -->
-
-  <dimen name="md_list_top_padding">8dp</dimen>
-  <dimen name="md_list_item_primary_text">16sp</dimen>
-  <dimen name="md_list_item_secondary_text">14sp</dimen>
-  <dimen name="md_list_item_horizontal_edges_padding">16dp</dimen>
-  <dimen name="md_list_item_text_edge_padding_start">72dp</dimen>
-  <dimen name="md_list_item_end_icon_padding_start">16dp</dimen>
-  <dimen name="md_list_item_line_spacing">4dp</dimen>
-  <dimen name="md_list_multi_line_item_avatar">40dp</dimen>
-  <dimen name="md_list_multi_line_item_icon">32dp</dimen>
-  <dimen name="md_list_multi_line_item_avatar_icon_padding_top">16dp</dimen>
-
-  <dimen name="md_list_dense_top_padding">4dp</dimen>
-  <dimen name="md_list_dense_item_primary_text">13sp</dimen>
-  <dimen name="md_list_dense_item_secondary_text">13sp</dimen>
-
-  <!-- Lists Single-line -->
-
-  <dimen name="md_list_single_line_item_height">48dp</dimen>
-  <dimen name="md_list_dense_single_line_item_height">40dp</dimen>
-
-  <!-- Lists Single-line (with Avatar) -->
-
-  <dimen name="md_list_single_line_with_avatar_item_height">56dp</dimen>
-  <dimen name="md_list_dense_single_line_with_avatar_item_height">48dp</dimen>
-
-  <!-- Lists Two-line (Text only) -->
-
-  <dimen name="md_list_two_line_item_height">72dp</dimen>
-  <dimen name="md_list_dense_two_line_item_height">60dp</dimen>
-
-  <!-- Lists Two-line (with Avatar) -->
-
-  <dimen name="md_list_two_line_with_avatar_item_height">72dp</dimen>
-  <dimen name="md_list_dense_two_line_with_avatar_item_height">60dp</dimen>
-
-  <!-- Lists Three-line (Text only) -->
-
-  <dimen name="md_list_three_line_item_height">88dp</dimen>
-  <dimen name="md_list_dense_three_line_item_height">76dp</dimen>
-
-  <!-- Lists Three-line (with Avatar) -->
-
-  <dimen name="md_list_three_line_with_avatar_item_height">88dp</dimen>
-  <dimen name="md_list_dense_three_line_with_avatar_item_height">76dp</dimen>
-
-
-  <!-- Menus -->
-
-  <dimen name="md_menu_padding_top">8dp</dimen>
-  <dimen name="md_menu_item_height">48dp</dimen>
-  <dimen name="md_menu_item_padding_start">16dp</dimen>
-  <dimen name="md_menu_item_text">16sp</dimen>
-
-
-  <!-- Snackbars -->
-
-  <dimen name="md_snackbar_single_line_height">48dp</dimen>
-  <dimen name="md_snackbar_multi_line_height">80dp</dimen>
-  <dimen name="md_snackbar_text">14sp</dimen>
-  <dimen name="md_snackbar_action">14sp</dimen>
-
-
-  <!-- Subheaders -->
-
-  <dimen name="md_subheader_height">48dp</dimen>
-  <dimen name="md_subheader_text">14sp</dimen>
-  <dimen name="md_subheader_text_padding_start">16dp</dimen>
-  <dimen name="md_subheader_text_below_fab_padding_start">72dp</dimen>
-
-
-  <!-- Tabs -->
-
-  <dimen name="md_tab_indicator_height">2dp</dimen>
-  <dimen name="md_tab_text_padding_horizontal">12dp</dimen>
-  <dimen name="md_tab_text_padding_horizontal_desktop">24dp</dimen>
-  <dimen name="md_tab_text_padding_desktop_first_tab_left">80dp</dimen>
-  <dimen name="md_tab_text_single_line">14sp</dimen>
-  <dimen name="md_tab_text_two_line">12sp</dimen>
-  <dimen name="md_tab_text_desktop">13sp</dimen>
-
-  <!-- Tabs Text-only -->
-
-  <dimen name="md_tab_text_only_height">48dp</dimen>
-  <dimen name="md_tab_text_only_padding_bottom_single_line">20dp</dimen>
-  <dimen name="md_tab_text_only_padding_bottom_two_line">12dp</dimen>
-
-  <!-- Tabs Text and Icon -->
-
-  <dimen name="md_tab_text_and_icon_height">72dp</dimen>
-  <dimen name="md_tab_text_and_icon_size_icon">24dp</dimen>
-  <dimen name="md_tab_text_and_icon_padding_icon_bottom">10dp</dimen>
-  <dimen name="md_tab_text_and_icon_padding_text_bottom">16dp</dimen>
-
-  <!-- Tabs Icon-only -->
-
-  <dimen name="md_tab_icon_only_height">48dp</dimen>
-  <dimen name="md_tab_icon_only_size_icon">24dp</dimen>
-  <dimen name="md_tab_icon_only_padding_icon_bottom">12dp</dimen>
-
-
-  <!-- Text Fields -->
-
-  <dimen name="md_text_field_input_text">16sp</dimen>
-  <dimen name="md_text_field_hint_text">16sp</dimen>
-  <dimen name="md_text_field_input_padding_bottom">16dp</dimen>
-  <dimen name="md_text_field_input_padding_below_line">8dp</dimen>
-  <dimen name="md_text_field_padding_top">16dp</dimen>
-  <dimen name="md_text_field_icon_start">24dp</dimen>
-  <dimen name="md_text_field_character_count_text">12sp</dimen>
-
-  <dimen name="md_text_field_dense_input_text">13sp</dimen>
-  <dimen name="md_text_field_dense_hint_text">13sp</dimen>
-  <dimen name="md_text_field_dense_input_padding_bottom">12dp</dimen>
-  <dimen name="md_text_field_dense_input_padding_below_line">4dp</dimen>
-  <dimen name="md_text_field_dense_padding_top">12dp</dimen>
-  <dimen name="md_text_field_dense_icon_start">20dp</dimen>
-
-  <!-- Text Fields Floating Label -->
-
-  <dimen name="md_text_field_label_text">12sp</dimen>
-  <dimen name="md_text_field_label_padding_bottom">8dp</dimen>
-
-  <dimen name="md_text_field_dense_label_text">13sp</dimen>
-  <dimen name="md_text_field_dense_label_padding_bottom">4dp</dimen>
-
-  <!-- Text Fields Full-Width -->
-
-  <dimen name="md_text_field_full_width_padding_vertical">20dp</dimen>
-  <dimen name="md_text_field_full_width_padding_horizontal">16dp</dimen>
-  <dimen name="md_text_field_full_width_height">54dp</dimen>
-
-  <dimen name="md_text_field_dense_full_width_padding_vertical">16dp</dimen>
-  <dimen name="md_text_field_dense_full_width_padding_horizontal">16dp</dimen>
-  <dimen name="md_text_field_dense_full_width_height">48dp</dimen>
-
-
-  <!-- Tooltips Desktop -->
-
-  <dimen name="md_tooltip_desktop_height">22dp</dimen>
-  <dimen name="md_tooltip_desktop_text">10sp</dimen>
-  <dimen name="md_tooltip_desktop_padding_horizontal">16dp</dimen>
-  <dimen name="md_tooltip_desktop_margin_from_anchor">14dp</dimen>
-
-  <!-- Tooltips Mobile -->
-
-  <dimen name="md_tooltip_mobile_height">32dp</dimen>
-  <dimen name="md_tooltip_mobile_text">14sp</dimen>
-  <dimen name="md_tooltip_mobile_padding_horizontal">16dp</dimen>
-  <dimen name="md_tooltip_mobile_margin_from_anchor">24dp</dimen>
+  <dimen name="ma_button_touch_area_height">48dp</dimen>
+  <dimen name="ma_button_minimum_width">88dp</dimen>
+  <dimen name="ma_button_corner_radius">2dp</dimen>
+
+  <dimen name="ma_button_flat_text">14sp</dimen>
+  <dimen name="ma_button_flat_height">36dp</dimen>
+  <dimen name="ma_button_flat_elevation">0dp</dimen>
+  <dimen name="ma_button_flat_padding_horizontal">8dp</dimen>
+  <dimen name="ma_button_flat_margin_horizontal">8dp</dimen>
+
+  <dimen name="ma_button_raised_text">14sp</dimen>
+  <dimen name="ma_button_raised_height">36dp</dimen>
+  <dimen name="ma_button_raised_elevation">2dp</dimen>
+  <dimen name="ma_button_raised_padding_horizontal">16dp</dimen>
+
+  <dimen name="ma_card_corner_radius">2dp</dimen>
+  <dimen name="ma_card_content_padding">16dp</dimen>
+  <dimen name="ma_card_margin_outside_card">8dp</dimen>
+  <dimen name="ma_card_elevation_default">2dp</dimen>
+  <dimen name="ma_card_elevation_raised">8dp</dimen>
+  <dimen name="ma_card_action_padding">8dp</dimen>
+  <dimen name="ma_card_stacked_action_between_padding">4dp</dimen>
+  <dimen name="ma_card_title_large_text">24sp</dimen>
+  <dimen name="ma_card_title_large_padding_top">24dp</dimen>
+  <dimen name="ma_card_title_small_text">14sp</dimen>
+  <dimen name="ma_card_title_small_padding_top">16dp</dimen>
+  <dimen name="ma_card_subtitle_text">14sp</dimen>
+  <dimen name="ma_card_title_area_padding_horizontal">16dp</dimen>
+  <dimen name="ma_card_padding_bottom_large">24dp</dimen>
+  <dimen name="ma_card_content_text">14sp</dimen>
+
+  <dimen name="ma_divider_thickness">1dp</dimen>
+
+  <dimen name="ma_fab_icon_size">24dp</dimen>
+  <dimen name="ma_fab_circle_size">56dp</dimen>
+  <dimen name="ma_fab_mini_circle_size">40dp</dimen>
+
+  <dimen name="ma_grid_list_cell_spacing">4dp</dimen>
+  <dimen name="ma_grid_list_cell_spacing_small">1dp</dimen>
+  <dimen name="ma_grid_list_label_padding">16dp</dimen>
+  <dimen name="ma_grid_list_label_start_icon_label_padding_end">8dp</dimen>
+  <dimen name="ma_grid_list_single_line_label_text">16sp</dimen>
+  <dimen name="ma_grid_list_two_line_label_text_type_diff_primary">16sp</dimen>
+  <dimen name="ma_grid_list_two_line_label_text_type_diff_secondary">12sp</dimen>
+  <dimen name="ma_grid_list_two_line_label_text_type_same">14sp</dimen>
+
+  <dimen name="ma_list_top_padding">8dp</dimen>
+  <dimen name="ma_list_item_primary_text">16sp</dimen>
+  <dimen name="ma_list_item_secondary_text">14sp</dimen>
+  <dimen name="ma_list_item_edges_padding">16dp</dimen>
+  <dimen name="ma_list_item_text_edge_padding_start">72dp</dimen>
+  <dimen name="ma_list_item_end_icon_padding_start">16dp</dimen>
+  <dimen name="ma_list_item_line_spacing">4dp</dimen>
+  <dimen name="ma_list_multi_line_item_avatar">40dp</dimen>
+  <dimen name="ma_list_multi_line_item_icon">32dp</dimen>
+  <dimen name="ma_list_multi_line_item_avatar_icon_padding_top">16dp</dimen>
+
+  <dimen name="ma_screen_edge_margin_horizontal">@dimen/ma_screen_edge_margin_horizontal_mobile</dimen>
+  <dimen name="ma_screen_edge_margin_horizontal_mobile">16dp</dimen>
+  <dimen name="ma_screen_edge_margin_horizontal_tablet">24dp</dimen>
+  <dimen name="ma_screen_edge_margin_vertical">16dp</dimen>
+
+  <dimen name="ma_status_bar_height">24dp</dimen>
+
+  <dimen name="ma_subheader_text">14sp</dimen>
+  <dimen name="ma_subheader_text_padding">16dp</dimen>
+  <dimen name="ma_subheader_text_below_fab_padding_start">72dp</dimen>
+
+  <dimen name="ma_text_field_full_width_input_text">16sp</dimen>
+  <dimen name="ma_text_field_full_width_padding_vertical">20dp</dimen>
+  <dimen name="ma_text_field_full_width_padding_horizontal">16dp</dimen>
+  <dimen name="ma_text_field_full_width_height">54dp</dimen>
+  <dimen name="ma_text_field_dense_full_width_padding_vertical">16dp</dimen>
+  <dimen name="ma_text_field_dense_full_width_padding_horizontal">16dp</dimen>
+  <dimen name="ma_text_field_dense_full_width_height">48dp</dimen>
+
+  <dimen name="ma_toolbar_height">?android:attr/actionBarSize</dimen>
 
 </resources>

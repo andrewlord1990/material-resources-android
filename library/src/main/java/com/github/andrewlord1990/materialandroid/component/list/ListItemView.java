@@ -88,7 +88,7 @@ public class ListItemView extends FrameLayout {
    * @param attrs   The attributes of the XML tag that is inflating the view.
    */
   public ListItemView(Context context, AttributeSet attrs) {
-    this(context, attrs, R.attr.mdListItemViewStyle);
+    this(context, attrs, R.attr.maListItemViewStyle);
   }
 
   /**
@@ -128,7 +128,7 @@ public class ListItemView extends FrameLayout {
 
   private void loadThemeAttributes(AttributeSet attrs, @AttrRes int themeAttribute, @StyleRes int styleRes) {
     TypedArray typedAttrs = getContext().getTheme().obtainStyledAttributes(
-        attrs, R.styleable.MDListItemView, themeAttribute, styleRes);
+        attrs, R.styleable.MAListItemView, themeAttribute, styleRes);
     try {
       loadVariant(typedAttrs);
       loadText(typedAttrs);
@@ -141,28 +141,28 @@ public class ListItemView extends FrameLayout {
 
   private void loadVariant(TypedArray typedAttrs) {
     @ListItemVariant int variant = typedAttrs
-        .getInt(R.styleable.MDListItemView_md_list_item_variant, VARIANT_ONE_LINE_TEXT);
+        .getInt(R.styleable.MAListItemView_ma_list_item_variant, VARIANT_ONE_LINE_TEXT);
     setVariant(variant);
   }
 
   private void loadText(TypedArray typedAttrs) {
-    String primaryText = typedAttrs.getString(R.styleable.MDListItemView_md_list_text_primary);
+    String primaryText = typedAttrs.getString(R.styleable.MAListItemView_ma_list_text_primary);
     setPrimaryText(primaryText);
 
-    String secondaryText = typedAttrs.getString(R.styleable.MDListItemView_md_list_text_secondary);
+    String secondaryText = typedAttrs.getString(R.styleable.MAListItemView_ma_list_text_secondary);
     setSecondaryText(secondaryText);
 
-    String tertiaryText = typedAttrs.getString(R.styleable.MDListItemView_md_list_text_tertiary);
+    String tertiaryText = typedAttrs.getString(R.styleable.MAListItemView_ma_list_text_tertiary);
     setTertiaryText(tertiaryText);
   }
 
   private void loadIcon(TypedArray typedAttrs) {
-    Drawable icon = typedAttrs.getDrawable(R.styleable.MDListItemView_md_list_icon);
+    Drawable icon = typedAttrs.getDrawable(R.styleable.MAListItemView_ma_list_icon);
     setIcon(icon);
   }
 
   private void loadAvatar(TypedArray typedAttrs) {
-    Drawable avatar = typedAttrs.getDrawable(R.styleable.MDListItemView_md_list_avatar);
+    Drawable avatar = typedAttrs.getDrawable(R.styleable.MAListItemView_ma_list_avatar);
     setAvatar(avatar);
   }
 
@@ -170,31 +170,31 @@ public class ListItemView extends FrameLayout {
   private int getLayoutFromVariant(@ListItemVariant int variant) {
     switch (variant) {
       case VARIANT_ONE_LINE_TEXT:
-        return R.layout.md_list_single_line;
+        return R.layout.ma_list_single_line;
       case VARIANT_ONE_LINE_TEXT_ICON:
-        return R.layout.md_list_single_line_icon;
+        return R.layout.ma_list_single_line_icon;
       case VARIANT_ONE_LINE_TEXT_AVATAR:
-        return R.layout.md_list_single_line_avatar;
+        return R.layout.ma_list_single_line_avatar;
       case VARIANT_ONE_LINE_TEXT_ICON_AVATAR:
-        return R.layout.md_list_single_line_avatar_and_icon;
+        return R.layout.ma_list_single_line_avatar_and_icon;
       case VARIANT_TWO_LINE_TEXT:
-        return R.layout.md_list_two_line;
+        return R.layout.ma_list_two_line;
       case VARIANT_TWO_LINE_TEXT_ICON:
-        return R.layout.md_list_two_line_icon;
+        return R.layout.ma_list_two_line_icon;
       case VARIANT_TWO_LINE_TEXT_AVATAR:
-        return R.layout.md_list_two_line_avatar;
+        return R.layout.ma_list_two_line_avatar;
       case VARIANT_TWO_LINE_TEXT_ICON_AVATAR:
-        return R.layout.md_list_two_line_avatar_and_icon;
+        return R.layout.ma_list_two_line_avatar_and_icon;
       case VARIANT_THREE_LINE_TEXT:
-        return R.layout.md_list_three_line;
+        return R.layout.ma_list_three_line;
       case VARIANT_THREE_LINE_TEXT_ICON:
-        return R.layout.md_list_three_line_icon;
+        return R.layout.ma_list_three_line_icon;
       case VARIANT_THREE_LINE_TEXT_AVATAR:
-        return R.layout.md_list_three_line_avatar;
+        return R.layout.ma_list_three_line_avatar;
       case VARIANT_THREE_LINE_TEXT_ICON_AVATAR:
-        return R.layout.md_list_three_line_avatar_and_icon;
+        return R.layout.ma_list_three_line_avatar_and_icon;
       default:
-        return R.layout.md_list_single_line;
+        return R.layout.ma_list_single_line;
     }
   }
 

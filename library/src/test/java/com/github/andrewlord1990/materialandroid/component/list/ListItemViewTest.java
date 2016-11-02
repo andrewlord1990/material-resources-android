@@ -73,7 +73,7 @@ public class ListItemViewTest {
   @Test
   public void givenVariantInAttrs_whenCreated_thenHasVariant() {
     AttributeSet attrs = Robolectric.buildAttributeSet()
-        .addAttribute(R.attr.md_list_item_variant, "two_line_text_icon")
+        .addAttribute(R.attr.ma_list_item_variant, "two_line_text_icon")
         .build();
 
     ListItemView view = new ListItemView(RuntimeEnvironment.application, attrs);
@@ -87,10 +87,10 @@ public class ListItemViewTest {
   @Test
   public void givenTextsInAttrs_whenCreated_thenHasTexts() {
     AttributeSet attrs = Robolectric.buildAttributeSet()
-        .addAttribute(R.attr.md_list_item_variant, "three_line_text")
-        .addAttribute(R.attr.md_list_text_primary, PRIMARY)
-        .addAttribute(R.attr.md_list_text_secondary, SECONDARY)
-        .addAttribute(R.attr.md_list_text_tertiary, TERTIARY)
+        .addAttribute(R.attr.ma_list_item_variant, "three_line_text")
+        .addAttribute(R.attr.ma_list_text_primary, PRIMARY)
+        .addAttribute(R.attr.ma_list_text_secondary, SECONDARY)
+        .addAttribute(R.attr.ma_list_text_tertiary, TERTIARY)
         .build();
 
     ListItemView view = new ListItemView(RuntimeEnvironment.application, attrs);
@@ -106,8 +106,8 @@ public class ListItemViewTest {
   @Test
   public void givenIconInAttrs_whenCreated_thenHasIcon() {
     AttributeSet attrs = Robolectric.buildAttributeSet()
-        .addAttribute(R.attr.md_list_item_variant, "one_line_text_icon")
-        .addAttribute(R.attr.md_list_icon, "@drawable/ic_icon_square")
+        .addAttribute(R.attr.ma_list_item_variant, "one_line_text_icon")
+        .addAttribute(R.attr.ma_list_icon, "@drawable/ic_icon_square")
         .build();
 
     ListItemView view = new ListItemView(RuntimeEnvironment.application, attrs, 0);
@@ -120,8 +120,8 @@ public class ListItemViewTest {
   @Test
   public void givenAvatarInAttrs_whenCreated_thenHasAvatar() {
     AttributeSet attrs = Robolectric.buildAttributeSet()
-        .addAttribute(R.attr.md_list_item_variant, "one_line_text_avatar")
-        .addAttribute(R.attr.md_list_avatar, "@drawable/ic_avatar_circle")
+        .addAttribute(R.attr.ma_list_item_variant, "one_line_text_avatar")
+        .addAttribute(R.attr.ma_list_avatar, "@drawable/ic_avatar_circle")
         .build();
 
     ListItemView view = new ListItemView(RuntimeEnvironment.application, attrs, 0, 0);

@@ -20,15 +20,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/md_list_single_line_with_avatar_item_height">
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/ma_list_item_edges_padding"
+    android:paddingBottom="@dimen/ma_list_item_edges_padding">
 
   <ImageView
       android:id="@+id/list_avatar"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_centerVertical="true"
-      android:layout_marginLeft="@dimen/md_list_item_horizontal_edges_padding"
-      android:layout_marginStart="@dimen/md_list_item_horizontal_edges_padding"
+      android:layout_marginLeft="@dimen/ma_list_item_edges_padding"
+      android:layout_marginStart="@dimen/ma_list_item_edges_padding"
       android:contentDescription="@string/list_item_avatar_cd"
       tools:src="@drawable/ic_avatar_circle"/>
 
@@ -37,12 +39,12 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_centerVertical="true"
-      android:layout_marginEnd="@dimen/md_list_item_horizontal_edges_padding"
-      android:layout_marginLeft="@dimen/md_list_item_text_edge_padding_start"
-      android:layout_marginRight="@dimen/md_list_item_horizontal_edges_padding"
-      android:layout_marginStart="@dimen/md_list_item_text_edge_padding_start"
-      android:textColor="@color/md_text_dark_primary_87"
-      android:textSize="@dimen/md_list_item_primary_text"
+      android:layout_marginLeft="@dimen/ma_list_item_text_edge_padding_start"
+      android:layout_marginStart="@dimen/ma_list_item_text_edge_padding_start"
+      android:layout_marginRight="@dimen/ma_list_item_edges_padding"
+      android:layout_marginEnd="@dimen/ma_list_item_edges_padding"
+      android:textColor="@color/ma_list_item_primary_text"
+      android:textSize="@dimen/ma_list_item_primary_text"
       tools:text="Single-line item"/>
 
 </RelativeLayout>

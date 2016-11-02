@@ -29,8 +29,8 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:clipToPadding="false"
-      android:paddingBottom="@dimen/md_grid_list_cell_spacing_small"
-      android:paddingTop="@dimen/md_grid_list_cell_spacing_small"
+      android:paddingBottom="@dimen/ma_grid_list_cell_spacing_small"
+      android:paddingTop="@dimen/ma_grid_list_cell_spacing_small"
       app:layout_behavior="@string/appbar_scrolling_view_behavior"
       tools:context=".components.grids.GridsSampleActivity"
       tools:showIn="@layout/activity_grids_sample"/>

@@ -17,7 +17,6 @@
   -->
 
 <resources>
-  <dimen name="activity_vertical_margin">16dp</dimen>
   <dimen name="color_square_size">38dp</dimen>
   <dimen name="color_square_bg_size">46dp</dimen>
   <dimen name="control_padding">16dp</dimen>

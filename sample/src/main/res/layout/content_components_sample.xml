@@ -23,10 +23,12 @@
     android:layout_height="match_parent"
     android:clipToPadding="false"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/ma_screen_edge_margin_vertical"
+    android:paddingBottom="@dimen/ma_screen_edge_margin_vertical"
     android:paddingLeft="@dimen/ma_screen_edge_margin_horizontal"
+    android:paddingStart="@dimen/ma_screen_edge_margin_horizontal"
     android:paddingRight="@dimen/ma_screen_edge_margin_horizontal"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingEnd="@dimen/ma_screen_edge_margin_horizontal"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".components.ComponentsSampleActivity"
     tools:showIn="@layout/activity_components_sample">
@@ -49,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/control_padding"
         android:text="@string/sample_components_lists_button"/>
 
     <Spinner
@@ -57,8 +59,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/control_padding"
         android:layout_marginBottom="@dimen/control_padding"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:entries="@array/grid_sample_types"/>
 
     <Button
@@ -73,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/control_padding"
         android:text="@string/sample_components_text_fields_button"/>
 
     <Button
@@ -81,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/control_padding"
         android:text="@string/sample_components_password_button"/>
 
   </LinearLayout>

@@ -31,46 +31,46 @@ public final class Colors {
 
   public static ArrayList<Integer> primaryColors(Context context) {
     ArrayList<Integer> primaryColors = new ArrayList<>();
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_red_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_pink_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_purple_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_deep_purple_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_indigo_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_blue_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_light_blue_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_cyan_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_teal_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_green_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_light_green_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_lime_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_yellow_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_amber_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_orange_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_deep_orange_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_brown_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_grey_500));
-    primaryColors.add(ContextCompat.getColor(context, R.color.md_blue_grey_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_red_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_pink_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_purple_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_deep_purple_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_indigo_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_blue_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_light_blue_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_cyan_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_teal_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_green_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_light_green_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_lime_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_yellow_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_amber_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_orange_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_deep_orange_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_brown_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_grey_500));
+    primaryColors.add(ContextCompat.getColor(context, R.color.ma_blue_grey_500));
     return primaryColors;
   }
 
   public static ArrayList<Integer> accentColors(Context context) {
     ArrayList<Integer> accentColors = new ArrayList<>();
-    accentColors.add(ContextCompat.getColor(context, R.color.md_red_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_pink_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_purple_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_deep_purple_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_indigo_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_blue_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_light_blue_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_cyan_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_teal_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_green_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_light_green_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_lime_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_yellow_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_amber_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_orange_a200));
-    accentColors.add(ContextCompat.getColor(context, R.color.md_deep_orange_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_red_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_pink_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_purple_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_deep_purple_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_indigo_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_blue_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_light_blue_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_cyan_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_teal_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_green_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_light_green_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_lime_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_yellow_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_amber_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_orange_a200));
+    accentColors.add(ContextCompat.getColor(context, R.color.ma_deep_orange_a200));
     return accentColors;
   }
 

@@ -61,7 +61,7 @@ public class GridsSampleActivity extends BaseSampleActivity {
       list.setHasFixedSize(true);
       adapter = new GridAdapter(this, gridType);
       list.setAdapter(adapter);
-      int spacing = getResources().getDimensionPixelSize(R.dimen.md_grid_list_cell_spacing_small);
+      int spacing = getResources().getDimensionPixelSize(R.dimen.ma_grid_list_cell_spacing_small);
       list.addItemDecoration(new GridListSpacingItemDecoration(spacing));
     }
   }

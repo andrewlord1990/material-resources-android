@@ -74,10 +74,10 @@ public class SampleActivity extends BaseSampleActivity implements ColorChooserDi
 
   private void initialiseColors() {
     if (primaryColor == 0) {
-      primaryColor = ContextCompat.getColor(this, R.color.md_cyan_500);
+      primaryColor = ContextCompat.getColor(this, R.color.ma_cyan_500);
     }
     if (accentColor == 0) {
-      accentColor = ContextCompat.getColor(this, R.color.md_red_a200);
+      accentColor = ContextCompat.getColor(this, R.color.ma_red_a200);
     }
   }
 

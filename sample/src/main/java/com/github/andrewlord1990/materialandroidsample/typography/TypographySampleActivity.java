@@ -85,14 +85,14 @@ public class TypographySampleActivity extends BaseSampleActivity {
 
   private void setDarkState() {
     state = STATE_DARK;
-    background.setBackgroundColor(ContextCompat.getColor(this, R.color.md_white));
+    background.setBackgroundColor(ContextCompat.getColor(this, R.color.ma_white));
     stateDark.setVisibility(View.VISIBLE);
     stateLight.setVisibility(View.GONE);
   }
 
   private void setLightState() {
     state = STATE_LIGHT;
-    background.setBackgroundColor(ContextCompat.getColor(this, R.color.md_black));
+    background.setBackgroundColor(ContextCompat.getColor(this, R.color.ma_black));
     stateDark.setVisibility(View.GONE);
     stateLight.setVisibility(View.VISIBLE);
   }

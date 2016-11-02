@@ -33,21 +33,21 @@
       android:orientation="vertical">
 
     <EditText
-        style="@style/MDFullWidthEditText"
+        style="@style/MAFullWidthEditText"
         android:hint="@string/sample_text_fields_1_hint"
         android:inputType="textEmailAddress"/>
 
     <include layout="@layout/ma_divider_horizontal_dark"/>
 
     <EditText
-        style="@style/MDFullWidthEditText"
+        style="@style/MAFullWidthEditText"
         android:hint="@string/sample_text_fields_2_hint"
         android:inputType="textEmailSubject"/>
 
     <include layout="@layout/ma_divider_horizontal_dark"/>
 
     <EditText
-        style="@style/MDFullWidthEditText"
+        style="@style/MAFullWidthEditText"
         android:hint="@string/sample_text_fields_3_hint"
         android:inputType="textMultiLine"/>
 

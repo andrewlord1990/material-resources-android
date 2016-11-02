@@ -21,18 +21,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="@dimen/md_grid_list_label_padding"
-    android:paddingBottom="@dimen/md_grid_list_label_padding">
+    android:paddingTop="@dimen/ma_grid_list_label_padding"
+    android:paddingBottom="@dimen/ma_grid_list_label_padding">
 
   <ImageView
       android:id="@+id/grid_list_label_icon"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_centerVertical="true"
-      android:layout_marginLeft="@dimen/md_grid_list_label_padding"
-      android:layout_marginStart="@dimen/md_grid_list_label_padding"
-      android:layout_marginRight="@dimen/md_grid_list_label_padding"
-      android:layout_marginEnd="@dimen/md_grid_list_label_padding"
+      android:layout_marginLeft="@dimen/ma_grid_list_label_padding"
+      android:layout_marginStart="@dimen/ma_grid_list_label_padding"
+      android:layout_marginRight="@dimen/ma_grid_list_label_padding"
+      android:layout_marginEnd="@dimen/ma_grid_list_label_padding"
       android:contentDescription="@string/list_item_icon_cd"
       tools:src="@drawable/ic_icon_square"/>
 
@@ -40,8 +40,8 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_centerVertical="true"
-      android:layout_marginRight="@dimen/md_grid_list_label_start_icon_label_padding_end"
-      android:layout_marginEnd="@dimen/md_grid_list_label_start_icon_label_padding_end"
+      android:layout_marginRight="@dimen/ma_grid_list_label_start_icon_label_padding_end"
+      android:layout_marginEnd="@dimen/ma_grid_list_label_start_icon_label_padding_end"
       android:layout_toRightOf="@id/grid_list_label_icon"
       android:layout_toEndOf="@id/grid_list_label_icon"
       android:orientation="vertical">
@@ -50,9 +50,9 @@
         android:id="@+id/grid_list_label_line_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/md_list_item_line_spacing"
+        android:layout_marginBottom="@dimen/ma_list_item_line_spacing"
         android:textColor="@color/ma_grid_list_item_text"
-        android:textSize="@dimen/md_grid_list_two_line_label_text_type_diff_primary"
+        android:textSize="@dimen/ma_grid_list_two_line_label_text_type_diff_primary"
         tools:text="Two-line item"/>
 
     <TextView
@@ -60,7 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/ma_grid_list_item_text"
-        android:textSize="@dimen/md_grid_list_two_line_label_text_type_diff_secondary"
+        android:textSize="@dimen/ma_grid_list_two_line_label_text_type_diff_secondary"
         tools:text="Secondary text"/>
 
   </LinearLayout>

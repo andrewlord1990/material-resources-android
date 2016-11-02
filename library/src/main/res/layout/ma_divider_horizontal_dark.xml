@@ -19,5 +19,5 @@
 <View
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/md_divider_thickness"
-    android:background="@color/md_dark_divider_12"/>
+    android:layout_height="@dimen/ma_divider_thickness"
+    android:background="@color/ma_divider_dark_12"/>

@@ -23,7 +23,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
-    android:padding="@dimen/md_list_item_edges_padding"
+    android:padding="@dimen/ma_list_item_edges_padding"
     android:textColor="@color/ma_list_item_primary_text"
-    android:textSize="@dimen/md_list_item_primary_text"
+    android:textSize="@dimen/ma_list_item_primary_text"
     tools:text="Single-line item"/>

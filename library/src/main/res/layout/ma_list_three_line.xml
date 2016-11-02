@@ -22,24 +22,24 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="@dimen/md_list_item_edges_padding">
+    android:padding="@dimen/ma_list_item_edges_padding">
 
   <TextView
       android:id="@+id/list_primary_text"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginBottom="@dimen/md_list_item_line_spacing"
+      android:layout_marginBottom="@dimen/ma_list_item_line_spacing"
       android:textColor="@color/ma_list_item_primary_text"
-      android:textSize="@dimen/md_list_item_primary_text"
+      android:textSize="@dimen/ma_list_item_primary_text"
       tools:text="Three-line item"/>
 
   <TextView
       android:id="@+id/list_secondary_text"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginBottom="@dimen/md_list_item_line_spacing"
+      android:layout_marginBottom="@dimen/ma_list_item_line_spacing"
       android:textColor="@color/ma_list_item_secondary_text"
-      android:textSize="@dimen/md_list_item_secondary_text"
+      android:textSize="@dimen/ma_list_item_secondary_text"
       tools:text="Secondary text"/>
 
   <TextView
@@ -47,7 +47,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:textColor="@color/ma_list_item_tertiary_text"
-      android:textSize="@dimen/md_list_item_secondary_text"
+      android:textSize="@dimen/ma_list_item_secondary_text"
       tools:text="Tertiary text"/>
 
 </LinearLayout>

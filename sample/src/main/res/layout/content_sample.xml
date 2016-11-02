@@ -23,8 +23,8 @@
     android:layout_height="match_parent"
     android:clipToPadding="false"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/md_screen_edge_margin_horizontal"
-    android:paddingRight="@dimen/md_screen_edge_margin_horizontal"
+    android:paddingLeft="@dimen/ma_screen_edge_margin_horizontal"
+    android:paddingRight="@dimen/ma_screen_edge_margin_horizontal"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".SampleActivity"
@@ -86,7 +86,7 @@
         android:layout_height="@dimen/divider_height"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:background="@color/md_dark_divider_12"/>
+        android:background="@color/ma_divider_dark_12"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -107,7 +107,7 @@
         android:layout_height="@dimen/divider_height"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:background="@color/md_dark_divider_12"/>
+        android:background="@color/ma_divider_dark_12"/>
 
     <RelativeLayout
         android:layout_width="match_parent"

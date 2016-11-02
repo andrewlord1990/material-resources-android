@@ -18,83 +18,36 @@
 
 <resources>
 
-  <!-- Bottom Sheets -->
+  <color name="ma_button_flat_light_background_pressed">#67999999</color>
+  <color name="ma_button_flat_light_text_disabled">#43000000</color>
+  <color name="ma_button_flat_dark_background_pressed">#41cccccc</color>
+  <color name="ma_button_flat_dark_text_disabled">#4dffffff</color>
 
-  <color name="md_bottom_sheet_title">@color/md_text_dark_secondary_54</color>
-  <color name="md_bottom_sheet_background_default">@color/md_white</color>
-  <color name="md_bottom_sheet_background_translucent">#34ffffff</color>
+  <color name="ma_button_raised_light_text_disabled">#43000000</color>
+  <color name="ma_button_raised_light_background_disabled">#1f000000</color>
+  <color name="ma_button_raised_dark_text_disabled">#4dffffff</color>
+  <color name="ma_button_raised_dark_background_disabled">#1fffffff</color>
 
-  <!-- Bottom Sheets List -->
+  <color name="ma_divider_dark_12">#1f000000</color>
+  <color name="md_divider_light_12">#1fffffff</color>
 
-  <color name="md_bottom_sheet_list_text">@color/md_text_dark_primary_87</color>
+  <color name="ma_grid_list_item_text">@color/ma_text_dark_primary_87</color>
 
-  <!-- Bottom Sheets Grid -->
+  <color name="ma_icon_dark_38">#62000000</color>
+  <color name="md_icon_light_50">#80ffffff</color>
 
-  <color name="md_bottom_sheet_grid_text">@color/md_text_dark_secondary_54</color>
+  <color name="ma_list_item_primary_text">@color/ma_text_dark_primary_87</color>
+  <color name="ma_list_item_secondary_text">@color/ma_text_dark_secondary_54</color>
+  <color name="ma_list_item_tertiary_text">@color/ma_text_dark_secondary_54</color>
 
+  <color name="ma_snackbar_background">#ff323232</color>
 
-  <!-- Buttons Flat -->
+  <color name="ma_subheader_dark_text">@color/ma_text_dark_secondary_54</color>
+  <color name="ma_subheader_light_text">@color/ma_text_light_secondary_70</color>
 
-  <color name="md_button_flat_light_background_pressed">#67999999</color>
-  <color name="md_button_flat_light_text_disabled">#43000000</color>
-  <color name="md_button_flat_dark_background_pressed">#41cccccc</color>
-  <color name="md_button_flat_dark_text_disabled">#4dffffff</color>
+  <color name="ma_tab_active_text">@color/ma_white</color>
+  <color name="ma_tab_unfocused_text">@color/ma_text_light_secondary_70</color>
 
-  <!-- Buttons Raised -->
-
-  <color name="md_button_raised_light_text_disabled">#43000000</color>
-  <color name="md_button_raised_light_background_disabled">#1f000000</color>
-  <color name="md_button_raised_dark_text_disabled">#4dffffff</color>
-  <color name="md_button_raised_dark_background_disabled">#1fffffff</color>
-
-
-  <!-- Data Tables -->
-
-  <color name="md_data_table_text">@color/md_text_dark_primary_87</color>
-  <color name="md_data_table_text_header">@color/md_text_dark_secondary_54</color>
-  <color name="md_data_table_text_header_sorted">@color/md_text_dark_primary_87</color>
-  <color name="md_data_table_text_header_sort_icon">@color/md_text_dark_primary_87</color>
-  <color name="md_data_table_text_header_sort_icon_hover">@color/md_text_dark_disabled_hint_38</color>
-  <color name="md_data_table_row_background_hover">@color/md_grey_200</color>
-  <color name="md_data_table_row_background_selected">@color/md_grey_100</color>
-  <color name="md_data_table_edit_field_placeholder_text">@color/md_text_dark_disabled_hint_38</color>
-  <color name="md_data_table_edit_icon">@color/md_text_dark_secondary_54</color>
-  <color name="md_data_table_card_title">@color/md_text_dark_primary_87</color>
-  <color name="md_data_table_card_action">@color/md_text_dark_secondary_54</color>
-  <color name="md_data_table_card_footer_pagination">@color/md_text_dark_secondary_54</color>
-
-
-  <!-- Grid List Items -->
-
-  <color name="ma_grid_list_item_text">@color/md_text_dark_primary_87</color>
-
-
-  <!-- List Items -->
-
-  <color name="ma_list_item_primary_text">@color/md_text_dark_primary_87</color>
-  <color name="ma_list_item_secondary_text">@color/md_text_dark_secondary_54</color>
-  <color name="ma_list_item_tertiary_text">@color/md_text_dark_secondary_54</color>
-
-
-  <!-- Snackbars -->
-
-  <color name="md_snackbar_background">#ff323232</color>
-
-
-  <!-- Subheaders -->
-
-  <color name="md_subheader_dark_text">@color/md_text_dark_secondary_54</color>
-  <color name="md_subheader_light_text">@color/md_text_light_secondary_70</color>
-
-
-  <!-- Tabs -->
-
-  <color name="md_tab_active_text">@color/md_white</color>
-  <color name="md_tab_unfocused_text">@color/md_text_light_secondary_70</color>
-
-
-  <!-- Tooltips -->
-
-  <color name="md_tooltip_background">#e6616161</color>
+  <color name="ma_tooltip_background">#e6616161</color>
 
 </resources>

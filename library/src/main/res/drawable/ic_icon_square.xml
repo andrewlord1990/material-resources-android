@@ -19,9 +19,9 @@
        android:shape="rectangle">
 
   <size
-      android:width="@dimen/md_list_multi_line_item_icon"
-      android:height="@dimen/md_list_multi_line_item_icon"/>
+      android:width="@dimen/ma_list_multi_line_item_icon"
+      android:height="@dimen/ma_list_multi_line_item_icon"/>
 
-  <solid android:color="@color/md_dark_icon_38"/>
+  <solid android:color="@color/ma_icon_dark_38"/>
 
 </shape>

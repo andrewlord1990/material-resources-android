@@ -22,7 +22,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
-    android:padding="@dimen/md_subheader_text_padding_start"
-    android:textColor="@color/md_subheader_dark_text"
-    android:textSize="@dimen/md_subheader_text"
+    android:padding="@dimen/ma_subheader_text_padding"
+    android:textColor="@color/ma_subheader_dark_text"
+    android:textSize="@dimen/ma_subheader_text"
     tools:text="Subheader"/>

@@ -108,15 +108,15 @@ public class GridItemViewTest {
   public void givenTextColorsInAttrs_whenCreated_thenHasTextColors() {
     AttributeSet attrs = Robolectric.buildAttributeSet()
         .addAttribute(R.attr.ma_grid_item_variant, "two_line_text")
-        .addAttribute(R.attr.ma_grid_text_primary_color, "@color/md_orange_50")
-        .addAttribute(R.attr.ma_grid_text_secondary_color, "@color/md_light_blue_a700")
+        .addAttribute(R.attr.ma_grid_text_primary_color, "@color/ma_orange_50")
+        .addAttribute(R.attr.ma_grid_text_secondary_color, "@color/ma_light_blue_a700")
         .build();
 
     GridItemView view = new GridItemView(RuntimeEnvironment.application, attrs, 0, 0);
 
     assertThat(view)
-        .hasPrimaryTextColor(getColor(R.color.md_orange_50))
-        .hasSecondaryTextColor(getColor(R.color.md_light_blue_a700));
+        .hasPrimaryTextColor(getColor(R.color.ma_orange_50))
+        .hasSecondaryTextColor(getColor(R.color.ma_light_blue_a700));
   }
 
   @Test
@@ -199,9 +199,9 @@ public class GridItemViewTest {
   @Test
   public void givenTextColors_whenSetVariant_thenTextColorsSetOnNewViews() {
     gridItemView.setVariant(GridItemView.VARIANT_ONE_LINE_TEXT);
-    int expectedPrimaryColor = getColor(R.color.md_amber_100);
+    int expectedPrimaryColor = getColor(R.color.ma_amber_100);
     gridItemView.setPrimaryTextColor(expectedPrimaryColor);
-    int expectedSecondaryColor = getColor(R.color.md_blue_100);
+    int expectedSecondaryColor = getColor(R.color.ma_blue_100);
     gridItemView.setSecondaryTextColor(expectedSecondaryColor);
 
     gridItemView.setVariant(GridItemView.VARIANT_TWO_LINE_TEXT);
@@ -266,7 +266,7 @@ public class GridItemViewTest {
 
   @Test
   public void whenSetPrimaryTextColorRes_thenHasPrimaryTextColor() {
-    @ColorRes final int expectedColor = R.color.md_red_400;
+    @ColorRes final int expectedColor = R.color.ma_red_400;
 
     gridItemView.setPrimaryTextColorRes(expectedColor);
 
@@ -345,7 +345,7 @@ public class GridItemViewTest {
 
   @Test
   public void whenSetSecondaryTextColorRes_thenHasSecondaryTextColor() {
-    @ColorRes final int expectedColor = R.color.md_red_400;
+    @ColorRes final int expectedColor = R.color.ma_red_400;
 
     gridItemView.setSecondaryTextColorRes(expectedColor);
     gridItemView.setVariant(GridItemView.VARIANT_TWO_LINE_TEXT);

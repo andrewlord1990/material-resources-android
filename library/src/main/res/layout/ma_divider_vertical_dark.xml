@@ -18,6 +18,6 @@
 
 <View
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/md_divider_thickness"
+    android:layout_width="@dimen/ma_divider_thickness"
     android:layout_height="match_parent"
-    android:background="@color/md_dark_divider_12"/>
+    android:background="@color/ma_divider_dark_12"/>

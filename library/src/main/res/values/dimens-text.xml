@@ -22,54 +22,46 @@
       Regular (e.g. English or English-like - Latin, Greek, and Cyrillic)
   -->
 
-  <dimen name="md_text_button">14sp</dimen>
-  <dimen name="md_text_caption">12sp</dimen>
-  <dimen name="md_text_body_1">14sp</dimen>
-  <dimen name="md_text_body_1_desktop">13sp</dimen>
-  <dimen name="md_text_subheading">16sp</dimen>
-  <dimen name="md_text_subheading_desktop">15sp</dimen>
-  <dimen name="md_text_title">20sp</dimen>
-  <dimen name="md_text_headline">24sp</dimen>
-  <dimen name="md_text_display_1">34sp</dimen>
-  <dimen name="md_text_display_2">45sp</dimen>
-  <dimen name="md_text_display_3">56sp</dimen>
-  <dimen name="md_text_display_4">112sp</dimen>
-
+  <dimen name="ma_text_button">14sp</dimen>
+  <dimen name="ma_text_caption">12sp</dimen>
+  <dimen name="ma_text_body_1">14sp</dimen>
+  <dimen name="ma_text_subheading">16sp</dimen>
+  <dimen name="ma_text_title">20sp</dimen>
+  <dimen name="ma_text_headline">24sp</dimen>
+  <dimen name="ma_text_display_1">34sp</dimen>
+  <dimen name="ma_text_display_2">45sp</dimen>
+  <dimen name="ma_text_display_3">56sp</dimen>
+  <dimen name="ma_text_display_4">112sp</dimen>
 
   <!--
       Dense (e.g. Chinese, Japanese, and Korean)
   -->
 
-  <dimen name="md_text_dense_button">15sp</dimen>
-  <dimen name="md_text_dense_caption">13sp</dimen>
-  <dimen name="md_text_dense_body_1">15sp</dimen>
-  <dimen name="md_text_dense_body_1_desktop">14sp</dimen>
-  <dimen name="md_text_dense_subheading">17sp</dimen>
-  <dimen name="md_text_dense_subheading_desktop">16sp</dimen>
-  <dimen name="md_text_dense_title">21sp</dimen>
-  <dimen name="md_text_dense_headline">24sp</dimen>
-  <dimen name="md_text_dense_display_1">34sp</dimen>
-  <dimen name="md_text_dense_display_2">45sp</dimen>
-  <dimen name="md_text_dense_display_3">56sp</dimen>
-  <dimen name="md_text_dense_display_4">112sp</dimen>
-
+  <dimen name="ma_text_dense_button">15sp</dimen>
+  <dimen name="ma_text_dense_caption">13sp</dimen>
+  <dimen name="ma_text_dense_body_1">15sp</dimen>
+  <dimen name="ma_text_dense_subheading">17sp</dimen>
+  <dimen name="ma_text_dense_title">21sp</dimen>
+  <dimen name="ma_text_dense_headline">24sp</dimen>
+  <dimen name="ma_text_dense_display_1">34sp</dimen>
+  <dimen name="ma_text_dense_display_2">45sp</dimen>
+  <dimen name="ma_text_dense_display_3">56sp</dimen>
+  <dimen name="ma_text_dense_display_4">112sp</dimen>
 
   <!--
       Tall (e.g. South and Southeast Asian and Middle Eastern languages, including
       Arabic, Hindi, and Thai.)
   -->
 
-  <dimen name="md_text_tall_button">15sp</dimen>
-  <dimen name="md_text_tall_caption">13sp</dimen>
-  <dimen name="md_text_tall_body_1">15sp</dimen>
-  <dimen name="md_text_tall_body_1_desktop">14sp</dimen>
-  <dimen name="md_text_tall_subheading">17sp</dimen>
-  <dimen name="md_text_tall_subheading_desktop">16sp</dimen>
-  <dimen name="md_text_tall_title">21sp</dimen>
-  <dimen name="md_text_tall_headline">24sp</dimen>
-  <dimen name="md_text_tall_display_1">34sp</dimen>
-  <dimen name="md_text_tall_display_2">45sp</dimen>
-  <dimen name="md_text_tall_display_3">56sp</dimen>
-  <dimen name="md_text_tall_display_4">112sp</dimen>
+  <dimen name="ma_text_tall_button">15sp</dimen>
+  <dimen name="ma_text_tall_caption">13sp</dimen>
+  <dimen name="ma_text_tall_body_1">15sp</dimen>
+  <dimen name="ma_text_tall_subheading">17sp</dimen>
+  <dimen name="ma_text_tall_title">21sp</dimen>
+  <dimen name="ma_text_tall_headline">24sp</dimen>
+  <dimen name="ma_text_tall_display_1">34sp</dimen>
+  <dimen name="ma_text_tall_display_2">45sp</dimen>
+  <dimen name="ma_text_tall_display_3">56sp</dimen>
+  <dimen name="ma_text_tall_display_4">112sp</dimen>
 
 </resources>

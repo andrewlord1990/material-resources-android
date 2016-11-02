@@ -50,7 +50,8 @@ import java.lang.annotation.RetentionPolicy;
  * toggle that switches between showing plain text and showing asterisk characters instead. The password is hidden by
  * default, however, this can be changed using the md_password_shown attribute. The view can be customised through
  * various setter methods, XML attributes passed to the view or by assigning a style to use for all PasswordEditTexts
- * to the mdPasswordEditTextStyle theme attribute.
+ * to the mdPasswordEditTextStyle theme attribute. For the toggle, you have the choice of either a single icon with two
+ * different opacity values or using an icon with strike-through (or any two icons).
  */
 public class PasswordEditText extends AppCompatEditText {
 

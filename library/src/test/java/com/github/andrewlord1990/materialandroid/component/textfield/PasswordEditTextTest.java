@@ -341,10 +341,10 @@ public class PasswordEditTextTest {
 
   @Test
   public void whenSetTintColorRes_thenDrawableTinted() {
-    passwordView.setTintColorRes(R.color.md_amber_100);
+    passwordView.setTintColorRes(R.color.ma_amber_100);
 
     assertThat(passwordView)
-        .hasTintColorRes(R.color.md_amber_100);
+        .hasTintColorRes(R.color.ma_amber_100);
   }
 
   private Drawable getDrawable(@DrawableRes int drawableRes) {

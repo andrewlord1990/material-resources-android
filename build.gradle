@@ -20,7 +20,7 @@ buildscript {
   }
   dependencies {
     classpath 'com.android.tools.build:gradle:2.2.2'
-    classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.1x'
+    classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.6.3'
     classpath 'com.novoda:bintray-release:0.3.4'
   }
 }
@@ -39,7 +39,7 @@ task clean(type: Delete) {
 
 ext {
   versionMajor = 0
-  versionMinor = 4
+  versionMinor = 5
   versionPatch = 0
 
   targetSdk = 25

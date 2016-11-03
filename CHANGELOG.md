@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.5.0 (03/11/16)
+
+### Resources
+
+- Library will now focus only on the commonly used components and resources
+- Replaced the prefix `md_` on resources with `ma_`
+- Replaced the prefix `MD` in styles to `MA`
+- Tidied up the grid and list layout files
+- Added resources for grid and list text colours, so that you can override them
+- Added a screen edge vertical margin dimension
+
+### Dependencies
+
+- Update to target Api 25
+- Updated Android support library dependencies to v25.0.0
+
 ## v0.4.0 (31/07/16)
 
 ### Custom Views
@@ -25,10 +41,13 @@
 - Added subheaders to lists sample
 - List and grid item samples using new custom views
 
-### Project
+### Improvements
 
 - Code quality checking using CheckStyle, FindBugs and PMD
 - Reformatted code style
+
+### Dependencies
+
 - Update to target Api 24
 - Updated Android support library dependencies to v24.1.1
 

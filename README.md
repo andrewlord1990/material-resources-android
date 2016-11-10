@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/andrewlord1990/materialandroid.svg?branch=master)](https://travis-ci.org/andrewlord1990/materialandroid)
 [![Coverage Status](https://coveralls.io/repos/github/andrewlord1990/materialandroid/badge.svg?branch=master&v=2)](https://coveralls.io/github/andrewlord1990/materialandroid?branch=master)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Android-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/4013)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green.svg) ](https://github.com/andrewlord1990/materialandroid/blob/master/LICENSE)
 [![API](https://img.shields.io/badge/API-9%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=9)
 [ ![Download](https://api.bintray.com/packages/andrewlord1990/maven/materialandroid/images/download.svg) ](https://bintray.com/andrewlord1990/maven/materialandroid/_latestVersion)

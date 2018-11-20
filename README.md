@@ -2,11 +2,6 @@
 
 NOTE - No longer actively developed. The repository can be used for inspiration or to implement similar ideas in your own projects. It was originally created due to a need for all the Material Design resources within Android apps. More of this is provided for you and Material Design has since changed. As such, this project is no longer supported or maintained. 
 
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Android-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/4013)
-[![License](https://img.shields.io/badge/license-Apache%202.0-green.svg) ](https://github.com/lordcodes/materialandroid/blob/master/LICENSE)
-[![API](https://img.shields.io/badge/API-9%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=9)
-[![Download](https://api.bintray.com/packages/andrewlord1990/maven/materialandroid/images/download.svg) ](https://bintray.com/andrewlord1990/maven/materialandroid/_latestVersion)
-
 Access commonly used Material Design resource values (e.g. colours, text sizes and dimensions), custom views, layouts and styles, through a simple dependency.
 
 ## Download

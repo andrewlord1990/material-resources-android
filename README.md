@@ -1,22 +1,8 @@
 # Material Android
 
-NOTE - No longer actively developed. The repository can be used for inspiration or to implement similar ideas in your own projects. It was originally created due to a need for all the Material Design resources within Android apps. More of this is provided for you and Material Design has since changed. As such, this project is no longer supported or maintained. 
+NOTE - Deprecated and no longer actively developed. The repository can be used for inspiration or to implement similar ideas in your own projects. It was originally created due to a need for all the Material Design resources within Android apps. More of this is provided for you and Material Design has since changed. As such, this project is no longer supported or maintained. 
 
 Access commonly used Material Design resource values (e.g. colours, text sizes and dimensions), custom views, layouts and styles, through a simple dependency.
-
-## Download
-
-Download via Gradle:
-```groovy
-compile 'com.github.andrewlord1990:materialandroid:0.5.0'
-```
-
-Available on Bintray (JCenter).
-```groovy
-repositories {
-  jcenter()
-}
-```
 
 ## Contents
 
